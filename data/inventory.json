@@ -1,0 +1,32 @@
+[
+    {
+        "title": "2025 Subaru Forester Sport",
+        "price": 34948,
+        "image": "",
+        "smsBody": "Hey Yancy, I'm interested in the 2025 Forester Sport"
+    },
+    {
+        "title": "2024 GMC Sierra 3500HD SLT",
+        "price": 68844,
+        "image": "",
+        "smsBody": "Hey Yancy, I'm interested in the Sierra 3500HD"
+    },
+    {
+        "title": "2025 Subaru Crosstrek Sport",
+        "price": 30369,
+        "image": "",
+        "smsBody": "Hey Yancy, I'm interested in the 2025 Crosstrek Sport"
+    },
+    {
+        "title": "2023 Chevrolet Colorado ZR2",
+        "price": 39977,
+        "image": "",
+        "smsBody": "Hey Yancy, I'm interested in the Colorado ZR2"
+    },
+    {
+        "title": "2020 Ford F-150 Platinum",
+        "price": 36983,
+        "image": "",
+        "smsBody": "Hey Yancy, I'm interested in the F-150 Platinum"
+    }
+]

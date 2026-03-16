@@ -1,0 +1,10 @@
+node_modules/
+.claude/
+server.js
+package.json
+package-lock.json
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.local
