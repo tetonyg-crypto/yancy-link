@@ -9,6 +9,11 @@ const NEED_MAP = {
     'refer': 'Referring someone'
 };
 
+function getSource() {
+    var params = new URLSearchParams(window.location.search);
+    return params.get('src') || 'direct';
+}
+
 function formatPrice(num) {
     return '$' + num.toLocaleString('en-US');
 }
@@ -50,6 +55,7 @@ function handleFormSubmit(event) {
     var phone = document.getElementById('fphone').value;
     var need = document.getElementById('fneed').value;
     var details = document.getElementById('fdetails').value;
+    var source = getSource();
 
     fetch(FORMSPREE_URL, {
         method: 'POST',
@@ -59,7 +65,8 @@ function handleFormSubmit(event) {
             phone: phone,
             need: NEED_MAP[need] || 'Not specified',
             details: details,
-            _subject: 'YENES Lead: ' + name + ' - ' + (NEED_MAP[need] || 'Vehicle inquiry')
+            source: source,
+            _subject: '[' + source.toUpperCase() + '] YENES Lead: ' + name + ' - ' + (NEED_MAP[need] || 'Vehicle inquiry')
         })
     })
         .then(function (response) {
@@ -71,7 +78,7 @@ function handleFormSubmit(event) {
             }
         })
         .catch(function () {
-            var body = 'YENES Lead:\nName: ' + name + '\nPhone: ' + phone + '\nNeed: ' + (NEED_MAP[need] || 'Not specified') + '\nDetails: ' + details;
+            var body = 'YENES Lead [' + source + ']:\nName: ' + name + '\nPhone: ' + phone + '\nNeed: ' + (NEED_MAP[need] || 'Not specified') + '\nDetails: ' + details;
             window.location.href = 'sms:' + PHONE + '?body=' + encodeURIComponent(body);
         });
 }

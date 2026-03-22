@@ -3,6 +3,11 @@
   "outputDirectory": ".",
   "framework": null,
   "cleanUrls": true,
+  "rewrites": [
+    { "source": "/inventory", "destination": "https://yancy-inventory.vercel.app/" },
+    { "source": "/inventory/:path*", "destination": "https://yancy-inventory.vercel.app/:path*" },
+    { "source": "/deal", "destination": "/" }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
