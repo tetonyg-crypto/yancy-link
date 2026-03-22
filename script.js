@@ -1,6 +1,4 @@
 const PHONE = '3076993743';
-const FORMSPREE_ID = 'mojkkavv';
-const FORMSPREE_URL = `https://formspree.io/f/${FORMSPREE_ID}`;
 const NEED_MAP = {
     'looking': 'Looking for a vehicle',
     'payment': 'Payment/financing help',
@@ -56,18 +54,23 @@ function handleFormSubmit(event) {
     var need = document.getElementById('fneed').value;
     var details = document.getElementById('fdetails').value;
     var source = getSource();
+    var btn = document.getElementById('submitBtn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
 
-    fetch(FORMSPREE_URL, {
+    var payload = {
+        name: name,
+        phone: phone,
+        need: NEED_MAP[need] || 'Not specified',
+        details: details,
+        source: source,
+        timestamp: new Date().toISOString()
+    };
+
+    fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            name: name,
-            phone: phone,
-            need: NEED_MAP[need] || 'Not specified',
-            details: details,
-            source: source,
-            _subject: '[' + source.toUpperCase() + '] YENES Lead: ' + name + ' - ' + (NEED_MAP[need] || 'Vehicle inquiry')
-        })
+        body: JSON.stringify(payload)
     })
         .then(function (response) {
             if (response.ok) {
