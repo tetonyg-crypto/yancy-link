@@ -79,6 +79,6 @@ module.exports = async function handler(req, res) {
     }
 
     // GET — fetch leads
-    const leads = await supabaseQuery(SUPABASE_URL, SUPABASE_KEY, 'leads?order=timestamp.desc&limit=200');
+    const leads = await supabaseQuery(SUPABASE_URL, SUPABASE_KEY, 'leads?order=created_at.desc&limit=200');
     return res.status(200).json(leads);
 };

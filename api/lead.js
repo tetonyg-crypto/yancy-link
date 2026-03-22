@@ -82,7 +82,7 @@ module.exports = async function handler(req, res) {
                 need: need || 'Not specified',
                 details: details || '',
                 source: source || 'direct',
-                timestamp: timestamp || new Date().toISOString(),
+                created_at: timestamp || new Date().toISOString(),
                 contacted: false,
                 notes: ''
             });

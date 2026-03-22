@@ -155,7 +155,7 @@
     function renderDashboard(leads) {
         // Stats
         const now = new Date();
-        const thisMonth = leads.filter(l => new Date(l.timestamp).getMonth() === now.getMonth() && new Date(l.timestamp).getFullYear() === now.getFullYear());
+        const thisMonth = leads.filter(l => new Date(l.created_at).getMonth() === now.getMonth() && new Date(l.created_at).getFullYear() === now.getFullYear());
         const bySrc = { fb: 0, tt: 0, ref: 0, direct: 0 };
         thisMonth.forEach(l => {
             const s = l.source || 'direct';
@@ -196,7 +196,7 @@
         }
         tbody.innerHTML = leads.map(function(l) {
             const srcClass = 'src-' + (l.source === 'fb' || l.source === 'tt' || l.source === 'ref' ? l.source : 'direct');
-            const time = new Date(l.timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' + new Date(l.timestamp).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+            const time = new Date(l.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' + new Date(l.created_at).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
             const smsBody = encodeURIComponent("Hey " + l.name + ", it's Yancy from Teton Motors! I saw you were interested in " + (l.need || 'a vehicle') + ". What's your budget range?");
             return '<tr>' +
                 '<td><button class="contacted-btn ' + (l.contacted ? 'done' : '') + '" onclick="toggleContacted(\'' + l.id + '\', this)">' + (l.contacted ? '✓' : '') + '</button></td>' +
