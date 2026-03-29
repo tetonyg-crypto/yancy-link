@@ -52,22 +52,26 @@ async function insertPipelineLead(lead) {
   } catch (err) { console.error('Pipeline insert error:', err.message); return null; }
 }
 
-// ─── Twilio SMS ───
+// ─── SMS via MacBook Relay (sends from your real iPhone number) ───
 async function sendSMS(phone, body) {
-  const SID = process.env.TWILIO_ACCOUNT_SID;
-  const TOKEN = process.env.TWILIO_AUTH_TOKEN;
-  const FROM = process.env.TWILIO_FROM_NUMBER;
-  if (!SID || !TOKEN || !FROM) return false;
+  const RELAY_URL = process.env.MACBOOK_SMS_URL;
+  const RELAY_SECRET = process.env.SMS_RELAY_SECRET || 'yancy-sms-2026';
+  if (!RELAY_URL) return false;
+
   try {
     const digits = phone.replace(/\D/g, '');
     if (digits.length < 10) return false;
-    const auth = Buffer.from(SID + ':' + TOKEN).toString('base64');
-    await httpPost('api.twilio.com', `/2010-04-01/Accounts/${SID}/Messages.json`, {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Authorization': 'Basic ' + auth
-    }, `To=%2B1${digits}&From=${encodeURIComponent(FROM)}&Body=${encodeURIComponent(body)}`);
-    return true;
-  } catch (err) { console.error('Twilio error:', err.message); return false; }
+    const parsed = new URL(RELAY_URL + '/send');
+    const result = await httpPost(parsed.hostname, parsed.pathname, {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + RELAY_SECRET
+    }, { phone: digits, message: body });
+    const data = JSON.parse(result.body);
+    return data.ok === true;
+  } catch (err) {
+    console.error('SMS relay error:', err.message);
+    return false;
+  }
 }
 
 // ─── Telegram ───
