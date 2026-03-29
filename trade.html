@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+<title>Trade-In Value | Yancy Garcia — Jackson WY</title>
+<meta name="description" content="Find out what your trade-in is worth in 60 seconds. Real numbers, no games. Text me.">
+<meta property="og:title" content="What's Your Trade Worth? — Yancy Garcia">
+<meta property="og:description" content="Get a real trade-in number in 60 seconds. No runaround.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yancygarcia.com/trade">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPVM70ENV0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-LPVM70ENV0');</script>
+<!-- Meta Pixel -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1448559512784568');fbq('track','PageView');</script>
+<style>
+/* ═══════════════════════════════════════════════════
+   SUMMIT & SLATE — Trade-In Form
+   ═══════════════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0b;--sf:#111113;--sf2:#161618;--bd:#1c1c20;
+  --tx:#f0f0f2;--mt:#6b6b75;--ac:#E8FF00;--acf:#0a0a0b;
+  --acdim:rgba(232,255,0,.05);
+  --fd:'Bebas Neue',Impact,sans-serif;
+  --fb:'Instrument Serif',Georgia,serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--fb);background:var(--bg);color:var(--tx);
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  line-height:1.5;padding-bottom:60px;
+}
+@media(min-width:768px){body{padding-bottom:0}}
+a{text-decoration:none;color:inherit;-webkit-tap-highlight-color:transparent}
+img{display:block;max-width:100%}
+.d{font-family:var(--fd);font-weight:400;letter-spacing:.03em}
+
+/* Grain */
+body::after{
+  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.025;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ═══ NAV ═══ */
+.nav{
+  position:sticky;top:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 24px;background:var(--bg);border-bottom:1px solid var(--bd);
+}
+.nav-logo{font-family:var(--fd);font-size:18px;letter-spacing:.08em;color:var(--tx)}
+.nav-cta{
+  font-family:var(--fd);font-size:13px;letter-spacing:.08em;
+  padding:10px 20px;background:var(--ac);color:var(--acf);
+}
+@media(min-width:768px){.nav{padding:28px 40px}}
+
+/* ═══ FORM CONTAINER ═══ */
+.form-wrap{
+  max-width:540px;margin:0 auto;padding:48px 24px 80px;
+}
+@media(min-width:768px){.form-wrap{padding:64px 24px 100px}}
+
+/* Progress */
+.progress{
+  font-family:var(--fd);font-size:12px;letter-spacing:.22em;
+  color:var(--ac);margin-bottom:12px;opacity:.7;
+}
+.progress-bar{
+  width:100%;height:3px;background:var(--bd);margin-bottom:40px;
+  overflow:hidden;
+}
+.progress-fill{
+  height:100%;background:var(--ac);
+  transition:width .4s var(--ease);
+}
+
+/* Headlines */
+.step-h{
+  font-family:var(--fd);font-size:clamp(2.2rem,7vw,3.4rem);
+  line-height:.95;margin-bottom:8px;
+}
+.step-sub{
+  font-size:17px;color:var(--mt);font-style:italic;
+  margin-bottom:32px;line-height:1.55;
+}
+
+/* Back button */
+.back-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--fd);font-size:13px;letter-spacing:.08em;
+  color:var(--mt);background:none;border:none;cursor:pointer;
+  margin-bottom:24px;padding:0;
+  transition:color .2s;
+}
+.back-btn:hover{color:var(--tx)}
+
+/* ═══ INPUTS ═══ */
+.field{margin-bottom:20px}
+.field label{
+  display:block;font-family:var(--fd);font-size:11px;
+  letter-spacing:.18em;color:var(--mt);margin-bottom:8px;
+}
+.field input,.field select{
+  width:100%;padding:14px 16px;
+  background:var(--sf);border:1px solid var(--bd);
+  color:var(--tx);font-family:var(--fb);font-size:16px;
+  outline:none;transition:border-color .2s;
+  -webkit-appearance:none;appearance:none;border-radius:0;
+}
+.field input:focus,.field select:focus{border-color:var(--ac)}
+.field input::placeholder{color:var(--mt);opacity:.6}
+.field select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b75' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;
+  padding-right:40px;cursor:pointer;
+}
+.field select option{background:var(--sf);color:var(--tx)}
+
+/* OR separator */
+.or-sep{
+  display:flex;align-items:center;gap:16px;
+  margin:28px 0;color:var(--mt);
+}
+.or-sep::before,.or-sep::after{
+  content:'';flex:1;height:1px;background:var(--bd);
+}
+.or-sep span{
+  font-family:var(--fd);font-size:12px;letter-spacing:.15em;
+}
+
+/* ═══ CONDITION CARDS ═══ */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
+@media(min-width:480px){.cards{grid-template-columns:1fr 1fr}}
+.card{
+  padding:20px 16px;background:var(--sf);border:1px solid var(--bd);
+  cursor:pointer;transition:border-color .2s,background .2s;
+  position:relative;
+}
+.card:hover{border-color:rgba(232,255,0,.2)}
+.card.selected{border-color:var(--ac);background:var(--acdim)}
+.card-dot{
+  width:10px;height:10px;border-radius:50%;
+  display:inline-block;margin-bottom:10px;
+}
+.card-dot.green{background:#22c55e}
+.card-dot.yellow{background:#eab308}
+.card-dot.orange{background:#f97316}
+.card-dot.red{background:#ef4444}
+.card-title{
+  font-family:var(--fd);font-size:16px;letter-spacing:.04em;
+  margin-bottom:4px;
+}
+.card-desc{font-size:13px;color:var(--mt);line-height:1.45}
+
+/* ═══ PHOTO UPLOADS ═══ */
+.uploads{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.upload-zone{
+  position:relative;aspect-ratio:1;
+  border:2px dashed var(--bd);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  cursor:pointer;overflow:hidden;
+  transition:border-color .2s;
+}
+.upload-zone:hover{border-color:rgba(232,255,0,.3)}
+.upload-zone.has-photo{border-style:solid;border-color:var(--ac)}
+.upload-zone input{
+  position:absolute;inset:0;opacity:0;cursor:pointer;
+  width:100%;height:100%;
+}
+.upload-zone .upload-icon{
+  font-size:24px;color:var(--mt);margin-bottom:6px;
+  transition:color .2s;
+}
+.upload-zone:hover .upload-icon{color:var(--ac)}
+.upload-zone .upload-label{
+  font-family:var(--fd);font-size:11px;letter-spacing:.15em;color:var(--mt);
+}
+.upload-zone .upload-preview{
+  position:absolute;inset:0;object-fit:cover;width:100%;height:100%;
+  display:none;
+}
+.upload-zone.has-photo .upload-preview{display:block}
+.upload-zone.has-photo .upload-icon,
+.upload-zone.has-photo .upload-label{display:none}
+.skip-link{
+  display:inline-block;
+  font-size:14px;color:var(--mt);font-style:italic;
+  margin-bottom:32px;cursor:pointer;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s,color .2s;
+}
+.skip-link:hover{color:var(--tx);border-color:var(--mt)}
+
+/* ═══ BUTTONS ═══ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:18px 40px;font-family:var(--fd);font-size:18px;letter-spacing:.06em;
+  border:none;cursor:pointer;position:relative;overflow:hidden;
+  transition:transform .15s var(--ease),box-shadow .3s var(--ease);
+  width:100%;
+}
+.btn:active{transform:scale(.97)}
+.btn-y{background:var(--ac);color:var(--acf)}
+.btn-y:hover{box-shadow:0 0 48px rgba(232,255,0,.18);transform:translateY(-2px)}
+.btn-y::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.12) 50%,transparent 60%);
+  transform:translateX(-100%);transition:transform .6s var(--ease);
+}
+.btn-y:hover::after{transform:translateX(100%)}
+.btn:disabled{opacity:.4;pointer-events:none}
+
+/* ═══ SUCCESS ═══ */
+.success-wrap{
+  text-align:center;padding:80px 24px;
+  max-width:480px;margin:0 auto;
+}
+.success-check{
+  width:64px;height:64px;margin:0 auto 24px;
+  background:var(--acdim);border:1px solid rgba(232,255,0,.15);
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;
+}
+.success-h{
+  font-family:var(--fd);font-size:clamp(1.8rem,5vw,2.6rem);
+  line-height:1;margin-bottom:16px;
+}
+.success-sub{
+  font-size:16px;color:var(--mt);font-style:italic;
+  line-height:1.6;margin-bottom:32px;
+}
+.sms-link{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--fd);font-size:16px;letter-spacing:.06em;
+  color:var(--ac);border:1px solid rgba(232,255,0,.25);
+  padding:14px 28px;
+  transition:background .2s,border-color .2s;
+}
+.sms-link:hover{background:rgba(232,255,0,.06);border-color:var(--ac)}
+
+/* ═══ STICKY CTA ═══ */
+.sticky{
+  position:fixed;bottom:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px;background:var(--ac);color:var(--acf);
+  font-family:var(--fd);font-size:17px;letter-spacing:.06em;
+  box-shadow:0 -4px 24px rgba(0,0,0,.5);
+}
+.sticky:active{opacity:.9}
+.sticky-s{font-size:13px;opacity:.5}
+@media(min-width:768px){.sticky{display:none}}
+
+/* Steps visibility */
+.step{display:none}
+.step.active{display:block}
+
+/* Animations */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.step.active{animation:fadeUp .4s var(--ease)}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <a href="/" class="nav-logo d">YANCY GARCIA</a>
+  <a href="sms:3076993743" class="nav-cta d">Text me</a>
+</nav>
+
+<!-- Form -->
+<div class="form-wrap" id="formWrap">
+  <div class="progress d" id="progressText">Step 1 of 4</div>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:25%"></div></div>
+
+  <!-- STEP 1 — Vehicle Info -->
+  <div class="step active" id="step1">
+    <h1 class="step-h d">What's your trade worth?</h1>
+    <p class="step-sub">Get a real number in 60 seconds.</p>
+
+    <div class="field">
+      <label>VIN</label>
+      <input type="text" id="vin" maxlength="17" placeholder="17-character VIN" autocomplete="off" style="text-transform:uppercase">
+    </div>
+
+    <div class="or-sep"><span>OR</span></div>
+
+    <div class="field">
+      <label>Year</label>
+      <select id="year">
+        <option value="">Select year</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Make</label>
+      <input type="text" id="make" placeholder="e.g. Toyota">
+    </div>
+    <div class="field">
+      <label>Model</label>
+      <input type="text" id="model" placeholder="e.g. Tacoma">
+    </div>
+    <div class="field">
+      <label>Mileage</label>
+      <input type="number" id="mileage" placeholder="e.g. 85000" min="0" inputmode="numeric">
+    </div>
+
+    <button class="btn btn-y d" id="next1">NEXT →</button>
+  </div>
+
+  <!-- STEP 2 — Condition -->
+  <div class="step" id="step2">
+    <button class="back-btn d" onclick="goStep(1)">&larr; Back</button>
+    <h2 class="step-h d">How's it look?</h2>
+    <p class="step-sub" style="margin-bottom:28px">Tap the one that fits.</p>
+
+    <div class="cards">
+      <div class="card" data-condition="Excellent" onclick="pickCondition(this)">
+        <span class="card-dot green"></span>
+        <div class="card-title d">Excellent</div>
+        <div class="card-desc">Like new, no issues</div>
+      </div>
+      <div class="card" data-condition="Good" onclick="pickCondition(this)">
+        <span class="card-dot yellow"></span>
+        <div class="card-title d">Good</div>
+        <div class="card-desc">Minor wear, everything works</div>
+      </div>
+      <div class="card" data-condition="Fair" onclick="pickCondition(this)">
+        <span class="card-dot orange"></span>
+        <div class="card-title d">Fair</div>
+        <div class="card-desc">Visible wear or minor repairs needed</div>
+      </div>
+      <div class="card" data-condition="Rough" onclick="pickCondition(this)">
+        <span class="card-dot red"></span>
+        <div class="card-title d">Rough</div>
+        <div class="card-desc">High miles or needs work</div>
+      </div>
+    </div>
+
+    <button class="btn btn-y d" id="next2" disabled>NEXT →</button>
+  </div>
+
+  <!-- STEP 3 — Photos -->
+  <div class="step" id="step3">
+    <button class="back-btn d" onclick="goStep(2)">&larr; Back</button>
+    <h2 class="step-h d">3 quick photos</h2>
+    <p class="step-sub">Front, back, and odometer</p>
+
+    <div class="uploads">
+      <label class="upload-zone" id="zone-front">
+        <input type="file" accept="image/*" capture="environment" onchange="handlePhoto(this,'front')">
+        <span class="upload-icon">&#128247;</span>
+        <span class="upload-label">FRONT</span>
+        <img class="upload-preview" id="preview-front" alt="Front preview">
+      </label>
+      <label class="upload-zone" id="zone-back">
+        <input type="file" accept="image/*" capture="environment" onchange="handlePhoto(this,'back')">
+        <span class="upload-icon">&#128247;</span>
+        <span class="upload-label">BACK</span>
+        <img class="upload-preview" id="preview-back" alt="Back preview">
+      </label>
+      <label class="upload-zone" id="zone-odo">
+        <input type="file" accept="image/*" capture="environment" onchange="handlePhoto(this,'odo')">
+        <span class="upload-icon">&#128247;</span>
+        <span class="upload-label">ODOMETER</span>
+        <img class="upload-preview" id="preview-odo" alt="Odometer preview">
+      </label>
+    </div>
+
+    <a class="skip-link" onclick="goStep(4)">No photos right now &mdash; that's fine</a>
+    <br><br>
+    <button class="btn btn-y d" id="next3">NEXT →</button>
+  </div>
+
+  <!-- STEP 4 — Contact -->
+  <div class="step" id="step4">
+    <button class="back-btn d" onclick="goStep(3)">&larr; Back</button>
+    <h2 class="step-h d">Where do I send your number?</h2>
+    <p class="step-sub" style="margin-bottom:28px"></p>
+
+    <div class="field">
+      <label>First name</label>
+      <input type="text" id="fname" placeholder="Your first name" autocomplete="given-name">
+    </div>
+    <div class="field">
+      <label>Phone</label>
+      <input type="tel" id="phone" placeholder="(307) 555-1234" autocomplete="tel" pattern="[0-9()+\-\s]{7,15}">
+    </div>
+
+    <button class="btn btn-y d" id="submitBtn" onclick="submitForm()">GET MY TRADE VALUE →</button>
+  </div>
+</div>
+
+<!-- Success -->
+<div class="success-wrap" id="successWrap" style="display:none">
+  <div class="success-check">&#10003;</div>
+  <h2 class="success-h d" id="successMsg">Got it.</h2>
+  <p class="success-sub" id="successSub"></p>
+  <a href="sms:3076993743" class="sms-link d">Text me directly &rarr;</a>
+</div>
+
+<!-- Sticky CTA -->
+<a href="sms:3076993743?body=Hey%20Yancy%2C%20I%20want%20to%20know%20my%20trade-in%20value" class="sticky d">
+  TEXT ME ABOUT MY TRADE
+  <span class="sticky-s">(307) 699-3743</span>
+</a>
+
+<script>
+/* ═══ Source Tracking ═══ */
+(function(){
+  var p = new URLSearchParams(window.location.search);
+  var src = p.get('src');
+  if(src) sessionStorage.setItem('trade_src', src);
+})();
+
+/* ═══ Year Dropdown ═══ */
+(function(){
+  var sel = document.getElementById('year');
+  for(var y = 2026; y >= 2000; y--){
+    var o = document.createElement('option');
+    o.value = y; o.textContent = y;
+    sel.appendChild(o);
+  }
+})();
+
+/* ═══ State ═══ */
+var state = {
+  vin:'', year:'', make:'', model:'', mileage:'',
+  condition:'', photos:[], name:'', phone:''
+};
+
+/* ═══ Step Navigation ═══ */
+function goStep(n){
+  document.querySelectorAll('.step').forEach(function(s){s.classList.remove('active')});
+  document.getElementById('step'+n).classList.add('active');
+  document.getElementById('progressText').textContent = 'Step '+n+' of 4';
+  document.getElementById('progressFill').style.width = (n*25)+'%';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ═══ Step 1 — Next ═══ */
+document.getElementById('next1').addEventListener('click', function(){
+  var vin = document.getElementById('vin').value.trim().toUpperCase();
+  var year = document.getElementById('year').value;
+  var make = document.getElementById('make').value.trim();
+  var model = document.getElementById('model').value.trim();
+  var mileage = document.getElementById('mileage').value.trim();
+
+  if(vin.length === 17){
+    state.vin = vin;
+  } else if(year && make && model){
+    state.year = year;
+    state.make = make;
+    state.model = model;
+  } else {
+    alert('Enter a VIN or fill in year, make, and model.');
+    return;
+  }
+  state.mileage = mileage;
+  goStep(2);
+});
+
+/* ═══ Step 2 — Condition Cards ═══ */
+function pickCondition(el){
+  document.querySelectorAll('.card').forEach(function(c){c.classList.remove('selected')});
+  el.classList.add('selected');
+  state.condition = el.getAttribute('data-condition');
+  document.getElementById('next2').disabled = false;
+}
+document.getElementById('next2').addEventListener('click', function(){
+  if(!state.condition){return}
+  goStep(3);
+});
+
+/* ═══ Step 3 — Photos ═══ */
+var photoData = {front:'',back:'',odo:''};
+
+function handlePhoto(input, key){
+  var file = input.files[0];
+  if(!file) return;
+  var zone = document.getElementById('zone-'+key);
+  var preview = document.getElementById('preview-'+key);
+  var reader = new FileReader();
+  reader.onload = function(e){
+    preview.src = e.target.result;
+    zone.classList.add('has-photo');
+    photoData[key] = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+document.getElementById('next3').addEventListener('click', function(){
+  goStep(4);
+});
+
+/* ═══ Step 4 — Submit ═══ */
+function submitForm(){
+  var name = document.getElementById('fname').value.trim();
+  var phone = document.getElementById('phone').value.trim();
+
+  if(!name || !phone){
+    alert('Name and phone are required.');
+    return;
+  }
+
+  state.name = name;
+  state.phone = phone;
+  state.photos = [photoData.front, photoData.back, photoData.odo].filter(Boolean);
+
+  var btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'SENDING...';
+
+  var payload = {
+    name: state.name,
+    phone: state.phone,
+    vin: state.vin,
+    year: state.year,
+    make: state.make,
+    model: state.model,
+    mileage: state.mileage,
+    condition: state.condition,
+    photos: state.photos,
+    source: sessionStorage.getItem('trade_src') || 'trade-page',
+    timestamp: new Date().toISOString()
+  };
+
+  fetch('/api/trade-lead', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(payload)
+  })
+  .then(function(r){
+    if(!r.ok) throw new Error('Server error');
+    return r.json();
+  })
+  .then(function(){
+    showSuccess(state.name);
+  })
+  .catch(function(){
+    // Fallback: redirect to SMS
+    window.location.href = 'sms:3076993743?body=' +
+      encodeURIComponent('Hey Yancy, I want my trade-in value. ' +
+        (state.vin ? 'VIN: '+state.vin : state.year+' '+state.make+' '+state.model) +
+        (state.mileage ? ', '+state.mileage+' miles' : '') +
+        '. Condition: '+state.condition+'. My name is '+state.name+'.');
+  });
+}
+
+function showSuccess(name){
+  document.getElementById('formWrap').style.display = 'none';
+  var sw = document.getElementById('successWrap');
+  sw.style.display = 'block';
+  document.getElementById('successMsg').textContent = 'Got it, '+name+'.';
+  document.getElementById('successSub').textContent =
+    "I'll look up your trade value and text you within the hour.";
+
+  // Fire analytics
+  if(typeof gtag==='function'){
+    gtag('event','generate_lead',{event_category:'trade',event_label:'trade_form'});
+  }
+  if(typeof fbq==='function'){
+    fbq('track','Lead');
+  }
+}
+</script>
+</body>
+</html>

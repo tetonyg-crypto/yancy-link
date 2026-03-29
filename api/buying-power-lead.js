@@ -2,8 +2,7 @@ const https = require('https');
 
 function httpPost(hostname, path, headers, body) {
   return new Promise((resolve, reject) => {
-    const isForm = typeof body === 'string';
-    const data = isForm ? body : JSON.stringify(body);
+    const data = JSON.stringify(body);
     const opts = { hostname, path, method: 'POST', headers: { ...headers, 'Content-Length': Buffer.byteLength(data) } };
     const req = https.request(opts, (res) => {
       let buf = ''; res.on('data', c => buf += c); res.on('end', () => resolve({ status: res.statusCode, body: buf }));
@@ -21,7 +20,7 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { name, phone, need, details, source, timestamp } = req.body;
+  const { name, phone, monthly_payment, down_payment, credit_range, estimated_min, estimated_max, source, timestamp } = req.body;
   if (!name || !phone) return res.status(400).json({ error: 'Name and phone required' });
 
   const SUPABASE_URL = process.env.SUPABASE_URL;
@@ -33,11 +32,13 @@ module.exports = async function handler(req, res) {
   const TWILIO_FROM = process.env.TWILIO_FROM_NUMBER;
 
   let smsSent = false;
+  const minStr = '$' + (estimated_min || 0).toLocaleString();
+  const maxStr = '$' + (estimated_max || 0).toLocaleString();
 
   // 1. Save to Supabase
   if (SUPABASE_URL && SUPABASE_KEY) {
     try {
-      const parsed = new URL(SUPABASE_URL + '/rest/v1/leads');
+      const parsed = new URL(SUPABASE_URL + '/rest/v1/buying_power_leads');
       await httpPost(parsed.hostname, parsed.pathname, {
         'Content-Type': 'application/json',
         'apikey': SUPABASE_KEY,
@@ -45,43 +46,44 @@ module.exports = async function handler(req, res) {
         'Prefer': 'return=minimal'
       }, {
         name, phone,
-        need: need || 'Not specified',
-        details: details || '',
-        source: source || 'direct',
-        created_at: timestamp || new Date().toISOString(),
-        contacted: false,
-        notes: ''
+        monthly_payment: parseInt(monthly_payment) || 0,
+        down_payment: down_payment || '',
+        credit_range: credit_range || '',
+        estimated_min: parseInt(estimated_min) || 0,
+        estimated_max: parseInt(estimated_max) || 0,
+        source: source || 'buying-power',
+        timestamp: timestamp || new Date().toISOString(),
+        contacted: false
       });
     } catch (err) { console.error('Supabase error:', err.message); }
   }
 
-  // 2. Twilio SMS auto-responder — fires immediately, never blocks lead save
+  // 2. Twilio SMS auto-responder
   if (TWILIO_SID && TWILIO_TOKEN && TWILIO_FROM) {
     try {
       const digits = phone.replace(/\D/g, '');
-      if (digits.length >= 10) {
-        const smsBody = `Hey ${name}, it's Yancy from Stone's Auto Group — got your info. What are you looking for? — (307) 699-3743`;
-        const authStr = Buffer.from(TWILIO_SID + ':' + TWILIO_TOKEN).toString('base64');
-        const formData = `To=%2B1${digits}&From=${encodeURIComponent(TWILIO_FROM)}&Body=${encodeURIComponent(smsBody)}`;
-        await httpPost('api.twilio.com', `/2010-04-01/Accounts/${TWILIO_SID}/Messages.json`, {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': 'Basic ' + authStr
-        }, formData);
-        smsSent = true;
-      }
-    } catch (err) { console.error('Twilio SMS error:', err.message); }
+      const smsBody = `Hey ${name}, Yancy here — based on your numbers you're looking at the ${minStr}-${maxStr} range. Let me pull some options that fit. — (307) 699-3743`;
+      const authStr = Buffer.from(TWILIO_SID + ':' + TWILIO_TOKEN).toString('base64');
+      const formData = `To=%2B1${digits}&From=${encodeURIComponent(TWILIO_FROM)}&Body=${encodeURIComponent(smsBody)}`;
+      await httpPost('api.twilio.com', `/2010-04-01/Accounts/${TWILIO_SID}/Messages.json`, {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': 'Basic ' + authStr
+      }, formData);
+      smsSent = true;
+    } catch (err) { console.error('Twilio error:', err.message); }
   }
 
   // 3. Telegram notification
   if (TELEGRAM_BOT_TOKEN && TELEGRAM_CHAT_ID) {
-    const srcLabel = (source || 'direct').toUpperCase();
     const msg = [
-      '🚨 <b>NEW LEAD — ' + srcLabel + '</b>',
+      '💰 <b>BUYING POWER LEAD</b>',
       '',
       '👤 Name: ' + name,
       '📱 Phone: ' + phone,
-      '🚗 Need: ' + (need || 'Not specified'),
-      '📝 Details: ' + (details || 'None'),
+      '💵 Monthly: $' + (monthly_payment || 0) + '/mo',
+      '💰 Down: ' + (down_payment || 'Not specified'),
+      '📊 Credit: ' + (credit_range || 'Not specified'),
+      '🎯 Range: ' + minStr + ' — ' + maxStr,
       '📲 SMS sent: ' + (smsSent ? '✅' : '❌'),
       '',
       '🕐 ' + new Date(timestamp || Date.now()).toLocaleString('en-US', { timeZone: 'America/Denver' }),
@@ -94,5 +96,5 @@ module.exports = async function handler(req, res) {
     } catch (err) { console.error('Telegram error:', err.message); }
   }
 
-  return res.status(200).json({ ok: true, sms_sent: smsSent });
+  return res.status(200).json({ ok: true, sms_sent: smsSent, estimated_min, estimated_max });
 };
