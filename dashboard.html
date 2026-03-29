@@ -197,7 +197,7 @@
         tbody.innerHTML = leads.map(function(l) {
             const srcClass = 'src-' + (l.source === 'fb' || l.source === 'tt' || l.source === 'ref' ? l.source : 'direct');
             const time = new Date(l.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' + new Date(l.created_at).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
-            const smsBody = encodeURIComponent("Hey " + l.name + ", it's Yancy from Teton Motors! I saw you were interested in " + (l.need || 'a vehicle') + ". What's your budget range?");
+            const smsBody = encodeURIComponent("Hey " + l.name + ", it's Yancy from Stone's Auto Group! I saw you were interested in " + (l.need || 'a vehicle') + ". What's your budget range?");
             return '<tr>' +
                 '<td><button class="contacted-btn ' + (l.contacted ? 'done' : '') + '" onclick="toggleContacted(\'' + l.id + '\', this)">' + (l.contacted ? '✓' : '') + '</button></td>' +
                 '<td><strong>' + l.name + '</strong></td>' +

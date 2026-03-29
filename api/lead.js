@@ -95,7 +95,7 @@ module.exports = async function handler(req, res) {
     if (TELEGRAM_BOT_TOKEN && TELEGRAM_CHAT_ID) {
         const srcLabel = (source || 'direct').toUpperCase();
         const smsBody = encodeURIComponent(
-            'Hey ' + name + ", it's Yancy from Teton Motors! I saw you were interested in " + (need || 'a vehicle') + ". What's your budget range?"
+            'Hey ' + name + ", it's Yancy from Stone's Auto Group! I saw you were interested in " + (need || 'a vehicle') + ". What's your budget range?"
         );
         const tapToText = 'sms:' + phone + '?body=' + smsBody;
 

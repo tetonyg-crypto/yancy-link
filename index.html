@@ -7,12 +7,20 @@
 <meta name="description" content="I help people in Jackson find the right car without the runaround. New, used, trades, financing. Text me.">
 <meta property="og:title" content="Yancy Garcia — Jackson WY">
 <meta property="og:description" content="I help people find the right car without the runaround. Text me what you're looking for.">
-<meta property="og:image" content="assets/og-image.jpg">
+<meta property="og:image" content="https://yancygarcia.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://yancygarcia.com">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<!-- GA4 — replace G-XXXXXXXXXX with your Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<!-- Meta Pixel — replace PIXEL_ID with your pixel ID -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','PIXEL_ID');fbq('track','PageView');</script>
 <style>
 /* ═══════════════════════════════════════════════════
    SUMMIT & SLATE — Design System from Stitch
@@ -395,10 +403,16 @@ document.getElementById('lf').addEventListener('submit',function(e){
     body:JSON.stringify({name:f.name.value,phone:f.phone.value,need:f.need.value,
     source:sessionStorage.getItem('src')||'landing',timestamp:new Date().toISOString()})
   }).then(function(r){
-    if(r.ok){f.style.display='none';document.getElementById('fOk').classList.add('on')}
+    if(r.ok){f.style.display='none';document.getElementById('fOk').classList.add('on');
+      if(typeof gtag==='function')gtag('event','generate_lead',{event_category:'form',event_label:f.need.value});
+      if(typeof fbq==='function')fbq('track','Lead');}
     else throw 0;
   }).catch(function(){
-    location.href='sms:3076993743?body='+encodeURIComponent('Hey Yancy, I need help with a '+(f.need.value||'vehicle')+'. - '+f.name.value);
+    btn.textContent='Send it →';btn.disabled=false;
+    var fb=document.createElement('div');
+    fb.style.cssText='text-align:center;padding:16px;margin-top:12px;background:rgba(232,255,0,.06);border:1px solid rgba(232,255,0,.1);font-size:14px;color:var(--mt)';
+    fb.innerHTML='Something went wrong. <a href="sms:3076993743?body='+encodeURIComponent('Hey Yancy, '+f.name.value+' here. Looking for help with a '+(f.need.value||'vehicle')+'.')+'" style="color:var(--ac)">Text me directly instead</a>';
+    f.parentNode.appendChild(fb);
   });
 });
 </script>
