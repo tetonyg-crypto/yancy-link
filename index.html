@@ -12,7 +12,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://yancygarcia.com">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔</text></svg>">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -103,7 +103,7 @@ body::after{
   .hero{flex-direction:row}
   .hero-img-wrap{position:absolute;inset:0;width:50%;height:100%}
   .hero-img-overlay{background:linear-gradient(to right,transparent 50%,var(--bg) 95%),linear-gradient(to bottom,transparent 60%,var(--bg))}
-  .hero-body{margin-left:42%;padding:80px 64px 80px 0;justify-content:center}
+  .hero-body{margin-left:46%;padding:80px 48px 80px 0;justify-content:center}
   .hero-nav{padding:28px 40px}
 }
 
@@ -215,15 +215,15 @@ body::after{
   </div>
   <nav class="hero-nav">
     <div class="hero-logo d">YANCY GARCIA</div>
-    <a href="sms:3076993743" class="hero-nav-cta d">Text me</a>
+    <a href="sms:3076993743?body=Hey%20Yancy%2C%20I%20found%20you%20online%20and%20I'm%20looking%20for%20a%20car" class="hero-nav-cta d">Text me</a>
   </nav>
   <div class="hero-body">
     <div class="hero-loc d">JACKSON HOLE &middot; WYOMING</div>
-    <h1 class="d hero-h">Your <span>partner</span><br>in the mountains.</h1>
-    <p class="hero-sub">I help people in Jackson find the right car without the runaround. New or used, I'll find something that fits.</p>
+    <h1 class="d hero-h">I'll find you<br>the <span>right car.</span></h1>
+    <p class="hero-sub">Text me directly. No lot walk, no games, no pressure.<br>— Yancy Garcia, Stone's Auto Group, Jackson WY</p>
     <div class="hero-name d">YANCY GARCIA &middot; STONE'S AUTO GROUP</div>
     <div class="hero-btns">
-      <a href="sms:3076993743" class="btn btn-y d">Text me &rarr;</a>
+      <a href="sms:3076993743?body=Hey%20Yancy%2C%20I%20found%20you%20online%20and%20I'm%20looking%20for%20a%20car" class="btn btn-y d">Text me &rarr;</a>
       <a href="https://inventory.yancygarcia.com" class="btn btn-o d">See inventory</a>
     </div>
     <div class="hero-phone d">(307) 699 &middot; 3743</div>
@@ -281,8 +281,8 @@ body::after{
     <div class="sec-label d rv" style="text-align:center">A little context</div>
     <div class="proof-stats rv">
       <div class="proof-stat">
-        <div class="proof-n d">130+</div>
-        <div class="proof-l">cars sold year one</div>
+        <div class="proof-n d">100+</div>
+        <div class="proof-l">happy customers</div>
       </div>
       <div class="proof-stat">
         <div class="proof-n d" id="vCount">120+</div>
@@ -293,13 +293,9 @@ body::after{
         <div class="proof-l">avg response</div>
       </div>
     </div>
-    <div class="proof-q rv">
-      Texted Yancy on a Saturday, drove off the lot Monday. Whole thing was easy. No pressure, no games.
-      <span class="proof-a">— Jackson WY</span>
-    </div>
-    <div class="proof-q rv">
-      Le mande mensaje y me respondio rapido. Me ayudo con todo, muy buena onda. Lo recomiendo.
-      <span class="proof-a">— Jackson WY</span>
+    <div class="proof-q rv" style="text-align:center;border-left:none;padding:32px 20px">
+      <p style="font-size:15px;color:var(--mt);margin-bottom:16px">Real reviews coming soon — check my Google profile in the meantime.</p>
+      <a href="https://www.google.com/maps/place/Stone's+Auto+Group/@43.4799,-110.7624,15z" target="_blank" rel="noopener" style="font-family:var(--fd);font-size:13px;letter-spacing:.1em;color:var(--ac)">See Google Reviews &rarr;</a>
     </div>
   </div>
 </section>
@@ -320,7 +316,7 @@ body::after{
     <div class="form-box">
       <form id="lf">
         <input type="text" name="name" placeholder="First name" required class="ff">
-        <input type="tel" name="phone" placeholder="Phone number" required class="ff">
+        <input type="tel" name="phone" placeholder="Phone number" required class="ff" pattern="[0-9\-\(\)\s]{10,14}" title="Enter a valid 10-digit phone number">
         <select name="need" class="ff">
           <option value="" disabled selected>What do you need?</option>
           <option value="vehicle">Looking for a vehicle</option>
@@ -355,12 +351,13 @@ body::after{
     <a href="https://tiktok.com/@cardogvlogs">TikTok</a>
     <a href="https://facebook.com/yancygarcia24">Facebook</a>
     <a href="https://wa.me/13076993743">WhatsApp</a>
+    <a href="/es" style="color:var(--ac)">Español</a>
   </div>
   <div class="foot-brand d">CarDogVlogs</div>
 </footer>
 
 <!-- ═══ STICKY ═══ -->
-<a href="sms:3076993743" class="sticky d">
+<a href="sms:3076993743?body=Hey%20Yancy%2C%20I%20found%20you%20online%20and%20I'm%20looking%20for%20a%20car" class="sticky d">
   <span>Text me</span>
   <span class="sticky-s">(307) 699-3743</span>
 </a>
@@ -382,10 +379,12 @@ fetch('https://inventory.yancygarcia.com/data/inventory.json')
 .then(function(data){
   var g=document.getElementById('invGrid');
   var ok=data.filter(function(v){return v.published&&v.photos&&v.photos.length>1});
-  var trucks=ok.filter(function(v){return v.body==='Truck'});
-  var suvs=ok.filter(function(v){return v.body==='SUV'});
-  var other=ok.filter(function(v){return v.body!=='Truck'&&v.body!=='SUV'});
-  var picks=[trucks[0]||ok[0],suvs[0]||ok[1],(other[0]||ok[2])].filter(Boolean).slice(0,3);
+  var mid=ok.filter(function(v){return v.price>=20000&&v.price<=45000});
+  if(mid.length<3)mid=ok.filter(function(v){return v.price>=15000&&v.price<=55000});
+  var trucks=mid.filter(function(v){return v.body==='Truck'});
+  var suvs=mid.filter(function(v){return v.body==='SUV'});
+  var other=mid.filter(function(v){return v.body!=='Truck'&&v.body!=='SUV'});
+  var picks=[trucks[0]||mid[0],suvs[0]||mid[1],(other[0]||mid[2])].filter(Boolean).slice(0,3);
   picks.forEach(function(v){
     var img=v.photos[1]||v.photos[0];
     var c=document.createElement('a');
@@ -406,6 +405,8 @@ fetch('https://inventory.yancygarcia.com/data/inventory.json')
 /* Form */
 document.getElementById('lf').addEventListener('submit',function(e){
   e.preventDefault();var f=e.target;
+  var digits=f.phone.value.replace(/\D/g,'');
+  if(digits.length<10){f.phone.style.borderColor='#ff4444';f.phone.focus();return;}
   var btn=f.querySelector('.btn');btn.textContent='Sending...';btn.disabled=true;
   fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},
     body:JSON.stringify({name:f.name.value,phone:f.phone.value,need:f.need.value,

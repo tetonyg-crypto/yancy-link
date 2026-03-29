@@ -8,9 +8,17 @@
 <meta property="og:title" content="Yancy Garcia — Jackson WY — Hablo Espanol">
 <meta property="og:description" content="Te ayudo a encontrar el carro correcto. Escribeme.">
 <meta property="og:image" content="https://yancygarcia.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPVM70ENV0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-LPVM70ENV0');</script>
+<!-- Meta Pixel -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1448559512784568');fbq('track','PageView');</script>
 <link rel="stylesheet" href="design-system/tokens.css">
 <link rel="stylesheet" href="design-system/components.css">
 <style>
@@ -33,7 +41,7 @@
 .hero{flex-direction:row}
 .hero-iw{position:absolute;inset:0;width:50%;height:100%}
 .hero-ov{background:linear-gradient(to right,transparent 50%,var(--color-bg) 95%),linear-gradient(to bottom,transparent 60%,var(--color-bg))}
-.hero-body{margin-left:42%;padding:80px 64px 80px 0;justify-content:center}
+.hero-body{margin-left:46%;padding:80px 48px 80px 0;justify-content:center}
 .hero-nav{padding:28px 40px}
 }
 .sec{padding:80px 24px;max-width:680px;margin:0 auto}
@@ -57,11 +65,28 @@
 .fo{display:none;text-align:center;padding:48px 20px}.fo.on{display:block}
 .fo h3{font-family:var(--font-display);font-size:28px;color:var(--color-accent);margin-bottom:8px}
 .fo p{font-size:15px;color:var(--color-muted);line-height:1.6}
+/* Inventory */
+.inv{padding:80px 24px;max-width:960px;margin:0 auto}
+.inv-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:32px}
+@media(min-width:640px){.inv-grid{grid-template-columns:repeat(3,1fr)}}
+.inv-card{background:var(--color-surface);border:1px solid var(--color-border);overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+.inv-card:hover{transform:translateY(-4px);border-color:var(--color-accent);box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.inv-card img{width:100%;height:200px;object-fit:cover}
+.inv-cb{padding:20px}
+.inv-ct{font-family:var(--font-display);font-size:17px;letter-spacing:.04em;margin-bottom:4px}
+.inv-cm{font-size:13px;color:var(--color-muted);margin-bottom:14px}
+.inv-cc{font-family:var(--font-display);font-size:12px;letter-spacing:.1em;color:var(--color-accent)}
+.inv-all{display:block;max-width:280px;margin:0 auto;text-align:center;padding:14px 28px;border:1px solid rgba(232,255,0,.25);font-family:var(--font-display);font-size:15px;letter-spacing:.06em;color:var(--color-accent);transition:background .2s,color .2s}
+.inv-all:hover{background:var(--color-accent);color:var(--color-accent-fg)}
 .foot{padding:48px 24px;text-align:center;border-top:1px solid var(--color-border)}
 .foot-l{font-family:var(--font-display);font-size:12px;letter-spacing:.12em;color:var(--color-muted);margin-bottom:16px}
 .foot-lk{display:flex;gap:20px;justify-content:center;margin-bottom:16px}
 .foot-lk a{font-size:14px;color:var(--color-muted);transition:color .15s}
 .foot-lk a:hover{color:var(--color-accent)}
+/* Reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.rv.v{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -73,7 +98,7 @@
   </div>
   <nav class="hero-nav">
     <div class="hero-logo">YANCY GARCIA</div>
-    <a href="sms:3076993743?body=Hola%20Yancy" class="hero-nc">Escribeme</a>
+    <a href="sms:3076993743?body=Hola%20Yancy%2C%20te%20encontr%C3%A9%20en%20l%C3%ADnea%20y%20busco%20un%20carro" class="hero-nc">Escribeme</a>
   </nav>
   <div class="hero-body">
     <div class="hero-loc">JACKSON HOLE · WYOMING</div>
@@ -81,7 +106,7 @@
     <p class="hero-sub">Te ayudo a encontrar el carro correcto sin complicaciones. Nuevo o usado, yo me encargo de todo.</p>
     <div class="hero-name">YANCY GARCIA · STONE'S AUTO GROUP</div>
     <div class="hero-btns">
-      <a href="sms:3076993743?body=Hola%20Yancy%2C%20estoy%20buscando%20un%20carro" class="btn-primary d">Escribeme &rarr;</a>
+      <a href="sms:3076993743?body=Hola%20Yancy%2C%20te%20encontr%C3%A9%20en%20l%C3%ADnea%20y%20busco%20un%20carro" class="btn-primary d">Escribeme &rarr;</a>
       <a href="https://inventory.yancygarcia.com" class="btn-secondary d">Ver inventario</a>
     </div>
     <div class="hero-phone">(307) 699 · 3743</div>
@@ -133,15 +158,18 @@
 <section class="sec-s">
   <div class="sec-in">
     <div class="sl rv" style="text-align:center">Lo que dicen</div>
-    <div class="pq rv">
-      Le mande mensaje y me respondio rapido. Me ayudo con todo — financiamiento, intercambio, todo. Muy buena onda.
-      <span class="pa">— Jackson WY</span>
-    </div>
-    <div class="pq rv">
-      Me consiguio exactamente lo que buscaba. Sin vueltas, sin complicaciones. Lo recomiendo mucho.
-      <span class="pa">— Jackson WY</span>
+    <div class="rv" style="text-align:center;padding:32px 20px">
+      <p style="font-size:15px;color:var(--color-muted);margin-bottom:16px;font-style:italic">Resenas reales pronto — revisa mi perfil de Google.</p>
+      <a href="https://www.google.com/maps/place/Stone's+Auto+Group/@43.4799,-110.7624,15z" target="_blank" rel="noopener" style="font-family:var(--font-display);font-size:13px;letter-spacing:.1em;color:var(--color-accent)">Ver Resenas en Google &rarr;</a>
     </div>
   </div>
+</section>
+
+<!-- Featured Inventory -->
+<section class="inv">
+  <div class="sl rv" style="text-align:center">Lo que tengo ahora</div>
+  <div class="inv-grid" id="invGrid"></div>
+  <a href="https://inventory.yancygarcia.com" class="inv-all d rv">Ver todo el inventario &rarr;</a>
 </section>
 
 <section class="sec-s" style="background:var(--color-bg)">
@@ -151,7 +179,7 @@
     <div class="form-box">
       <form id="lf">
         <input type="text" name="name" placeholder="Tu nombre" required class="ff">
-        <input type="tel" name="phone" placeholder="Tu telefono" required class="ff">
+        <input type="tel" name="phone" placeholder="Tu telefono" required class="ff" pattern="[0-9\-\(\)\s]{10,14}" title="Ingresa un numero de telefono valido">
         <select name="need" class="ff">
           <option value="" disabled selected>Que necesitas?</option>
           <option value="vehicle">Busco un vehiculo</option>
@@ -169,33 +197,82 @@
   </div>
 </section>
 
+<!-- Cal.com Booking -->
+<section class="rv" style="padding:60px 24px;max-width:480px;margin:0 auto;text-align:center">
+  <div class="sl">Prefieres agendar una cita?</div>
+  <p style="font-size:15px;color:var(--color-muted);margin-bottom:24px;font-style:italic">Escoge un horario y estare listo para ti.</p>
+  <a href="https://cal.com/yancygarcia/15min" target="_blank" rel="noopener" class="btn-secondary d" style="width:100%;max-width:320px;margin:0 auto;display:block;text-align:center;padding:14px 28px">Agendar cita &rarr;</a>
+  <p style="font-size:12px;color:var(--color-muted);margin-top:12px;opacity:.6">Llamada de 15 minutos o visita en persona</p>
+</section>
+
 <footer class="foot">
   <div class="foot-l">Yancy Garcia · Stone's Auto Group · Jackson WY</div>
   <div class="foot-lk">
     <a href="https://instagram.com/cardogvlogs">Instagram</a>
+    <a href="https://tiktok.com/@cardogvlogs">TikTok</a>
     <a href="https://facebook.com/yancygarcia24">Facebook</a>
     <a href="https://wa.me/13076993743">WhatsApp</a>
-    <a href="/">English</a>
+    <a href="/" style="color:var(--color-accent)">English</a>
   </div>
 </footer>
 
-<a href="sms:3076993743?body=Hola%20Yancy" class="sticky-cta d">
+<a href="sms:3076993743?body=Hola%20Yancy%2C%20te%20encontr%C3%A9%20en%20l%C3%ADnea%20y%20busco%20un%20carro" class="sticky-cta d">
   <span>Escribeme</span>
   <span style="font-size:13px;opacity:.5">(307) 699-3743</span>
 </a>
 
 <script>
+/* Source tracking */
+var s=new URLSearchParams(location.search).get('src')||'direct';
+sessionStorage.setItem('src',s);
+
+/* Scroll reveals */
 var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+/* Featured inventory */
+fetch('https://inventory.yancygarcia.com/data/inventory.json')
+.then(function(r){return r.json()})
+.then(function(data){
+  var g=document.getElementById('invGrid');
+  var ok=data.filter(function(v){return v.published&&v.photos&&v.photos.length>1});
+  var mid=ok.filter(function(v){return v.price>=20000&&v.price<=45000});
+  if(mid.length<3)mid=ok.filter(function(v){return v.price>=15000&&v.price<=55000});
+  var trucks=mid.filter(function(v){return v.body==='Truck'});
+  var suvs=mid.filter(function(v){return v.body==='SUV'});
+  var other=mid.filter(function(v){return v.body!=='Truck'&&v.body!=='SUV'});
+  var picks=[trucks[0]||mid[0],suvs[0]||mid[1],(other[0]||mid[2])].filter(Boolean).slice(0,3);
+  picks.forEach(function(v){
+    var img=v.photos[1]||v.photos[0];
+    var c=document.createElement('a');
+    c.className='inv-card rv';
+    c.href='sms:3076993743?body='+encodeURIComponent('Hola Yancy, me interesa el '+v.year+' '+v.make+' '+v.model);
+    c.innerHTML='<img src="'+img+'" alt="'+v.year+' '+v.make+' '+v.model+'" loading="lazy">'+
+      '<div class="inv-cb">'+
+      '<div class="inv-ct d">'+v.year+' '+v.make+' '+v.model+(v.trim?' '+v.trim:'')+'</div>'+
+      '<div class="inv-cm">$'+v.price.toLocaleString()+' &middot; '+v.mileage.toLocaleString()+' mi</div>'+
+      '<div class="inv-cc d">Me interesa &rarr;</div></div>';
+    g.appendChild(c);
+    io.observe(c);
+  });
+}).catch(function(){});
+
+/* Form */
 document.getElementById('lf').addEventListener('submit',function(e){
   e.preventDefault();var f=e.target;
+  var phone=f.phone.value.replace(/\D/g,'');
+  if(phone.length<10){f.phone.style.borderColor='#ff4444';f.phone.focus();return;}
   var btn=f.querySelector('.btn-primary');btn.textContent='Enviando...';btn.disabled=true;
   fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({name:f.name.value,phone:f.phone.value,need:f.need.value,source:'landing-es',timestamp:new Date().toISOString()})
+    body:JSON.stringify({name:f.name.value,phone:f.phone.value,need:f.need.value,
+    source:sessionStorage.getItem('src')||'landing-es',timestamp:new Date().toISOString()})
   }).then(function(r){
-    if(r.ok){f.style.display='none';document.getElementById('fOk').classList.add('on')}
+    if(r.ok){f.style.display='none';document.getElementById('fOk').classList.add('on');
+      if(typeof gtag==='function')gtag('event','generate_lead',{event_category:'form',event_label:f.need.value});
+      if(typeof fbq==='function')fbq('track','Lead');}
     else throw 0;
   }).catch(function(){
+    btn.textContent='Enviar →';btn.disabled=false;
     location.href='sms:3076993743?body='+encodeURIComponent('Hola Yancy, soy '+f.name.value+'. Busco ayuda con un vehiculo.');
   });
 });
