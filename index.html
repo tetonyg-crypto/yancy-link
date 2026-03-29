@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>Yancy Garcia | Your Car Guy in Jackson WY</title>
-<meta name="description" content="I find the car. I handle the paperwork. You drive. Text Yancy — Stone's Auto Group, Jackson WY. Hablo Espanol.">
+<title>Yancy Garcia | Text Me About a Car</title>
+<meta name="description" content="Yancy Garcia — your car guy in Jackson WY. New, used, trades, financing. Text me and I handle everything.">
 <meta property="og:title" content="Yancy Garcia | Your Car Guy in Jackson WY">
-<meta property="og:description" content="I find the car. I handle the paperwork. You drive. New, used, trades, financing. Text me.">
+<meta property="og:description" content="I find the car. I handle the paperwork. You drive. Text me.">
 <meta property="og:image" content="assets/og-image.jpg">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://yancygarcia.com">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,491 +16,288 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
---bg:#0c0c0c;--surface:#141414;--surface-2:#1a1a1a;
---border:#252525;--text:#f2f2f0;--muted:#7a7a78;
---yellow:#E8FF00;--yellow-dim:rgba(232,255,0,0.08);
+--bg:#0c0c0c;--surface:#131313;
+--border:#222;--text:#f0f0ee;--muted:#888;
+--yellow:#E8FF00;
 }
 html{scroll-behavior:smooth}
 body{
 font-family:'Instrument Serif',Georgia,serif;
 background:var(--bg);color:var(--text);
 overflow-x:hidden;-webkit-font-smoothing:antialiased;
+padding-bottom:64px;
 }
-/* Grain overlay */
 body::after{
-content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
-opacity:0.035;
+content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.03;
 background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-.bebas{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:0.02em}
+.b{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:0.02em}
+a{text-decoration:none;color:inherit}
 
-/* ═══════ HERO ═══════ */
+/* ═══ HERO ═══ */
 .hero{
 min-height:100vh;min-height:100dvh;
-display:grid;grid-template-columns:1fr;
-position:relative;overflow:hidden;
+display:flex;flex-direction:column;
+position:relative;
 }
-.hero-photo{
-width:100%;height:50vh;
-object-fit:cover;object-position:center top;
+.hero-img{
+width:100%;height:55vh;
+object-fit:cover;object-position:center 20%;
 display:block;
-filter:grayscale(20%) contrast(1.1);
 }
-.hero-content{
-padding:32px 24px 40px;
-display:flex;flex-direction:column;justify-content:flex-end;
+.hero-body{
+flex:1;padding:28px 24px 32px;
+display:flex;flex-direction:column;
+justify-content:center;
 }
-.hero-headline{
-font-size:clamp(64px,18vw,120px);
-line-height:0.88;
-color:var(--yellow);
-margin-bottom:20px;
+.hero-h{
+font-size:clamp(52px,15vw,100px);
+line-height:0.9;color:var(--yellow);
+margin-bottom:16px;
 }
-.hero-sub{
-font-size:18px;line-height:1.5;
-color:var(--muted);max-width:360px;
-margin-bottom:28px;font-style:italic;
+.hero-p{
+font-size:17px;line-height:1.5;
+color:var(--muted);font-style:italic;
+max-width:340px;margin-bottom:24px;
 }
-.hero-cta{
-display:inline-flex;align-items:center;gap:10px;
-padding:18px 36px;
+.cta{
+display:block;text-align:center;
+padding:18px 24px;
 background:var(--yellow);color:#000;
 font-family:'Bebas Neue',sans-serif;
 font-size:20px;letter-spacing:0.06em;
-text-decoration:none;border:none;cursor:pointer;
-transition:transform 0.15s,box-shadow 0.15s;
 -webkit-tap-highlight-color:transparent;
+transition:opacity .15s;
 }
-.hero-cta:active{transform:scale(0.97)}
-.hero-cta:hover{box-shadow:0 0 40px rgba(232,255,0,0.25);transform:translateY(-2px)}
-.hero-phone{
-margin-top:20px;
+.cta:active{opacity:.85}
+.hero-num{
+margin-top:16px;text-align:center;
 font-family:'Bebas Neue',sans-serif;
-font-size:22px;letter-spacing:0.15em;
+font-size:18px;letter-spacing:0.12em;
 color:var(--muted);
 }
 @media(min-width:768px){
-.hero{grid-template-columns:55% 1fr;min-height:100vh}
-.hero-photo{height:100%;position:absolute;left:0;top:0;width:55%}
-.hero-content{grid-column:2;padding:60px 48px;justify-content:center}
+.hero{flex-direction:row}
+.hero-img{width:50%;height:100vh;position:sticky;top:0}
+.hero-body{width:50%;padding:60px 48px;justify-content:center}
 }
 
-/* ═══════ TICKER ═══════ */
-.ticker{
-background:var(--surface);
-border-top:1px solid var(--border);
-border-bottom:1px solid var(--border);
-overflow:hidden;padding:14px 0;
+/* ═══ PATHS ═══ */
+.paths{
+padding:48px 24px;
+max-width:480px;margin:0 auto;
 }
-.ticker-track{
-display:flex;gap:0;
-animation:tickerScroll 25s linear infinite;
-white-space:nowrap;width:max-content;
-}
-.ticker-item{
+.paths-label{
 font-family:'Bebas Neue',sans-serif;
-font-size:13px;letter-spacing:0.2em;
-color:var(--yellow);opacity:0.7;
-padding:0 24px;
-}
-@keyframes tickerScroll{
-0%{transform:translateX(0)}
-100%{transform:translateX(-50%)}
-}
-
-/* ═══════ VIDEO ═══════ */
-.video-section{
-padding:80px 24px;position:relative;
-}
-.video-section::before{
-content:'';position:absolute;top:0;left:0;right:0;
-height:80px;background:linear-gradient(135deg,var(--bg) 49.5%,var(--surface) 50.5%);
-}
-.section-head{
-font-size:clamp(36px,8vw,56px);
-color:var(--text);margin-bottom:32px;
-text-align:center;
-}
-.video-wrap{
-max-width:720px;margin:0 auto;
-aspect-ratio:16/9;
-background:var(--surface-2);
-border:1px solid var(--border);
-display:flex;align-items:center;justify-content:center;
-position:relative;overflow:hidden;cursor:pointer;
-}
-.video-wrap::after{
-content:'';position:absolute;inset:0;
-background:radial-gradient(circle,transparent 30%,rgba(0,0,0,0.4));
-}
-.play-btn{
-width:72px;height:72px;border-radius:50%;
-background:var(--yellow);
-display:flex;align-items:center;justify-content:center;
-position:relative;z-index:2;
-transition:transform 0.2s;
-}
-.play-btn::after{
-content:'';width:0;height:0;
-border-left:22px solid #000;
-border-top:14px solid transparent;
-border-bottom:14px solid transparent;
-margin-left:4px;
-}
-.video-wrap:hover .play-btn{transform:scale(1.1)}
-.video-label{
-position:absolute;bottom:20px;left:0;right:0;
-text-align:center;z-index:2;
-font-family:'Bebas Neue',sans-serif;
-font-size:14px;letter-spacing:0.15em;
-color:var(--muted);
-}
-
-/* ═══════ STATS ═══════ */
-.stats{padding:60px 24px 80px;max-width:700px;margin:0 auto}
-.stat-row{
-display:flex;align-items:baseline;
-justify-content:space-between;
-padding:28px 0;
-border-bottom:1px solid var(--yellow);
-opacity:0.15;
-}
-.stat-row:last-child{border-bottom:none}
-.stat-num{
-font-family:'Bebas Neue',sans-serif;
-font-size:clamp(48px,12vw,72px);
-color:var(--yellow);line-height:1;
-}
-.stat-label{
-font-size:16px;color:var(--muted);
-max-width:200px;text-align:right;
-line-height:1.4;
-}
-.stat-row:nth-child(2) .stat-num{order:2}
-.stat-row:nth-child(2) .stat-label{text-align:left}
-
-/* ═══════ INVENTORY ═══════ */
-.inventory{
-padding:80px 24px;
-background:var(--surface);
-position:relative;
-}
-.inventory::before{
-content:'';position:absolute;top:0;left:0;right:0;
-height:80px;background:linear-gradient(225deg,var(--bg) 49.5%,var(--surface) 50.5%);
-}
-.inv-grid{
-display:grid;grid-template-columns:1fr;
-gap:16px;max-width:900px;margin:0 auto 32px;
-}
-@media(min-width:600px){.inv-grid{grid-template-columns:repeat(3,1fr)}}
-.inv-card{
-background:var(--bg);border:1px solid var(--border);
-overflow:hidden;text-decoration:none;color:var(--text);
-transition:border-color 0.2s,transform 0.2s;
-}
-.inv-card:hover{border-color:var(--yellow);transform:translateY(-3px)}
-.inv-card img{
-width:100%;height:200px;object-fit:cover;display:block;
-filter:grayscale(10%);transition:filter 0.3s;
-}
-.inv-card:hover img{filter:grayscale(0%)}
-.inv-card-info{padding:16px}
-.inv-card-title{
-font-family:'Bebas Neue',sans-serif;
-font-size:18px;letter-spacing:0.04em;
-margin-bottom:4px;
-}
-.inv-card-meta{font-size:13px;color:var(--muted);margin-bottom:12px}
-.inv-card-cta{
-font-family:'Bebas Neue',sans-serif;
-font-size:14px;letter-spacing:0.1em;
-color:var(--yellow);
-}
-.see-all{
-display:block;text-align:center;
-font-family:'Bebas Neue',sans-serif;
-font-size:18px;letter-spacing:0.1em;
-color:var(--yellow);text-decoration:none;
-padding:16px;border:1px solid var(--yellow);
-max-width:320px;margin:0 auto;
-transition:background 0.2s,color 0.2s;
-}
-.see-all:hover{background:var(--yellow);color:#000}
-
-/* ═══════ FORM ═══════ */
-.form-section{
-padding:80px 24px;max-width:520px;margin:0 auto;
-}
-.form-box{
-border-left:3px solid var(--yellow);
-padding:32px;background:var(--surface);
-}
-.form-field{
-width:100%;padding:16px;margin-bottom:12px;
-background:var(--bg);border:1px solid var(--border);
-color:var(--text);font-family:'Instrument Serif',serif;
-font-size:16px;outline:none;
-transition:border-color 0.2s;
-}
-.form-field::placeholder{color:var(--muted)}
-.form-field:focus{border-color:var(--yellow)}
-.form-field option{background:var(--bg);color:var(--text)}
-.form-submit{
-width:100%;padding:18px;
-background:var(--yellow);color:#000;border:none;
-font-family:'Bebas Neue',sans-serif;
-font-size:20px;letter-spacing:0.08em;
-cursor:pointer;transition:opacity 0.2s;
-}
-.form-submit:hover{opacity:0.9}
-.form-submit:active{transform:scale(0.98)}
-.form-note{
-text-align:center;margin-top:14px;
-font-size:14px;color:var(--muted);
-}
-.form-note a{color:var(--yellow);text-decoration:none}
-.form-success{display:none;text-align:center;padding:40px 20px}
-.form-success.active{display:block}
-.form-success-head{font-size:28px;color:var(--yellow);margin-bottom:8px}
-.form-success-sub{font-size:16px;color:var(--muted);line-height:1.5}
-
-/* ═══════ FOOTER ═══════ */
-.footer{
-padding:40px 24px;text-align:center;
-border-top:1px solid var(--border);
-}
-.footer-line{
-font-family:'Bebas Neue',sans-serif;
-font-size:13px;letter-spacing:0.12em;
+font-size:13px;letter-spacing:0.15em;
 color:var(--muted);margin-bottom:16px;
 }
-.footer-socials{display:flex;gap:16px;justify-content:center;margin-bottom:16px}
-.footer-socials a{
-color:var(--muted);text-decoration:none;font-size:20px;
-transition:color 0.2s;
+.path{
+display:flex;align-items:center;gap:14px;
+padding:20px;margin-bottom:10px;
+background:var(--surface);
+border:1px solid var(--border);
+transition:border-color .2s;
+-webkit-tap-highlight-color:transparent;
 }
-.footer-socials a:hover{color:var(--yellow)}
-.footer-brand{font-size:10px;letter-spacing:0.15em;color:var(--muted);opacity:0.4}
+.path:active,.path:hover{border-color:var(--yellow)}
+.path-icon{
+width:40px;height:40px;
+display:flex;align-items:center;justify-content:center;
+font-size:20px;flex-shrink:0;
+background:rgba(232,255,0,0.06);
+}
+.path-text{flex:1}
+.path-title{
+font-family:'Bebas Neue',sans-serif;
+font-size:16px;letter-spacing:0.04em;
+}
+.path-sub{font-size:12px;color:var(--muted);margin-top:2px}
+.path-arrow{color:var(--muted);font-size:18px}
+.path:hover .path-arrow{color:var(--yellow)}
 
-/* ═══════ STICKY CTA ═══════ */
+/* ═══ PROOF ═══ */
+.proof{
+padding:40px 24px;
+max-width:480px;margin:0 auto;
+}
+.proof-row{
+display:flex;gap:8px;margin-bottom:16px;
+}
+.proof-stat{
+flex:1;padding:16px 12px;text-align:center;
+background:var(--surface);border:1px solid var(--border);
+}
+.proof-num{
+font-family:'Bebas Neue',sans-serif;
+font-size:28px;color:var(--yellow);
+}
+.proof-label{font-size:11px;color:var(--muted);margin-top:2px}
+.proof-line{
+padding:16px 20px;
+border-left:2px solid var(--yellow);
+font-size:14px;font-style:italic;
+color:var(--muted);line-height:1.5;
+margin-bottom:24px;
+}
+.proof-attr{
+display:block;font-style:normal;
+font-size:11px;margin-top:8px;opacity:.6;
+}
+
+/* ═══ BOTTOM CTA ═══ */
+.bottom{
+padding:32px 24px 48px;
+max-width:480px;margin:0 auto;
+text-align:center;
+}
+.bottom-h{
+font-family:'Bebas Neue',sans-serif;
+font-size:clamp(32px,8vw,48px);
+color:var(--text);margin-bottom:8px;
+}
+.bottom-p{
+font-size:14px;color:var(--muted);
+margin-bottom:20px;
+}
+.bottom-links{
+display:flex;gap:12px;justify-content:center;
+margin-top:20px;
+}
+.bottom-links a{
+font-size:12px;color:var(--muted);
+border-bottom:1px solid var(--border);
+padding-bottom:2px;
+transition:color .2s;
+}
+.bottom-links a:hover{color:var(--yellow)}
+.bottom-tag{
+margin-top:32px;font-size:10px;
+letter-spacing:0.12em;color:var(--muted);opacity:.4;
+font-family:'Bebas Neue',sans-serif;
+}
+
+/* ═══ STICKY ═══ */
 .sticky{
-position:fixed;bottom:0;left:0;right:0;
-z-index:100;
+position:fixed;bottom:0;left:0;right:0;z-index:100;
 display:flex;align-items:center;justify-content:center;gap:8px;
 padding:16px;
 background:var(--yellow);color:#000;
 font-family:'Bebas Neue',sans-serif;
-font-size:18px;letter-spacing:0.08em;
-text-decoration:none;
-box-shadow:0 -4px 24px rgba(0,0,0,0.5);
+font-size:17px;letter-spacing:0.06em;
+box-shadow:0 -2px 20px rgba(0,0,0,.5);
 -webkit-tap-highlight-color:transparent;
 }
-.sticky:active{opacity:0.9}
-.sticky span:last-child{font-size:14px;opacity:0.6;letter-spacing:0.05em}
-@media(min-width:768px){.sticky{display:none}}
-body{padding-bottom:56px}
-@media(min-width:768px){body{padding-bottom:0}}
+.sticky:active{opacity:.9}
+.sticky-sub{font-size:13px;opacity:.5;letter-spacing:.04em}
+@media(min-width:768px){
+.sticky{display:none}
+body{padding-bottom:0}
+}
 
-/* ═══════ REVEAL ═══════ */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s,transform 0.7s}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.stat-row{border-bottom-color:rgba(232,255,0,0.15)}
+/* ═══ REVEAL ═══ */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
+.rv.v{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
-<img src="assets/avatar.jpg" alt="Yancy Garcia" class="hero-photo">
-<div class="hero-content">
-<h1 class="bebas hero-headline">LOOKING<br>FOR A<br>CAR?</h1>
-<p class="hero-sub">I'm Yancy. I'll find it, price it right, and make it easy.</p>
-<a href="sms:3076993743?src=hero" class="hero-cta bebas">TEXT ME NOW &rarr;</a>
-<div class="hero-phone bebas">3_0_7 &middot; 69-9 &middot; 3743</div>
+<img src="assets/avatar.jpg" alt="Yancy Garcia" class="hero-img">
+<div class="hero-body">
+<h1 class="b hero-h">NEED<br>A CAR?</h1>
+<p class="hero-p">I'm Yancy. Text me what you're looking for and I'll handle the rest.</p>
+<a href="sms:3076993743" class="cta b">TEXT ME NOW &rarr;</a>
+<div class="hero-num b">307 &middot; 699 &middot; 3743</div>
 </div>
 </section>
 
-<!-- ═══ TICKER ═══ -->
-<div class="ticker">
-<div class="ticker-track">
-<span class="ticker-item">STONE'S AUTO GROUP</span>
-<span class="ticker-item">JACKSON WY</span>
-<span class="ticker-item">HABLO ESPANOL</span>
-<span class="ticker-item">TRADES WELCOME</span>
-<span class="ticker-item">ALL CREDIT TYPES</span>
-<span class="ticker-item">NEW &amp; USED</span>
-<span class="ticker-item">STONE'S AUTO GROUP</span>
-<span class="ticker-item">JACKSON WY</span>
-<span class="ticker-item">HABLO ESPANOL</span>
-<span class="ticker-item">TRADES WELCOME</span>
-<span class="ticker-item">ALL CREDIT TYPES</span>
-<span class="ticker-item">NEW &amp; USED</span>
+<!-- ═══ PATHS ═══ -->
+<section class="paths">
+<div class="paths-label b">WHAT DO YOU NEED?</div>
+
+<a href="sms:3076993743?body=Hey%20Yancy%2C%20I%27m%20looking%20for%20a%20vehicle" class="path rv">
+<div class="path-icon">🔍</div>
+<div class="path-text">
+<div class="path-title b">FIND ME A CAR</div>
+<div class="path-sub">Tell me what you want — I'll find it</div>
+</div>
+<div class="path-arrow">&rarr;</div>
+</a>
+
+<a href="sms:3076993743?body=Hey%20Yancy%2C%20what%27s%20my%20trade%20worth%3F" class="path rv">
+<div class="path-icon">🔄</div>
+<div class="path-text">
+<div class="path-title b">WHAT'S MY TRADE WORTH?</div>
+<div class="path-sub">Text me year, make, model — I'll give you a number</div>
+</div>
+<div class="path-arrow">&rarr;</div>
+</a>
+
+<a href="sms:3076993743?body=Hey%20Yancy%2C%20can%20you%20help%20me%20get%20approved%3F" class="path rv">
+<div class="path-icon">💳</div>
+<div class="path-text">
+<div class="path-title b">GET APPROVED</div>
+<div class="path-sub">All credit types — let's figure out your options</div>
+</div>
+<div class="path-arrow">&rarr;</div>
+</a>
+</section>
+
+<!-- ═══ PROOF ═══ -->
+<section class="proof">
+<div class="proof-row rv">
+<div class="proof-stat">
+<div class="proof-num b">130+</div>
+<div class="proof-label">cars sold first year</div>
+</div>
+<div class="proof-stat">
+<div class="proof-num b">&lt;5m</div>
+<div class="proof-label">response time</div>
+</div>
+<div class="proof-stat">
+<div class="proof-num b">ALL</div>
+<div class="proof-label">credit types</div>
 </div>
 </div>
 
-<!-- ═══ VIDEO ═══ -->
-<section class="video-section">
-<h2 class="bebas section-head reveal">WATCH HOW I WORK</h2>
-<div class="video-wrap reveal" onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/PLACEHOLDER\' style=\'width:100%;height:100%;border:none\' allow=\'autoplay\'></iframe>'">
-<div class="play-btn"></div>
-<div class="video-label bebas">WALKAROUND DROPPING SOON</div>
+<div class="proof-line rv">
+Easiest car buying experience I've ever had. No pressure, no games. Yancy just handled it.
+<span class="proof-attr">— Jackson WY buyer</span>
+</div>
+
+<div class="proof-line rv">
+Respondio rapido y me ayudo con todo. Lo recomiendo.
+<span class="proof-attr">— Cliente en Jackson</span>
 </div>
 </section>
 
-<!-- ═══ STATS ═══ -->
-<section class="stats">
-<div class="stat-row reveal">
-<div class="stat-num bebas" id="invCount">127</div>
-<div class="stat-label">vehicles in stock right now — new, used, and certified</div>
+<!-- ═══ BOTTOM CTA ═══ -->
+<section class="bottom rv">
+<div class="bottom-h b">READY?</div>
+<div class="bottom-p">Text me. I'll take it from there.</div>
+<a href="sms:3076993743" class="cta b" style="max-width:320px;margin:0 auto">TEXT ME &rarr;</a>
+<div class="bottom-links">
+<a href="https://inventory.yancygarcia.com">Browse inventory</a>
+<a href="https://wa.me/13076993743?text=Hola%20Yancy">Espanol</a>
+<a href="https://instagram.com/cardogvlogs">Instagram</a>
 </div>
-<div class="stat-row reveal">
-<div class="stat-label">trades welcome — fair value, fast process</div>
-<div class="stat-num bebas">TRADE</div>
-</div>
-<div class="stat-row reveal">
-<div class="stat-num bebas">BILINGUAL</div>
-<div class="stat-label">hablo espanol — mismo precio, mismo servicio</div>
-</div>
+<div class="bottom-tag b">STONE'S AUTO GROUP &middot; JACKSON WY</div>
 </section>
 
-<!-- ═══ INVENTORY ═══ -->
-<section class="inventory">
-<h2 class="bebas section-head reveal">WHAT'S ON THE LOT</h2>
-<div class="inv-grid" id="invGrid"></div>
-<a href="https://inventory.yancygarcia.com" class="see-all bebas reveal">SEE ALL VEHICLES &rarr;</a>
-</section>
-
-<!-- ═══ FORM ═══ -->
-<section class="form-section">
-<h2 class="bebas section-head reveal">LET'S FIND YOUR VEHICLE</h2>
-<div class="form-box reveal">
-<form id="leadForm">
-<input type="text" name="name" placeholder="First name" required class="form-field">
-<input type="tel" name="phone" placeholder="Phone number" required class="form-field">
-<select name="need" class="form-field">
-<option value="" disabled selected>What are you looking for?</option>
-<option value="truck">Truck</option>
-<option value="suv">SUV</option>
-<option value="sedan">Car / Sedan</option>
-<option value="trade">Trade-in appraisal</option>
-<option value="financing">Financing / payments</option>
-<option value="espanol">Ayuda en espanol</option>
-</select>
-<input type="text" name="budget" placeholder="Budget or payment range" class="form-field">
-<button type="submit" class="form-submit bebas">SEND IT &rarr;</button>
-</form>
-<div class="form-note">Or text me directly: <a href="sms:3076993743">3_0_7-69-9/3743</a></div>
-<div id="formSuccess" class="form-success">
-<div class="bebas form-success-head">GOT IT.</div>
-<div class="form-success-sub">I'll text you within the hour.<br>Need me faster? Text <a href="sms:3076993743" style="color:var(--yellow)">307-699-3743</a> directly.</div>
-</div>
-</div>
-</section>
-
-<!-- ═══ FOOTER ═══ -->
-<footer class="footer">
-<div class="footer-line">YANCY GARCIA &middot; STONE'S AUTO GROUP &middot; JACKSON WY &middot; 3_0_7-69-9/3743</div>
-<div class="footer-socials">
-<a href="https://www.instagram.com/cardogvlogs/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-<a href="https://www.tiktok.com/@cardogvlogs" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
-<a href="https://www.facebook.com/yancygarcia24" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
-</div>
-<div class="footer-brand">CARDOGVLOGS</div>
-</footer>
-
-<!-- ═══ STICKY CTA (mobile) ═══ -->
-<a href="sms:3076993743?src=sticky" class="sticky bebas">
+<!-- ═══ STICKY (MOBILE) ═══ -->
+<a href="sms:3076993743" class="sticky b">
 <span>TEXT ME NOW</span>
-<span>307-699-3743</span>
+<span class="sticky-sub">307-699-3743</span>
 </a>
 
 <script>
-// ─── Source tracking ───
-var src = new URLSearchParams(window.location.search).get('src') || 'direct';
-sessionStorage.setItem('lead_src', src);
-
-// ─── Scroll reveals ───
-var reveals = document.querySelectorAll('.reveal');
-var observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) {
-    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-  });
-}, { threshold: 0.15 });
-reveals.forEach(function(el) { observer.observe(el); });
-
-// ─── Featured inventory ───
-fetch('https://inventory.yancygarcia.com/data/inventory.json')
-  .then(function(r) { return r.json(); })
-  .then(function(data) {
-    var grid = document.getElementById('invGrid');
-    // Filter: published, has photos, skip watermark photos
-    var good = data.filter(function(v) { return v.published && v.photos && v.photos.length > 1; });
-    // Pick 3 diverse: one truck, one SUV, one other
-    var trucks = good.filter(function(v) { return v.body === 'Truck'; });
-    var suvs = good.filter(function(v) { return v.body === 'SUV'; });
-    var other = good.filter(function(v) { return v.body !== 'Truck' && v.body !== 'SUV'; });
-    var picks = [
-      trucks[0] || good[0],
-      suvs[0] || good[1],
-      (other[0] || good[2] || good[1])
-    ].filter(Boolean).slice(0, 3);
-
-    picks.forEach(function(v) {
-      var img = v.photos[1] || v.photos[0]; // skip 01 watermark
-      var card = document.createElement('a');
-      card.className = 'inv-card reveal';
-      card.href = 'sms:3076993743?body=' + encodeURIComponent(v.smsBody || ('Interested in the ' + v.year + ' ' + v.make + ' ' + v.model));
-      card.innerHTML =
-        '<img src="' + img + '" alt="' + v.year + ' ' + v.make + ' ' + v.model + '" loading="lazy">' +
-        '<div class="inv-card-info">' +
-          '<div class="inv-card-title">' + v.year + ' ' + v.make + ' ' + v.model + (v.trim ? ' ' + v.trim : '') + '</div>' +
-          '<div class="inv-card-meta">$' + v.price.toLocaleString() + ' · ' + v.mileage.toLocaleString() + ' mi</div>' +
-          '<div class="inv-card-cta">INTERESTED? &rarr;</div>' +
-        '</div>';
-      grid.appendChild(card);
-      observer.observe(card);
-    });
-
-    // Update count
-    var count = data.filter(function(v) { return v.published; }).length;
-    document.getElementById('invCount').textContent = count;
-  })
-  .catch(function() {});
-
-// ─── Form ───
-document.getElementById('leadForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  var form = e.target;
-  var payload = {
-    name: form.name.value,
-    phone: form.phone.value,
-    need: form.need.value,
-    details: 'Budget: ' + (form.budget.value || 'not specified'),
-    source: sessionStorage.getItem('lead_src') || 'landing',
-    timestamp: new Date().toISOString()
-  };
-  var btn = form.querySelector('.form-submit');
-  btn.textContent = 'SENDING...';
-  btn.disabled = true;
-
-  fetch('/api/lead', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  })
-  .then(function(r) {
-    if (r.ok) {
-      form.style.display = 'none';
-      document.getElementById('formSuccess').classList.add('active');
-    } else { throw new Error(); }
-  })
-  .catch(function() {
-    // Fallback: open SMS
-    var body = 'Hey Yancy, I\'m looking for a ' + (form.need.value || 'vehicle') + '. Budget: ' + (form.budget.value || 'flexible') + '. - ' + form.name.value;
-    window.location.href = 'sms:3076993743?body=' + encodeURIComponent(body);
-  });
-});
+var rv=document.querySelectorAll('.rv');
+var io=new IntersectionObserver(function(e){
+e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}});
+},{threshold:.15});
+rv.forEach(function(el){io.observe(el)});
 </script>
 </body>
 </html>
