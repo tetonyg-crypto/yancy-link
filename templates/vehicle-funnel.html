@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>{{YEAR}} {{MAKE}} {{MODEL}} — Text Yancy</title>
+<meta name="description" content="{{YEAR}} {{MAKE}} {{MODEL}} {{TRIM}} — ${{PRICE}}. Text Yancy at (307) 699-3743. Jackson WY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="../design-system/components.css">
+<style>
+.v-hero{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+.v-hero-img{width:100%;height:55vh;object-fit:cover;filter:saturate(.95) contrast(1.05)}
+.v-hero-body{flex:1;padding:var(--space-8) var(--space-6) var(--space-12);display:flex;flex-direction:column;justify-content:center}
+.v-hero-h{font-size:clamp(2.5rem,8vw,5rem);line-height:.9;color:var(--color-accent);margin-bottom:var(--space-3)}
+.v-hero-sub{font-family:var(--font-display);font-size:var(--text-xl);letter-spacing:.04em;color:var(--color-text);margin-bottom:var(--space-6)}
+.v-hero-meta{font-size:var(--text-base);color:var(--color-muted);margin-bottom:var(--space-8);line-height:1.6}
+.v-urgency{display:flex;align-items:center;gap:var(--space-3);padding:var(--space-4) var(--space-6);background:var(--color-accent-dim);border:1px solid rgba(232,255,0,.1);margin-bottom:var(--space-8);font-family:var(--font-display);font-size:var(--text-sm);letter-spacing:.06em;color:var(--color-accent)}
+.v-urgency-dot{width:8px;height:8px;border-radius:50%;background:var(--color-accent);animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.v-details{padding:var(--space-12) var(--space-6);max-width:600px;margin:0 auto}
+.v-detail-row{display:flex;justify-content:space-between;padding:var(--space-4) 0;border-bottom:1px solid var(--color-border)}
+.v-detail-label{font-family:var(--font-display);font-size:var(--text-sm);letter-spacing:.08em;color:var(--color-muted)}
+.v-detail-value{font-size:var(--text-base);color:var(--color-text)}
+.v-bottom{padding:var(--space-16) var(--space-6);text-align:center}
+.v-bottom-h{font-family:var(--font-display);font-size:clamp(2rem,6vw,3.5rem);color:var(--color-text);margin-bottom:var(--space-2)}
+.v-bottom-p{font-size:var(--text-base);color:var(--color-muted);font-style:italic;margin-bottom:var(--space-8)}
+@media(min-width:768px){
+  .v-hero{flex-direction:row}
+  .v-hero-img{width:50%;height:100vh;position:sticky;top:0}
+  .v-hero-body{width:50%;padding:var(--space-16) var(--space-12)}
+}
+</style>
+</head>
+<body>
+
+<section class="v-hero">
+  <img src="{{IMAGE_URL}}" alt="{{YEAR}} {{MAKE}} {{MODEL}}" class="v-hero-img" fetchpriority="high">
+  <div class="v-hero-body">
+    <h1 class="d v-hero-h">GET THIS<br>{{MODEL}}.</h1>
+    <div class="v-hero-sub d">{{YEAR}} {{MAKE}} {{MODEL}} {{TRIM}}</div>
+    <div class="v-hero-meta">${{PRICE}} &middot; {{MILEAGE}} mi &middot; {{DRIVETRAIN}}</div>
+    <div class="v-urgency"><span class="v-urgency-dot"></span> <span>THIS ONE'S MOVING — TEXT ME BEFORE IT'S GONE</span></div>
+    <a href="sms:3076993743?body={{SMS_BODY}}" class="btn-primary d">TEXT ME ABOUT THIS &rarr;</a>
+    <div class="hero-phone d" style="margin-top:var(--space-4)">(307) 699-3743</div>
+  </div>
+</section>
+
+<section class="v-details rv">
+  <div class="v-detail-row"><span class="v-detail-label d">YEAR</span><span class="v-detail-value">{{YEAR}}</span></div>
+  <div class="v-detail-row"><span class="v-detail-label d">MAKE</span><span class="v-detail-value">{{MAKE}}</span></div>
+  <div class="v-detail-row"><span class="v-detail-label d">MODEL</span><span class="v-detail-value">{{MODEL}} {{TRIM}}</span></div>
+  <div class="v-detail-row"><span class="v-detail-label d">MILEAGE</span><span class="v-detail-value">{{MILEAGE}} mi</span></div>
+  <div class="v-detail-row"><span class="v-detail-label d">DRIVETRAIN</span><span class="v-detail-value">{{DRIVETRAIN}}</span></div>
+  <div class="v-detail-row"><span class="v-detail-label d">CONDITION</span><span class="v-detail-value">{{CONDITION}}</span></div>
+  <div class="v-detail-row"><span class="v-detail-label d">PRICE</span><span class="v-detail-value" style="color:var(--color-accent)">${{PRICE}}</span></div>
+</section>
+
+<section class="v-bottom rv">
+  <div class="v-bottom-h d">INTERESTED?</div>
+  <p class="v-bottom-p">Text me — I'll get you the details and we can set up a time.</p>
+  <a href="sms:3076993743?body={{SMS_BODY}}" class="btn-primary d" style="margin:0 auto">TEXT ME NOW &rarr;</a>
+</section>
+
+<a href="sms:3076993743?body={{SMS_BODY}}" class="sticky-cta d">
+  <span>TEXT ABOUT THIS {{MODEL}}</span>
+</a>
+
+<script>
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+</script>
+</body>
+</html>

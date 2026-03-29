@@ -4,300 +4,460 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>Yancy Garcia | Text Me About a Car</title>
-<meta name="description" content="Yancy Garcia — your car guy in Jackson WY. New, used, trades, financing. Text me and I handle everything.">
+<meta name="description" content="Skip the dealership games. I find the car, handle the paperwork, and get you driving. Text Yancy — Jackson WY.">
 <meta property="og:title" content="Yancy Garcia | Your Car Guy in Jackson WY">
-<meta property="og:description" content="I find the car. I handle the paperwork. You drive. Text me.">
+<meta property="og:description" content="Skip the dealership games. Text me what you're looking for — I'll handle the rest.">
 <meta property="og:image" content="assets/og-image.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-system/tokens.css">
+<link rel="stylesheet" href="design-system/components.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
---bg:#0c0c0c;--surface:#131313;
---border:#222;--text:#f0f0ee;--muted:#888;
---yellow:#E8FF00;
-}
-html{scroll-behavior:smooth}
-body{
-font-family:'Instrument Serif',Georgia,serif;
-background:var(--bg);color:var(--text);
-overflow-x:hidden;-webkit-font-smoothing:antialiased;
-padding-bottom:64px;
-}
-body::after{
-content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.03;
-background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-.b{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:0.02em}
-a{text-decoration:none;color:inherit}
+/* ═══ PAGE-SPECIFIC LAYOUT ═══ */
 
-/* ═══ HERO ═══ */
-.hero{
-min-height:100vh;min-height:100dvh;
-display:flex;flex-direction:column;
-position:relative;
+/* HERO */
+.hero {
+  min-height: 100vh; min-height: 100dvh;
+  display: flex; flex-direction: column;
+  position: relative;
 }
-.hero-img{
-width:100%;height:55vh;
-object-fit:cover;object-position:center 20%;
-display:block;
+.hero-img {
+  width: 100%; height: 52vh;
+  object-fit: cover; object-position: center 20%;
+  filter: grayscale(15%) contrast(1.08);
 }
-.hero-body{
-flex:1;padding:28px 24px 32px;
-display:flex;flex-direction:column;
-justify-content:center;
+.hero-body {
+  flex: 1; padding: var(--space-8) var(--space-6) var(--space-12);
+  display: flex; flex-direction: column; justify-content: center;
 }
-.hero-h{
-font-size:clamp(52px,15vw,100px);
-line-height:0.9;color:var(--yellow);
-margin-bottom:16px;
+.hero-eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--text-xs); letter-spacing: 0.2em;
+  color: var(--color-muted); margin-bottom: var(--space-4);
 }
-.hero-p{
-font-size:17px;line-height:1.5;
-color:var(--muted);font-style:italic;
-max-width:340px;margin-bottom:24px;
+.hero-h {
+  font-size: var(--text-hero); line-height: 0.88;
+  color: var(--color-accent); margin-bottom: var(--space-6);
 }
-.cta{
-display:block;text-align:center;
-padding:18px 24px;
-background:var(--yellow);color:#000;
-font-family:'Bebas Neue',sans-serif;
-font-size:20px;letter-spacing:0.06em;
--webkit-tap-highlight-color:transparent;
-transition:opacity .15s;
+.hero-p {
+  font-size: var(--text-lg); line-height: 1.55;
+  color: var(--color-muted); font-style: italic;
+  max-width: 380px; margin-bottom: var(--space-8);
 }
-.cta:active{opacity:.85}
-.hero-num{
-margin-top:16px;text-align:center;
-font-family:'Bebas Neue',sans-serif;
-font-size:18px;letter-spacing:0.12em;
-color:var(--muted);
+.hero-cta-wrap { display: flex; flex-direction: column; gap: var(--space-4); max-width: 320px; }
+.hero-phone {
+  text-align: center; margin-top: var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--text-lg); letter-spacing: 0.15em;
+  color: var(--color-muted);
 }
-@media(min-width:768px){
-.hero{flex-direction:row}
-.hero-img{width:50%;height:100vh;position:sticky;top:0}
-.hero-body{width:50%;padding:60px 48px;justify-content:center}
+@media(min-width:768px) {
+  .hero { flex-direction: row; }
+  .hero-img { width: 48%; height: 100vh; position: sticky; top: 0; }
+  .hero-body { width: 52%; padding: var(--space-16) var(--space-12); }
 }
 
-/* ═══ PATHS ═══ */
-.paths{
-padding:48px 24px;
-max-width:480px;margin:0 auto;
+/* WHY SECTION */
+.why {
+  padding: var(--space-16) var(--space-6);
+  max-width: 600px; margin: 0 auto;
 }
-.paths-label{
-font-family:'Bebas Neue',sans-serif;
-font-size:13px;letter-spacing:0.15em;
-color:var(--muted);margin-bottom:16px;
+.why-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs); letter-spacing: 0.2em;
+  color: var(--color-muted); margin-bottom: var(--space-8);
 }
-.path{
-display:flex;align-items:center;gap:14px;
-padding:20px;margin-bottom:10px;
-background:var(--surface);
-border:1px solid var(--border);
-transition:border-color .2s;
--webkit-tap-highlight-color:transparent;
+.why-item {
+  display: flex; gap: var(--space-6);
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--color-border);
 }
-.path:active,.path:hover{border-color:var(--yellow)}
-.path-icon{
-width:40px;height:40px;
-display:flex;align-items:center;justify-content:center;
-font-size:20px;flex-shrink:0;
-background:rgba(232,255,0,0.06);
+.why-item:last-child { border-bottom: none; }
+.why-num {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl); line-height: 1;
+  color: var(--color-accent); flex-shrink: 0;
+  width: 48px;
 }
-.path-text{flex:1}
-.path-title{
-font-family:'Bebas Neue',sans-serif;
-font-size:16px;letter-spacing:0.04em;
-}
-.path-sub{font-size:12px;color:var(--muted);margin-top:2px}
-.path-arrow{color:var(--muted);font-size:18px}
-.path:hover .path-arrow{color:var(--yellow)}
+.why-text { font-size: var(--text-base); color: var(--color-muted); line-height: 1.6; }
+.why-text strong { color: var(--color-text); font-weight: normal; }
 
-/* ═══ PROOF ═══ */
-.proof{
-padding:40px 24px;
-max-width:480px;margin:0 auto;
+/* PROOF */
+.proof {
+  padding: var(--space-16) var(--space-6);
+  background: var(--color-surface);
 }
-.proof-row{
-display:flex;gap:8px;margin-bottom:16px;
+.proof-inner { max-width: 600px; margin: 0 auto; }
+.proof-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs); letter-spacing: 0.2em;
+  color: var(--color-muted); margin-bottom: var(--space-8);
+  text-align: center;
 }
-.proof-stat{
-flex:1;padding:16px 12px;text-align:center;
-background:var(--surface);border:1px solid var(--border);
+.proof-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3); margin-bottom: var(--space-12);
 }
-.proof-num{
-font-family:'Bebas Neue',sans-serif;
-font-size:28px;color:var(--yellow);
+.proof-stat {
+  text-align: center; padding: var(--space-6) var(--space-2);
+  background: var(--color-bg); border: 1px solid var(--color-border);
 }
-.proof-label{font-size:11px;color:var(--muted);margin-top:2px}
-.proof-line{
-padding:16px 20px;
-border-left:2px solid var(--yellow);
-font-size:14px;font-style:italic;
-color:var(--muted);line-height:1.5;
-margin-bottom:24px;
+.proof-stat-num {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl); color: var(--color-accent);
 }
-.proof-attr{
-display:block;font-style:normal;
-font-size:11px;margin-top:8px;opacity:.6;
+.proof-stat-label { font-size: var(--text-xs); color: var(--color-muted); margin-top: var(--space-1); }
+.proof-quote {
+  padding: var(--space-6) var(--space-8);
+  border-left: 2px solid var(--color-accent);
+  margin-bottom: var(--space-6);
+  font-size: var(--text-base); font-style: italic;
+  color: var(--color-muted); line-height: 1.65;
 }
-
-/* ═══ BOTTOM CTA ═══ */
-.bottom{
-padding:32px 24px 48px;
-max-width:480px;margin:0 auto;
-text-align:center;
-}
-.bottom-h{
-font-family:'Bebas Neue',sans-serif;
-font-size:clamp(32px,8vw,48px);
-color:var(--text);margin-bottom:8px;
-}
-.bottom-p{
-font-size:14px;color:var(--muted);
-margin-bottom:20px;
-}
-.bottom-links{
-display:flex;gap:12px;justify-content:center;
-margin-top:20px;
-}
-.bottom-links a{
-font-size:12px;color:var(--muted);
-border-bottom:1px solid var(--border);
-padding-bottom:2px;
-transition:color .2s;
-}
-.bottom-links a:hover{color:var(--yellow)}
-.bottom-tag{
-margin-top:32px;font-size:10px;
-letter-spacing:0.12em;color:var(--muted);opacity:.4;
-font-family:'Bebas Neue',sans-serif;
+.proof-attr {
+  display: block; font-style: normal;
+  font-size: var(--text-xs); margin-top: var(--space-3); opacity: 0.5;
 }
 
-/* ═══ STICKY ═══ */
-.sticky{
-position:fixed;bottom:0;left:0;right:0;z-index:100;
-display:flex;align-items:center;justify-content:center;gap:8px;
-padding:16px;
-background:var(--yellow);color:#000;
-font-family:'Bebas Neue',sans-serif;
-font-size:17px;letter-spacing:0.06em;
-box-shadow:0 -2px 20px rgba(0,0,0,.5);
--webkit-tap-highlight-color:transparent;
+/* INVENTORY */
+.inv {
+  padding: var(--space-16) var(--space-6);
+  max-width: 960px; margin: 0 auto;
 }
-.sticky:active{opacity:.9}
-.sticky-sub{font-size:13px;opacity:.5;letter-spacing:.04em}
-@media(min-width:768px){
-.sticky{display:none}
-body{padding-bottom:0}
+.inv-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs); letter-spacing: 0.2em;
+  color: var(--color-muted); margin-bottom: var(--space-8);
+  text-align: center;
+}
+.inv-grid {
+  display: grid; grid-template-columns: 1fr;
+  gap: var(--space-4); margin-bottom: var(--space-8);
+}
+@media(min-width:640px) { .inv-grid { grid-template-columns: repeat(3, 1fr); } }
+.inv-see-all {
+  display: block; max-width: 280px; margin: 0 auto;
+  text-align: center;
 }
 
-/* ═══ REVEAL ═══ */
-.rv{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
-.rv.v{opacity:1;transform:translateY(0)}
+/* FRICTION REDUCERS */
+.friction {
+  padding: var(--space-12) var(--space-6);
+  background: var(--color-surface);
+}
+.friction-inner { max-width: 600px; margin: 0 auto; }
+.friction-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+.friction-item {
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  background: var(--color-bg); border: 1px solid var(--color-border);
+}
+.friction-icon { font-size: 24px; margin-bottom: var(--space-2); }
+.friction-title {
+  font-family: var(--font-display);
+  font-size: var(--text-sm); letter-spacing: 0.06em;
+}
+.friction-sub { font-size: var(--text-xs); color: var(--color-muted); margin-top: var(--space-1); }
+
+/* MID CTA */
+.mid-cta {
+  padding: var(--space-16) var(--space-6);
+  text-align: center;
+}
+.mid-cta-h {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  color: var(--color-text); margin-bottom: var(--space-2);
+}
+.mid-cta-p {
+  font-size: var(--text-base); color: var(--color-muted);
+  font-style: italic; margin-bottom: var(--space-8);
+}
+
+/* FORM */
+.form-section {
+  padding: var(--space-12) var(--space-6);
+  max-width: 480px; margin: 0 auto;
+}
+.form-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs); letter-spacing: 0.2em;
+  color: var(--color-muted); margin-bottom: var(--space-6);
+  text-align: center;
+}
+.form-box {
+  border-left: 3px solid var(--color-accent);
+  padding: var(--space-8);
+  background: var(--color-surface);
+}
+.form-field {
+  width: 100%; padding: 16px; margin-bottom: var(--space-3);
+  background: var(--color-bg); border: 1px solid var(--color-border);
+  color: var(--color-text); font-family: var(--font-body);
+  font-size: var(--text-base); outline: none;
+  transition: border-color var(--duration-fast);
+}
+.form-field::placeholder { color: var(--color-muted); }
+.form-field:focus { border-color: var(--color-accent); }
+.form-field option { background: var(--color-bg); color: var(--color-text); }
+.form-note {
+  text-align: center; margin-top: var(--space-4);
+  font-size: var(--text-sm); color: var(--color-muted);
+}
+.form-note a { color: var(--color-accent); }
+.form-ok { display:none; text-align:center; padding:var(--space-12) var(--space-4); }
+.form-ok.on { display:block; }
+.form-ok-h { font-family:var(--font-display); font-size:var(--text-2xl); color:var(--color-accent); margin-bottom:var(--space-2); }
+.form-ok-p { font-size:var(--text-base); color:var(--color-muted); line-height:1.6; }
+
+/* FOOTER */
+.footer {
+  padding: var(--space-12) var(--space-6);
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+}
+.footer-line {
+  font-family: var(--font-display);
+  font-size: var(--text-xs); letter-spacing: 0.12em;
+  color: var(--color-muted); margin-bottom: var(--space-4);
+}
+.footer-links { display:flex; gap:var(--space-6); justify-content:center; margin-bottom:var(--space-4); }
+.footer-links a {
+  font-size: var(--text-sm); color: var(--color-muted);
+  transition: color var(--duration-fast);
+}
+.footer-links a:hover { color: var(--color-accent); }
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 10px; letter-spacing: 0.15em;
+  color: var(--color-muted); opacity: 0.3;
+}
 </style>
 </head>
 <body>
 
-<!-- ═══ HERO ═══ -->
+<!-- ═══ 1. HERO ═══ -->
 <section class="hero">
-<img src="assets/avatar.jpg" alt="Yancy Garcia" class="hero-img">
-<div class="hero-body">
-<h1 class="b hero-h">NEED<br>A CAR?</h1>
-<p class="hero-p">I'm Yancy. Text me what you're looking for and I'll handle the rest.</p>
-<a href="sms:3076993743" class="cta b">TEXT ME NOW &rarr;</a>
-<div class="hero-num b">307 &middot; 699 &middot; 3743</div>
-</div>
+  <img src="assets/avatar.jpg" alt="Yancy Garcia" class="hero-img" fetchpriority="high">
+  <div class="hero-body">
+    <div class="hero-eyebrow d">STONE'S AUTO GROUP &middot; JACKSON WY</div>
+    <h1 class="d hero-h">SKIP THE<br>GAMES.</h1>
+    <p class="hero-p">I find the car. I handle the paperwork. You drive. Text me what you need.</p>
+    <div class="hero-cta-wrap">
+      <a href="sms:3076993743" class="btn-primary d">TEXT ME NOW &rarr;</a>
+      <a href="https://inventory.yancygarcia.com" class="btn-secondary d">BROWSE INVENTORY</a>
+    </div>
+    <div class="hero-phone d">(307) 699-3743</div>
+  </div>
 </section>
 
-<!-- ═══ PATHS ═══ -->
-<section class="paths">
-<div class="paths-label b">WHAT DO YOU NEED?</div>
-
-<a href="sms:3076993743?body=Hey%20Yancy%2C%20I%27m%20looking%20for%20a%20vehicle" class="path rv">
-<div class="path-icon">🔍</div>
-<div class="path-text">
-<div class="path-title b">FIND ME A CAR</div>
-<div class="path-sub">Tell me what you want — I'll find it</div>
+<!-- ═══ 2. TRUST TICKER ═══ -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">STONE'S AUTO GROUP</span><span class="ticker-item ticker-dot">&middot;</span>
+    <span class="ticker-item">JACKSON WY</span><span class="ticker-item ticker-dot">&middot;</span>
+    <span class="ticker-item">HABLO ESPANOL</span><span class="ticker-item ticker-dot">&middot;</span>
+    <span class="ticker-item">300+ VEHICLES</span><span class="ticker-item ticker-dot">&middot;</span>
+    <span class="ticker-item">TRADES WELCOME</span><span class="ticker-item ticker-dot">&middot;</span>
+    <span class="ticker-item">ALL CREDIT TYPES</span><span class="ticker-item ticker-dot">&middot;</span>
+    <span class="ticker-item">STONE'S AUTO GROUP</span><span class="ticker-item ticker-dot">&middot;</span>
+    <span class="ticker-item">JACKSON WY</span><span class="ticker-item ticker-dot">&middot;</span>
+    <span class="ticker-item">HABLO ESPANOL</span><span class="ticker-item ticker-dot">&middot;</span>
+    <span class="ticker-item">300+ VEHICLES</span><span class="ticker-item ticker-dot">&middot;</span>
+    <span class="ticker-item">TRADES WELCOME</span><span class="ticker-item ticker-dot">&middot;</span>
+    <span class="ticker-item">ALL CREDIT TYPES</span><span class="ticker-item ticker-dot">&middot;</span>
+  </div>
 </div>
-<div class="path-arrow">&rarr;</div>
-</a>
 
-<a href="sms:3076993743?body=Hey%20Yancy%2C%20what%27s%20my%20trade%20worth%3F" class="path rv">
-<div class="path-icon">🔄</div>
-<div class="path-text">
-<div class="path-title b">WHAT'S MY TRADE WORTH?</div>
-<div class="path-sub">Text me year, make, model — I'll give you a number</div>
-</div>
-<div class="path-arrow">&rarr;</div>
-</a>
-
-<a href="sms:3076993743?body=Hey%20Yancy%2C%20can%20you%20help%20me%20get%20approved%3F" class="path rv">
-<div class="path-icon">💳</div>
-<div class="path-text">
-<div class="path-title b">GET APPROVED</div>
-<div class="path-sub">All credit types — let's figure out your options</div>
-</div>
-<div class="path-arrow">&rarr;</div>
-</a>
+<!-- ═══ 3. WHY YANCY ═══ -->
+<section class="why">
+  <div class="why-label d rv">WHY WORK WITH ME</div>
+  <div class="why-item rv rv-d1">
+    <div class="why-num d">01</div>
+    <div class="why-text"><strong>I respond fast.</strong> Text me and I'll get back to you in minutes, not hours. No phone trees, no "let me transfer you."</div>
+  </div>
+  <div class="why-item rv rv-d2">
+    <div class="why-num d">02</div>
+    <div class="why-text"><strong>I keep it straight.</strong> I'll tell you the real number, the real timeline, and what actually makes sense for your situation.</div>
+  </div>
+  <div class="why-item rv rv-d3">
+    <div class="why-num d">03</div>
+    <div class="why-text"><strong>Hablo espanol.</strong> Mismo precio, mismo servicio, sin complicaciones. Escribeme directo.</div>
+  </div>
 </section>
 
-<!-- ═══ PROOF ═══ -->
+<!-- ═══ 4. PROOF ═══ -->
 <section class="proof">
-<div class="proof-row rv">
-<div class="proof-stat">
-<div class="proof-num b">130+</div>
-<div class="proof-label">cars sold first year</div>
-</div>
-<div class="proof-stat">
-<div class="proof-num b">&lt;5m</div>
-<div class="proof-label">response time</div>
-</div>
-<div class="proof-stat">
-<div class="proof-num b">ALL</div>
-<div class="proof-label">credit types</div>
-</div>
-</div>
-
-<div class="proof-line rv">
-Easiest car buying experience I've ever had. No pressure, no games. Yancy just handled it.
-<span class="proof-attr">— Jackson WY buyer</span>
-</div>
-
-<div class="proof-line rv">
-Respondio rapido y me ayudo con todo. Lo recomiendo.
-<span class="proof-attr">— Cliente en Jackson</span>
-</div>
+  <div class="proof-inner">
+    <div class="proof-label d rv">REAL RESULTS</div>
+    <div class="proof-stats rv">
+      <div class="proof-stat">
+        <div class="proof-stat-num d">130+</div>
+        <div class="proof-stat-label">cars sold year one</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-num d">&lt;5m</div>
+        <div class="proof-stat-label">avg response</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-num d" id="vCount">120+</div>
+        <div class="proof-stat-label">in stock now</div>
+      </div>
+    </div>
+    <div class="proof-quote rv">
+      Easiest car buying experience I've had. No runaround, no pressure. Yancy just took care of it.
+      <span class="proof-attr">— Recent buyer, Jackson WY</span>
+    </div>
+    <div class="proof-quote rv">
+      Me ayudo con todo — financiamiento, intercambio, todo. Lo recomiendo mucho.
+      <span class="proof-attr">— Cliente en Jackson</span>
+    </div>
+  </div>
 </section>
 
-<!-- ═══ BOTTOM CTA ═══ -->
-<section class="bottom rv">
-<div class="bottom-h b">READY?</div>
-<div class="bottom-p">Text me. I'll take it from there.</div>
-<a href="sms:3076993743" class="cta b" style="max-width:320px;margin:0 auto">TEXT ME &rarr;</a>
-<div class="bottom-links">
-<a href="https://inventory.yancygarcia.com">Browse inventory</a>
-<a href="https://wa.me/13076993743?text=Hola%20Yancy">Espanol</a>
-<a href="https://instagram.com/cardogvlogs">Instagram</a>
-</div>
-<div class="bottom-tag b">STONE'S AUTO GROUP &middot; JACKSON WY</div>
+<!-- ═══ 5. FEATURED INVENTORY ═══ -->
+<section class="inv">
+  <div class="inv-label d rv">ON THE LOT RIGHT NOW</div>
+  <div class="inv-grid" id="invGrid"></div>
+  <a href="https://inventory.yancygarcia.com" class="btn-secondary d inv-see-all rv">SEE ALL VEHICLES &rarr;</a>
 </section>
 
-<!-- ═══ STICKY (MOBILE) ═══ -->
-<a href="sms:3076993743" class="sticky b">
-<span>TEXT ME NOW</span>
-<span class="sticky-sub">307-699-3743</span>
+<!-- ═══ 6. FRICTION REDUCERS ═══ -->
+<section class="friction">
+  <div class="friction-inner">
+    <div class="friction-grid rv">
+      <div class="friction-item">
+        <div class="friction-icon">⚡</div>
+        <div class="friction-title d">SAME DAY</div>
+        <div class="friction-sub">Drive home today</div>
+      </div>
+      <div class="friction-item">
+        <div class="friction-icon">💳</div>
+        <div class="friction-title d">ALL CREDIT</div>
+        <div class="friction-sub">We'll make it work</div>
+      </div>
+      <div class="friction-item">
+        <div class="friction-icon">🔄</div>
+        <div class="friction-title d">TRADES</div>
+        <div class="friction-sub">Fair value, fast process</div>
+      </div>
+      <div class="friction-item">
+        <div class="friction-icon">🇲🇽</div>
+        <div class="friction-title d">ESPANOL</div>
+        <div class="friction-sub">Mismo servicio</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7. MID CTA ═══ -->
+<section class="mid-cta rv">
+  <div class="mid-cta-h d">READY?</div>
+  <p class="mid-cta-p">Text me. I'll take it from there.</p>
+  <a href="sms:3076993743" class="btn-primary d" style="margin:0 auto">TEXT ME NOW &rarr;</a>
+</section>
+
+<!-- ═══ 8. FORM ═══ -->
+<section class="form-section">
+  <div class="form-label d rv">OR SEND YOUR INFO</div>
+  <div class="form-box rv">
+    <form id="lf">
+      <input type="text" name="name" placeholder="First name" required class="form-field">
+      <input type="tel" name="phone" placeholder="Phone number" required class="form-field">
+      <select name="need" class="form-field">
+        <option value="" disabled selected>What do you need?</option>
+        <option value="vehicle">Looking for a vehicle</option>
+        <option value="trade">Trade-in value</option>
+        <option value="financing">Financing / payments</option>
+        <option value="espanol">Ayuda en espanol</option>
+      </select>
+      <button type="submit" class="btn-primary d" style="width:100%">SEND IT &rarr;</button>
+    </form>
+    <div class="form-note">Or text me directly: <a href="sms:3076993743">(307) 699-3743</a></div>
+    <div id="formOk" class="form-ok">
+      <div class="form-ok-h d">GOT IT.</div>
+      <div class="form-ok-p">I'll text you back shortly.<br>Need me faster? <a href="sms:3076993743" style="color:var(--color-accent)">(307) 699-3743</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 9. FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-line d">YANCY GARCIA &middot; STONE'S AUTO GROUP &middot; JACKSON WY</div>
+  <div class="footer-links">
+    <a href="https://instagram.com/cardogvlogs">Instagram</a>
+    <a href="https://tiktok.com/@cardogvlogs">TikTok</a>
+    <a href="https://facebook.com/yancygarcia24">Facebook</a>
+    <a href="https://wa.me/13076993743">WhatsApp</a>
+  </div>
+  <div class="footer-brand d">CARDOGVLOGS</div>
+</footer>
+
+<!-- ═══ STICKY CTA ═══ -->
+<a href="sms:3076993743" class="sticky-cta d">
+  <span>TEXT ME NOW</span>
+  <span class="sticky-sub">(307) 699-3743</span>
 </a>
 
 <script>
-var rv=document.querySelectorAll('.rv');
-var io=new IntersectionObserver(function(e){
-e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}});
-},{threshold:.15});
-rv.forEach(function(el){io.observe(el)});
+/* Source tracking */
+var src=new URLSearchParams(location.search).get('src')||'direct';
+sessionStorage.setItem('src',src);
+
+/* Scroll reveals */
+var obs=new IntersectionObserver(function(e){
+  e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target)}});
+},{threshold:0.12});
+document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+
+/* Featured inventory — pull 3 diverse vehicles */
+fetch('https://inventory.yancygarcia.com/data/inventory.json')
+.then(function(r){return r.json()})
+.then(function(data){
+  var g=document.getElementById('invGrid');
+  var ok=data.filter(function(v){return v.published&&v.photos&&v.photos.length>1});
+  var trucks=ok.filter(function(v){return v.body==='Truck'});
+  var suvs=ok.filter(function(v){return v.body==='SUV'});
+  var other=ok.filter(function(v){return v.body!=='Truck'&&v.body!=='SUV'});
+  var picks=[trucks[0]||ok[0], suvs[0]||ok[1], other[0]||ok[2]].filter(Boolean).slice(0,3);
+  picks.forEach(function(v){
+    var img=v.photos[1]||v.photos[0];
+    var c=document.createElement('a');
+    c.className='card-vehicle rv';
+    c.href='sms:3076993743?body='+encodeURIComponent('Hey Yancy, interested in the '+v.year+' '+v.make+' '+v.model);
+    c.innerHTML='<img src="'+img+'" alt="'+v.year+' '+v.make+' '+v.model+'" loading="lazy">'+
+      '<div class="card-vehicle-info">'+
+      '<div class="card-vehicle-title d">'+v.year+' '+v.make+' '+v.model+(v.trim?' '+v.trim:'')+'</div>'+
+      '<div class="card-vehicle-meta">$'+v.price.toLocaleString()+' &middot; '+v.mileage.toLocaleString()+' mi</div>'+
+      '<div class="card-vehicle-cta d">TEXT ABOUT THIS &rarr;</div></div>';
+    g.appendChild(c);
+    obs.observe(c);
+  });
+  var ct=data.filter(function(v){return v.published}).length;
+  document.getElementById('vCount').textContent=ct+'+';
+}).catch(function(){});
+
+/* Form */
+document.getElementById('lf').addEventListener('submit',function(e){
+  e.preventDefault();var f=e.target;
+  var btn=f.querySelector('.btn-primary');btn.textContent='SENDING...';btn.disabled=true;
+  fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({name:f.name.value,phone:f.phone.value,need:f.need.value,
+    source:sessionStorage.getItem('src')||'landing',timestamp:new Date().toISOString()})
+  }).then(function(r){
+    if(r.ok){f.style.display='none';document.getElementById('formOk').classList.add('on')}
+    else throw 0;
+  }).catch(function(){
+    location.href='sms:3076993743?body='+encodeURIComponent('Hey Yancy, I need help with a '+
+    (f.need.value||'vehicle')+'. - '+f.name.value);
+  });
+});
 </script>
 </body>
 </html>
