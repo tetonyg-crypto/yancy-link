@@ -35,7 +35,8 @@
 .vh-back:hover{color:var(--color-accent)}
 @media(min-width:768px){
 .vh{flex-direction:row}
-.vh-img{width:50%;height:100vh;position:sticky;top:0}
+.vh-img,.vh-img-wrap{width:50%;height:100vh;position:sticky;top:0}
+.vh-img-wrap .vh-img{width:100%;height:100%;position:static}
 .vh-body{width:50%;padding:var(--space-16) var(--space-12)}
 }
 </style>
@@ -46,7 +47,7 @@
   <div class="vh-body">
     <h1 class="d vh-h"><span>Civic</span><br>Sedan LX</h1>
     <div class="d vh-sub">2019 Honda Civic Sedan LX</div>
-    <div class="vh-meta">$15,577 · 68,161 mi · Automatic</div>
+    <div class="vh-meta">$15,577 · 68,161 mi · FWD</div>
     <div class="vh-urg"><span class="vh-dot"></span> This one won't sit long</div>
     <a href="sms:3076993743?body=Hey%20Yancy%2C%20interested%20in%20the%202019%20Honda%20Civic" class="btn-primary d" style="max-width:320px">Text me about this &rarr;</a>
     <div style="margin-top:var(--space-4);font-family:var(--font-display);font-size:16px;letter-spacing:.1em;color:var(--color-muted)">(307) 699 · 3743</div>
@@ -57,7 +58,7 @@
   <div class="vh-row"><span class="d vh-lbl">Make</span><span class="vh-val">Honda</span></div>
   <div class="vh-row"><span class="d vh-lbl">Model</span><span class="vh-val">Civic Sedan LX</span></div>
   <div class="vh-row"><span class="d vh-lbl">Mileage</span><span class="vh-val">68,161 mi</span></div>
-  <div class="vh-row"><span class="d vh-lbl">Drivetrain</span><span class="vh-val">Automatic</span></div>
+  <div class="vh-row"><span class="d vh-lbl">Drivetrain</span><span class="vh-val">FWD</span></div>
   <div class="vh-row"><span class="d vh-lbl">Condition</span><span class="vh-val">Used</span></div>
   <div class="vh-row"><span class="d vh-lbl">Color</span><span class="vh-val">White</span></div>
   <div class="vh-row"><span class="d vh-lbl">Price</span><span class="vh-val" style="color:var(--color-accent)">$15,577</span></div>
