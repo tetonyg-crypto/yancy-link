@@ -1,4 +1,4 @@
-const { httpPost, insertPipelineLead, sendSMS, sendTelegram } = require('./lib/pipeline.js');
+const { httpPost, insertPipelineLead, sendSMS, sendTelegram, buildSmartAlert } = require('./lib/pipeline.js');
 
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -24,34 +24,25 @@ module.exports = async function handler(req, res) {
       }, { name, phone, vin: vin || '', year: year || '', make: make || '', model: model || '',
         mileage: parseInt(mileage) || 0, condition: condition || '', photos: photos || [],
         source: source || 'trade-page', timestamp: timestamp || new Date().toISOString(), contacted: false });
-    } catch (err) { console.error('Supabase trade error:', err.message); }
+    } catch (err) { console.error('Supabase error:', err.message); }
   }
 
-  // 2. SMS auto-responder
+  // 2. SMS
   const smsSent = await sendSMS(phone,
     `Hey ${name}, it's Yancy — got your trade info on the ${vehicleStr}. I'll run the numbers and text you back shortly. — (307) 699-3743`
   );
 
-  // 3. Insert into lead_pipeline
-  await insertPipelineLead({
+  // 3. Pipeline insert
+  const leadData = {
     name, phone, source: source || 'trade-page', vehicle: vehicleStr,
     lead_type: 'trade', score: 70, priority: 'HIGH',
     details: { vin, year, make, model, mileage: parseInt(mileage) || 0, condition, photo_count: (photos || []).filter(Boolean).length },
     sms_sent: smsSent
-  });
+  };
+  await insertPipelineLead(leadData);
 
-  // 4. Telegram
-  const photoCount = (photos || []).filter(Boolean).length;
-  await sendTelegram([
-    '🔄 <b>TRADE-IN LEAD</b>',
-    '', '👤 ' + name, '📱 ' + phone,
-    '🚗 ' + vehicleStr + (mileage ? ' — ' + parseInt(mileage).toLocaleString() + ' mi' : ''),
-    '📋 Condition: ' + (condition || '?'),
-    '📷 Photos: ' + photoCount,
-    vin ? '🔑 VIN: ' + vin : '',
-    '📲 SMS: ' + (smsSent ? '✅' : '❌'),
-    '🕐 ' + new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })
-  ].filter(Boolean).join('\n'));
+  // 4. Smart Telegram alert
+  await sendTelegram(buildSmartAlert(leadData));
 
   return res.status(200).json({ ok: true, sms_sent: smsSent });
 };

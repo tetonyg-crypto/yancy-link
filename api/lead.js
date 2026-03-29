@@ -1,4 +1,4 @@
-const { httpPost, insertPipelineLead, sendSMS, sendTelegram } = require('./lib/pipeline.js');
+const { httpPost, insertPipelineLead, sendSMS, sendTelegram, buildSmartAlert } = require('./lib/pipeline.js');
 
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -23,30 +23,25 @@ module.exports = async function handler(req, res) {
       }, { name, phone, need: need || 'Not specified', details: details || '',
         source: source || 'direct', created_at: timestamp || new Date().toISOString(),
         contacted: false, notes: '' });
-    } catch (err) { console.error('Supabase leads error:', err.message); }
+    } catch (err) { console.error('Supabase error:', err.message); }
   }
 
-  // 2. Insert into lead_pipeline (the engine)
+  // 2. SMS auto-reply
   const smsSent = await sendSMS(phone,
     `Hey ${name}, it's Yancy from Stone's Auto Group — got your info. What are you looking for? — (307) 699-3743`
   );
 
-  await insertPipelineLead({
+  // 3. Pipeline insert
+  const leadData = {
     name, phone, source: source || 'landing', vehicle: '',
     lead_type: 'general', score: 60, priority: 'MEDIUM',
     details: { need: need || '', details: details || '' },
     sms_sent: smsSent
-  });
+  };
+  await insertPipelineLead(leadData);
 
-  // 3. Telegram notification
-  const time = new Date(timestamp || Date.now()).toLocaleString('en-US', { timeZone: 'America/Denver' });
-  await sendTelegram([
-    '🚨 <b>NEW LEAD</b> — ' + (source || 'direct').toUpperCase(),
-    '', '👤 ' + name, '📱 ' + phone,
-    '🚗 ' + (need || 'Not specified'),
-    '📲 SMS: ' + (smsSent ? '✅' : '❌'),
-    '🕐 ' + time
-  ].join('\n'));
+  // 4. Smart Telegram alert with copy-paste reply
+  await sendTelegram(buildSmartAlert(leadData));
 
   return res.status(200).json({ ok: true, sms_sent: smsSent });
 };

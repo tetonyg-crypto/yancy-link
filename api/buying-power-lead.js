@@ -1,4 +1,4 @@
-const { httpPost, insertPipelineLead, sendSMS, sendTelegram } = require('./lib/pipeline.js');
+const { httpPost, insertPipelineLead, sendSMS, sendTelegram, buildSmartAlert } = require('./lib/pipeline.js');
 
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -12,8 +12,6 @@ module.exports = async function handler(req, res) {
 
   const SUPABASE_URL = process.env.SUPABASE_URL;
   const SUPABASE_KEY = process.env.SUPABASE_KEY;
-  const minStr = '$' + (estimated_min || 0).toLocaleString();
-  const maxStr = '$' + (estimated_max || 0).toLocaleString();
 
   // 1. Save to buying_power_leads table
   if (SUPABASE_URL && SUPABASE_KEY) {
@@ -26,33 +24,27 @@ module.exports = async function handler(req, res) {
         credit_range: credit_range || '', estimated_min: parseInt(estimated_min) || 0,
         estimated_max: parseInt(estimated_max) || 0, source: source || 'buying-power',
         timestamp: timestamp || new Date().toISOString(), contacted: false });
-    } catch (err) { console.error('Supabase buying-power error:', err.message); }
+    } catch (err) { console.error('Supabase error:', err.message); }
   }
 
-  // 2. SMS auto-responder
+  // 2. SMS
+  const minStr = '$' + (estimated_min || 0).toLocaleString();
+  const maxStr = '$' + (estimated_max || 0).toLocaleString();
   const smsSent = await sendSMS(phone,
     `Hey ${name}, Yancy here — based on your numbers you're looking at the ${minStr}-${maxStr} range. Let me pull some options that fit. — (307) 699-3743`
   );
 
-  // 3. Insert into lead_pipeline
-  await insertPipelineLead({
+  // 3. Pipeline insert
+  const leadData = {
     name, phone, source: source || 'buying-power', vehicle: '',
     lead_type: 'buying_power', score: 65, priority: 'HIGH',
     details: { monthly_payment, down_payment, credit_range, estimated_min, estimated_max },
     sms_sent: smsSent
-  });
+  };
+  await insertPipelineLead(leadData);
 
-  // 4. Telegram
-  await sendTelegram([
-    '💰 <b>BUYING POWER LEAD</b>',
-    '', '👤 ' + name, '📱 ' + phone,
-    '💵 $' + (monthly_payment || 0) + '/mo',
-    '💰 Down: ' + (down_payment || '?'),
-    '📊 Credit: ' + (credit_range || '?'),
-    '🎯 Range: ' + minStr + ' — ' + maxStr,
-    '📲 SMS: ' + (smsSent ? '✅' : '❌'),
-    '🕐 ' + new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })
-  ].join('\n'));
+  // 4. Smart Telegram alert
+  await sendTelegram(buildSmartAlert(leadData));
 
   return res.status(200).json({ ok: true, sms_sent: smsSent, estimated_min, estimated_max });
 };
