@@ -30,6 +30,19 @@ function httpGet(hostname, path, headers) {
   });
 }
 
+function httpPatch(hostname, path, headers, body) {
+  return new Promise((resolve, reject) => {
+    const data = JSON.stringify(body);
+    const opts = { hostname, path, method: 'PATCH', headers: { ...headers, 'Content-Length': Buffer.byteLength(data) } };
+    const req = https.request(opts, (res) => {
+      let buf = ''; res.on('data', c => buf += c); res.on('end', () => resolve({ status: res.statusCode, body: buf }));
+    });
+    req.on('error', reject);
+    req.write(data);
+    req.end();
+  });
+}
+
 // ─── Supabase: insert into lead_pipeline ───
 async function insertPipelineLead(lead) {
   const URL = process.env.SUPABASE_URL;
@@ -202,4 +215,4 @@ async function getPipelineStats() {
   } catch (err) { console.error('Pipeline stats error:', err.message); return []; }
 }
 
-module.exports = { httpPost, httpGet, insertPipelineLead, sendSMS, sendTelegram, buildSmartAlert, getPipelineStats };
+module.exports = { httpPost, httpGet, httpPatch, insertPipelineLead, sendSMS, sendTelegram, buildSmartAlert, getPipelineStats };

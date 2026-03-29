@@ -4,7 +4,7 @@
  * Also checks for stalled leads and queues follow-up alerts
  * Trigger: Vercel Cron (every 4 hours) or manual GET request
  */
-const { httpGet, sendTelegram } = require('./lib/pipeline.js');
+const { httpGet, httpPatch, sendTelegram } = require('./lib/pipeline.js');
 
 module.exports = async function handler(req, res) {
   const SUPABASE_URL = process.env.SUPABASE_URL;
@@ -123,7 +123,12 @@ module.exports = async function handler(req, res) {
     if (lead.state !== 'STALLED') {
       try {
         const parsed = new URL(SUPABASE_URL + '/rest/v1/lead_pipeline?id=eq.' + lead.id);
-        await httpGet(parsed.hostname, parsed.pathname + parsed.search, {}); // placeholder - would need PATCH
+        await httpPatch(parsed.hostname, parsed.pathname + parsed.search, {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_KEY,
+          'Prefer': 'return=minimal'
+        }, { state: 'STALLED' });
       } catch {}
     }
   }
