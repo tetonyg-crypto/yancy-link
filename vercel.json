@@ -3,6 +3,12 @@
   "outputDirectory": ".",
   "framework": null,
   "cleanUrls": true,
+  "crons": [
+    {
+      "path": "/api/dashboard",
+      "schedule": "0 8,12,16,20 * * *"
+    }
+  ],
   "redirects": [
     { "source": "/inventory/:path*", "destination": "https://inventory.yancygarcia.com/:path*", "permanent": false }
   ],
