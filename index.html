@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
 <title>Yancy Garcia | Text Me About a Car</title>
 <meta name="description" content="I help people in Jackson find the right car without the runaround. New, used, trades, financing. Text me.">
 <meta property="og:title" content="Yancy Garcia — Jackson WY">
@@ -13,410 +13,354 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="design-system/tokens.css">
-<link rel="stylesheet" href="design-system/components.css">
 <style>
-/* ═══ PAGE-SPECIFIC LAYOUT ═══ */
+/* ═══════════════════════════════════════════════════
+   SUMMIT & SLATE — Design System from Stitch
+   Colors: #0a0a0b bg, #111113 surface, #E8FF00 accent
+   Fonts: Bebas Neue (display), Instrument Serif (body)
+   ═══════════════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0b;--sf:#111113;--sf2:#161618;--bd:#1c1c20;
+  --tx:#f0f0f2;--mt:#6b6b75;--ac:#E8FF00;--acf:#0a0a0b;
+  --acdim:rgba(232,255,0,.05);
+  --fd:'Bebas Neue',Impact,sans-serif;
+  --fb:'Instrument Serif',Georgia,serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--fb);background:var(--bg);color:var(--tx);
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  line-height:1.5;padding-bottom:60px;
+}
+@media(min-width:768px){body{padding-bottom:0}}
+a{text-decoration:none;color:inherit;-webkit-tap-highlight-color:transparent}
+img{display:block;max-width:100%}
+.d{font-family:var(--fd);font-weight:400;letter-spacing:.03em}
 
-/* HERO */
-.hero {
-  min-height: 100vh; min-height: 100dvh;
-  display: flex; flex-direction: column;
-  position: relative;
-}
-.hero-img {
-  width: 100%; height: 52vh;
-  object-fit: cover; object-position: center 20%;
-  filter: grayscale(15%) contrast(1.08);
-}
-.hero-body {
-  flex: 1; padding: var(--space-8) var(--space-6) var(--space-12);
-  display: flex; flex-direction: column; justify-content: center;
-}
-.hero-eyebrow {
-  font-family: var(--font-display);
-  font-size: var(--text-xs); letter-spacing: 0.2em;
-  color: var(--color-muted); margin-bottom: var(--space-4);
-}
-.hero-h {
-  font-size: var(--text-hero); line-height: 0.88;
-  color: var(--color-accent); margin-bottom: var(--space-6);
-}
-.hero-p {
-  font-size: var(--text-lg); line-height: 1.55;
-  color: var(--color-muted); font-style: italic;
-  max-width: 380px; margin-bottom: var(--space-8);
-}
-.hero-cta-wrap { display: flex; flex-direction: column; gap: var(--space-4); max-width: 320px; }
-.hero-phone {
-  text-align: center; margin-top: var(--space-4);
-  font-family: var(--font-display);
-  font-size: var(--text-lg); letter-spacing: 0.15em;
-  color: var(--color-muted);
-}
-@media(min-width:768px) {
-  .hero { flex-direction: row; }
-  .hero-img { width: 48%; height: 100vh; position: sticky; top: 0; }
-  .hero-body { width: 52%; padding: var(--space-16) var(--space-12); }
+/* Grain */
+body::after{
+  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.025;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* WHY SECTION */
-.why {
-  padding: var(--space-16) var(--space-6);
-  max-width: 600px; margin: 0 auto;
-}
-.why-label {
-  font-family: var(--font-display);
-  font-size: var(--text-xs); letter-spacing: 0.2em;
-  color: var(--color-muted); margin-bottom: var(--space-8);
-}
-.why-item {
-  display: flex; gap: var(--space-6);
-  padding: var(--space-6) 0;
-  border-bottom: 1px solid var(--color-border);
-}
-.why-item:last-child { border-bottom: none; }
-.why-num {
-  font-family: var(--font-display);
-  font-size: var(--text-3xl); line-height: 1;
-  color: var(--color-accent); flex-shrink: 0;
-  width: 48px;
-}
-.why-text { font-size: var(--text-base); color: var(--color-muted); line-height: 1.6; }
-.why-text strong { color: var(--color-text); font-weight: normal; }
+/* Reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.v{opacity:1;transform:translateY(0)}
+.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 
-/* PROOF */
-.proof {
-  padding: var(--space-16) var(--space-6);
-  background: var(--color-surface);
+/* ═══ HERO ═══ */
+.hero{position:relative;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+.hero-img-wrap{position:relative;width:100%;height:56vh;overflow:hidden}
+.hero-img{width:100%;height:100%;object-fit:cover;object-position:center 15%;filter:contrast(1.05)}
+.hero-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,var(--bg) 100%)}
+.hero-nav{
+  position:absolute;top:0;left:0;right:0;z-index:10;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 24px;
 }
-.proof-inner { max-width: 600px; margin: 0 auto; }
-.proof-label {
-  font-family: var(--font-display);
-  font-size: var(--text-xs); letter-spacing: 0.2em;
-  color: var(--color-muted); margin-bottom: var(--space-8);
-  text-align: center;
+.hero-logo{font-family:var(--fd);font-size:18px;letter-spacing:.08em;color:var(--tx)}
+.hero-nav-cta{
+  font-family:var(--fd);font-size:13px;letter-spacing:.08em;
+  padding:10px 20px;background:var(--ac);color:var(--acf);
 }
-.proof-stats {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-3); margin-bottom: var(--space-12);
+.hero-body{padding:0 24px 48px;display:flex;flex-direction:column;justify-content:flex-end;flex:1}
+.hero-loc{font-family:var(--fd);font-size:11px;letter-spacing:.25em;color:var(--ac);margin-bottom:16px;opacity:.8}
+.hero-h{font-size:clamp(2.8rem,9vw,5.5rem);line-height:.9;margin-bottom:16px}
+.hero-h span{color:var(--ac)}
+.hero-sub{font-size:17px;color:var(--mt);font-style:italic;max-width:380px;margin-bottom:28px;line-height:1.55}
+.hero-name{font-family:var(--fd);font-size:13px;letter-spacing:.12em;color:var(--mt);margin-bottom:24px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:18px 40px;font-family:var(--fd);font-size:18px;letter-spacing:.06em;
+  border:none;cursor:pointer;position:relative;overflow:hidden;
+  transition:transform .15s var(--ease),box-shadow .3s var(--ease);
 }
-.proof-stat {
-  text-align: center; padding: var(--space-6) var(--space-2);
-  background: var(--color-bg); border: 1px solid var(--color-border);
+.btn:active{transform:scale(.97)}
+.btn-y{background:var(--ac);color:var(--acf)}
+.btn-y:hover{box-shadow:0 0 48px rgba(232,255,0,.18);transform:translateY(-2px)}
+.btn-y::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.12) 50%,transparent 60%);
+  transform:translateX(-100%);transition:transform .6s var(--ease);
 }
-.proof-stat-num {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl); color: var(--color-accent);
-}
-.proof-stat-label { font-size: var(--text-xs); color: var(--color-muted); margin-top: var(--space-1); }
-.proof-quote {
-  padding: var(--space-6) var(--space-8);
-  border-left: 2px solid var(--color-accent);
-  margin-bottom: var(--space-6);
-  font-size: var(--text-base); font-style: italic;
-  color: var(--color-muted); line-height: 1.65;
-}
-.proof-attr {
-  display: block; font-style: normal;
-  font-size: var(--text-xs); margin-top: var(--space-3); opacity: 0.5;
+.btn-y:hover::after{transform:translateX(100%)}
+.btn-o{background:transparent;color:var(--ac);border:1px solid rgba(232,255,0,.25);margin-left:12px}
+.btn-o:hover{border-color:var(--ac);background:rgba(232,255,0,.06)}
+.hero-phone{margin-top:16px;font-family:var(--fd);font-size:16px;letter-spacing:.12em;color:var(--mt)}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px}
+@media(min-width:768px){
+  .hero{flex-direction:row}
+  .hero-img-wrap{position:absolute;inset:0;width:50%;height:100%}
+  .hero-img-overlay{background:linear-gradient(to right,transparent 50%,var(--bg) 95%),linear-gradient(to bottom,transparent 60%,var(--bg))}
+  .hero-body{margin-left:42%;padding:80px 64px 80px 0;justify-content:center}
+  .hero-nav{padding:28px 40px}
 }
 
-/* INVENTORY */
-.inv {
-  padding: var(--space-16) var(--space-6);
-  max-width: 960px; margin: 0 auto;
-}
-.inv-label {
-  font-family: var(--font-display);
-  font-size: var(--text-xs); letter-spacing: 0.2em;
-  color: var(--color-muted); margin-bottom: var(--space-8);
-  text-align: center;
-}
-.inv-grid {
-  display: grid; grid-template-columns: 1fr;
-  gap: var(--space-4); margin-bottom: var(--space-8);
-}
-@media(min-width:640px) { .inv-grid { grid-template-columns: repeat(3, 1fr); } }
-.inv-see-all {
-  display: block; max-width: 280px; margin: 0 auto;
-  text-align: center;
-}
+/* ═══ TICKER ═══ */
+.ticker{background:var(--sf);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);overflow:hidden;padding:14px 0}
+.ticker-t{display:flex;white-space:nowrap;width:max-content;animation:tk 35s linear infinite}
+.ticker-i{font-family:var(--fd);font-size:12px;letter-spacing:.2em;color:var(--ac);opacity:.55;padding:0 20px}
+.ticker-dot{opacity:.25}
+@keyframes tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* FRICTION REDUCERS */
-.friction {
-  padding: var(--space-12) var(--space-6);
-  background: var(--color-surface);
+/* ═══ WHY ═══ */
+.why{padding:80px 24px;max-width:680px;margin:0 auto}
+.sec-label{font-family:var(--fd);font-size:11px;letter-spacing:.22em;color:var(--ac);margin-bottom:48px;opacity:.7}
+.why-item{display:flex;gap:24px;margin-bottom:48px}
+.why-icon{
+  width:44px;height:44px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--acdim);border:1px solid rgba(232,255,0,.08);
+  font-family:var(--fd);font-size:16px;color:var(--ac);
 }
-.friction-inner { max-width: 600px; margin: 0 auto; }
-.friction-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: var(--space-3);
-}
-.friction-item {
-  padding: var(--space-6) var(--space-4);
-  text-align: center;
-  background: var(--color-bg); border: 1px solid var(--color-border);
-}
-.friction-icon { font-size: 24px; margin-bottom: var(--space-2); }
-.friction-title {
-  font-family: var(--font-display);
-  font-size: var(--text-sm); letter-spacing: 0.06em;
-}
-.friction-sub { font-size: var(--text-xs); color: var(--color-muted); margin-top: var(--space-1); }
+.why-title{font-family:var(--fd);font-size:16px;letter-spacing:.04em;margin-bottom:4px}
+.why-desc{font-size:15px;color:var(--mt);line-height:1.6}
 
-/* MID CTA */
-.mid-cta {
-  padding: var(--space-16) var(--space-6);
-  text-align: center;
+/* ═══ PROOF ═══ */
+.proof{padding:80px 24px;background:var(--sf)}
+.proof-in{max-width:680px;margin:0 auto}
+.proof-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:56px}
+.proof-stat{text-align:center;padding:24px 12px;background:var(--bg);border:1px solid var(--bd)}
+.proof-n{font-family:var(--fd);font-size:28px;color:var(--ac)}
+.proof-l{font-size:11px;color:var(--mt);margin-top:4px;letter-spacing:.02em}
+.proof-q{
+  padding:24px 28px;border-left:2px solid var(--ac);margin-bottom:20px;
+  font-size:15px;font-style:italic;color:var(--mt);line-height:1.65;
 }
-.mid-cta-h {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 7vw, 4rem);
-  color: var(--color-text); margin-bottom: var(--space-2);
-}
-.mid-cta-p {
-  font-size: var(--text-base); color: var(--color-muted);
-  font-style: italic; margin-bottom: var(--space-8);
-}
+.proof-a{display:block;font-style:normal;font-size:11px;margin-top:10px;opacity:.5;letter-spacing:.02em}
 
-/* FORM */
-.form-section {
-  padding: var(--space-12) var(--space-6);
-  max-width: 480px; margin: 0 auto;
-}
-.form-label {
-  font-family: var(--font-display);
-  font-size: var(--text-xs); letter-spacing: 0.2em;
-  color: var(--color-muted); margin-bottom: var(--space-6);
-  text-align: center;
-}
-.form-box {
-  border-left: 3px solid var(--color-accent);
-  padding: var(--space-8);
-  background: var(--color-surface);
-}
-.form-field {
-  width: 100%; padding: 16px; margin-bottom: var(--space-3);
-  background: var(--color-bg); border: 1px solid var(--color-border);
-  color: var(--color-text); font-family: var(--font-body);
-  font-size: var(--text-base); outline: none;
-  transition: border-color var(--duration-fast);
-}
-.form-field::placeholder { color: var(--color-muted); }
-.form-field:focus { border-color: var(--color-accent); }
-.form-field option { background: var(--color-bg); color: var(--color-text); }
-.form-note {
-  text-align: center; margin-top: var(--space-4);
-  font-size: var(--text-sm); color: var(--color-muted);
-}
-.form-note a { color: var(--color-accent); }
-.form-ok { display:none; text-align:center; padding:var(--space-12) var(--space-4); }
-.form-ok.on { display:block; }
-.form-ok-h { font-family:var(--font-display); font-size:var(--text-2xl); color:var(--color-accent); margin-bottom:var(--space-2); }
-.form-ok-p { font-size:var(--text-base); color:var(--color-muted); line-height:1.6; }
+/* ═══ DIVIDER ═══ */
+.div-d{width:100%;height:56px;background:var(--sf);clip-path:polygon(0 0,100% 0,100% 30%,0 100%)}
+.div-u{width:100%;height:56px;background:var(--bg);clip-path:polygon(0 70%,100% 0,100% 100%,0 100%)}
 
-/* FOOTER */
-.footer {
-  padding: var(--space-12) var(--space-6);
-  text-align: center;
-  border-top: 1px solid var(--color-border);
+/* ═══ INVENTORY ═══ */
+.inv{padding:80px 24px;max-width:960px;margin:0 auto}
+.inv-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:32px}
+@media(min-width:640px){.inv-grid{grid-template-columns:repeat(3,1fr)}}
+.inv-card{
+  background:var(--sf);border:1px solid var(--bd);overflow:hidden;
+  transition:transform .3s var(--ease),border-color .3s,box-shadow .3s;
 }
-.footer-line {
-  font-family: var(--font-display);
-  font-size: var(--text-xs); letter-spacing: 0.12em;
-  color: var(--color-muted); margin-bottom: var(--space-4);
+.inv-card:hover{transform:translateY(-4px);border-color:var(--ac);box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.inv-card img{width:100%;height:200px;object-fit:cover;filter:saturate(.92) contrast(1.04);transition:filter .4s}
+.inv-card:hover img{filter:saturate(1) contrast(1)}
+.inv-card-body{padding:20px}
+.inv-card-title{font-family:var(--fd);font-size:17px;letter-spacing:.04em;margin-bottom:4px}
+.inv-card-meta{font-size:13px;color:var(--mt);margin-bottom:14px}
+.inv-card-cta{font-family:var(--fd);font-size:12px;letter-spacing:.1em;color:var(--ac);transition:letter-spacing .3s}
+.inv-card:hover .inv-card-cta{letter-spacing:.16em}
+.inv-all{display:block;max-width:280px;margin:0 auto;text-align:center;padding:14px 28px;border:1px solid rgba(232,255,0,.25);font-family:var(--fd);font-size:15px;letter-spacing:.06em;color:var(--ac);transition:background .2s,color .2s}
+.inv-all:hover{background:var(--ac);color:var(--acf)}
+
+/* ═══ FORM ═══ */
+.form-s{padding:80px 24px;background:var(--sf)}
+.form-in{max-width:480px;margin:0 auto}
+.form-h{font-family:var(--fd);font-size:clamp(2rem,6vw,3rem);margin-bottom:6px}
+.form-p{font-size:15px;color:var(--mt);font-style:italic;margin-bottom:32px}
+.form-box{border-left:3px solid var(--ac);padding:32px;background:var(--bg)}
+.ff{
+  width:100%;padding:16px;margin-bottom:10px;
+  background:var(--sf2);border:1px solid var(--bd);
+  color:var(--tx);font-family:var(--fb);font-size:16px;
+  outline:none;transition:border-color .15s;
 }
-.footer-links { display:flex; gap:var(--space-6); justify-content:center; margin-bottom:var(--space-4); }
-.footer-links a {
-  font-size: var(--text-sm); color: var(--color-muted);
-  transition: color var(--duration-fast);
+.ff::placeholder{color:var(--mt)}.ff:focus{border-color:var(--ac)}
+.ff option{background:var(--sf2);color:var(--tx)}
+.form-note{text-align:center;margin-top:14px;font-size:14px;color:var(--mt)}
+.form-note a{color:var(--ac)}
+.form-ok{display:none;text-align:center;padding:48px 20px}
+.form-ok.on{display:block}
+.form-ok h3{font-family:var(--fd);font-size:28px;color:var(--ac);margin-bottom:8px}
+.form-ok p{font-size:15px;color:var(--mt);line-height:1.6}
+
+/* ═══ FOOTER ═══ */
+.foot{padding:48px 24px;text-align:center;border-top:1px solid var(--bd)}
+.foot-line{font-family:var(--fd);font-size:12px;letter-spacing:.12em;color:var(--mt);margin-bottom:16px}
+.foot-links{display:flex;gap:20px;justify-content:center;margin-bottom:16px}
+.foot-links a{font-size:14px;color:var(--mt);transition:color .15s}
+.foot-links a:hover{color:var(--ac)}
+.foot-brand{font-family:var(--fd);font-size:10px;letter-spacing:.15em;color:var(--mt);opacity:.3}
+
+/* ═══ STICKY ═══ */
+.sticky{
+  position:fixed;bottom:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px;background:var(--ac);color:var(--acf);
+  font-family:var(--fd);font-size:17px;letter-spacing:.06em;
+  box-shadow:0 -4px 24px rgba(0,0,0,.5);
 }
-.footer-links a:hover { color: var(--color-accent); }
-.footer-brand {
-  font-family: var(--font-display);
-  font-size: 10px; letter-spacing: 0.15em;
-  color: var(--color-muted); opacity: 0.3;
-}
+.sticky:active{opacity:.9}
+.sticky-s{font-size:13px;opacity:.5}
+@media(min-width:768px){.sticky{display:none}}
 </style>
 </head>
 <body>
 
-<!-- ═══ 1. HERO ═══ -->
+<!-- ═══ HERO ═══ -->
 <section class="hero">
-  <img src="assets/avatar.jpg" alt="Yancy Garcia" class="hero-img" fetchpriority="high">
+  <div class="hero-img-wrap">
+    <img src="assets/avatar.jpg" alt="Yancy Garcia" class="hero-img" fetchpriority="high">
+    <div class="hero-img-overlay"></div>
+  </div>
+  <nav class="hero-nav">
+    <div class="hero-logo d">YANCY GARCIA</div>
+    <a href="sms:3076993743" class="hero-nav-cta d">Text me</a>
+  </nav>
   <div class="hero-body">
-    <div class="hero-eyebrow d">STONE'S AUTO GROUP &middot; JACKSON WY</div>
-    <h1 class="d hero-h">FIND THE<br>RIGHT CAR.</h1>
-    <p class="hero-p">I help people in Jackson find the right car without the runaround. New or used, I'll help you find something that fits.</p>
-    <div class="hero-cta-wrap">
-      <a href="sms:3076993743" class="btn-primary d">Text me &rarr;</a>
-      <a href="https://inventory.yancygarcia.com" class="btn-secondary d">See what I have</a>
+    <div class="hero-loc d">JACKSON HOLE &middot; WYOMING</div>
+    <h1 class="d hero-h">Your <span>partner</span><br>in the mountains.</h1>
+    <p class="hero-sub">I help people in Jackson find the right car without the runaround. New or used, I'll find something that fits.</p>
+    <div class="hero-name d">YANCY GARCIA &middot; STONE'S AUTO GROUP</div>
+    <div class="hero-btns">
+      <a href="sms:3076993743" class="btn btn-y d">Text me &rarr;</a>
+      <a href="https://inventory.yancygarcia.com" class="btn btn-o d">See inventory</a>
     </div>
-    <div class="hero-phone d">(307) 699-3743</div>
+    <div class="hero-phone d">(307) 699 &middot; 3743</div>
   </div>
 </section>
 
-<!-- ═══ 2. TRUST TICKER ═══ -->
+<!-- ═══ TICKER ═══ -->
 <div class="ticker">
-  <div class="ticker-track">
-    <span class="ticker-item">STONE'S AUTO GROUP</span><span class="ticker-item ticker-dot">&middot;</span>
-    <span class="ticker-item">JACKSON WY</span><span class="ticker-item ticker-dot">&middot;</span>
-    <span class="ticker-item">HABLO ESPANOL</span><span class="ticker-item ticker-dot">&middot;</span>
-    <span class="ticker-item">New and used</span><span class="ticker-item ticker-dot">&middot;</span>
-    <span class="ticker-item">Trades welcome</span><span class="ticker-item ticker-dot">&middot;</span>
-    <span class="ticker-item">Financing available</span><span class="ticker-item ticker-dot">&middot;</span>
-    <span class="ticker-item">Stone's Auto Group</span><span class="ticker-item ticker-dot">&middot;</span>
-    <span class="ticker-item">Jackson WY</span><span class="ticker-item ticker-dot">&middot;</span>
-    <span class="ticker-item">Hablo espanol</span><span class="ticker-item ticker-dot">&middot;</span>
-    <span class="ticker-item">New and used</span><span class="ticker-item ticker-dot">&middot;</span>
-    <span class="ticker-item">Trades welcome</span><span class="ticker-item ticker-dot">&middot;</span>
-    <span class="ticker-item">Financing available</span><span class="ticker-item ticker-dot">&middot;</span>
+  <div class="ticker-t">
+    <span class="ticker-i">Stone's Auto Group</span><span class="ticker-i ticker-dot">&middot;</span>
+    <span class="ticker-i">Jackson WY</span><span class="ticker-i ticker-dot">&middot;</span>
+    <span class="ticker-i">Hablo Espanol</span><span class="ticker-i ticker-dot">&middot;</span>
+    <span class="ticker-i">Trades welcome</span><span class="ticker-i ticker-dot">&middot;</span>
+    <span class="ticker-i">Financing available</span><span class="ticker-i ticker-dot">&middot;</span>
+    <span class="ticker-i">New and used</span><span class="ticker-i ticker-dot">&middot;</span>
+    <span class="ticker-i">Stone's Auto Group</span><span class="ticker-i ticker-dot">&middot;</span>
+    <span class="ticker-i">Jackson WY</span><span class="ticker-i ticker-dot">&middot;</span>
+    <span class="ticker-i">Hablo Espanol</span><span class="ticker-i ticker-dot">&middot;</span>
+    <span class="ticker-i">Trades welcome</span><span class="ticker-i ticker-dot">&middot;</span>
+    <span class="ticker-i">Financing available</span><span class="ticker-i ticker-dot">&middot;</span>
+    <span class="ticker-i">New and used</span><span class="ticker-i ticker-dot">&middot;</span>
   </div>
 </div>
 
-<!-- ═══ 3. WHY YANCY ═══ -->
+<!-- ═══ WHY ═══ -->
 <section class="why">
-  <div class="why-label d rv">How I work</div>
+  <div class="sec-label d rv">How I work</div>
   <div class="why-item rv rv-d1">
-    <div class="why-num d">01</div>
-    <div class="why-text"><strong>I text back fast.</strong> Usually within a few minutes. No phone trees, no getting transferred around.</div>
+    <div class="why-icon d">01</div>
+    <div>
+      <div class="why-title d">I text back fast</div>
+      <div class="why-desc">Usually within a few minutes. No phone trees, no getting transferred around. You text me, I answer.</div>
+    </div>
   </div>
   <div class="why-item rv rv-d2">
-    <div class="why-num d">02</div>
-    <div class="why-text"><strong>I'll be straight with you.</strong> If something doesn't make sense for your situation, I'll tell you. No pressure.</div>
+    <div class="why-icon d">02</div>
+    <div>
+      <div class="why-title d">Local WY specialist</div>
+      <div class="why-desc">I know Jackson, I know the roads, I know what works up here. I'll help you find something that actually makes sense for your life.</div>
+    </div>
   </div>
   <div class="why-item rv rv-d3">
-    <div class="why-num d">03</div>
-    <div class="why-text"><strong>Hablo espanol.</strong> Mismo trato, mismo precio. Escribeme cuando quieras.</div>
+    <div class="why-icon d">03</div>
+    <div>
+      <div class="why-title d">Straightforward process</div>
+      <div class="why-desc">I'll tell you the real number and the real timeline. If something doesn't make sense for your situation, I'll say so. No pressure.</div>
+    </div>
   </div>
 </section>
 
-<!-- ═══ 4. PROOF ═══ -->
+<!-- ═══ PROOF ═══ -->
+<div class="div-u"></div>
 <section class="proof">
-  <div class="proof-inner">
-    <div class="proof-label d rv">A little context</div>
+  <div class="proof-in">
+    <div class="sec-label d rv" style="text-align:center">A little context</div>
     <div class="proof-stats rv">
       <div class="proof-stat">
-        <div class="proof-stat-num d">130+</div>
-        <div class="proof-stat-label">cars sold year one</div>
+        <div class="proof-n d">130+</div>
+        <div class="proof-l">cars sold year one</div>
       </div>
       <div class="proof-stat">
-        <div class="proof-stat-num d">&lt;5m</div>
-        <div class="proof-stat-label">avg response</div>
+        <div class="proof-n d" id="vCount">120+</div>
+        <div class="proof-l">in stock now</div>
       </div>
       <div class="proof-stat">
-        <div class="proof-stat-num d" id="vCount">120+</div>
-        <div class="proof-stat-label">in stock now</div>
+        <div class="proof-n d">&lt;5m</div>
+        <div class="proof-l">avg response</div>
       </div>
     </div>
-    <div class="proof-quote rv">
-      Texted Yancy on a Saturday, drove off the lot Monday. Whole thing was easy.
-      <span class="proof-attr">— Jackson WY</span>
+    <div class="proof-q rv">
+      Texted Yancy on a Saturday, drove off the lot Monday. Whole thing was easy. No pressure, no games.
+      <span class="proof-a">— Jackson WY</span>
     </div>
-    <div class="proof-quote rv">
-      Le mande mensaje y me respondio rapido. Me ayudo con todo, muy buena onda.
-      <span class="proof-attr">— Jackson WY</span>
+    <div class="proof-q rv">
+      Le mande mensaje y me respondio rapido. Me ayudo con todo, muy buena onda. Lo recomiendo.
+      <span class="proof-a">— Jackson WY</span>
     </div>
   </div>
 </section>
+<div class="div-d"></div>
 
-<!-- ═══ 5. FEATURED INVENTORY ═══ -->
+<!-- ═══ INVENTORY ═══ -->
 <section class="inv">
-  <div class="inv-label d rv">A few things I have right now</div>
+  <div class="sec-label d rv" style="text-align:center">A few things I have right now</div>
   <div class="inv-grid" id="invGrid"></div>
-  <a href="https://inventory.yancygarcia.com" class="btn-secondary d inv-see-all rv">See everything I have &rarr;</a>
+  <a href="https://inventory.yancygarcia.com" class="inv-all d rv">See everything I have &rarr;</a>
 </section>
 
-<!-- ═══ 6. FRICTION REDUCERS ═══ -->
-<section class="friction">
-  <div class="friction-inner">
-    <div class="friction-grid rv">
-      <div class="friction-item">
-        <div class="friction-icon">⚡</div>
-        <div class="friction-title d">Same day</div>
-        <div class="friction-sub">You can drive it home today</div>
-      </div>
-      <div class="friction-item">
-        <div class="friction-icon">💳</div>
-        <div class="friction-title d">Financing</div>
-        <div class="friction-sub">All credit situations welcome</div>
-      </div>
-      <div class="friction-item">
-        <div class="friction-icon">🔄</div>
-        <div class="friction-title d">Trades</div>
-        <div class="friction-sub">I'll give you a fair number</div>
-      </div>
-      <div class="friction-item">
-        <div class="friction-icon">🇲🇽</div>
-        <div class="friction-title d">Espanol</div>
-        <div class="friction-sub">Escribeme cuando quieras</div>
+<!-- ═══ FORM ═══ -->
+<section class="form-s">
+  <div class="form-in rv">
+    <div class="form-h d">Let's chat.</div>
+    <p class="form-p">Drop your info and I'll text you back personally.</p>
+    <div class="form-box">
+      <form id="lf">
+        <input type="text" name="name" placeholder="First name" required class="ff">
+        <input type="tel" name="phone" placeholder="Phone number" required class="ff">
+        <select name="need" class="ff">
+          <option value="" disabled selected>What do you need?</option>
+          <option value="vehicle">Looking for a vehicle</option>
+          <option value="trade">Trade-in value</option>
+          <option value="financing">Financing / payments</option>
+          <option value="espanol">Ayuda en espanol</option>
+        </select>
+        <button type="submit" class="btn btn-y d" style="width:100%">Send it &rarr;</button>
+      </form>
+      <div class="form-note">Or text me directly: <a href="sms:3076993743">(307) 699-3743</a></div>
+      <div id="fOk" class="form-ok">
+        <h3 class="d">Got it.</h3>
+        <p>I'll text you back shortly. Want me faster? <a href="sms:3076993743" style="color:var(--ac)">Text me directly</a></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ 7. MID CTA ═══ -->
-<section class="mid-cta rv">
-  <div class="mid-cta-h d">Sound good?</div>
-  <p class="mid-cta-p">Shoot me a text. I'll get back to you quick.</p>
-  <a href="sms:3076993743" class="btn-primary d" style="margin:0 auto">Text me &rarr;</a>
-</section>
-
-<!-- ═══ 8. FORM ═══ -->
-<section class="form-section">
-  <div class="form-label d rv">Or drop your info here</div>
-  <div class="form-box rv">
-    <form id="lf">
-      <input type="text" name="name" placeholder="First name" required class="form-field">
-      <input type="tel" name="phone" placeholder="Phone number" required class="form-field">
-      <select name="need" class="form-field">
-        <option value="" disabled selected>What do you need?</option>
-        <option value="vehicle">Looking for a vehicle</option>
-        <option value="trade">Trade-in value</option>
-        <option value="financing">Financing / payments</option>
-        <option value="espanol">Ayuda en espanol</option>
-      </select>
-      <button type="submit" class="btn-primary d" style="width:100%">Send it &rarr;</button>
-    </form>
-    <div class="form-note">I'll text you back personally — <a href="sms:3076993743">(307) 699-3743</a></div>
-    <div id="formOk" class="form-ok">
-      <div class="form-ok-h d">Got it.</div>
-      <div class="form-ok-p">I'll text you back shortly.<br>Want me faster? <a href="sms:3076993743" style="color:var(--color-accent)">Text me directly</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 9. FOOTER ═══ -->
-<footer class="footer">
-  <div class="footer-line d">Yancy Garcia &middot; Stone's Auto Group &middot; Jackson WY</div>
-  <div class="footer-links">
+<!-- ═══ FOOTER ═══ -->
+<footer class="foot">
+  <div class="foot-line d">Yancy Garcia &middot; Stone's Auto Group &middot; Jackson WY</div>
+  <div class="foot-links">
     <a href="https://instagram.com/cardogvlogs">Instagram</a>
     <a href="https://tiktok.com/@cardogvlogs">TikTok</a>
     <a href="https://facebook.com/yancygarcia24">Facebook</a>
     <a href="https://wa.me/13076993743">WhatsApp</a>
   </div>
-  <div class="footer-brand d">CARDOGVLOGS</div>
+  <div class="foot-brand d">CarDogVlogs</div>
 </footer>
 
-<!-- ═══ STICKY CTA ═══ -->
-<a href="sms:3076993743" class="sticky-cta d">
+<!-- ═══ STICKY ═══ -->
+<a href="sms:3076993743" class="sticky d">
   <span>Text me</span>
-  <span class="sticky-sub">(307) 699-3743</span>
+  <span class="sticky-s">(307) 699-3743</span>
 </a>
 
 <script>
 /* Source tracking */
-var src=new URLSearchParams(location.search).get('src')||'direct';
-sessionStorage.setItem('src',src);
+var s=new URLSearchParams(location.search).get('src')||'direct';
+sessionStorage.setItem('src',s);
 
 /* Scroll reveals */
-var obs=new IntersectionObserver(function(e){
-  e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target)}});
-},{threshold:0.12});
-document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+var io=new IntersectionObserver(function(e){
+  e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}});
+},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 
-/* Featured inventory — pull 3 diverse vehicles */
+/* Featured inventory */
 fetch('https://inventory.yancygarcia.com/data/inventory.json')
 .then(function(r){return r.json()})
 .then(function(data){
@@ -425,19 +369,19 @@ fetch('https://inventory.yancygarcia.com/data/inventory.json')
   var trucks=ok.filter(function(v){return v.body==='Truck'});
   var suvs=ok.filter(function(v){return v.body==='SUV'});
   var other=ok.filter(function(v){return v.body!=='Truck'&&v.body!=='SUV'});
-  var picks=[trucks[0]||ok[0], suvs[0]||ok[1], other[0]||ok[2]].filter(Boolean).slice(0,3);
+  var picks=[trucks[0]||ok[0],suvs[0]||ok[1],(other[0]||ok[2])].filter(Boolean).slice(0,3);
   picks.forEach(function(v){
     var img=v.photos[1]||v.photos[0];
     var c=document.createElement('a');
-    c.className='card-vehicle rv';
+    c.className='inv-card rv';
     c.href='sms:3076993743?body='+encodeURIComponent('Hey Yancy, interested in the '+v.year+' '+v.make+' '+v.model);
     c.innerHTML='<img src="'+img+'" alt="'+v.year+' '+v.make+' '+v.model+'" loading="lazy">'+
-      '<div class="card-vehicle-info">'+
-      '<div class="card-vehicle-title d">'+v.year+' '+v.make+' '+v.model+(v.trim?' '+v.trim:'')+'</div>'+
-      '<div class="card-vehicle-meta">$'+v.price.toLocaleString()+' &middot; '+v.mileage.toLocaleString()+' mi</div>'+
-      '<div class="card-vehicle-cta d">Text me about this &rarr;</div></div>';
+      '<div class="inv-card-body">'+
+      '<div class="inv-card-title d">'+v.year+' '+v.make+' '+v.model+(v.trim?' '+v.trim:'')+'</div>'+
+      '<div class="inv-card-meta">$'+v.price.toLocaleString()+' &middot; '+v.mileage.toLocaleString()+' mi</div>'+
+      '<div class="inv-card-cta d">Text me about this &rarr;</div></div>';
     g.appendChild(c);
-    obs.observe(c);
+    io.observe(c);
   });
   var ct=data.filter(function(v){return v.published}).length;
   document.getElementById('vCount').textContent=ct+'+';
@@ -446,16 +390,15 @@ fetch('https://inventory.yancygarcia.com/data/inventory.json')
 /* Form */
 document.getElementById('lf').addEventListener('submit',function(e){
   e.preventDefault();var f=e.target;
-  var btn=f.querySelector('.btn-primary');btn.textContent='SENDING...';btn.disabled=true;
+  var btn=f.querySelector('.btn');btn.textContent='Sending...';btn.disabled=true;
   fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},
     body:JSON.stringify({name:f.name.value,phone:f.phone.value,need:f.need.value,
     source:sessionStorage.getItem('src')||'landing',timestamp:new Date().toISOString()})
   }).then(function(r){
-    if(r.ok){f.style.display='none';document.getElementById('formOk').classList.add('on')}
+    if(r.ok){f.style.display='none';document.getElementById('fOk').classList.add('on')}
     else throw 0;
   }).catch(function(){
-    location.href='sms:3076993743?body='+encodeURIComponent('Hey Yancy, I need help with a '+
-    (f.need.value||'vehicle')+'. - '+f.name.value);
+    location.href='sms:3076993743?body='+encodeURIComponent('Hey Yancy, I need help with a '+(f.need.value||'vehicle')+'. - '+f.name.value);
   });
 });
 </script>
