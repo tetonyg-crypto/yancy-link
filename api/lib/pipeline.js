@@ -47,21 +47,25 @@ function httpPatch(hostname, path, headers, body) {
 async function insertPipelineLead(lead) {
   const URL = process.env.SUPABASE_URL;
   const KEY = process.env.SUPABASE_KEY;
-  if (!URL || !KEY) return null;
+  if (!URL || !KEY) { console.error('Pipeline: no SUPABASE_URL or KEY'); return null; }
   try {
     const parsed = new URL(URL + '/rest/v1/lead_pipeline');
-    return await httpPost(parsed.hostname, parsed.pathname, {
+    const result = await httpPost(parsed.hostname, parsed.pathname, {
       'Content-Type': 'application/json', 'apikey': KEY,
-      'Authorization': 'Bearer ' + KEY, 'Prefer': 'return=representation'
+      'Authorization': 'Bearer ' + KEY, 'Prefer': 'return=minimal'
     }, {
       name: lead.name || '', phone: lead.phone || '',
       source: lead.source || 'direct', vehicle: lead.vehicle || '',
       lead_type: lead.lead_type || 'general', state: 'NEW',
       score: lead.score || 50, priority: lead.priority || 'MEDIUM',
-      details: lead.details || {}, sms_sent: lead.sms_sent || false,
+      details: JSON.stringify(lead.details || {}), sms_sent: lead.sms_sent || false,
       notes: '', created_at: new Date().toISOString(),
       last_activity: new Date().toISOString()
     });
+    if (result.status >= 300) {
+      console.error('Pipeline insert failed:', result.status, result.body);
+    }
+    return result;
   } catch (err) { console.error('Pipeline insert error:', err.message); return null; }
 }
 

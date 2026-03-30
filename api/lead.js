@@ -38,10 +38,10 @@ module.exports = async function handler(req, res) {
     details: { need: need || '', details: details || '' },
     sms_sent: smsSent
   };
-  await insertPipelineLead(leadData);
+  const pipelineResult = await insertPipelineLead(leadData);
 
   // 4. Smart Telegram alert with copy-paste reply
   await sendTelegram(buildSmartAlert(leadData));
 
-  return res.status(200).json({ ok: true, sms_sent: smsSent });
+  return res.status(200).json({ ok: true, sms_sent: smsSent, pipeline: pipelineResult?.status || 'no_result' });
 };
