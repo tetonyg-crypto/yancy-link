@@ -58,7 +58,7 @@ async function insertPipelineLead(lead) {
       source: lead.source || 'direct', vehicle: lead.vehicle || '',
       lead_type: lead.lead_type || 'general', state: 'NEW',
       score: lead.score || 50, priority: lead.priority || 'MEDIUM',
-      details: JSON.stringify(lead.details || {}), sms_sent: lead.sms_sent || false,
+      details: lead.details || {}, sms_sent: lead.sms_sent || false,
       notes: '', created_at: new Date().toISOString(),
       last_activity: new Date().toISOString()
     });
@@ -66,7 +66,7 @@ async function insertPipelineLead(lead) {
       console.error('Pipeline insert failed:', result.status, result.body);
     }
     return result;
-  } catch (err) { console.error('Pipeline insert error:', err.message); return null; }
+  } catch (err) { console.error('Pipeline insert error:', err.message); return { status: 0, body: err.message }; }
 }
 
 // ─── SMS via MacBook Relay (sends from your real iPhone number) ───
