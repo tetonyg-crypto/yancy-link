@@ -43,5 +43,5 @@ module.exports = async function handler(req, res) {
   // 4. Smart Telegram alert with copy-paste reply
   await sendTelegram(buildSmartAlert(leadData));
 
-  return res.status(200).json({ ok: true, sms_sent: smsSent, pipeline_status: pipelineResult?.status, pipeline_body: pipelineResult?.body?.substring?.(0, 200) || pipelineResult?.body });
+  return res.status(200).json({ ok: true, sms_sent: smsSent });
 };

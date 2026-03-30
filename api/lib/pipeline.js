@@ -47,7 +47,7 @@ function httpPatch(hostname, path, headers, body) {
 async function insertPipelineLead(lead) {
   const SUPA_URL = process.env.SUPABASE_URL;
   const SUPA_KEY = process.env.SUPABASE_KEY;
-  if (!SUPA_URL || !SUPA_KEY) { return { status: 0, body: 'MISSING env vars' }; }
+  if (!SUPA_URL || !SUPA_KEY) return null;
   try {
     const parsed = new globalThis.URL(SUPA_URL + '/rest/v1/lead_pipeline');
     const result = await httpPost(parsed.hostname, parsed.pathname, {
