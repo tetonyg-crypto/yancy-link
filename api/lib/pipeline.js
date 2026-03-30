@@ -47,7 +47,7 @@ function httpPatch(hostname, path, headers, body) {
 async function insertPipelineLead(lead) {
   const URL = process.env.SUPABASE_URL;
   const KEY = process.env.SUPABASE_KEY;
-  if (!URL || !KEY) { console.error('Pipeline: no SUPABASE_URL or KEY'); return null; }
+  if (!URL || !KEY) { return { status: 0, body: 'MISSING: URL=' + (URL ? 'set' : 'empty') + ' KEY=' + (KEY ? KEY.substring(0,10) + '...' : 'empty') }; }
   try {
     const parsed = new URL(URL + '/rest/v1/lead_pipeline');
     const result = await httpPost(parsed.hostname, parsed.pathname, {
