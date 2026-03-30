@@ -45,14 +45,14 @@ function httpPatch(hostname, path, headers, body) {
 
 // ─── Supabase: insert into lead_pipeline ───
 async function insertPipelineLead(lead) {
-  const URL = process.env.SUPABASE_URL;
-  const KEY = process.env.SUPABASE_KEY;
-  if (!URL || !KEY) { return { status: 0, body: 'MISSING: URL=' + (URL ? 'set' : 'empty') + ' KEY=' + (KEY ? KEY.substring(0,10) + '...' : 'empty') }; }
+  const SUPA_URL = process.env.SUPABASE_URL;
+  const SUPA_KEY = process.env.SUPABASE_KEY;
+  if (!SUPA_URL || !SUPA_KEY) { return { status: 0, body: 'MISSING env vars' }; }
   try {
-    const parsed = new URL(URL + '/rest/v1/lead_pipeline');
+    const parsed = new globalThis.URL(SUPA_URL + '/rest/v1/lead_pipeline');
     const result = await httpPost(parsed.hostname, parsed.pathname, {
-      'Content-Type': 'application/json', 'apikey': KEY,
-      'Authorization': 'Bearer ' + KEY, 'Prefer': 'return=minimal'
+      'Content-Type': 'application/json', 'apikey': SUPA_KEY,
+      'Authorization': 'Bearer ' + SUPA_KEY, 'Prefer': 'return=minimal'
     }, {
       name: lead.name || '', phone: lead.phone || '',
       source: lead.source || 'direct', vehicle: lead.vehicle || '',
