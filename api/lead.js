@@ -43,5 +43,18 @@ module.exports = async function handler(req, res) {
   // 4. Smart Telegram alert with copy-paste reply
   await sendTelegram(buildSmartAlert(leadData));
 
+  // 5. Bridge to FORGE OS signal stream
+  try {
+    const forgeUrl = 'https://web-production-af474.up.railway.app/forge/signal';
+    const forgeBody = JSON.stringify({
+      source: 'website', signal_type: 'new_lead',
+      payload: { name, phone, email: '', vehicle: need || '', source: source || 'yancygarcia.com', details: details || '' },
+      priority: 2,
+    });
+    await httpPost('web-production-af474.up.railway.app', '/forge/signal', {
+      'Content-Type': 'application/json', 'Content-Length': forgeBody.length
+    }, JSON.parse(forgeBody));
+  } catch (err) { console.error('FORGE signal error:', err.message); }
+
   return res.status(200).json({ ok: true, sms_sent: smsSent });
 };
