@@ -4,15 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Yancy Garcia — Founder, Brevmont Labs</title>
-<meta name="description" content="Founder of Brevmont Labs. Five years of high-volume sales in Jackson, Wyoming. Operator background in CRM workflow, outbound systems, and retail execution.">
+<meta name="description" content="Founder of Brevmont Labs. Five years of high-volume sales in Jackson, Wyoming. Operator background in CRM workflow, outbound systems, and retail execution — now channeled into Brevmont Labs.">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0F1419">
 <link rel="canonical" href="https://yancygarcia.com/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Yancy Garcia">
 <meta property="og:title" content="Yancy Garcia — Founder, Brevmont Labs">
-<meta property="og:description" content="Founder of Brevmont Labs. Five years of high-volume sales in Jackson, Wyoming. Operator background in CRM workflow, outbound systems, and retail execution.">
+<meta property="og:description" content="Founder of Brevmont Labs. Five years of high-volume sales in Jackson, Wyoming. Operator background in CRM workflow, outbound systems, and retail execution — now channeled into Brevmont Labs.">
 <meta property="og:url" content="https://yancygarcia.com/">
 <meta property="og:image" content="https://yancygarcia.com/og-yancygarcia.png">
 <meta property="og:image:width" content="1200">
@@ -21,275 +22,191 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Yancy Garcia — Founder, Brevmont Labs">
-<meta name="twitter:description" content="Founder of Brevmont Labs. Five years of high-volume sales in Jackson, Wyoming. Operator background in CRM workflow, outbound systems, and retail execution.">
+<meta name="twitter:description" content="Founder of Brevmont Labs. Five years of high-volume sales in Jackson, Wyoming. Operator background in CRM workflow, outbound systems, and retail execution — now channeled into Brevmont Labs.">
 <meta name="twitter:image" content="https://yancygarcia.com/og-yancygarcia.png">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
-<!-- Fonts: Inter 400 + 600 only -->
+<!-- Fonts: Inter 400/500/600/700 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-  /* Design tokens — matches Brevmont visual system */
-  :root {
-    --charcoal: #0F1419;
-    --bone: #F8F6F1;
-    --teal: #0D6E6E;
-    --rule: rgba(248, 246, 241, 0.12);
-    --muted: rgba(248, 246, 241, 0.68);
-    --font: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --max: 720px;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--charcoal);
-    color: var(--bone);
-    font-family: var(--font);
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
-
-  main {
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 96px 32px 96px;
-  }
-
-  a {
-    color: var(--bone);
-    text-decoration: underline;
-    text-decoration-color: var(--rule);
-    text-underline-offset: 4px;
-    transition: text-decoration-color 160ms ease;
-  }
-  a:hover { text-decoration-color: var(--bone); }
-
-  h1, h2, h3 {
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    line-height: 1.15;
-  }
-
-  h1 {
-    font-size: clamp(2.4rem, 5vw, 3.25rem);
-    margin-bottom: 8px;
-  }
-
-  h2 {
-    font-size: 1.625rem;
-    margin-bottom: 32px;
-  }
-
-  h3 {
-    font-size: 1.125rem;
-    margin-bottom: 8px;
-  }
-
-  /* Hero */
-  .hero { margin-bottom: 96px; }
-  .hero .role {
-    font-size: 1rem;
-    color: var(--muted);
-    margin-bottom: 28px;
-  }
-  .hero p {
-    margin-bottom: 20px;
-    max-width: 620px;
-  }
-  .hero .bilingual {
-    color: var(--muted);
-    margin-bottom: 40px;
-  }
-
-  /* CTA buttons */
-  .cta-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .btn {
-    display: inline-block;
-    padding: 14px 24px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    text-decoration: none;
-    border: 1px solid transparent;
-    border-radius: 2px;
-    transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
-  }
-  .btn-primary {
-    background: var(--bone);
-    color: var(--charcoal);
-  }
-  .btn-primary:hover { background: #ffffff; }
-  .btn-secondary {
-    background: transparent;
-    color: var(--bone);
-    border-color: var(--rule);
-  }
-  .btn-secondary:hover {
-    border-color: var(--bone);
-    color: var(--bone);
-  }
-
-  /* Sections */
-  section {
-    padding-top: 56px;
-    border-top: 1px solid var(--rule);
-    margin-bottom: 56px;
-  }
-
-  /* Background block — company-by-company */
-  .bg-block { margin-bottom: 40px; }
-  .bg-block:last-child { margin-bottom: 0; }
-  .bg-block p {
-    color: var(--muted);
-    max-width: 620px;
-  }
-  .bg-block h3 { color: var(--bone); }
-
-  /* What I do — capability list */
-  .cap {
-    margin-bottom: 20px;
-    padding-left: 20px;
-    border-left: 1px solid var(--rule);
-  }
-  .cap:last-child { margin-bottom: 0; }
-  .cap .cap-title {
-    font-weight: 600;
-    color: var(--bone);
-    margin-bottom: 4px;
-  }
-  .cap .cap-desc {
-    color: var(--muted);
-  }
-
-  /* Now section */
-  .now p {
-    color: var(--muted);
-    margin-bottom: 32px;
-  }
-  .contact {
-    margin-top: 40px;
-    padding-top: 32px;
-    border-top: 1px solid var(--rule);
-    font-size: 0.95rem;
-    color: var(--muted);
-    line-height: 2;
-  }
-  .contact a { color: var(--bone); }
-
-  @media (max-width: 640px) {
-    main { padding: 64px 24px; }
-    .hero { margin-bottom: 64px; }
-    section { margin-bottom: 40px; }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.375rem; margin-bottom: 24px; }
-  }
-</style>
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
-<main>
-
   <!-- HERO -->
-  <header class="hero">
-    <h1>YANCY GARCIA</h1>
-    <div class="role">Founder, Brevmont Labs</div>
-    <p>Five years of high-volume sales in Jackson, Wyoming. An operator's background in CRM workflow, outbound systems, and retail execution — now channeled into Brevmont Labs.</p>
-    <p class="bilingual">Bilingual EN/ES.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="https://brevmont.com">See Brevmont →</a>
-      <a class="btn btn-secondary" href="https://cal.com/brevmont/demo">Book a demo</a>
+  <section class="hero" data-reveal>
+    <div class="hero-inner">
+      <div class="label label-yellow">Founder</div>
+
+      <h1 class="display">YANCY&nbsp;GARCIA</h1>
+
+      <p class="hero-sub">Founder, Brevmont Labs</p>
+
+      <p class="hero-body">Five years of high-volume sales in Jackson, Wyoming. An operator's background in CRM workflow, outbound systems, and retail execution — now channeled into Brevmont Labs.</p>
+
+      <p class="bilingual">Bilingual EN/ES.</p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://brevmont.com">See Brevmont →</a>
+        <a class="btn btn-secondary" href="https://cal.com/brevmont/demo">Book a demo</a>
+      </div>
     </div>
-  </header>
+
+    <a class="scroll-indicator" href="#background" aria-label="Scroll to Background">
+      <span class="scroll-indicator-line"></span>
+      <span class="scroll-indicator-dot"></span>
+    </a>
+  </section>
+
+  <hr class="section-divider" aria-hidden="true">
 
   <!-- BACKGROUND -->
-  <section class="background">
-    <h2>Background</h2>
+  <section id="background" class="background" data-reveal>
+    <div class="section-inner">
+      <header class="section-header">
+        <h2>Background</h2>
+        <span class="section-rule" aria-hidden="true"></span>
+      </header>
 
-    <div class="bg-block">
-      <h3>Yancy Regional Services</h3>
-      <p>Trucking operation out of Elkhart, Indiana, moving new and used RVs to dealerships across Arizona and New Mexico. Ran the lanes with commercial vehicles. Catching loads, running the routes, learning what it takes to operate a logistics business end-to-end.</p>
-    </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="label label-yellow card-label">01 — Venture</div>
+          <h3 class="card-title">Yancy Regional Services</h3>
+          <p class="card-body">Trucking operation out of Elkhart, Indiana, moving new and used RVs to dealerships across Arizona and New Mexico. Ran the lanes with commercial vehicles. Catching loads, running the routes, learning what it takes to operate a logistics business end-to-end.</p>
+        </article>
 
-    <div class="bg-block">
-      <h3>RADM LLC</h3>
-      <p>Came on as a business consultant in mid-2023 while YRS ran in the background. A commercial real estate financial consulting practice — interest-savings, debt restructuring, cap rate analysis for CRE investors. RADM is where the web-based side of the business was built: outbound infrastructure, funnel architecture, landing pages, automations, pipeline systems. Five years in sales taught me how to close. RADM taught me how to build the machine that produces the opportunity in the first place.</p>
-    </div>
+        <article class="card">
+          <div class="label label-yellow card-label">02 — Consulting</div>
+          <h3 class="card-title">RADM LLC</h3>
+          <p class="card-body">Came on as a business consultant in mid-2023 while YRS ran in the background. A commercial real estate financial consulting practice — interest-savings, debt restructuring, cap rate analysis for CRE investors. RADM is where the web-based side of the business was built: outbound infrastructure, funnel architecture, landing pages, automations, pipeline systems. Five years in sales taught me how to close. RADM taught me how to build the machine that produces the opportunity in the first place.</p>
+        </article>
 
-    <div class="bg-block">
-      <h3>High-volume sales</h3>
-      <p>Five years on the floor in Jackson, Wyoming. Thousands of customer interactions. Walk-in to delivery, trade evaluation to F&amp;I. Bilingual fluency opened a segment of the market most reps never touch.</p>
-    </div>
+        <article class="card">
+          <div class="label label-yellow card-label">03 — Sales</div>
+          <h3 class="card-title">High-volume sales</h3>
+          <p class="card-body">Five years on the floor in Jackson, Wyoming. Thousands of customer interactions. Walk-in to delivery, trade evaluation to F&amp;I. Bilingual fluency opened a segment of the market most reps never touch.</p>
+        </article>
 
-    <div class="bg-block">
-      <h3>Brevmont Labs</h3>
-      <p>Filed in Wyoming, April 2026. An AI layer for auto dealerships — purpose-built, operator-designed, currently in rollout.</p>
+        <article class="card">
+          <div class="label label-yellow card-label">04 — Now</div>
+          <h3 class="card-title">Brevmont Labs</h3>
+          <p class="card-body">Filed in Wyoming, April 2026. An AI layer for auto dealerships — purpose-built, operator-designed, currently in rollout.</p>
+        </article>
+      </div>
     </div>
   </section>
+
+  <hr class="section-divider" aria-hidden="true">
 
   <!-- WHAT I DO -->
-  <section class="what">
-    <h2>What I do</h2>
+  <section id="what-i-do" class="what-i-do" data-reveal>
+    <div class="section-inner">
+      <header class="section-header">
+        <h2>What I do</h2>
+        <span class="section-rule" aria-hidden="true"></span>
+      </header>
 
-    <div class="cap">
-      <div class="cap-title">Sales.</div>
-      <div class="cap-desc">Five years high-volume. Bilingual EN/ES. The full customer cycle.</div>
-    </div>
+      <div class="cap-grid">
+        <article class="cap">
+          <div class="cap-num">01</div>
+          <div class="cap-content">
+            <h3 class="cap-name">Sales.</h3>
+            <p class="cap-desc">Five years high-volume. Bilingual EN/ES. The full customer cycle.</p>
+          </div>
+        </article>
 
-    <div class="cap">
-      <div class="cap-title">Sales process.</div>
-      <div class="cap-desc">CRM architecture, pipeline design, rep-level workflow.</div>
-    </div>
+        <article class="cap">
+          <div class="cap-num">02</div>
+          <div class="cap-content">
+            <h3 class="cap-name">Sales process.</h3>
+            <p class="cap-desc">CRM architecture, pipeline design, rep-level workflow.</p>
+          </div>
+        </article>
 
-    <div class="cap">
-      <div class="cap-title">Lead generation.</div>
-      <div class="cap-desc">Cold email, LinkedIn outbound, inbound funnel design.</div>
-    </div>
+        <article class="cap">
+          <div class="cap-num">03</div>
+          <div class="cap-content">
+            <h3 class="cap-name">Lead generation.</h3>
+            <p class="cap-desc">Cold email, LinkedIn outbound, inbound funnel design.</p>
+          </div>
+        </article>
 
-    <div class="cap">
-      <div class="cap-title">Outbound &amp; outreach.</div>
-      <div class="cap-desc">SMTP, Apollo, ringless voicemail, SMS. Operator-grade infrastructure.</div>
-    </div>
+        <article class="cap">
+          <div class="cap-num">04</div>
+          <div class="cap-content">
+            <h3 class="cap-name">Outbound &amp; outreach.</h3>
+            <p class="cap-desc">SMTP, Apollo, ringless voicemail, SMS. Operator-grade infrastructure.</p>
+          </div>
+        </article>
 
-    <div class="cap">
-      <div class="cap-title">Landing pages &amp; funnels.</div>
-      <div class="cap-desc">Conversion-aware design. Lovable, Next.js, Vercel.</div>
-    </div>
+        <article class="cap">
+          <div class="cap-num">05</div>
+          <div class="cap-content">
+            <h3 class="cap-name">Landing pages &amp; funnels.</h3>
+            <p class="cap-desc">Conversion-aware design. Lovable, Next.js, Vercel.</p>
+          </div>
+        </article>
 
-    <div class="cap">
-      <div class="cap-title">Automations.</div>
-      <div class="cap-desc">End-to-end system integration — pipelines, triggers, workflows.</div>
+        <article class="cap">
+          <div class="cap-num">06</div>
+          <div class="cap-content">
+            <h3 class="cap-name">Automations.</h3>
+            <p class="cap-desc">End-to-end system integration — pipelines, triggers, workflows.</p>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
+
+  <hr class="section-divider" aria-hidden="true">
 
   <!-- NOW -->
-  <section class="now">
-    <h2>Now</h2>
-    <p>Running Brevmont Labs. Jackson, Wyoming.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="https://brevmont.com">See Brevmont →</a>
-      <a class="btn btn-secondary" href="https://cal.com/brevmont/demo">Book a demo</a>
-    </div>
-    <div class="contact">
-      <a href="mailto:founder@brevmont.com">founder@brevmont.com</a><br>
-      <a href="https://linkedin.com/in/yancy-garcia-0212b921a">linkedin.com/in/yancy-garcia-0212b921a</a>
+  <section id="now" class="now" data-reveal>
+    <div class="section-inner now-inner">
+      <div class="label label-yellow">Now</div>
+
+      <p class="now-statement">Running Brevmont Labs. Jackson, Wyoming.</p>
+
+      <div class="cta-row cta-row-center">
+        <a class="btn btn-primary" href="https://brevmont.com">See Brevmont →</a>
+        <a class="btn btn-secondary" href="https://cal.com/brevmont/demo">Book a demo</a>
+      </div>
+
+      <hr class="contact-divider" aria-hidden="true">
+
+      <div class="contact">
+        <a href="mailto:founder@brevmont.com">founder@brevmont.com</a>
+        <a href="https://linkedin.com/in/yancy-garcia-0212b921a">linkedin.com/in/yancy-garcia-0212b921a</a>
+      </div>
     </div>
   </section>
 
-</main>
+  <footer class="footer">
+    Yancy Garcia · 2026
+  </footer>
+
+<script>
+  // Intersection Observer for fade-in on scroll-into-view.
+  (function () {
+    var els = document.querySelectorAll('[data-reveal]');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
 
 </body>
 </html>
