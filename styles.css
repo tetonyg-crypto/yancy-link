@@ -350,6 +350,61 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* -------------------------------------------------------------------
+   FOUNDER PHOTO — Jackson, Wyoming (between hero and experience)
+------------------------------------------------------------------- */
+.founder-photo {
+  padding: 96px 24px 48px;
+  text-align: center;
+}
+
+.founder-photo-frame {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  max-width: 640px;
+  width: 100%;
+  position: relative;
+}
+
+.founder-photo-frame picture,
+.founder-photo-frame picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+/* Subtle bottom shadow grounding the image on the charcoal */
+.founder-photo-frame picture {
+  box-shadow:
+    0 32px 64px -24px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(248, 246, 241, 0.04);
+}
+
+.founder-photo-caption {
+  font-family: var(--f-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-top: 28px;
+}
+
+@media (max-width: 768px) {
+  .founder-photo {
+    padding: 64px 24px 32px;
+  }
+  .founder-photo-frame {
+    max-width: 100%;
+  }
+  .founder-photo-caption {
+    font-size: 11px;
+    margin-top: 20px;
+  }
+}
+
+/* -------------------------------------------------------------------
    EXPERIENCE TIMELINE — centered, vertically-connected ventures
 ------------------------------------------------------------------- */
 .experience {
