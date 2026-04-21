@@ -432,6 +432,13 @@ a { color: inherit; text-decoration: none; }
   object-fit: contain;
 }
 
+/* RADM-specific: wider aspect ratio, flatter */
+.t-badge-radm {
+  max-width: 380px;
+  max-height: 190px;
+  margin-bottom: 24px;
+}
+
 /* Yellow geometric mark (interlude venture) */
 .t-mark {
   display: block;
