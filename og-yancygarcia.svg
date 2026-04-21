@@ -1,7 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Charcoal background -->
   <rect width="1200" height="630" fill="#0F1419"/>
-  <text x="80" y="300" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="84" fill="#F8F6F1" letter-spacing="-2">YANCY GARCIA</text>
-  <text x="80" y="360" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="34" fill="rgba(248, 246, 241, 0.68)">Founder, Brevmont Labs</text>
-  <line x1="80" y1="520" x2="180" y2="520" stroke="rgba(248, 246, 241, 0.3)" stroke-width="2"/>
-  <text x="80" y="560" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="22" fill="rgba(248, 246, 241, 0.5)">yancygarcia.com</text>
+
+  <!-- Subtle grain texture overlay -->
+  <defs>
+    <filter id="noise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.02 0"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" filter="url(#noise)"/>
+
+  <!-- Yellow square mark (top-right corner) -->
+  <rect x="1080" y="72" width="48" height="48" fill="#E8FF00"/>
+
+  <!-- Yellow FOUNDER label -->
+  <text x="80" y="112" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="18" fill="#E8FF00" letter-spacing="2.2">FOUNDER</text>
+
+  <!-- Display name -->
+  <text x="80" y="340" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="132" fill="#F8F6F1" letter-spacing="-4">YANCY GARCIA</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="408" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="32" fill="#A8ADB3" letter-spacing="-0.5">Founder, Brevmont Labs</text>
+
+  <!-- Yellow hairline -->
+  <rect x="80" y="480" width="80" height="2" fill="#E8FF00"/>
+
+  <!-- Domain footer -->
+  <text x="80" y="540" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="20" fill="#A8ADB3">yancygarcia.com</text>
 </svg>
