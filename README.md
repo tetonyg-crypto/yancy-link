@@ -1,43 +1,37 @@
-# YENES Link — Yancy Garcia
+# yancygarcia.com
 
-Personal lead-capture landing page. Replaces Linktree.
+Founder landing page for Yancy Garcia — points to Brevmont Labs (brevmont.com) and a Cal.com demo booking link.
 
-## Setup
+## Stack
 
-1. Replace all placeholder URLs in `index.html` (search for `<!-- REPLACE`)
-2. Replace `REPLACE_WITH_FORMSPREE_ID` in `script.js` with your Formspree form ID
-3. Add your headshot as `assets/avatar.jpg`
-4. Optionally add `assets/og-image.jpg` for social sharing preview (1200x630px)
-5. Push to GitHub
-6. Import into Vercel
-7. Use the Vercel URL as your bio link on Instagram, TikTok, and Facebook
+- Static HTML + vanilla CSS (no framework)
+- Deployed on Vercel
+- Fonts: Inter (400/600) via Google Fonts
+- OG image: SVG source rendered to PNG via `sharp`
 
-## Updating Featured Vehicles
+## Structure
 
-Edit `data/inventory.json`. Each vehicle needs:
-- `title` — Year Make Model Trim
-- `price` — number (no dollar sign, no commas)
-- `image` — URL to vehicle photo (leave empty string for emoji fallback)
-- `smsBody` — pre-filled text message body
+- `index.html` — the entire page
+- `og-yancygarcia.png` / `og-yancygarcia.svg` — Open Graph card (1200x630)
+- `favicon.svg`
+- `404.html` — redirects to `/`
+- `vercel.json` — legacy-route 301s and cache headers
+- `archive/legacy-site-20260421/` — snapshot of the prior inventory-era site, preserved for reference
 
-Push to GitHub. Vercel auto-deploys within 60 seconds.
+## Design tokens (matches Brevmont visual system)
 
-## File Structure
+- Charcoal `#0F1419` (bg)
+- Bone `#F8F6F1` (fg)
+- Deep Teal `#0D6E6E` (accent, reserved for future use)
+- Inter 600 headings, Inter 400 body
+- Max content width 720px
 
-- `index.html` — Page markup
-- `styles.css` — All styles
-- `script.js` — Inventory loading from JSON, form submission via Formspree
-- `data/inventory.json` — Featured vehicles (edit this to update inventory)
-- `vcard/yancy.vcf` — Downloadable contact card
-- `assets/` — Avatar photo, Open Graph image
+## Regenerate OG PNG from SVG
 
-## Deployment
+```
+node -e "require('sharp')('og-yancygarcia.svg').png().toFile('og-yancygarcia.png')"
+```
 
-1. Create a GitHub repository named `yancy-link`
-2. Push this project to GitHub
-3. Go to vercel.com
-4. Click "Import Project"
-5. Select the repository
-6. Deploy
+## Deploy
 
-## Powered by YENES AI
+Pushes to `main` auto-deploy to production at `https://yancygarcia.com`.

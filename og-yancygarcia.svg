@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#0F1419"/>
+  <text x="80" y="300" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="84" fill="#F8F6F1" letter-spacing="-2">YANCY GARCIA</text>
+  <text x="80" y="360" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="34" fill="rgba(248, 246, 241, 0.68)">Founder, Brevmont Labs</text>
+  <line x1="80" y1="520" x2="180" y2="520" stroke="rgba(248, 246, 241, 0.3)" stroke-width="2"/>
+  <text x="80" y="560" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="22" fill="rgba(248, 246, 241, 0.5)">yancygarcia.com</text>
+</svg>
