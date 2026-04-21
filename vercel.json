@@ -3,26 +3,48 @@
   "outputDirectory": ".",
   "framework": null,
   "cleanUrls": true,
-  "crons": [
-    {
-      "path": "/api/dashboard",
-      "schedule": "0 8 * * *"
-    }
-  ],
+  "trailingSlash": false,
   "redirects": [
-    { "source": "/inventory/:path*", "destination": "https://inventory.yancygarcia.com/:path*", "permanent": false }
+    { "source": "/inventory", "destination": "/", "permanent": true },
+    { "source": "/inventory/:path*", "destination": "/", "permanent": true },
+    { "source": "/deal", "destination": "/", "permanent": true },
+    { "source": "/deal/:path*", "destination": "/", "permanent": true },
+    { "source": "/about", "destination": "/", "permanent": true },
+    { "source": "/es", "destination": "/", "permanent": true },
+    { "source": "/trade", "destination": "/", "permanent": true },
+    { "source": "/buying-power", "destination": "/", "permanent": true },
+    { "source": "/dashboard", "destination": "/", "permanent": true },
+    { "source": "/jarvis", "destination": "/", "permanent": true },
+    { "source": "/blog", "destination": "/", "permanent": true },
+    { "source": "/blog/:path*", "destination": "/", "permanent": true },
+    { "source": "/v", "destination": "/", "permanent": true },
+    { "source": "/v/:path*", "destination": "/", "permanent": true },
+    { "source": "/vcard", "destination": "/", "permanent": true },
+    { "source": "/vcard/:path*", "destination": "/", "permanent": true },
+    { "source": "/templates", "destination": "/", "permanent": true },
+    { "source": "/templates/:path*", "destination": "/", "permanent": true },
+    { "source": "/api", "destination": "/", "permanent": true },
+    { "source": "/api/:path*", "destination": "/", "permanent": true }
   ],
   "headers": [
     {
-      "source": "/assets/(.*)",
+      "source": "/og-yancygarcia.png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        { "key": "Cache-Control", "value": "public, max-age=604800, immutable" }
       ]
     },
     {
-      "source": "/vcard/(.*)",
+      "source": "/favicon.svg",
       "headers": [
-        { "key": "Content-Type", "value": "text/vcard" }
+        { "key": "Cache-Control", "value": "public, max-age=604800, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
       ]
     }
   ]
