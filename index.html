@@ -261,6 +261,14 @@
   </footer>
 
 <script>
+  // Single source of truth for the Cal.com booking URL.
+  // Change here to update all "Book a demo" buttons on the page.
+  var CAL_DEMO_URL = 'https://cal.com/brevmont/demo';
+  document.querySelectorAll('a[href*="cal.com"]').forEach(function (a) {
+    a.href = CAL_DEMO_URL;
+  });
+</script>
+<script>
   // Intersection Observer for fade-in on scroll-into-view.
   (function () {
     var els = document.querySelectorAll('[data-reveal]');
