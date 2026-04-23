@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Yancy Garcia — Founder, Brevmont Labs</title>
-<meta name="description" content="Founder of Brevmont Labs. Five years of high-volume sales in Jackson, Wyoming. Operator background in CRM workflow, outbound systems, and sales execution — now channeled into Brevmont Labs.">
+<meta name="description" content="Founder of Brevmont Labs. Operator background across automotive sales, trucking, commercial real estate consulting, and CRM execution infrastructure — now channeled into Brevmont Labs.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0F1419">
 <link rel="canonical" href="https://yancygarcia.com/">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Yancy Garcia">
 <meta property="og:title" content="Yancy Garcia — Founder, Brevmont Labs">
-<meta property="og:description" content="Founder of Brevmont Labs. Five years of high-volume sales in Jackson, Wyoming. Operator background in CRM workflow, outbound systems, and sales execution — now channeled into Brevmont Labs.">
+<meta property="og:description" content="Founder of Brevmont Labs. Operator background across automotive sales, trucking, commercial real estate consulting, and CRM execution infrastructure — now channeled into Brevmont Labs.">
 <meta property="og:url" content="https://yancygarcia.com/">
 <meta property="og:image" content="https://yancygarcia.com/og-yancygarcia.png">
 <meta property="og:image:width" content="1200">
@@ -22,7 +22,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Yancy Garcia — Founder, Brevmont Labs">
-<meta name="twitter:description" content="Founder of Brevmont Labs. Five years of high-volume sales in Jackson, Wyoming. Operator background in CRM workflow, outbound systems, and sales execution — now channeled into Brevmont Labs.">
+<meta name="twitter:description" content="Founder of Brevmont Labs. Operator background across automotive sales, trucking, commercial real estate consulting, and CRM execution infrastructure — now channeled into Brevmont Labs.">
 <meta name="twitter:image" content="https://yancygarcia.com/og-yancygarcia.png">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -91,7 +91,7 @@
       </div>
     </div>
 
-    <a class="scroll-indicator" href="#background" aria-label="Scroll to Background">
+    <a class="scroll-indicator" href="#experience-timeline" aria-label="Scroll to Experience">
       <span class="scroll-indicator-line"></span>
       <span class="scroll-indicator-dot"></span>
     </a>
@@ -112,59 +112,207 @@
 
   <hr class="section-divider" aria-hidden="true">
 
-  <!-- EXPERIENCE TIMELINE -->
-  <section id="experience" class="experience" data-reveal>
-    <div class="section-inner experience-inner">
-      <header class="experience-header">
+  <!-- EXPERIENCE TIMELINE — interactive horizontal bars -->
+  <section id="experience-timeline" class="exp-timeline" data-reveal aria-labelledby="exp-timeline-heading">
+    <div class="section-inner exp-timeline-inner">
+      <header class="exp-timeline-header">
         <div class="label label-yellow">Experience</div>
-        <p class="experience-subhead">A career compounded across five chapters.</p>
+        <h2 id="exp-timeline-heading" class="exp-timeline-subhead">A career compounded across five chapters.</h2>
         <span class="experience-rule" aria-hidden="true"></span>
       </header>
 
+      <!-- Horizontal bar chart -->
+      <div class="exp-chart" role="group" aria-label="Career timeline from 2019 to present">
+        <div class="exp-chart-bars">
+
+          <div class="exp-row">
+            <div class="exp-row-label">Sales</div>
+            <div class="exp-row-track">
+              <button type="button"
+                      class="exp-bar"
+                      data-target="chapter-sales"
+                      style="--start:0%;--end:50%;"
+                      aria-label="Automotive sales, 2019 to 2023. Activate to jump to chapter."></button>
+            </div>
+          </div>
+
+          <div class="exp-row">
+            <div class="exp-row-label">YRS</div>
+            <div class="exp-row-track">
+              <button type="button"
+                      class="exp-bar"
+                      data-target="chapter-yrs"
+                      style="--start:37.5%;--end:62.5%;"
+                      aria-label="Yancy Regional Services, 2022 to 2024. Activate to jump to chapter."></button>
+            </div>
+          </div>
+
+          <div class="exp-row">
+            <div class="exp-row-label">RADM</div>
+            <div class="exp-row-track">
+              <button type="button"
+                      class="exp-bar"
+                      data-target="chapter-radm"
+                      style="--start:62.5%;--end:75%;"
+                      aria-label="RADM, 2024 to 2025. Activate to jump to chapter."></button>
+            </div>
+          </div>
+
+          <div class="exp-row">
+            <div class="exp-row-label">Testing</div>
+            <div class="exp-row-track">
+              <button type="button"
+                      class="exp-bar"
+                      data-target="chapter-testing"
+                      style="--start:75%;--end:87.5%;"
+                      aria-label="Testing on the floor, 2025 to 2026. Activate to jump to chapter."></button>
+            </div>
+          </div>
+
+          <div class="exp-row">
+            <div class="exp-row-label">Brevmont</div>
+            <div class="exp-row-track">
+              <button type="button"
+                      class="exp-bar"
+                      data-target="chapter-brevmont"
+                      style="--start:87.5%;--end:100%;"
+                      aria-label="Brevmont Labs, 2026 to present. Activate to jump to chapter."></button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Year axis -->
+        <div class="exp-axis" aria-hidden="true">
+          <span class="exp-tick" style="--at:0%;">2019</span>
+          <span class="exp-tick" style="--at:12.5%;">2020</span>
+          <span class="exp-tick" style="--at:25%;">2021</span>
+          <span class="exp-tick" style="--at:37.5%;">2022</span>
+          <span class="exp-tick" style="--at:50%;">2023</span>
+          <span class="exp-tick" style="--at:62.5%;">2024</span>
+          <span class="exp-tick" style="--at:75%;">2025</span>
+          <span class="exp-tick" style="--at:87.5%;">2026</span>
+          <span class="exp-tick exp-tick-present" style="--at:100%;">Present</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE CHAPTERS — expandable accordion -->
+  <section id="experience" class="experience" data-reveal>
+    <div class="section-inner experience-inner">
       <ol class="timeline" role="list">
 
-        <!-- 1. Origin: first automotive sales run -->
-        <li class="t-venture t-venture-interlude" data-reveal>
-          <div class="t-mark" aria-hidden="true"></div>
-          <div class="t-meta"><span class="t-dates">2019 — 2023</span> · <span class="t-role">Salesperson</span></div>
-          <h3 class="t-company">Automotive sales.</h3>
-          <p class="t-copy">Began my automotive sales career in 2019 at a Jackson, Wyoming dealership. Four years on the floor — walk-in to delivery, trade evaluation to F&amp;I, bilingual end to end. Thousands of customer interactions taught me how dealerships actually work. This is where it started.</p>
+        <!-- Chapter 1 — Sales -->
+        <li id="chapter-sales" class="t-venture t-venture-interlude" data-reveal>
+          <button type="button" class="t-toggle" aria-expanded="false" aria-controls="chapter-sales-body">
+            <div class="t-toggle-head">
+              <div class="t-mark" aria-hidden="true"></div>
+              <div class="t-meta"><span class="t-dates">2019 — 2023</span> · <span class="t-role">Salesperson</span></div>
+              <h3 class="t-company">Four years on the floor.</h3>
+              <p class="t-copy">Four years at a Jackson, Wyoming dealership. Walk-in to delivery, F&amp;I, bilingual EN/ES. Hundreds of customers, hundreds of follow-ups, hundreds of stalled deals that needed one more call nobody had time to make.</p>
+              <p class="t-copy">This chapter isn't a résumé. Brevmont is a direct response to what I couldn't do on that floor. The product exists because of the lead I didn't call back in 2021. That's the honest version.</p>
+            </div>
+            <span class="t-caret" aria-hidden="true"></span>
+          </button>
+          <div id="chapter-sales-body" class="t-body" role="region" aria-labelledby="chapter-sales" hidden>
+            <figure class="t-artifact" data-src="/artifacts/chapter-1.jpg" data-n="1">
+              <div class="t-artifact-placeholder" aria-label="Chapter 1 artifact placeholder">IMAGE · CHAPTER 1</div>
+            </figure>
+            <blockquote class="t-insight">Every lead I didn't call back is now the customer Brevmont calls for you.</blockquote>
+            <div class="t-artifact-meta">Jackson, WY · Full cycle · Bilingual EN/ES</div>
+          </div>
           <span class="t-connector" aria-hidden="true"></span>
         </li>
 
-        <!-- 2. Yancy Regional Services -->
-        <li class="t-venture" data-reveal>
-          <img class="t-badge" src="/logos/yrs-badge.png" alt="Yancy Regional Services" width="480" height="238" loading="lazy" decoding="async">
-          <div class="t-meta"><span class="t-dates">2022 — 2024</span> · <span class="t-role">Founder</span></div>
-          <h3 class="t-company">Yancy Regional Services</h3>
-          <p class="t-copy">Trucking company founded to move heavy-duty commercial equipment across the American Southwest. Ran RV transport lanes from Elkhart, Indiana — the RV capital of the country — down to dealerships in Arizona and New Mexico. Built the operational playbook from the ground up: sourcing loads, managing routes, handling driver logistics, and running a clean fleet. The company sold in 2023.</p>
+        <!-- Chapter 2 — YRS -->
+        <li id="chapter-yrs" class="t-venture" data-reveal>
+          <button type="button" class="t-toggle" aria-expanded="false" aria-controls="chapter-yrs-body">
+            <div class="t-toggle-head">
+              <img class="t-badge" src="/logos/yrs-badge.png" alt="Yancy Regional Services" width="480" height="238" loading="lazy" decoding="async">
+              <div class="t-meta"><span class="t-dates">2022 — 2024</span> · <span class="t-role">Founder</span></div>
+              <h3 class="t-company">Yancy Regional Services.</h3>
+              <p class="t-copy">Trucking company. Routes from Elkhart, Indiana to Arizona and New Mexico. RV transport, specialized.</p>
+              <p class="t-copy">Underneath the freight: this is where the outreach muscle came from. Cold email, cold phone, LinkedIn outbound — every load on every truck came from a conversation I started with an owner who didn't know my name that morning. Operator-grade outbound infrastructure was forced into existence because the work required it.</p>
+              <p class="t-copy">Exited 2024. The outreach stack survived.</p>
+            </div>
+            <span class="t-caret" aria-hidden="true"></span>
+          </button>
+          <div id="chapter-yrs-body" class="t-body" role="region" aria-labelledby="chapter-yrs" hidden>
+            <figure class="t-artifact" data-src="/artifacts/chapter-2.jpg" data-n="2">
+              <div class="t-artifact-placeholder" aria-label="Chapter 2 artifact placeholder">IMAGE · CHAPTER 2</div>
+            </figure>
+            <blockquote class="t-insight">Every load on every truck started as a cold outreach. The stack that built this became the engine I run today.</blockquote>
+            <div class="t-artifact-meta">Elkhart, IN → AZ / NM · RV transport · Exited 2024</div>
+          </div>
           <span class="t-connector" aria-hidden="true"></span>
         </li>
 
-        <!-- 3. RADM CRE -->
-        <li class="t-venture" data-reveal>
-          <img class="t-badge t-badge-radm" src="/logos/radm-badge.png" alt="RADM — Commercial Real Estate" width="720" height="360" loading="lazy" decoding="async">
-          <div class="t-meta"><span class="t-dates">2024 — 2025</span> · <span class="t-role">Business Consultant</span></div>
-          <h3 class="t-company">RADM CRE</h3>
-          <p class="t-copy">Commercial real estate financial consulting practice serving dealership owners, multifamily operators, and medical aesthetics investors. Built the outbound engine that produced the pipeline — cold email infrastructure, funnel architecture, landing page design, and automation stacks. Five years in sales taught me how to close. RADM is where I learned how to build the machine that creates the opportunity in the first place.</p>
+        <!-- Chapter 3 — RADM -->
+        <li id="chapter-radm" class="t-venture" data-reveal>
+          <button type="button" class="t-toggle" aria-expanded="false" aria-controls="chapter-radm-body">
+            <div class="t-toggle-head">
+              <img class="t-badge t-badge-radm" src="/logos/radm-badge.png" alt="RADM — Commercial Real Estate" width="720" height="360" loading="lazy" decoding="async">
+              <div class="t-meta"><span class="t-dates">2024 — 2025</span> · <span class="t-role">Business Consultant</span></div>
+              <h3 class="t-company">RADM.</h3>
+              <p class="t-copy">Commercial real estate financial consulting company. I came on as the business consultant.</p>
+              <p class="t-copy">What I built for them: landing pages, funnel architecture, nurture sequences, automations. Conversion-aware design, Next.js, Vercel. Email sequences that held open rates above 40%. The machines that turn strangers into booked calls.</p>
+              <p class="t-copy">RADM is where I stopped thinking like a salesperson and started thinking like a builder. The question went from "how do I close this deal" to "how do I design the system that closes deals while I sleep."</p>
+            </div>
+            <span class="t-caret" aria-hidden="true"></span>
+          </button>
+          <div id="chapter-radm-body" class="t-body" role="region" aria-labelledby="chapter-radm" hidden>
+            <figure class="t-artifact" data-src="/artifacts/chapter-3.jpg" data-n="3">
+              <div class="t-artifact-placeholder" aria-label="Chapter 3 artifact placeholder">IMAGE · CHAPTER 3</div>
+            </figure>
+            <blockquote class="t-insight">Landing pages, funnels, nurture sequences, automations. This is where I learned to build the machine instead of being the machine.</blockquote>
+            <div class="t-artifact-meta">Next.js / Vercel · 40%+ open rates · Business consultant</div>
+          </div>
           <span class="t-connector" aria-hidden="true"></span>
         </li>
 
-        <!-- 4. Return to the Floor -->
-        <li class="t-venture t-venture-interlude" data-reveal>
-          <div class="t-mark" aria-hidden="true"></div>
-          <div class="t-meta"><span class="t-dates">2025 — 2026</span> · <span class="t-role">Operator, on the floor</span></div>
-          <h3 class="t-company">Back on the floor.</h3>
-          <p class="t-copy">Returned to sales at two Jackson, Wyoming dealerships — a Subaru store and a Chevy store. The goal was not to sell cars — it was to live-test the product I was building from the ground up. Every lead running through the CRM became a trial run of the execution layer between intake and close. The floor is where Brevmont got made real.</p>
+        <!-- Chapter 4 — Testing on the floor -->
+        <li id="chapter-testing" class="t-venture t-venture-interlude" data-reveal>
+          <button type="button" class="t-toggle" aria-expanded="false" aria-controls="chapter-testing-body">
+            <div class="t-toggle-head">
+              <div class="t-mark" aria-hidden="true"></div>
+              <div class="t-meta"><span class="t-dates">2025 — 2026</span> · <span class="t-role">Operator</span></div>
+              <h3 class="t-company">Testing on the floor.</h3>
+              <p class="t-copy">Returned to Jackson dealerships — Subaru, then Chevy — for one specific reason. Not to sell the most units. I came to study, investigate, and confirm what I already knew was missing in this industry.</p>
+              <p class="t-copy">One year watching the same pattern repeat across every rep, every shift, every Monday morning. Leads don't die because reps are lazy. Leads die because the floor is short-staffed, because the lot is loud, because by the time a rep gets back to the desk there's a cup of coffee to grab, a coworker to talk to, a customer on the phone, something — there's always a something.</p>
+              <p class="t-copy">The CRM was the last thing anyone touched. That's the problem Brevmont is built to remove. Not laziness. Friction.</p>
+            </div>
+            <span class="t-caret" aria-hidden="true"></span>
+          </button>
+          <div id="chapter-testing-body" class="t-body" role="region" aria-labelledby="chapter-testing" hidden>
+            <figure class="t-artifact" data-src="/artifacts/chapter-4.jpg" data-n="4">
+              <div class="t-artifact-placeholder" aria-label="Chapter 4 artifact placeholder">IMAGE · CHAPTER 4</div>
+            </figure>
+            <blockquote class="t-insight">I didn't come back to sell cars. I came back to confirm the problem I already knew existed.</blockquote>
+            <div class="t-artifact-meta">Subaru · Chevy · One year field research</div>
+          </div>
           <span class="t-connector" aria-hidden="true"></span>
         </li>
 
-        <!-- 4. Brevmont Labs -->
-        <li class="t-venture" data-reveal>
-          <div class="t-wordmark t-wordmark-brevmont" aria-hidden="true">BREVMONT</div>
-          <div class="t-meta"><span class="t-dates">Present</span> · <span class="t-role">Founder</span></div>
-          <h3 class="t-company">Brevmont Labs</h3>
-          <p class="t-copy">An AI layer that lives inside the CRM. A new lead comes in — the text, email, and CRM note are already written. A deal stalls — it gets surfaced before it rots. The follow-up that never happens on a busy floor, happens here. Built by the guy who had to do it, not theorized in a conference room.</p>
+        <!-- Chapter 5 — Brevmont Labs -->
+        <li id="chapter-brevmont" class="t-venture" data-reveal>
+          <button type="button" class="t-toggle" aria-expanded="false" aria-controls="chapter-brevmont-body">
+            <div class="t-toggle-head">
+              <div class="t-wordmark t-wordmark-brevmont" aria-hidden="true">BREVMONT</div>
+              <div class="t-meta"><span class="t-dates">Present</span> · <span class="t-role">Founder</span></div>
+              <h3 class="t-company">Brevmont Labs.</h3>
+              <p class="t-copy">An AI layer that lives inside the CRM. A new lead comes in — the text, email, and CRM note are already written. A deal stalls — it gets surfaced before it rots. The follow-up that never happens on a busy floor, happens here.</p>
+              <p class="t-copy">Built by the guy who had to do it, not theorized in a conference room.</p>
+            </div>
+            <span class="t-caret" aria-hidden="true"></span>
+          </button>
+          <div id="chapter-brevmont-body" class="t-body" role="region" aria-labelledby="chapter-brevmont" hidden>
+            <figure class="t-artifact" data-src="/artifacts/chapter-5.jpg" data-n="5">
+              <div class="t-artifact-placeholder" aria-label="Chapter 5 artifact placeholder">IMAGE · CHAPTER 5</div>
+            </figure>
+            <blockquote class="t-insight">Built by the guy who had to do it, not theorized in a conference room.</blockquote>
+            <div class="t-artifact-meta">AI execution layer · Live in two Wyoming dealerships · Founding cohort open</div>
+          </div>
         </li>
 
       </ol>
@@ -173,11 +321,11 @@
 
   <hr class="section-divider" aria-hidden="true">
 
-  <!-- WHAT I DO -->
+  <!-- SPECIALIZED IN -->
   <section id="what-i-do" class="what-i-do" data-reveal>
     <div class="section-inner">
       <header class="section-header">
-        <h2>What I do</h2>
+        <h2>Specialized in</h2>
         <span class="section-rule" aria-hidden="true"></span>
       </header>
 
@@ -186,7 +334,7 @@
           <div class="cap-num">01</div>
           <div class="cap-content">
             <h3 class="cap-name">Sales.</h3>
-            <p class="cap-desc">Five years high-volume. Bilingual EN/ES. The full customer cycle.</p>
+            <p class="cap-desc">Four years high-volume. Bilingual EN/ES. Full cycle.</p>
           </div>
         </article>
 
@@ -194,7 +342,7 @@
           <div class="cap-num">02</div>
           <div class="cap-content">
             <h3 class="cap-name">Lead generation.</h3>
-            <p class="cap-desc">Cold email, LinkedIn outbound, inbound funnel design.</p>
+            <p class="cap-desc">Cold email, LinkedIn outbound, inbound funnel design. 40%+ open rates documented.</p>
           </div>
         </article>
 
@@ -202,7 +350,7 @@
           <div class="cap-num">03</div>
           <div class="cap-content">
             <h3 class="cap-name">Outbound &amp; outreach.</h3>
-            <p class="cap-desc">SMTP, Apollo, ringless voicemail, SMS. Operator-grade infrastructure.</p>
+            <p class="cap-desc">SMTP, Apollo, ringless voicemail, SMS. Operator-grade infrastructure, not plug-and-play stacks.</p>
           </div>
         </article>
 
@@ -210,7 +358,7 @@
           <div class="cap-num">04</div>
           <div class="cap-content">
             <h3 class="cap-name">Sales process.</h3>
-            <p class="cap-desc">CRM architecture, pipeline design, rep-level workflow.</p>
+            <p class="cap-desc">CRM architecture, pipeline design, rep-level workflow. Built for the floor, tested on the floor.</p>
           </div>
         </article>
 
@@ -226,7 +374,7 @@
           <div class="cap-num">06</div>
           <div class="cap-content">
             <h3 class="cap-name">Automations.</h3>
-            <p class="cap-desc">End-to-end system integration — pipelines, triggers, workflows.</p>
+            <p class="cap-desc">End-to-end integration — pipelines, triggers, workflows. The machines that do the work while you sleep.</p>
           </div>
         </article>
       </div>
@@ -262,12 +410,12 @@
 
 <script>
   // Single source of truth for the Cal.com booking URL.
-  // Change here to update all "Book a demo" buttons on the page.
   var CAL_DEMO_URL = 'https://cal.com/brevmont/demo';
   document.querySelectorAll('a[href*="cal.com"]').forEach(function (a) {
     a.href = CAL_DEMO_URL;
   });
 </script>
+
 <script>
   // Intersection Observer for fade-in on scroll-into-view.
   (function () {
@@ -285,6 +433,120 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
     els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+<script>
+  // Chapter accordion — strict single-open behavior + timeline bar integration.
+  (function () {
+    var toggles = Array.prototype.slice.call(document.querySelectorAll('.t-toggle'));
+    var bars    = Array.prototype.slice.call(document.querySelectorAll('.exp-bar'));
+    if (!toggles.length) return;
+
+    function collapseAll(except) {
+      toggles.forEach(function (btn) {
+        if (btn === except) return;
+        var venture = btn.closest('.t-venture');
+        var body    = document.getElementById(btn.getAttribute('aria-controls'));
+        btn.setAttribute('aria-expanded', 'false');
+        if (venture) venture.classList.remove('is-expanded');
+        if (body)    body.hidden = true;
+      });
+      bars.forEach(function (b) { b.classList.remove('is-active'); });
+    }
+
+    function expandChapter(ventureId, opts) {
+      opts = opts || {};
+      var venture = document.getElementById(ventureId);
+      if (!venture) return;
+      var btn  = venture.querySelector('.t-toggle');
+      var body = venture.querySelector('.t-body');
+      if (!btn || !body) return;
+
+      collapseAll(btn);
+      btn.setAttribute('aria-expanded', 'true');
+      venture.classList.add('is-expanded');
+      body.hidden = false;
+
+      // Mark matching timeline bar active
+      var matchBar = document.querySelector('.exp-bar[data-target="' + ventureId + '"]');
+      if (matchBar) matchBar.classList.add('is-active');
+
+      if (opts.scroll) {
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        venture.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      }
+    }
+
+    function collapseChapter(ventureId) {
+      var venture = document.getElementById(ventureId);
+      if (!venture) return;
+      var btn  = venture.querySelector('.t-toggle');
+      var body = venture.querySelector('.t-body');
+      btn.setAttribute('aria-expanded', 'false');
+      venture.classList.remove('is-expanded');
+      if (body) body.hidden = true;
+      var matchBar = document.querySelector('.exp-bar[data-target="' + ventureId + '"]');
+      if (matchBar) matchBar.classList.remove('is-active');
+    }
+
+    // Card header clicks
+    toggles.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var venture = btn.closest('.t-venture');
+        if (!venture) return;
+        var isOpen = btn.getAttribute('aria-expanded') === 'true';
+        if (isOpen) {
+          collapseChapter(venture.id);
+        } else {
+          expandChapter(venture.id, { scroll: false });
+        }
+      });
+    });
+
+    // Timeline bar clicks
+    bars.forEach(function (bar) {
+      bar.addEventListener('click', function () {
+        var target = bar.getAttribute('data-target');
+        if (target) expandChapter(target, { scroll: true });
+      });
+    });
+
+    // Click outside any expanded card to collapse it
+    document.addEventListener('click', function (e) {
+      var openBtn = document.querySelector('.t-toggle[aria-expanded="true"]');
+      if (!openBtn) return;
+      var venture = openBtn.closest('.t-venture');
+      if (!venture) return;
+      if (venture.contains(e.target)) return;
+      if (e.target.closest('.exp-bar')) return; // bars handle their own state
+      collapseChapter(venture.id);
+    });
+  })();
+</script>
+
+<script>
+  // Chapter artifact: swap placeholder for real image if /artifacts/chapter-N.jpg resolves.
+  (function () {
+    var figs = document.querySelectorAll('.t-artifact[data-src]');
+    figs.forEach(function (fig) {
+      var src = fig.getAttribute('data-src');
+      var n   = fig.getAttribute('data-n') || '';
+      if (!src) return;
+      var probe = new Image();
+      probe.onload = function () {
+        var img = document.createElement('img');
+        img.src = src;
+        img.alt = 'Chapter ' + n + ' artifact';
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.className = 't-artifact-img';
+        fig.innerHTML = '';
+        fig.appendChild(img);
+        fig.classList.add('has-image');
+      };
+      probe.src = src;
+    });
   })();
 </script>
 
