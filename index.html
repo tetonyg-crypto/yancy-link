@@ -81,9 +81,9 @@
 
       <p class="hero-sub">Founder, Brevmont Labs</p>
 
-      <p class="hero-body">Five years of high-volume sales in Jackson, Wyoming. An operator's background in CRM workflow, outbound systems, and sales execution — now channeled into Brevmont Labs.</p>
+      <p class="hero-body">Four years selling cars. A second year testing the product I built. CRM workflow, outbound, sales execution — all channeled into Brevmont Labs.</p>
 
-      <p class="bilingual">Bilingual EN/ES.</p>
+      <p class="bilingual">Bilingual EN/ES</p>
 
       <div class="cta-row">
         <a class="btn btn-primary" href="https://brevmont.com">See Brevmont →</a>
@@ -175,8 +175,8 @@
               <button type="button"
                       class="exp-bar"
                       data-target="chapter-brevmont"
-                      style="--start:75%;--end:100%;"
-                      aria-label="Brevmont Labs, 2025 to present. Activate to jump to chapter."></button>
+                      style="--start:87.5%;--end:100%;"
+                      aria-label="Brevmont Labs, 2026 to present. Activate to jump to chapter."></button>
             </div>
           </div>
 
@@ -229,7 +229,7 @@
               <img class="t-badge" src="/logos/yrs-badge.png" alt="Yancy Regional Services" width="480" height="238" loading="lazy" decoding="async">
               <div class="t-meta"><span class="t-dates">2022 — 2024</span> · <span class="t-role">Founder</span></div>
               <h3 class="t-company">Yancy Regional Services.</h3>
-              <p class="t-copy">Trucking company. Routes from Elkhart, Indiana to Arizona and New Mexico. RV transport, specialized.</p>
+              <p class="t-copy">Trucking company. Routes from Elkhart, Indiana to Arizona and New Mexico. Specialized in RV transport.</p>
               <p class="t-copy">Underneath the freight: this is where the outreach muscle came from. Cold email, cold phone, LinkedIn outbound — every load on every truck came from a conversation I started with an owner who didn't know my name that morning. Operator-grade outbound infrastructure was forced into existence because the work required it.</p>
               <p class="t-copy">Exited 2024. The outreach stack survived.</p>
             </div>
@@ -249,14 +249,14 @@
               <img class="t-badge t-badge-radm" src="/logos/radm-badge.png" alt="RADM — Commercial Real Estate" width="720" height="360" loading="lazy" decoding="async">
               <div class="t-meta"><span class="t-dates">2024 — 2025</span> · <span class="t-role">Business Consultant</span></div>
               <h3 class="t-company">RADM.</h3>
-              <p class="t-copy">Commercial real estate financial consulting company. I came on as the business consultant.</p>
+              <p class="t-copy">Commercial real estate financial consulting firm. I came on as the business consultant.</p>
               <p class="t-copy">What I built for them: landing pages, funnel architecture, nurture sequences, automations. Conversion-aware design, Next.js, Vercel. Email sequences that held open rates above 40%. The machines that turn strangers into booked calls.</p>
               <p class="t-copy">RADM is where I stopped thinking like a salesperson and started thinking like a builder. The question went from "how do I close this deal" to "how do I design the system that closes deals while I sleep."</p>
             </div>
             <span class="t-caret" aria-hidden="true"></span>
           </button>
           <div id="chapter-radm-body" class="t-body" role="region" aria-labelledby="chapter-radm" hidden>
-            <blockquote class="t-insight">Landing pages, funnels, nurture sequences, automations. This is where I learned to build the machine instead of being the machine.</blockquote>
+            <blockquote class="t-insight">This is where I learned to build the machine instead of being the machine.</blockquote>
             <div class="t-artifact-meta">Next.js / Vercel · 40%+ open rates · Business consultant</div>
           </div>
           <span class="t-connector" aria-hidden="true"></span>
@@ -287,7 +287,7 @@
           <button type="button" class="t-toggle" aria-expanded="false" aria-controls="chapter-brevmont-body">
             <div class="t-toggle-head">
               <div class="t-wordmark t-wordmark-brevmont" aria-hidden="true">BREVMONT</div>
-              <div class="t-meta"><span class="t-dates">2025 — Present</span> · <span class="t-role">Founder</span></div>
+              <div class="t-meta"><span class="t-dates">2026 — Present</span> · <span class="t-role">Founder</span></div>
               <h3 class="t-company">Brevmont Labs.</h3>
               <p class="t-copy">An AI layer that lives inside the CRM. A new lead comes in — the text, email, and CRM note are already written. A deal stalls — it gets surfaced before it rots. The follow-up that never happens on a busy floor, happens here.</p>
               <p class="t-copy">Built by the guy who had to do it, not theorized in a conference room.</p>
@@ -390,7 +390,7 @@
   </section>
 
   <footer class="footer">
-    Yancy Garcia · 2026
+    Yancy Garcia · <span id="copy-year">2026</span>
   </footer>
 
 <script>
@@ -399,6 +399,9 @@
   document.querySelectorAll('a[href*="cal.com"]').forEach(function (a) {
     a.href = CAL_DEMO_URL;
   });
+  // Auto-update footer copyright year so it never ages.
+  var __y = document.getElementById('copy-year');
+  if (__y) __y.textContent = String(new Date().getFullYear());
 </script>
 
 <script>
