@@ -405,10 +405,157 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* -------------------------------------------------------------------
+   EXPERIENCE TIMELINE (HORIZONTAL) — interactive bar chart
+------------------------------------------------------------------- */
+.exp-timeline {
+  padding: var(--gap-section) 0 48px;
+}
+
+.exp-timeline-inner {
+  max-width: 1040px;
+  padding: 0 48px;
+  text-align: center;
+}
+
+.exp-timeline-header {
+  margin-bottom: 56px;
+}
+.exp-timeline-header .label { display: block; margin-bottom: 12px; }
+
+.exp-timeline-subhead {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: var(--bone);
+  margin: 0 auto 24px;
+  max-width: 620px;
+}
+
+.exp-chart {
+  position: relative;
+  width: 100%;
+  padding: 16px 0 0;
+}
+
+.exp-chart-bars {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 8px 0 16px;
+
+  /* Year tick guides — faint vertical lines at each 12.5% step */
+  background-image: linear-gradient(
+    to right,
+    rgba(248, 246, 241, 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 12.5% 100%;
+  background-position: 0 0;
+  background-repeat: repeat-y;
+}
+
+.exp-row {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 20px;
+  align-items: center;
+  min-height: 18px;
+}
+
+.exp-row-label {
+  font-family: var(--f-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(248, 246, 241, 0.6);
+  text-align: right;
+}
+
+.exp-row-track {
+  position: relative;
+  height: 18px;
+  width: 100%;
+}
+
+.exp-bar {
+  position: absolute;
+  top: 0;
+  left: var(--start);
+  width: calc(var(--end) - var(--start));
+  height: 18px;
+  background: var(--teal);
+  opacity: 0.4;
+  border: 0;
+  border-radius: 4px;
+  padding: 0;
+  cursor: pointer;
+  transition: background 200ms var(--ease),
+              opacity 200ms var(--ease),
+              box-shadow 200ms var(--ease),
+              transform 200ms var(--ease);
+  will-change: opacity, background, box-shadow;
+}
+
+.exp-bar:hover,
+.exp-bar:focus-visible,
+.exp-bar.is-active {
+  background: var(--yellow);
+  opacity: 1;
+  box-shadow: 0 0 24px rgba(232, 255, 0, 0.3);
+}
+
+/* Dim siblings when one bar is hovered/focused/active */
+.exp-chart-bars:hover .exp-bar:not(:hover):not(:focus-visible):not(.is-active) {
+  opacity: 0.2;
+}
+.exp-chart-bars:has(.exp-bar.is-active) .exp-bar:not(.is-active):not(:hover):not(:focus-visible) {
+  opacity: 0.2;
+}
+
+/* Year axis */
+.exp-axis {
+  position: relative;
+  height: 24px;
+  width: 100%;
+  margin-left: 116px;   /* align with .exp-row-track (label col 96 + gap 20) */
+  margin-right: 0;
+  margin-top: 8px;
+  width: calc(100% - 116px);
+}
+.exp-tick {
+  position: absolute;
+  top: 0;
+  left: var(--at);
+  transform: translateX(-50%);
+  font-family: var(--f-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(248, 246, 241, 0.6);
+  white-space: nowrap;
+}
+.exp-tick-present { color: var(--yellow); }
+
+@media (prefers-reduced-motion: reduce) {
+  .exp-bar { transition: background 200ms linear, opacity 0ms; box-shadow: none !important; }
+  .exp-bar:hover, .exp-bar:focus-visible, .exp-bar.is-active {
+    box-shadow: none;
+  }
+  .exp-chart-bars:hover .exp-bar:not(:hover):not(:focus-visible):not(.is-active),
+  .exp-chart-bars:has(.exp-bar.is-active) .exp-bar:not(.is-active):not(:hover):not(:focus-visible) {
+    opacity: 0.4;
+  }
+}
+
+/* -------------------------------------------------------------------
    EXPERIENCE TIMELINE — centered, vertically-connected ventures
 ------------------------------------------------------------------- */
 .experience {
-  padding: var(--gap-section) 0 calc(var(--gap-section) + 24px);
+  padding: 48px 0 calc(var(--gap-section) + 24px);
 }
 
 .experience-inner {
@@ -539,6 +686,7 @@ a { color: inherit; text-decoration: none; }
   margin: 0 auto;
   text-align: center;
 }
+.t-copy + .t-copy { margin-top: 20px; }
 
 /* Vertical connector line + terminal dot */
 .t-connector {
@@ -700,6 +848,178 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* -------------------------------------------------------------------
+   EXPERIENCE — accordion toggle + expanded body
+------------------------------------------------------------------- */
+.t-venture { scroll-margin-top: 24px; }
+
+.t-toggle {
+  display: block;
+  width: 100%;
+  position: relative;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 200ms var(--ease);
+}
+.t-toggle:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 8px;
+}
+.t-toggle .t-toggle-head {
+  display: block;
+}
+
+/* Hover glow on the chapter's logo / mark / wordmark */
+.t-toggle:hover .t-badge,
+.t-toggle:hover .t-mark,
+.t-toggle:hover .t-wordmark {
+  transform: scale(1.02);
+  box-shadow: 0 0 32px rgba(232, 255, 0, 0.2);
+}
+.t-badge, .t-mark, .t-wordmark {
+  transition: transform 240ms var(--ease), box-shadow 240ms var(--ease);
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .t-toggle:hover .t-badge,
+  .t-toggle:hover .t-mark,
+  .t-toggle:hover .t-wordmark {
+    transform: none;
+    box-shadow: none;
+  }
+  .t-badge, .t-mark, .t-wordmark { transition: none; }
+}
+
+/* Expand caret — subtle chevron that flips when open */
+.t-caret {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 24px auto 0;
+  border-right: 1.5px solid var(--yellow);
+  border-bottom: 1.5px solid var(--yellow);
+  transform: rotate(45deg);
+  transition: transform 300ms var(--ease), opacity 200ms var(--ease);
+  opacity: 0.7;
+}
+.t-toggle[aria-expanded="true"] .t-caret {
+  transform: rotate(225deg);
+  opacity: 1;
+}
+
+/* Expanded body — reveals under the head */
+.t-body {
+  max-width: 720px;
+  margin: 32px auto 0;
+  text-align: left;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms var(--ease), max-height 400ms var(--ease);
+}
+.t-venture.is-expanded .t-body {
+  opacity: 1;
+  max-height: 1400px;  /* generous cap; content rarely exceeds */
+}
+.t-body[hidden] { display: none; }
+.t-venture.is-expanded .t-body { display: block; }
+
+.t-artifact {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 24px;
+  background: var(--teal);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.t-artifact-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bone);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px dashed rgba(248, 246, 241, 0.2);
+  border-radius: 4px;
+}
+.t-artifact-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.t-insight {
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bone);
+  padding: 12px 0 12px 16px;
+  border-left: 3px solid var(--teal);
+  margin: 0 0 20px;
+}
+
+.t-artifact-meta {
+  font-family: var(--f-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(248, 246, 241, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t-body { transition: none; }
+  .t-caret { transition: none; }
+}
+
+/* Arrow divider pulse: apply the existing connector dot to feel alive on scroll-in */
+@keyframes connector-pulse {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 1; }
+}
+.t-venture.is-visible .t-connector {
+  animation: connector-pulse 2.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .t-venture.is-visible .t-connector { animation: none; }
+}
+
+/* CTA underline — animate from 0 to full width on hover */
+.btn-secondary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 10px;
+  height: 1px;
+  background: var(--yellow);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 200ms var(--ease);
+}
+.btn-secondary:hover::before { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) {
+  .btn-secondary::before { transition: none; }
+}
+
+/* -------------------------------------------------------------------
    RESPONSIVE — tablet (<= 1024px)
 ------------------------------------------------------------------- */
 @media (max-width: 1024px) {
@@ -710,6 +1030,10 @@ a { color: inherit; text-decoration: none; }
   .hero-mark { top: 80px; right: 40px; width: 48px; height: 48px; }
 
   .cap-grid { column-gap: 48px; row-gap: 48px; }
+
+  .exp-timeline-inner { padding: 0 40px; }
+  .exp-row { grid-template-columns: 80px 1fr; gap: 16px; }
+  .exp-axis { margin-left: 96px; width: calc(100% - 96px); }
 }
 
 /* -------------------------------------------------------------------
@@ -783,6 +1107,24 @@ a { color: inherit; text-decoration: none; }
   .footer { padding: 32px 24px 40px; }
 
   .btn { padding: 14px 22px; font-size: 13px; }
+
+  /* Horizontal timeline mobile — compress, keep overlaps visible */
+  .exp-timeline-inner { padding: 0 20px; }
+  .exp-timeline-subhead { font-size: 18px; }
+  .exp-row { grid-template-columns: 64px 1fr; gap: 12px; min-height: 14px; }
+  .exp-row-label { font-size: 10px; }
+  .exp-row-track { height: 14px; }
+  .exp-bar { height: 14px; }
+  .exp-chart-bars { gap: 12px; }
+  .exp-axis { margin-left: 76px; width: calc(100% - 76px); height: 20px; }
+  .exp-tick { font-size: 9px; letter-spacing: 0.06em; }
+  /* Drop alternating tick labels to reduce crowding on mobile */
+  .exp-tick:nth-child(even):not(.exp-tick-present) { display: none; }
+
+  /* Expanded chapter body mobile */
+  .t-body { padding: 0 4px; }
+  .t-insight { font-size: 16px; }
+  .t-caret { margin-top: 20px; }
 }
 
 /* -------------------------------------------------------------------
