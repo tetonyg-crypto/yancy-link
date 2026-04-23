@@ -216,9 +216,6 @@
             <span class="t-caret" aria-hidden="true"></span>
           </button>
           <div id="chapter-sales-body" class="t-body" role="region" aria-labelledby="chapter-sales" hidden>
-            <figure class="t-artifact" data-src="/artifacts/chapter-1.jpg" data-n="1">
-              <div class="t-artifact-placeholder" aria-label="Chapter 1 artifact placeholder">IMAGE · CHAPTER 1</div>
-            </figure>
             <blockquote class="t-insight">Every lead I didn't call back is now the customer Brevmont calls for you.</blockquote>
             <div class="t-artifact-meta">Jackson, WY · Full cycle · Bilingual EN/ES</div>
           </div>
@@ -239,9 +236,6 @@
             <span class="t-caret" aria-hidden="true"></span>
           </button>
           <div id="chapter-yrs-body" class="t-body" role="region" aria-labelledby="chapter-yrs" hidden>
-            <figure class="t-artifact" data-src="/artifacts/chapter-2.jpg" data-n="2">
-              <div class="t-artifact-placeholder" aria-label="Chapter 2 artifact placeholder">IMAGE · CHAPTER 2</div>
-            </figure>
             <blockquote class="t-insight">Every load on every truck started as a cold outreach. The stack that built this became the engine I run today.</blockquote>
             <div class="t-artifact-meta">Elkhart, IN → AZ / NM · RV transport · Exited 2024</div>
           </div>
@@ -262,9 +256,6 @@
             <span class="t-caret" aria-hidden="true"></span>
           </button>
           <div id="chapter-radm-body" class="t-body" role="region" aria-labelledby="chapter-radm" hidden>
-            <figure class="t-artifact" data-src="/artifacts/chapter-3.jpg" data-n="3">
-              <div class="t-artifact-placeholder" aria-label="Chapter 3 artifact placeholder">IMAGE · CHAPTER 3</div>
-            </figure>
             <blockquote class="t-insight">Landing pages, funnels, nurture sequences, automations. This is where I learned to build the machine instead of being the machine.</blockquote>
             <div class="t-artifact-meta">Next.js / Vercel · 40%+ open rates · Business consultant</div>
           </div>
@@ -285,9 +276,6 @@
             <span class="t-caret" aria-hidden="true"></span>
           </button>
           <div id="chapter-testing-body" class="t-body" role="region" aria-labelledby="chapter-testing" hidden>
-            <figure class="t-artifact" data-src="/artifacts/chapter-4.jpg" data-n="4">
-              <div class="t-artifact-placeholder" aria-label="Chapter 4 artifact placeholder">IMAGE · CHAPTER 4</div>
-            </figure>
             <blockquote class="t-insight">I didn't come back to sell cars. I came back to confirm the problem I already knew existed.</blockquote>
             <div class="t-artifact-meta">Subaru · Chevy · One year field research</div>
           </div>
@@ -307,9 +295,6 @@
             <span class="t-caret" aria-hidden="true"></span>
           </button>
           <div id="chapter-brevmont-body" class="t-body" role="region" aria-labelledby="chapter-brevmont" hidden>
-            <figure class="t-artifact" data-src="/artifacts/chapter-5.jpg" data-n="5">
-              <div class="t-artifact-placeholder" aria-label="Chapter 5 artifact placeholder">IMAGE · CHAPTER 5</div>
-            </figure>
             <blockquote class="t-insight">Built by the guy who had to do it, not theorized in a conference room.</blockquote>
             <div class="t-artifact-meta">AI execution layer · Live in two Wyoming dealerships · Founding cohort open</div>
           </div>
@@ -521,31 +506,6 @@
       if (venture.contains(e.target)) return;
       if (e.target.closest('.exp-bar')) return; // bars handle their own state
       collapseChapter(venture.id);
-    });
-  })();
-</script>
-
-<script>
-  // Chapter artifact: swap placeholder for real image if /artifacts/chapter-N.jpg resolves.
-  (function () {
-    var figs = document.querySelectorAll('.t-artifact[data-src]');
-    figs.forEach(function (fig) {
-      var src = fig.getAttribute('data-src');
-      var n   = fig.getAttribute('data-n') || '';
-      if (!src) return;
-      var probe = new Image();
-      probe.onload = function () {
-        var img = document.createElement('img');
-        img.src = src;
-        img.alt = 'Chapter ' + n + ' artifact';
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        img.className = 't-artifact-img';
-        fig.innerHTML = '';
-        fig.appendChild(img);
-        fig.classList.add('has-image');
-      };
-      probe.src = src;
     });
   })();
 </script>
