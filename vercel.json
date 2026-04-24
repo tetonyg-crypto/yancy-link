@@ -4,6 +4,10 @@
   "framework": null,
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/archive", "destination": "/api/gone" },
+    { "source": "/archive/:path*", "destination": "/api/gone" }
+  ],
   "redirects": [
     { "source": "/inventory", "destination": "/", "permanent": true },
     { "source": "/inventory/:path*", "destination": "/", "permanent": true },
@@ -22,9 +26,7 @@
     { "source": "/vcard", "destination": "/", "permanent": true },
     { "source": "/vcard/:path*", "destination": "/", "permanent": true },
     { "source": "/templates", "destination": "/", "permanent": true },
-    { "source": "/templates/:path*", "destination": "/", "permanent": true },
-    { "source": "/api", "destination": "/", "permanent": true },
-    { "source": "/api/:path*", "destination": "/", "permanent": true }
+    { "source": "/templates/:path*", "destination": "/", "permanent": true }
   ],
   "headers": [
     {
