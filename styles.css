@@ -1054,6 +1054,23 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted);
 }
 
+.portfolio-thumb-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 40px;
+  background: var(--bone);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.portfolio-thumb-logo img {
+  width: auto;
+  max-width: 72%;
+  max-height: 96px;
+  height: auto;
+  object-fit: contain;
+}
+
 .portfolio-card-body {
   padding: 24px 28px 28px;
 }
