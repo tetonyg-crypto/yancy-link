@@ -920,6 +920,183 @@ a { color: inherit; text-decoration: none; }
 .contact a:hover::after { transform: scaleX(1); }
 
 /* -------------------------------------------------------------------
+   SITE NAV
+------------------------------------------------------------------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 48px;
+  background: rgba(15, 20, 25, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.site-nav-brand {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--bone);
+}
+
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.site-nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 200ms var(--ease);
+}
+
+.site-nav-links a:hover,
+.site-nav-links a[aria-current="page"] {
+  color: var(--yellow);
+}
+
+/* -------------------------------------------------------------------
+   PORTFOLIO PAGE
+------------------------------------------------------------------- */
+.portfolio-page {
+  padding-bottom: var(--gap-section);
+}
+
+.portfolio-hero {
+  padding: 72px 48px 48px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.portfolio-hero .label {
+  margin-bottom: 24px;
+}
+
+.portfolio-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--bone);
+  margin-bottom: 16px;
+  max-width: 18ch;
+}
+
+.portfolio-lede {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted-soft);
+  max-width: 42ch;
+}
+
+.portfolio-grid-wrap {
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+
+.portfolio-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.portfolio-card-featured {
+  grid-column: 1 / -1;
+}
+
+.portfolio-card-link {
+  display: block;
+  height: 100%;
+  border: 1px solid var(--hairline);
+  background: var(--surface);
+  transition: border-color 200ms var(--ease), transform 200ms var(--ease);
+}
+
+.portfolio-card-link:hover {
+  border-color: var(--yellow);
+  transform: translateY(-2px);
+}
+
+.portfolio-thumb {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--surface-hi);
+}
+
+.portfolio-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio-thumb-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.portfolio-thumb-placeholder span {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.portfolio-card-body {
+  padding: 24px 28px 28px;
+}
+
+.portfolio-trade {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 10px;
+}
+
+.portfolio-name {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  color: var(--bone);
+  margin-bottom: 12px;
+}
+
+.portfolio-card-featured .portfolio-name {
+  font-size: clamp(24px, 3vw, 32px);
+}
+
+.portfolio-card-cta {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted-soft);
+  transition: color 200ms var(--ease);
+}
+
+.portfolio-card-link:hover .portfolio-card-cta {
+  color: var(--yellow);
+}
+
+.portfolio-footer-cta {
+  padding-top: 48px;
+  max-width: 720px;
+}
+
+/* -------------------------------------------------------------------
    FOOTER
 ------------------------------------------------------------------- */
 .footer {
@@ -1114,6 +1291,9 @@ a { color: inherit; text-decoration: none; }
 
   .cap-grid { column-gap: 48px; row-gap: 48px; }
   .work-list { gap: 40px 48px; }
+  .site-nav { padding: 16px 40px; }
+  .portfolio-hero { padding: 64px 40px 40px; }
+  .portfolio-grid { gap: 24px; }
 
   .exp-timeline-inner { padding: 0 40px; }
   .exp-row { grid-template-columns: 80px 1fr; gap: 16px; }
@@ -1163,6 +1343,22 @@ a { color: inherit; text-decoration: none; }
   .work-list {
     grid-template-columns: 1fr;
     gap: 36px;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .site-nav {
+    padding: 14px 24px;
+  }
+  .site-nav-links {
+    gap: 18px;
+  }
+  .portfolio-hero {
+    padding: 48px 24px 32px;
+  }
+  .portfolio-card-body {
+    padding: 20px 20px 24px;
   }
   .cap {
     grid-template-columns: 56px 1fr;
