@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 640" role="img" aria-labelledby="title">
+  <title id="title">Dying Breed Barber Shop</title>
+  <defs>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#cfcfcf"/>
+      <stop offset="100%" stop-color="#8f8f8f"/>
+    </linearGradient>
+    <pattern id="pole" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(-30)">
+      <rect width="12" height="12" fill="#111"/>
+      <rect width="12" height="4" fill="#f4f4f4"/>
+      <rect y="4" width="12" height="4" fill="#9a9a9a"/>
+    </pattern>
+  </defs>
+
+  <path d="M260 16 L508 320 L260 624 L12 320 Z" fill="#0a0a0a"/>
+  <path d="M260 16 L508 320 L260 624 L12 320 Z" fill="none" stroke="#f4f4f4" stroke-width="3.5"/>
+  <path d="M260 34 L488 320 L260 606 L32 320 Z" fill="none" stroke="#f4f4f4" stroke-width="1.2" opacity=".75"/>
+
+  <text x="260" y="100" text-anchor="middle" fill="#f4f4f4"
+        font-family="Georgia, Times, serif" font-size="14" font-weight="700" letter-spacing="5.5">BARBER</text>
+  <text x="260" y="120" text-anchor="middle" fill="#f4f4f4"
+        font-family="Georgia, Times, serif" font-size="14" font-weight="700" letter-spacing="7">SHOP</text>
+
+  <!-- poles -->
+  <g>
+    <ellipse cx="98" cy="214" rx="17" ry="8" fill="url(#chrome)"/>
+    <rect x="83" y="218" width="30" height="158" rx="2" fill="url(#pole)" stroke="#e8e8e8" stroke-width=".7"/>
+    <ellipse cx="98" cy="380" rx="17" ry="8" fill="url(#chrome)"/>
+
+    <ellipse cx="422" cy="214" rx="17" ry="8" fill="url(#chrome)"/>
+    <rect x="407" y="218" width="30" height="158" rx="2" fill="url(#pole)" stroke="#e8e8e8" stroke-width=".7"/>
+    <ellipse cx="422" cy="380" rx="17" ry="8" fill="url(#chrome)"/>
+  </g>
+
+  <!-- banners -->
+  <path d="M36 288 H196 L208 320 L196 352 H36 L50 320 Z" fill="#0a0a0a" stroke="#f4f4f4" stroke-width="1.6"/>
+  <path d="M484 288 H324 L312 320 L324 352 H484 L470 320 Z" fill="#0a0a0a" stroke="#f4f4f4" stroke-width="1.6"/>
+  <text x="116" y="328" text-anchor="middle" fill="#f4f4f4"
+        font-family="Georgia, Times, serif" font-size="19" font-weight="700" letter-spacing="4">DYING</text>
+  <text x="404" y="328" text-anchor="middle" fill="#f4f4f4"
+        font-family="Georgia, Times, serif" font-size="19" font-weight="700" letter-spacing="4">BREED</text>
+
+  <!-- DB monogram -->
+  <text x="260" y="300" text-anchor="middle" fill="#f4f4f4"
+        font-family="Georgia, 'Times New Roman', Times, serif" font-size="118" font-weight="700"
+        letter-spacing="-6">DB</text>
+
+  <text x="260" y="430" text-anchor="middle" fill="#f4f4f4"
+        font-family="Georgia, Times, serif" font-size="11" font-weight="600" letter-spacing="3.5">OLD SCHOOL</text>
+  <text x="260" y="450" text-anchor="middle" fill="#f4f4f4"
+        font-family="Georgia, Times, serif" font-size="11" font-weight="600" letter-spacing="3.5">TRADITIONS</text>
+
+  <!-- scissors -->
+  <g transform="translate(260,510)" fill="none" stroke="#f4f4f4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="rotate(-38)">
+      <circle cx="-9" cy="2" r="4.5"/><circle cx="9" cy="2" r="4.5"/>
+      <path d="M-9 2 L-26 -20 M9 2 L26 -20 M-3 6 H3"/>
+    </g>
+    <g transform="rotate(38)">
+      <circle cx="-9" cy="2" r="4.5"/><circle cx="9" cy="2" r="4.5"/>
+      <path d="M-9 2 L-26 -20 M9 2 L26 -20 M-3 6 H3"/>
+    </g>
+  </g>
+</svg>

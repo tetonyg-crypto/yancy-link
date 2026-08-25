@@ -1090,48 +1090,70 @@ a { color: inherit; text-decoration: none; }
 }
 
 .portfolio-thumb {
-  aspect-ratio: 16 / 9;
+  position: relative;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: var(--surface-hi);
+  background: #12171c;
 }
 
-.portfolio-thumb img {
+.portfolio-cover {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transform: scale(1.01);
+  transition: transform 400ms var(--ease);
+}
+
+.portfolio-card-link:hover .portfolio-cover {
+  transform: scale(1.04);
+}
+
+.portfolio-logo-badge {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  max-width: 42%;
+  height: 48px;
+  padding: 8px 12px;
+  background: rgba(15, 20, 25, 0.88);
+  border: 1px solid rgba(245, 243, 238, 0.14);
+  backdrop-filter: blur(8px);
+}
+
+.portfolio-logo-badge img {
+  width: auto;
+  max-width: 100%;
+  max-height: 32px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.portfolio-thumb-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 40px;
+  background: #0A0C0E;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.portfolio-thumb-brand img {
+  width: auto;
+  max-width: 58%;
+  max-height: 88px;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .portfolio-thumb-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid var(--hairline);
-}
-
-.portfolio-thumb-placeholder span {
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.portfolio-thumb-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 36px 40px;
-  background: var(--bone);
-  border-bottom: 1px solid var(--hairline);
-}
-
-.portfolio-thumb-logo img {
-  width: auto;
-  max-width: 72%;
-  max-height: 96px;
-  height: auto;
-  object-fit: contain;
+  display: none;
 }
 
 .portfolio-card-body {
