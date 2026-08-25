@@ -986,15 +986,78 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.02em;
   line-height: 1.15;
   color: var(--bone);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   max-width: 18ch;
+}
+
+.portfolio-role {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--yellow);
+  margin-bottom: 20px;
+  letter-spacing: 0.01em;
 }
 
 .portfolio-lede {
   font-size: 16px;
   line-height: 1.7;
   color: var(--muted-soft);
-  max-width: 42ch;
+  max-width: 52ch;
+  margin-bottom: 14px;
+}
+
+.portfolio-contact {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding-top: 28px;
+  border-top: 1px solid var(--hairline);
+}
+
+.portfolio-contact-primary {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--bone);
+  letter-spacing: -0.01em;
+  transition: color 200ms var(--ease);
+}
+
+.portfolio-contact-primary:hover {
+  color: var(--yellow);
+}
+
+.portfolio-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 8px;
+}
+
+.portfolio-social a {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 200ms var(--ease);
+}
+
+.portfolio-social a:hover {
+  color: var(--yellow);
+}
+
+.portfolio-social-footer {
+  margin-top: 28px;
+}
+
+.portfolio-work-head {
+  margin-bottom: 40px;
+}
+
+.portfolio-work-head h2 {
+  font-size: 28px;
 }
 
 .portfolio-grid-wrap {
