@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="yg-static-bake" content="jh-masonry">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="https://jh-masonry.com/favicon.ico" sizes="any">
+<title>JH Masonry — Project Catalog</title>
+<meta name="description" content="JH Masonry. Stone, brick, stucco, fireplaces, and outdoor living. 30 years of work across Idaho and Wyoming.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+html{scroll-padding-top:80px}
+section[id]{scroll-margin-top:80px}
+:root{
+  --accent:#0A0A0A;
+  --ink:#0A0A0A;
+  --ink-2:#1A1A1A;
+  --white:#FFFFFF;
+  --mute:#4A4A4A;
+  --body:#2E2E2E;
+  --card:#FFFFFF;
+  --line-l:#E8E8E8;
+  --wrap:min(1220px,92vw);
+  --page:#FFFFFF;
+  --soft:#F7F7F5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--page);color:var(--ink);
+  font-family:'Montserrat',system-ui,sans-serif;
+  font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.55;
+}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;border-radius:0}
+.wrap{width:var(--wrap);margin:0 auto}
+.caps{text-transform:uppercase}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--ink);font-weight:700;
+}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--accent);flex-shrink:0}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 22px;font-size:11px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;border:1px solid transparent;cursor:pointer;
+  transition:.2s;border-radius:0;line-height:1;
+}
+.btn-primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-primary:hover{background:var(--ink-2)}
+.btn-ghost{background:transparent;color:#0A0A0A;border-color:rgba(10,10,10,.45)}
+.btn-ghost:hover{background:rgba(10,10,10,.06)}
+
+/* NAV */
+.nav{
+  position:fixed;inset:0 0 auto;z-index:60;
+  background:#fff;border-bottom:1px solid #E8E8E8;
+  color:#0A0A0A;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:0 22px;height:64px;
+}
+.nav .brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav .brand .lockup{
+  display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid #0A0A0A;padding:8px 12px;
+  font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  color:#0A0A0A;line-height:1;white-space:nowrap;
+}
+.nav .links{display:flex;gap:20px;align-items:center}
+.nav .links a{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#0A0A0A;transition:.15s}
+.nav .links a:hover{color:#555}
+.nav .actions{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.nav .actions .tel{font-size:13px;font-weight:600;color:#0A0A0A;display:flex;align-items:center;gap:6px}
+@media(max-width:900px){.nav .links{display:none}}
+@media(max-width:640px){.nav .actions .tel{display:none}}
+
+/* CAT PAGE */
+.cat-page{padding-top:64px}
+
+/* HERO — video bg */
+.cat-page .hero{
+  position:relative;min-height:min(56vh,480px);
+  padding:140px 24px 72px;text-align:center;
+  overflow:hidden;background:#111;color:#fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.cat-page .hero-video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;z-index:0;
+}
+.cat-page .hero::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(10,10,10,.52) 0%,rgba(10,10,10,.32) 45%,rgba(10,10,10,.72) 100%);
+  pointer-events:none
+}
+.cat-page .hero .eyebrow,
+.cat-page .hero h1,
+.cat-page .hero p{position:relative;z-index:2}
+.cat-page .hero .eyebrow{color:rgba(255,255,255,.85);letter-spacing:.28em;font-size:11px;text-transform:uppercase;font-weight:700}
+.cat-page .hero .eyebrow::before{background:rgba(255,255,255,.5)}
+.cat-page .hero h1{
+  color:#fff;margin-top:14px;
+  font-size:clamp(28px,5.5vw,52px);text-transform:uppercase;
+  font-weight:800;letter-spacing:.02em;line-height:1.05;
+  max-width:16ch;
+}
+.cat-page .hero p{color:rgba(255,255,255,.75);margin-top:14px;max-width:52ch;font-size:15px}
+@media(prefers-reduced-motion:reduce){.cat-page .hero-video{display:none!important}.cat-page .hero{background:#1a1a1a url(https://jh-masonry.com/assets/images/catalog/thumbs/001.jpg) center/cover no-repeat}}
+
+/* FILTER */
+.filter{
+  position:sticky;top:64px;z-index:40;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(14px);
+  border-bottom:1px solid #E8E8E8;
+  padding:14px 20px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
+}
+.filter button{
+  background:transparent;border:1px solid #ddd;color:#555;
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:600;padding:10px 14px;cursor:pointer;font-family:inherit;
+  transition:.15s;border-radius:0;
+}
+.filter button:hover{border-color:#0A0A0A;color:#0A0A0A}
+.filter button.on{border-color:#0A0A0A;background:#0A0A0A;color:#fff}
+
+/* GRID */
+.cat{padding:52px 0 24px}
+.cat.hidden{display:none}
+.cat-head{
+  padding:0 28px 24px;width:var(--wrap);margin:0 auto;
+  display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;
+}
+.cat-head .num{
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:#0A0A0A;font-weight:700;margin-bottom:8px;
+}
+.cat-head h2{font-size:clamp(22px,3vw,34px);text-transform:uppercase;font-weight:800;margin-top:2px}
+.cat-head .count{font-size:12px;color:#888;letter-spacing:.08em;padding-bottom:6px}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:2px;
+  padding:0 2px;
+  width:min(1460px,100vw);margin:0 auto;
+}
+.item{
+  position:relative;background:#f0f0ee;cursor:pointer;
+  overflow:hidden;padding:0;border:none;text-align:left;
+  aspect-ratio:4/3;
+}
+.item img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .55s ease,filter .22s;
+}
+.item:hover img{transform:scale(1.05);filter:brightness(1.08)}
+.item .meta{
+  position:absolute;inset:auto 0 0;z-index:2;
+  padding:32px 14px 14px;
+  background:linear-gradient(180deg,transparent 0%,rgba(10,10,10,.72) 100%);
+  color:#fff;opacity:0;transition:.2s;
+}
+.item:hover .meta{opacity:1}
+.item .ti{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.item .lc{font-size:10px;color:rgba(255,255,255,.7);margin-top:3px;letter-spacing:.06em}
+@media(max-width:640px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .cat-head{padding:0 16px 18px}
+  .filter{padding:10px 14px}
+  .filter button{padding:8px 11px;font-size:9px}
+}
+
+/* LIGHTBOX */
+.lb{
+  position:fixed;inset:0;z-index:200;
+  background:rgba(10,10,10,.92);backdrop-filter:blur(8px);
+  display:none;align-items:center;justify-content:center;
+  padding:20px;
+}
+.lb.open{display:flex}
+.lb-inner{
+  position:relative;max-width:min(90vw,1000px);max-height:90vh;
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+}
+.lb-inner img{max-width:100%;max-height:80vh;object-fit:contain;display:block}
+.lb-cap{color:rgba(255,255,255,.8);font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-align:center}
+.lb-close{
+  position:absolute;top:-40px;right:0;
+  background:transparent;border:none;color:#fff;font-size:28px;
+  cursor:pointer;line-height:1;padding:4px 8px;
+}
+
+/* FOOTER */
+footer{
+  border-top:1px solid #E8E8E8;margin-top:60px;padding:32px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;font-size:11px;color:#888;letter-spacing:.08em;
+}
+footer a{color:#0A0A0A;font-weight:700}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head{
+  max-width:none!important;
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a class="brand" href="/d/jh/" aria-label="JH Masonry">
+    <span class="lockup">JH MASONRY</span>
+  </a>
+  <nav class="links" aria-label="Primary">
+    <a href="/d/jh/">Home</a>
+    <a href="/d/jh/catalog/" aria-current="page">Catalog</a>
+    <a href="/d/jh/#contact">Contact</a>
+  </nav>
+  <div class="actions">
+    <a class="tel" href="tel:+12083138664">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.35a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.75.32 1.54.55 2.35.68A2 2 0 0 1 22 16.92z"/></svg>
+      (208) 313-8664
+    </a>
+    <a class="btn btn-primary" href="/d/jh/#contact">Book a style</a>
+  </div>
+</header>
+
+<div class="cat-page">
+
+<section class="hero">
+  <video class="hero-video" id="catHeroVideo" autoplay muted loop playsinline preload="metadata" poster="https://jh-masonry.com/assets/images/hero-poster.jpg">
+    <source src="https://jh-masonry.com/assets/video/hero-loop.mp4" type="video/mp4">
+  </video>
+  <div class="eyebrow">Project catalog</div>
+  <h1>[YOUR HEADLINE HERE]</h1>
+  <p>Stone &middot; Brick &middot; Stucco &middot; Fireplaces &middot; Outdoor Living</p>
+</section>
+
+<div class="filter" id="filters">
+  <button class="on" data-filter="all">All work</button>
+  <button data-filter="stone">Stone Veneer</button>
+  <button data-filter="brick">Brick</button>
+  <button data-filter="stucco">Stucco</button>
+  <button data-filter="fireplaces">Fireplaces</button>
+  <button data-filter="outdoor">Outdoor Living</button>
+</div>
+
+
+<section class="cat" data-section="stone">
+  <div class="cat-head"><div class="num">01</div><h2>Stone Veneer</h2><div class="count">30 plates · Natural & manufactured stone elevations, wainscot, and feature walls.</div></div>
+  <div class="grid">
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/001.jpg" data-title="Stone elevation, Pl. 001" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/001.jpg" alt="Stone elevation, Pl. 001" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 001</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/002.jpg" data-title="Stone elevation, Pl. 002" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/002.jpg" alt="Stone elevation, Pl. 002" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 002</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/003.jpg" data-title="Stone elevation, Pl. 003" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/003.jpg" alt="Stone elevation, Pl. 003" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 003</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/005.jpg" data-title="Stone elevation, Pl. 005" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/005.jpg" alt="Stone elevation, Pl. 005" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 005</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/006.jpg" data-title="Stone elevation, Pl. 006" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/006.jpg" alt="Stone elevation, Pl. 006" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 006</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/012.jpg" data-title="Stone elevation, Pl. 012" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/012.jpg" alt="Stone elevation, Pl. 012" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 012</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/013.jpg" data-title="Stone elevation, Pl. 013" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/013.jpg" alt="Stone elevation, Pl. 013" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 013</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/014.jpg" data-title="Stone elevation, Pl. 014" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/014.jpg" alt="Stone elevation, Pl. 014" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 014</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/023.jpg" data-title="Stone elevation, Pl. 023" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/023.jpg" alt="Stone elevation, Pl. 023" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 023</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/026.jpg" data-title="Stone elevation, Pl. 026" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/026.jpg" alt="Stone elevation, Pl. 026" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 026</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/028.jpg" data-title="Stone elevation, Pl. 028" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/028.jpg" alt="Stone elevation, Pl. 028" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 028</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/029.jpg" data-title="Stone elevation, Pl. 029" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/029.jpg" alt="Stone elevation, Pl. 029" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 029</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/033.jpg" data-title="Stone elevation, Pl. 033" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/033.jpg" alt="Stone elevation, Pl. 033" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 033</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/034.jpg" data-title="Stone elevation, Pl. 034" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/034.jpg" alt="Stone elevation, Pl. 034" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 034</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/043.jpg" data-title="Stone elevation, Pl. 043" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/043.jpg" alt="Stone elevation, Pl. 043" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 043</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/044.jpg" data-title="Stone elevation, Pl. 044" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/044.jpg" alt="Stone elevation, Pl. 044" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 044</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/069.jpg" data-title="Stone elevation, Pl. 069" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/069.jpg" alt="Stone elevation, Pl. 069" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 069</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/070.jpg" data-title="Stone elevation, Pl. 070" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/070.jpg" alt="Stone elevation, Pl. 070" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 070</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/071.jpg" data-title="Stone elevation, Pl. 071" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/071.jpg" alt="Stone elevation, Pl. 071" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 071</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/103.jpg" data-title="Stone elevation, Pl. 103" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/103.jpg" alt="Stone elevation, Pl. 103" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 103</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/111.jpg" data-title="Stone elevation, Pl. 111" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/111.jpg" alt="Stone elevation, Pl. 111" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 111</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/112.jpg" data-title="Stone elevation, Pl. 112" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/112.jpg" alt="Stone elevation, Pl. 112" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 112</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/133.jpg" data-title="Stone elevation, Pl. 133" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/133.jpg" alt="Stone elevation, Pl. 133" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 133</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/134.jpg" data-title="Stone elevation, Pl. 134" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/134.jpg" alt="Stone elevation, Pl. 134" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 134</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/135.jpg" data-title="Stone elevation, Pl. 135" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/135.jpg" alt="Stone elevation, Pl. 135" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 135</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/136.jpg" data-title="Stone elevation, Pl. 136" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/136.jpg" alt="Stone elevation, Pl. 136" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 136</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/137.jpg" data-title="Stone elevation, Pl. 137" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/137.jpg" alt="Stone elevation, Pl. 137" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 137</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/138.jpg" data-title="Stone elevation, Pl. 138" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/138.jpg" alt="Stone elevation, Pl. 138" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 138</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/139.jpg" data-title="Stone elevation, Pl. 139" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/139.jpg" alt="Stone elevation, Pl. 139" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 139</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stone" data-full="https://jh-masonry.com/assets/images/catalog/140.jpg" data-title="Stone elevation, Pl. 140" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/140.jpg" alt="Stone elevation, Pl. 140" loading="lazy"><div class="meta"><div class="ti">Stone elevation, Pl. 140</div><div class="lc">Wyoming</div></div></button>
+  </div>
+</section>
+
+<section class="cat" data-section="brick">
+  <div class="cat-head"><div class="num">02</div><h2>Brick</h2><div class="count">20 plates · Full brick builds, veneers, and accent work.</div></div>
+  <div class="grid">
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/016.jpg" data-title="Brick build, Pl. 016" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/016.jpg" alt="Brick build, Pl. 016" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 016</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/018.jpg" data-title="Brick build, Pl. 018" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/018.jpg" alt="Brick build, Pl. 018" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 018</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/024.jpg" data-title="Brick build, Pl. 024" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/024.jpg" alt="Brick build, Pl. 024" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 024</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/025.jpg" data-title="Brick build, Pl. 025" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/025.jpg" alt="Brick build, Pl. 025" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 025</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/040.jpg" data-title="Brick build, Pl. 040" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/040.jpg" alt="Brick build, Pl. 040" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 040</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/046.jpg" data-title="Brick build, Pl. 046" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/046.jpg" alt="Brick build, Pl. 046" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 046</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/051.jpg" data-title="Brick build, Pl. 051" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/051.jpg" alt="Brick build, Pl. 051" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 051</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/052.jpg" data-title="Brick build, Pl. 052" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/052.jpg" alt="Brick build, Pl. 052" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 052</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/084.jpg" data-title="Brick build, Pl. 084" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/084.jpg" alt="Brick build, Pl. 084" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 084</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/109.jpg" data-title="Brick build, Pl. 109" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/109.jpg" alt="Brick build, Pl. 109" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 109</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/129.jpg" data-title="Brick build, Pl. 129" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/129.jpg" alt="Brick build, Pl. 129" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 129</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/130.jpg" data-title="Brick build, Pl. 130" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/130.jpg" alt="Brick build, Pl. 130" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 130</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/131.jpg" data-title="Brick build, Pl. 131" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/131.jpg" alt="Brick build, Pl. 131" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 131</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/192.jpg" data-title="Brick build, Pl. 192" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/192.jpg" alt="Brick build, Pl. 192" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 192</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/205.jpg" data-title="Brick build, Pl. 205" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/205.jpg" alt="Brick build, Pl. 205" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 205</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/234.jpg" data-title="Brick build, Pl. 234" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/234.jpg" alt="Brick build, Pl. 234" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 234</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/235.jpg" data-title="Brick build, Pl. 235" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/235.jpg" alt="Brick build, Pl. 235" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 235</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/240.jpg" data-title="Brick build, Pl. 240" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/240.jpg" alt="Brick build, Pl. 240" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 240</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/241.jpg" data-title="Brick build, Pl. 241" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/241.jpg" alt="Brick build, Pl. 241" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 241</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="brick" data-full="https://jh-masonry.com/assets/images/catalog/259.jpg" data-title="Brick build, Pl. 259" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/259.jpg" alt="Brick build, Pl. 259" loading="lazy"><div class="meta"><div class="ti">Brick build, Pl. 259</div><div class="lc">Eastern Idaho</div></div></button>
+  </div>
+</section>
+
+<section class="cat" data-section="stucco">
+  <div class="cat-head"><div class="num">03</div><h2>Stucco</h2><div class="count">20 plates · Three-coat stucco, smooth and textured finishes.</div></div>
+  <div class="grid">
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/007.jpg" data-title="Stucco finish, Pl. 007" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/007.jpg" alt="Stucco finish, Pl. 007" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 007</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/009.jpg" data-title="Stucco finish, Pl. 009" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/009.jpg" alt="Stucco finish, Pl. 009" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 009</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/010.jpg" data-title="Stucco finish, Pl. 010" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/010.jpg" alt="Stucco finish, Pl. 010" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 010</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/027.jpg" data-title="Stucco finish, Pl. 027" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/027.jpg" alt="Stucco finish, Pl. 027" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 027</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/035.jpg" data-title="Stucco finish, Pl. 035" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/035.jpg" alt="Stucco finish, Pl. 035" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 035</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/036.jpg" data-title="Stucco finish, Pl. 036" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/036.jpg" alt="Stucco finish, Pl. 036" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 036</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/042.jpg" data-title="Stucco finish, Pl. 042" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/042.jpg" alt="Stucco finish, Pl. 042" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 042</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/047.jpg" data-title="Stucco finish, Pl. 047" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/047.jpg" alt="Stucco finish, Pl. 047" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 047</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/048.jpg" data-title="Stucco finish, Pl. 048" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/048.jpg" alt="Stucco finish, Pl. 048" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 048</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/107.jpg" data-title="Stucco finish, Pl. 107" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/107.jpg" alt="Stucco finish, Pl. 107" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 107</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/108.jpg" data-title="Stucco finish, Pl. 108" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/108.jpg" alt="Stucco finish, Pl. 108" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 108</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/114.jpg" data-title="Stucco finish, Pl. 114" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/114.jpg" alt="Stucco finish, Pl. 114" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 114</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/115.jpg" data-title="Stucco finish, Pl. 115" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/115.jpg" alt="Stucco finish, Pl. 115" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 115</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/116.jpg" data-title="Stucco finish, Pl. 116" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/116.jpg" alt="Stucco finish, Pl. 116" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 116</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/117.jpg" data-title="Stucco finish, Pl. 117" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/117.jpg" alt="Stucco finish, Pl. 117" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 117</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/156.jpg" data-title="Stucco finish, Pl. 156" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/156.jpg" alt="Stucco finish, Pl. 156" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 156</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/157.jpg" data-title="Stucco finish, Pl. 157" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/157.jpg" alt="Stucco finish, Pl. 157" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 157</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/199.jpg" data-title="Stucco finish, Pl. 199" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/199.jpg" alt="Stucco finish, Pl. 199" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 199</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/200.jpg" data-title="Stucco finish, Pl. 200" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/200.jpg" alt="Stucco finish, Pl. 200" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 200</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="stucco" data-full="https://jh-masonry.com/assets/images/catalog/267.jpg" data-title="Stucco finish, Pl. 267" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/267.jpg" alt="Stucco finish, Pl. 267" loading="lazy"><div class="meta"><div class="ti">Stucco finish, Pl. 267</div><div class="lc">Eastern Idaho</div></div></button>
+  </div>
+</section>
+
+<section class="cat" data-section="fireplaces">
+  <div class="cat-head"><div class="num">04</div><h2>Fireplaces</h2><div class="count">20 plates · Interior and exterior fireplaces, chimneys, and mantels.</div></div>
+  <div class="grid">
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/004.jpg" data-title="Fireplace / chimney, Pl. 004" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/004.jpg" alt="Fireplace / chimney, Pl. 004" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 004</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/008.jpg" data-title="Fireplace / chimney, Pl. 008" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/008.jpg" alt="Fireplace / chimney, Pl. 008" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 008</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/019.jpg" data-title="Fireplace / chimney, Pl. 019" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/019.jpg" alt="Fireplace / chimney, Pl. 019" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 019</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/020.jpg" data-title="Fireplace / chimney, Pl. 020" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/020.jpg" alt="Fireplace / chimney, Pl. 020" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 020</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/030.jpg" data-title="Fireplace / chimney, Pl. 030" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/030.jpg" alt="Fireplace / chimney, Pl. 030" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 030</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/041.jpg" data-title="Fireplace / chimney, Pl. 041" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/041.jpg" alt="Fireplace / chimney, Pl. 041" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 041</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/045.jpg" data-title="Fireplace / chimney, Pl. 045" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/045.jpg" alt="Fireplace / chimney, Pl. 045" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 045</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/055.jpg" data-title="Fireplace / chimney, Pl. 055" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/055.jpg" alt="Fireplace / chimney, Pl. 055" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 055</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/056.jpg" data-title="Fireplace / chimney, Pl. 056" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/056.jpg" alt="Fireplace / chimney, Pl. 056" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 056</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/059.jpg" data-title="Fireplace / chimney, Pl. 059" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/059.jpg" alt="Fireplace / chimney, Pl. 059" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 059</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/060.jpg" data-title="Fireplace / chimney, Pl. 060" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/060.jpg" alt="Fireplace / chimney, Pl. 060" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 060</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/061.jpg" data-title="Fireplace / chimney, Pl. 061" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/061.jpg" alt="Fireplace / chimney, Pl. 061" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 061</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/066.jpg" data-title="Fireplace / chimney, Pl. 066" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/066.jpg" alt="Fireplace / chimney, Pl. 066" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 066</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/067.jpg" data-title="Fireplace / chimney, Pl. 067" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/067.jpg" alt="Fireplace / chimney, Pl. 067" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 067</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/086.jpg" data-title="Fireplace / chimney, Pl. 086" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/086.jpg" alt="Fireplace / chimney, Pl. 086" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 086</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/093.jpg" data-title="Fireplace / chimney, Pl. 093" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/093.jpg" alt="Fireplace / chimney, Pl. 093" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 093</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/094.jpg" data-title="Fireplace / chimney, Pl. 094" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/094.jpg" alt="Fireplace / chimney, Pl. 094" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 094</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/095.jpg" data-title="Fireplace / chimney, Pl. 095" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/095.jpg" alt="Fireplace / chimney, Pl. 095" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 095</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/096.jpg" data-title="Fireplace / chimney, Pl. 096" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/096.jpg" alt="Fireplace / chimney, Pl. 096" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 096</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="fireplaces" data-full="https://jh-masonry.com/assets/images/catalog/102.jpg" data-title="Fireplace / chimney, Pl. 102" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/102.jpg" alt="Fireplace / chimney, Pl. 102" loading="lazy"><div class="meta"><div class="ti">Fireplace / chimney, Pl. 102</div><div class="lc">Wyoming</div></div></button>
+  </div>
+</section>
+
+<section class="cat" data-section="outdoor">
+  <div class="cat-head"><div class="num">05</div><h2>Outdoor Living</h2><div class="count">20 plates · Patios, retaining walls, garden borders, and hardscape.</div></div>
+  <div class="grid">
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/017.jpg" data-title="Hardscape / outdoor, Pl. 017" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/017.jpg" alt="Hardscape / outdoor, Pl. 017" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 017</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/022.jpg" data-title="Hardscape / outdoor, Pl. 022" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/022.jpg" alt="Hardscape / outdoor, Pl. 022" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 022</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/031.jpg" data-title="Hardscape / outdoor, Pl. 031" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/031.jpg" alt="Hardscape / outdoor, Pl. 031" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 031</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/032.jpg" data-title="Hardscape / outdoor, Pl. 032" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/032.jpg" alt="Hardscape / outdoor, Pl. 032" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 032</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/068.jpg" data-title="Hardscape / outdoor, Pl. 068" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/068.jpg" alt="Hardscape / outdoor, Pl. 068" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 068</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/078.jpg" data-title="Hardscape / outdoor, Pl. 078" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/078.jpg" alt="Hardscape / outdoor, Pl. 078" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 078</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/110.jpg" data-title="Hardscape / outdoor, Pl. 110" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/110.jpg" alt="Hardscape / outdoor, Pl. 110" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 110</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/121.jpg" data-title="Hardscape / outdoor, Pl. 121" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/121.jpg" alt="Hardscape / outdoor, Pl. 121" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 121</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/128.jpg" data-title="Hardscape / outdoor, Pl. 128" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/128.jpg" alt="Hardscape / outdoor, Pl. 128" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 128</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/143.jpg" data-title="Hardscape / outdoor, Pl. 143" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/143.jpg" alt="Hardscape / outdoor, Pl. 143" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 143</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/144.jpg" data-title="Hardscape / outdoor, Pl. 144" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/144.jpg" alt="Hardscape / outdoor, Pl. 144" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 144</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/176.jpg" data-title="Hardscape / outdoor, Pl. 176" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/176.jpg" alt="Hardscape / outdoor, Pl. 176" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 176</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/216.jpg" data-title="Hardscape / outdoor, Pl. 216" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/216.jpg" alt="Hardscape / outdoor, Pl. 216" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 216</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/217.jpg" data-title="Hardscape / outdoor, Pl. 217" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/217.jpg" alt="Hardscape / outdoor, Pl. 217" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 217</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/231.jpg" data-title="Hardscape / outdoor, Pl. 231" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/231.jpg" alt="Hardscape / outdoor, Pl. 231" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 231</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/232.jpg" data-title="Hardscape / outdoor, Pl. 232" data-label="Wyoming"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/232.jpg" alt="Hardscape / outdoor, Pl. 232" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 232</div><div class="lc">Wyoming</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/238.jpg" data-title="Hardscape / outdoor, Pl. 238" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/238.jpg" alt="Hardscape / outdoor, Pl. 238" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 238</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/242.jpg" data-title="Hardscape / outdoor, Pl. 242" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/242.jpg" alt="Hardscape / outdoor, Pl. 242" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 242</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/248.jpg" data-title="Hardscape / outdoor, Pl. 248" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/248.jpg" alt="Hardscape / outdoor, Pl. 248" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 248</div><div class="lc">Eastern Idaho</div></div></button>
+    <button class="item" type="button" data-filter="outdoor" data-full="https://jh-masonry.com/assets/images/catalog/261.jpg" data-title="Hardscape / outdoor, Pl. 261" data-label="Eastern Idaho"><img src="https://jh-masonry.com/assets/images/catalog/thumbs/261.jpg" alt="Hardscape / outdoor, Pl. 261" loading="lazy"><div class="meta"><div class="ti">Hardscape / outdoor, Pl. 261</div><div class="lc">Eastern Idaho</div></div></button>
+  </div>
+</section>
+
+</div><!-- /cat-page -->
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose" aria-label="Close">&#x2715;</button>
+    <img id="lbImg" src="" alt="">
+    <div class="lb-cap" id="lbCap"></div>
+  </div>
+</div>
+
+<footer>
+  <span>JH Masonry &mdash; 30 Years of Craftsmanship</span>
+  <a href="/d/jh/">← Back to main site</a>
+</footer>
+
+<script>
+// Filter
+const filterBtns = document.querySelectorAll("#filters button");
+const allSections = document.querySelectorAll(".cat");
+const allItems = document.querySelectorAll(".item");
+
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    filterBtns.forEach(b => b.classList.remove("on"));
+    btn.classList.add("on");
+    const f = btn.dataset.filter;
+    if (f === "all") {
+      allSections.forEach(s => s.classList.remove("hidden"));
+    } else {
+      allSections.forEach(s => {
+        s.classList.toggle("hidden", s.dataset.section !== f);
+      });
+    }
+  });
+});
+
+// Lightbox
+const lb = document.getElementById("lb");
+const lbImg = document.getElementById("lbImg");
+const lbCap = document.getElementById("lbCap");
+const lbClose = document.getElementById("lbClose");
+
+document.querySelectorAll(".item").forEach(btn => {
+  btn.addEventListener("click", () => {
+    lbImg.src = btn.dataset.full;
+    lbCap.textContent = btn.dataset.title + (btn.dataset.label ? " · " + btn.dataset.label : "");
+    lb.classList.add("open");
+    document.body.style.overflow = "hidden";
+  });
+});
+
+lbClose.addEventListener("click", closeLb);
+lb.addEventListener("click", e => { if (e.target === lb) closeLb(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeLb(); });
+function closeLb() {
+  lb.classList.remove("open");
+  document.body.style.overflow = "";
+  lbImg.src = "";
+}
+
+// Hero video mobile fix
+const hv = document.getElementById("catHeroVideo");
+if (hv) {
+  hv.setAttribute("webkit-playsinline", "");
+  hv.muted = true;
+  const tryPlay = () => {
+    const p = hv.play();
+    if (p) p.catch(() => { hv.muted = true; hv.play().catch(() => {}); });
+  };
+  if (hv.readyState >= 2) { tryPlay(); }
+  else { hv.addEventListener("loadeddata", tryPlay, {once: true}); }
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) { hv.pause(); } else { hv.play().catch(() => {}); }
+  });
+}
+</script>
+</body>
+</html>

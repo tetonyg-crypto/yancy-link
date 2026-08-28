@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="yg-static-bake" content="integris">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="https://integris-construction-demo-sales.vercel.app/assets/brand/favicon.svg" type="image/svg+xml">
+<title>Your Company — Built Right | Your City</title>
+<meta name="description" content="Your Company. Your City. Call (000) 000-0000.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Your Company">
+<meta property="og:description" content="Built right. Designed to last. Your City · Your Region.">
+<meta property="og:image" content="/assets/images/clone/hero-bg.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+html{scroll-padding-top:80px}
+section[id]{scroll-margin-top:80px}
+:root{
+  --accent:#0A0A0A;
+  --cream:#FFFFFF;
+  --ink:#0A0A0A;
+  --ink-2:#1A1A1A;
+  --white:#FFFFFF;
+  --mute:#4A4A4A;
+  --body:#2E2E2E;
+  --form:rgba(255,255,255,.92);
+  --card:#FFFFFF;
+  --mute-d:#555555;
+  --line-l:#E8E8E8;
+  --before:#555555;
+  --wrap:min(1220px,92vw);
+  --page:#FFFFFF;
+  --soft:#F7F7F5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--page);color:var(--ink);
+  font-family:'Montserrat',system-ui,sans-serif;
+  font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.55;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;border-radius:0}
+.wrap{width:var(--wrap);margin:0 auto}
+.caps{text-transform:uppercase}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--ink);font-weight:700;
+}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--accent);flex-shrink:0}
+.eyebrow.no-rule::before{display:none}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 22px;font-size:11px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;border:1px solid transparent;cursor:pointer;
+  transition:.2s;border-radius:0;line-height:1;
+}
+.btn-primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-primary:hover{background:var(--ink-2)}
+.btn-ghost{background:transparent;color:#0A0A0A;border-color:rgba(10,10,10,.45)}
+.hero .cta .btn-ghost{color:#0A0A0A;border-color:rgba(10,10,10,.5)}
+.hero .cta .btn-ghost:hover{background:rgba(10,10,10,.06)}
+.mid-cta .btn-ghost,.mid-cta .btn-white{color:var(--ink);border-color:var(--ink)}
+.mid-cta .btn-white{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-white{background:#fff;color:var(--ink);border-color:#fff}
+.btn-white:hover{background:var(--cream)}
+.hero .cta .btn-primary{
+  background:#0A0A0A;color:#fff;border-color:#0A0A0A;
+}
+.hero .cta .btn-primary:hover{background:#222}
+.form-card .btn-primary{
+  background:#0A0A0A;color:#fff;border-color:#0A0A0A;
+}
+.form-card .btn-primary:hover{background:#222}
+.nav .actions .btn-primary{background:#0A0A0A;color:#fff;border-color:#0A0A0A}
+.nav .actions .btn-primary:hover{background:#222}
+.nav-toggle{color:#0A0A0A!important}
+
+/* NAV */
+.nav{
+  position:fixed;inset:0 0 auto;z-index:60;
+  background:#fff;
+  border-bottom:1px solid #E8E8E8;
+  color:#0A0A0A;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:0 22px;height:64px;
+}
+.nav .brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav .brand .lockup{
+  display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid #0A0A0A;padding:8px 12px;
+  font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  color:#0A0A0A;line-height:1;white-space:nowrap;
+}
+.nav .links{display:flex;gap:20px;align-items:center}
+.nav .links a{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.nav .links a:hover{opacity:.85}
+.nav .actions{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.nav .tel{font-size:13px;font-weight:700;letter-spacing:.02em;display:inline-flex;align-items:center;gap:6px}
+.nav .tel svg{width:14px;height:14px}
+.nav .actions .btn{padding:12px 16px}
+.nav-toggle{display:none;background:transparent;border:0;color:#0A0A0A;width:40px;height:40px;font-size:22px;cursor:pointer}
+@media(max-width:980px){
+  .nav{padding:0 14px;gap:10px}
+  .nav .links{display:none}
+  .nav .tel span{display:none}
+  .nav .actions .btn{display:none}
+  .nav-toggle{display:grid;place-items:center;color:#0A0A0A!important}
+  .nav .brand .lockup{
+    font-size:10px;letter-spacing:.14em;padding:7px 10px;
+  }
+  .nav.open .links{
+    display:flex;flex-direction:column;align-items:stretch;
+    position:absolute;top:64px;left:0;right:0;background:#fff;
+    padding:8px 16px 20px;gap:0;border-top:1px solid #E8E8E8;
+    box-shadow:0 16px 40px rgba(0,0,0,.08);z-index:70;
+  }
+  .nav.open .links a{
+    padding:14px 4px;border-bottom:1px solid #EFEFEF;font-size:12px;
+  }
+  .nav.open .links a:last-child{border-bottom:0}
+}
+
+/* HERO */
+.hero{
+  position:relative;min-height:100vh;padding:64px 0 0;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  overflow:hidden;
+}
+.hero-media{
+  position:absolute;inset:0;z-index:0;
+  background:#EDEAE4 url(https://integris-construction-demo-sales.vercel.app/assets/images/clone/hero-bg.jpg) center/cover no-repeat;
+}
+.hero-media .bg-video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:1;z-index:0;
+  transform:translateZ(0);
+  backface-visibility:hidden;
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-media .bg-video{display:none!important}
+}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(255,255,255,.72) 0%,rgba(255,255,255,.38) 40%,rgba(255,255,255,.12) 68%,rgba(10,10,10,.18) 100%);pointer-events:none}
+.hero-copy{max-width:560px}
+.hero-grid{
+  position:relative;z-index:2;width:var(--wrap);margin:0 auto;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end;
+  padding:48px 0 32px;
+}
+.hero .geo{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;margin-bottom:18px;color:#0A0A0A}
+.hero h1{
+  font-size:clamp(34px,5.4vw,64px);line-height:.95;font-weight:800;
+  letter-spacing:.01em;text-transform:uppercase;max-width:13ch;color:#0A0A0A;
+}
+.hero .sub{margin-top:18px;font-size:15px;color:#3A3A3A;max-width:46ch;font-weight:400}
+.hero .cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+
+.form-card{
+  background:rgba(255,255,255,.92);backdrop-filter:blur(14px);
+  border:1px solid rgba(10,10,10,.1);padding:28px 24px 22px;border-radius:0;
+  box-shadow:0 18px 50px rgba(10,10,10,.08);
+}
+.form-card .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#0A0A0A;font-weight:700;margin-bottom:18px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#222;margin-bottom:8px;font-weight:700}
+.field input,.field select,.field textarea{
+  width:100%;background:transparent;border:0;border-bottom:1px solid rgba(10,10,10,.22);
+  color:#0A0A0A;padding:8px 0;outline:none;border-radius:0;
+}
+.field textarea{min-height:72px;resize:vertical}
+.field select option{color:#111}
+.form-card .btn{width:100%;margin-top:8px}
+.form-card .note{margin-top:12px;font-size:10px;color:#555;letter-spacing:.04em;text-align:center}
+
+.trust{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #E8E8E8;background:#fff}
+.trust .cell{padding:22px 18px;border-right:1px solid #E8E8E8}
+.trust .cell:last-child{border-right:0}
+.trust .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:6px;color:#0A0A0A}
+.trust .v{font-size:12px;color:#444}
+@media(max-width:900px){
+  .hero{
+    min-height:auto;
+    padding:64px 0 0;
+    justify-content:flex-start;
+  }
+  .hero::after{
+    background:linear-gradient(180deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.82) 38%,rgba(255,255,255,.55) 62%,rgba(255,255,255,.92) 100%);
+  }
+  .hero-copy{max-width:none}
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:22px;
+    padding:28px 0 24px;
+    align-items:stretch;
+  }
+  .hero h1{
+    font-size:clamp(28px,9vw,40px);
+    max-width:11ch;
+    line-height:.98;
+  }
+  .hero .geo{margin-bottom:12px;font-size:11px}
+  .hero .sub{margin-top:14px;font-size:14px;line-height:1.55}
+  .hero .cta{margin-top:20px;gap:10px}
+  .hero .cta .btn{flex:1 1 auto;min-width:140px;padding:13px 16px}
+  .form-card{
+    margin-top:4px;
+    padding:22px 18px 18px;
+    box-shadow:0 10px 30px rgba(10,10,10,.06);
+  }
+  .trust{grid-template-columns:1fr 1fr}
+  .trust .cell{padding:16px 14px}
+  .trust .cell:nth-child(2n){border-right:0}
+  .trust .k{font-size:10px}
+  .trust .v{font-size:11px}
+  .form-row{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .nav .brand .lockup{letter-spacing:.1em;padding:6px 8px;font-size:9px}
+  .hero-grid{padding:22px 0 18px}
+  .hero .cta{flex-direction:column}
+  .hero .cta .btn{width:100%}
+}
+
+/* WHY */
+.why{background:#fff;color:var(--ink);padding:100px 0}
+.why-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.why .photo{aspect-ratio:4/5;overflow:hidden;background:#ddd}
+.why .photo img{width:100%;height:100%;object-fit:cover}
+.why h2{font-size:clamp(28px,4vw,44px);line-height:1.05;text-transform:uppercase;font-weight:800;margin:14px 0 22px;letter-spacing:.01em}
+.why .prose{display:grid;gap:16px;margin-bottom:32px}
+.why .prose p{font-size:15px;color:var(--body);line-height:1.65;max-width:58ch}
+.why-list{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.why-list .item{padding:22px 0;border-top:1px solid var(--line-l)}
+.why-list .item:nth-child(odd){padding-right:24px}
+.why-list .item:nth-child(even){padding-left:24px;border-left:1px solid var(--line-l)}
+.why-list .item h3{font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;margin-bottom:8px}
+.why-list .item p{font-size:13px;color:#444;line-height:1.55}
+@media(max-width:800px){
+  .why-grid,.why-list{grid-template-columns:1fr}
+  .why-list .item:nth-child(odd),.why-list .item:nth-child(even){padding-left:0;padding-right:0;border-left:0}
+}
+
+/* SERVICES */
+.services{background:var(--soft);color:var(--ink);padding:100px 0 80px}
+.services .head{margin-bottom:40px}
+.services h2{font-size:clamp(28px,4.2vw,46px);text-transform:uppercase;font-weight:800;line-height:1.05;margin-top:10px}
+.services .lead{margin-top:14px;color:var(--mute);max-width:54ch;font-size:15px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line-l);background:#fff}
+.svc{background:#fff;padding:28px 24px;min-height:200px;border-right:1px solid var(--line-l);border-bottom:1px solid var(--line-l);transition:.2s;color:var(--ink)}
+.svc:nth-child(3n){border-right:0}
+.svc:nth-child(n+4){border-bottom:0}
+.svc:hover{outline:1px solid var(--accent);outline-offset:-1px;z-index:1}
+.svc .ico{width:28px;height:28px;margin-bottom:16px;color:var(--ink)}
+.svc h3{font-size:14px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;margin-bottom:10px}
+.svc p{font-size:13px;color:var(--mute-d);line-height:1.55}
+@media(max-width:900px){
+  .svc-grid{grid-template-columns:1fr}
+  .svc{border-right:0!important;border-bottom:1px solid var(--line-l)!important}
+  .svc:last-child{border-bottom:0!important}
+}
+
+/* SELECTED WORK */
+.work{background:#fff;color:var(--ink);padding:100px 0 40px}
+.work .head{
+  display:flex;justify-content:space-between;gap:32px;align-items:flex-start;
+  margin-bottom:28px;flex-wrap:wrap;
+}
+.work h2{font-size:clamp(28px,4vw,44px);text-transform:uppercase;font-weight:800;margin-top:10px;max-width:16ch;line-height:1.05}
+.work .lead{max-width:40ch;color:#4A4A4A;font-size:14px;padding-top:28px;line-height:1.6}
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.proj{position:relative;overflow:hidden;background:#222;min-height:280px}
+.proj.featured,.proj.commercial{grid-column:1/-1;min-height:420px}
+.proj img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s}
+.proj:hover img{transform:scale(1.03)}
+.proj::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78),rgba(0,0,0,.08) 55%)}
+.proj .cap{position:relative;z-index:2;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;height:100%;min-height:inherit}
+.proj .tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85);font-weight:700;margin-bottom:8px}
+.proj h3{font-size:clamp(22px,2.4vw,30px);text-transform:uppercase;font-weight:800;color:#fff;line-height:1.05}
+.proj .meta{margin-top:8px;color:#ddd;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+@media(max-width:800px){
+  .work-grid{grid-template-columns:1fr}
+  .proj.featured,.proj.commercial{min-height:320px}
+}
+
+/* GALLERY */
+.gallery{background:var(--soft);padding:100px 0 70px;color:var(--ink)}
+.gallery .head{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:28px;flex-wrap:wrap}
+.gallery h2{font-size:clamp(28px,4vw,44px);text-transform:uppercase;font-weight:800;margin-top:10px}
+.gallery .lead{max-width:42ch;color:#4A4A4A;font-size:14px;padding-top:28px}
+.g-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.g-grid .tile{aspect-ratio:5/4;overflow:hidden;background:#111}
+.g-grid .tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.g-grid .tile:hover img{transform:scale(1.04)}
+@media(max-width:900px){.g-grid{grid-template-columns:1fr 1fr}}
+
+/* BEFORE / AFTER */
+.ba{background:#fff;color:var(--ink);padding:40px 0 100px}
+.ba h2{font-size:clamp(28px,4vw,44px);text-transform:uppercase;font-weight:800;margin:10px 0 14px}
+.ba .intro{color:#4A4A4A;font-size:14px;max-width:56ch;margin-bottom:28px}
+.compare{
+  position:relative;aspect-ratio:16/10;overflow:hidden;background:#eee;
+  user-select:none;touch-action:none;cursor:ew-resize;
+}
+.compare.tall{aspect-ratio:21/10}
+.compare .ba-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;display:block}
+.compare .ba-reveal{
+  position:absolute;inset:0;z-index:2;
+  clip-path:inset(0 0 0 50%);
+}
+.compare .ba-reveal .ba-layer{
+  position:absolute;top:0;left:0;height:100%;
+  width:var(--cw,100%);
+  max-width:none;object-fit:cover;
+}
+.compare .handle{
+  position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-50%);
+  z-index:5;pointer-events:none;
+}
+.compare .handle::after{
+  content:"⇔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:40px;height:40px;border-radius:50%;background:#fff;color:#111;
+  display:grid;place-items:center;font-size:15px;font-weight:700;
+  box-shadow:0 2px 10px rgba(0,0,0,.25);
+}
+.compare .tag{
+  position:absolute;top:12px;z-index:6;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:800;padding:6px 10px;border-radius:0;clip-path:none!important;
+}
+.compare .tag-before{left:12px;background:#555;color:#fff}
+.compare .tag-after{right:12px;background:#0A0A0A;color:#fff}
+.ba-meta{
+  display:flex;justify-content:space-between;margin-top:12px;margin-bottom:28px;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:800px){.ba-grid{grid-template-columns:1fr}}
+
+/* TESTIMONIALS */
+.trust-clients{background:var(--soft);color:var(--ink);padding:100px 0}
+.trust-clients h2{font-size:clamp(28px,4vw,44px);text-transform:uppercase;font-weight:800;margin:10px 0 40px;line-height:1.05}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.quote{padding:0 28px;border-right:1px solid var(--line-l)}
+.quote:first-child{padding-left:0}
+.quote:last-child{border-right:0;padding-right:0}
+.quote blockquote{font-size:15px;line-height:1.65;color:#333;font-weight:400;min-height:7.5em}
+.quote hr{border:0;border-top:1px solid var(--line-l);margin:22px 0 16px}
+.quote .name{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800}
+.quote .role{margin-top:6px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#555}
+@media(max-width:800px){
+  .quotes{grid-template-columns:1fr;gap:28px}
+  .quote{padding:0;border-right:0;border-bottom:1px solid var(--line-l);padding-bottom:28px}
+  .quote:last-child{border-bottom:0;padding-bottom:0}
+  .quote blockquote{min-height:0}
+}
+
+/* PROCESS */
+.process{background:var(--soft);color:var(--ink);padding:100px 0}
+.process h2{font-size:clamp(28px,4vw,44px);text-transform:uppercase;font-weight:800;margin:10px 0 36px}
+.steps{display:grid;gap:0}
+.step{
+  display:grid;grid-template-columns:64px 300px 1fr;gap:18px;align-items:center;
+  padding:24px 8px;border-top:1px solid var(--line-l);transition:.2s;
+}
+.step:last-child{border-bottom:1px solid var(--line-l)}
+.step:hover{background:rgba(0,0,0,.02)}
+.step .n{color:var(--ink);font-weight:800;font-size:18px}
+.step .t{font-size:15px;letter-spacing:.1em;text-transform:uppercase;font-weight:800}
+.step .d{color:#4A4A4A;font-size:14px;line-height:1.55}
+@media(max-width:800px){.step{grid-template-columns:48px 1fr;gap:8px 14px}.step .d{grid-column:2}}
+
+/* FAQ */
+.faq{background:#fff;color:var(--ink);padding:100px 0}
+.faq-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.faq h2{font-size:clamp(28px,4vw,44px);text-transform:uppercase;font-weight:800;margin:10px 0 20px;line-height:1.05}
+.faq .pitch{font-size:15px;color:#444;max-width:34ch;line-height:1.6}
+.faq .pitch a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.faq details{border-top:1px solid var(--line-l);padding:18px 0}
+.faq details:last-child{border-bottom:1px solid var(--line-l)}
+.faq summary{
+  cursor:pointer;list-style:none;font-weight:700;font-size:14px;
+  display:flex;justify-content:space-between;gap:16px;align-items:center;
+  text-transform:uppercase;letter-spacing:.04em;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"▾";color:var(--accent);font-weight:800;font-size:14px;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(180deg)}
+.faq details p{margin-top:12px;color:#444;max-width:70ch;font-size:14px;line-height:1.6;text-transform:none;letter-spacing:0;font-weight:400}
+@media(max-width:800px){.faq-grid{grid-template-columns:1fr}}
+
+/* MID CTA */
+.mid-cta{
+  background:#0A0A0A;padding:90px 0;text-align:center;color:#fff;
+  border-top:0;border-bottom:0;
+}
+.mid-cta h2{
+  font-size:clamp(28px,4.5vw,48px);text-transform:uppercase;font-weight:800;
+  line-height:1.05;max-width:16ch;margin:0 auto 28px;color:#fff;
+}
+.mid-cta .btn{margin-bottom:16px}
+.mid-cta .btn-primary{background:#fff;color:#0A0A0A;border-color:#fff}
+.mid-cta .btn-primary:hover{background:#F5F3EE;color:#0A0A0A}
+.mid-cta .or{font-size:14px;color:rgba(255,255,255,.7)}
+.mid-cta .or a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+/* CONTACT */
+.contact{position:relative;padding:110px 0 120px;overflow:hidden;background:#fff;color:var(--ink)}
+.contact .inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.contact h2{font-size:clamp(30px,4.5vw,48px);text-transform:uppercase;font-weight:800;line-height:1.05;margin:12px 0 16px}
+.contact .lead{color:var(--mute);max-width:40ch;margin-bottom:28px;font-size:15px;line-height:1.6}
+.cinfo{display:grid;gap:20px}
+.cinfo .row{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
+.cinfo .row svg{width:18px;height:18px;color:var(--accent);margin-top:2px}
+.cinfo .row strong{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;color:#0A0A0A;font-weight:800}
+.cinfo .row span,.cinfo .row a{font-size:15px;color:#222;line-height:1.45}
+@media(max-width:800px){.contact .inner{grid-template-columns:1fr}}
+
+
+
+
+/* FOOTER */
+footer{background:#fff;border-top:1px solid var(--line-l);padding:64px 0 36px;color:var(--ink)}
+.foot-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:36px}
+.foot-brand .mark{
+  width:36px;height:36px;background:transparent;border-radius:0;display:grid;place-items:center;margin-bottom:16px;
+}
+.foot-brand .mark img{width:36px;height:36px;object-fit:contain}
+.foot-brand h3{font-size:16px;text-transform:uppercase;font-weight:800;letter-spacing:.04em;margin-bottom:10px;color:var(--ink)}
+.foot-brand p{font-size:13px;color:var(--mute);max-width:46ch;line-height:1.6}
+.foot-col h4{color:var(--ink);font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px;font-weight:700}
+.foot-col a,.foot-col p{display:block;font-size:13px;color:var(--mute);margin-bottom:8px}
+.foot-bottom{
+  margin-top:40px;padding-top:18px;border-top:1px solid var(--line-l);
+  font-size:11px;color:#777;letter-spacing:.08em;text-transform:uppercase;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+.foot-bottom .demo{opacity:.7;letter-spacing:.06em}
+@media(max-width:800px){.foot-grid{grid-template-columns:1fr}}
+
+/* === YG MOBILE HARD RULE (do not remove) === */
+html,body{overflow-x:hidden!important;max-width:100%!important}
+img,video{max-width:100%;height:auto}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head,.hero:not(.hero-media),.page-cta .wrap,.preview .head,.about,.services,.contact,.cta-band,.strip,section.hero{
+  box-sizing:border-box;
+}
+nav,.filter,header,footer{
+  padding-left:max(16px, env(safe-area-inset-left))!important;
+  padding-right:max(16px, env(safe-area-inset-right))!important;
+}
+.hero-content,.cat-head,.wrap,.about,.services,.contact,.cta-band,.preview .head,section.hero > .eyebrow,section.hero > h1,section.hero > p,.hero .content{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  box-sizing:border-box;
+  max-width:100%;
+}
+.grid,.mosaic{width:100%;max-width:100%;box-sizing:border-box;min-width:0}
+.item,.cell,.card{min-width:0;max-width:100%}
+.item img,.cell img{width:100%;height:100%;object-fit:cover;display:block}
+
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a class="brand" href="/d/construction-demo/" aria-label="Your Company">
+    <span class="lockup">YOUR LOGO</span>
+  </a>
+  <nav class="links" aria-label="Primary">
+    <a href="/d/construction-demo/about/">About</a>
+    <a href="/d/construction-demo/services/">Services</a>
+    <a href="/d/construction-demo/projects/">Projects</a>
+    <a href="/d/construction-demo/catalog/">Catalog</a>
+    <a href="/d/construction-demo/gallery/">Gallery</a>
+    <a href="/d/construction-demo/before-after/">Before &amp; After</a>
+    <a href="/d/construction-demo/process/">Process</a>
+    <a href="/d/construction-demo/faq/">FAQ</a>
+  </nav>
+  <div class="actions">
+    <a class="tel" href="tel:+10000000000">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.35a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.75.32 1.54.55 2.35.68A2 2 0 0 1 22 16.92z"/></svg>
+      <span>(000) 000-0000</span>
+    </a>
+    <a class="btn btn-primary" href="/d/construction-demo/contact/">Request Consultation</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-media" aria-hidden="true">
+    <video class="bg-video" id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="https://integris-construction-demo-sales.vercel.app/assets/images/clone/hero-bg.jpg">
+      <source src="https://integris-construction-demo-sales.vercel.app/assets/video/hero-bg.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="geo">Your City • Your Region</div>
+      <h1>Built with integrity.<br>Designed to last.</h1>
+      <p class="sub">Custom homes, additions, and commercial builds delivered foundation to finish with quality workmanship and honest pricing.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="/d/construction-demo/contact/">Start your project</a>
+        <a class="btn btn-ghost" href="/d/construction-demo/projects/">View our work</a>
+      </div>
+    </div>
+    <form class="form-card" id="heroForm">
+      <div class="label">Request a consultation</div>
+      <div class="form-row">
+        <div class="field"><label for="h-name">Full name</label><input id="h-name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="h-phone">Phone</label><input id="h-phone" name="phone" required autocomplete="tel"></div>
+      </div>
+      <div class="field"><label for="h-email">Email</label><input id="h-email" name="email" type="email" required autocomplete="email"></div>
+      <div class="field">
+        <label for="h-type">Project type</label>
+        <select id="h-type" name="type">
+          <option>New Construction</option>
+          <option>Addition / Remodel</option>
+          <option>Commercial / TI</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field"><label for="h-details">Project details</label><textarea id="h-details" name="details" placeholder="Location, scope, timeline, budget range..."></textarea></div>
+      <button class="btn btn-primary" type="submit">Request Consultation</button>
+      <div class="note">License Licensed &amp; Insured — Commercial &amp; Residential • </div>
+    </form>
+  </div>
+  <div class="trust">
+    <div class="cell"><div class="k">Licensed &amp; Insured </div><div class="v"></div></div>
+    <div class="cell"><div class="k">Dual License</div><div class="v">KB-1 Commercial &amp; Residential</div></div>
+    <div class="cell"><div class="k">In-House</div><div class="v">Engineers &amp; Architects</div></div>
+    <div class="cell"><div class="k">Service</div><div class="v">Foundation to Finish</div></div>
+  </div>
+</section>
+
+<section class="why" id="about">
+  <div class="wrap why-grid">
+    <div class="photo"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/why-interior.jpg" alt="Finished interior craftsmanship"></div>
+    <div>
+      <div class="eyebrow">Why Your Company</div>
+      <h2>Integrity isn't in our name by accident</h2>
+      <div class="prose">
+        <p>At Your Company, quality is the foundation of everything we build. From residential improvements to complete ground-up construction, we deliver craftsmanship, honest pricing, and professional results in your area.</p>
+        <p>Whether you're building your dream home, expanding your business, or planning your next investment project, our experienced crews and in-house design team bring the vision to life — on schedule and to a standard that outlives the trend cycle.</p>
+      </div>
+      <div class="why-list">
+        <div class="item">
+          <h3>Licensed, Bonded &amp; Insured</h3>
+          <p>KB-1 dual license,  — commercial and residential.</p>
+        </div>
+        <div class="item">
+          <h3>In-House Engineers &amp; Architects</h3>
+          <p>Structural design and construction under one roof.</p>
+        </div>
+        <div class="item">
+          <h3>Honest Communication</h3>
+          <p>Reliable timelines, transparent pricing, no surprises.</p>
+        </div>
+        <div class="item">
+          <h3>Craftsmanship Built to Last</h3>
+          <p>Concrete, framing, roofing, and finish work done right.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Capabilities</div>
+      <h2>Premium services,<br>one accountable builder</h2>
+      <p class="lead">Residential and commercial construction across your service area — all sizes, all budgets.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg>
+        <h3>New Construction</h3>
+        <p>Full custom home builds from foundation to finish, including site work, permitting, and turnover.</p>
+      </article>
+      <article class="svc">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <h3>Additions &amp; Remodels</h3>
+        <p>Kitchens, primary suites, whole-home renovations, and square-footage additions with structural work.</p>
+      </article>
+      <article class="svc">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 17l3-8 4 4 3-6 4 10"/><path d="M8 21v-4h3"/></svg>
+        <h3>Design &amp; Planning</h3>
+        <p>In-house structural engineers and architects producing buildable, budget-aware plan sets.</p>
+      </article>
+      <article class="svc">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="18"/><rect x="14" y="8" width="7" height="13"/><path d="M3 12h7M14 14h7"/></svg>
+        <h3>Commercial &amp; Tenant Improvements</h3>
+        <p>Ground-up commercial, TI build-outs, and investment projects delivered on a business timeline.</p>
+      </article>
+      <article class="svc">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h16M4 16h16M4 12h16M8 8h8M10 4h4"/></svg>
+        <h3>Concrete • Framing • Roofing</h3>
+        <p>Core structural trades self-performed by experienced crews for tighter quality control.</p>
+      </article>
+      <article class="svc">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z"/><path d="m9 12 2 2 4-4"/></svg>
+        <h3>Quality Finish Work</h3>
+        <p>Millwork, tile, stone, and paint executed to a level that reads as custom, not builder-grade.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="projects">
+<div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Selected Work</div>
+        <h2>A portfolio of Your State craftsmanship</h2>
+      </div>
+      <p class="lead">Homes, outdoor living environments, and commercial spaces built across the Valley. New project photography is added as each build reaches completion.</p>
+    </div>
+    <div class="work-grid">
+      <article class="proj featured">
+        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-desert-ridge.jpg" alt="Desert Ridge Residence">
+        <div class="cap">
+          <div class="tag">Ground-up Custom Home</div>
+          <h3>Desert Ridge Residence</h3>
+          <div class="meta">Your City, AZ — 2025</div>
+        </div>
+      </article>
+      <article class="proj">
+        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-cavalliere.jpg" alt="Cavalliere Outdoor Living">
+        <div class="cap">
+          <div class="tag">Backyard Build &amp; Ramada</div>
+          <h3>Cavalliere Outdoor Living</h3>
+          <div class="meta">North Your City — 2023</div>
+        </div>
+      </article>
+      <article class="proj">
+        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-pinnacle.jpg" alt="Pinnacle Peak Resort Yard">
+        <div class="cap">
+          <div class="tag">Pools, Hardscape &amp; Shade</div>
+          <h3>Pinnacle Peak Resort Yard</h3>
+          <div class="meta">Your City, AZ — 2024</div>
+        </div>
+      </article>
+      <article class="proj">
+        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-camelback.jpg" alt="Camelback Great Room">
+        <div class="cap">
+          <div class="tag">Full Interior Remodel</div>
+          <h3>Camelback Great Room</h3>
+          <div class="meta">Paradise Valley, AZ — 2024</div>
+        </div>
+      </article>
+      <article class="proj">
+        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-valvista.jpg" alt="Val Vista Frame-Up">
+        <div class="cap">
+          <div class="tag">Addition &amp; Structural Work</div>
+          <h3>Val Vista Frame-Up</h3>
+          <div class="meta">Gilbert, AZ — 2024</div>
+        </div>
+      </article>
+      <article class="proj commercial">
+        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-chandler.jpg" alt="Chandler Tenant Improvement">
+        <div class="cap">
+          <div class="tag">Commercial Build-Out</div>
+          <h3>Chandler Tenant Improvement</h3>
+          <div class="meta">Chandler, AZ — 2023</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" style="padding:0 0 48px;text-align:center"><a class="btn btn-primary" href="/d/construction-demo/catalog/">Browse full project catalog</a></div>
+<section class="gallery" id="gallery">
+<div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Gallery</div>
+        <h2>Details from the field</h2>
+      </div>
+      <p class="lead">Structure, finish, and outdoor living work from builds across Your City, and the East Valley.</p>
+    </div>
+    <div class="g-grid">
+      <div class="tile"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/gal-01.jpg" alt="Outdoor living patio" loading="lazy"></div>
+      <div class="tile"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/gal-02.jpg" alt="Kitchen remodel" loading="lazy"></div>
+      <div class="tile"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/gal-03.jpg" alt="Living space with glass" loading="lazy"></div>
+      <div class="tile"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/gal-04.jpg" alt="Residence at dusk" loading="lazy"></div>
+      <div class="tile"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/gal-05.jpg" alt="Pool and patio at night" loading="lazy"></div>
+      <div class="tile"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/gal-06.jpg" alt="Framing at sunset" loading="lazy"></div>
+      <div class="tile"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/gal-07.jpg" alt="Commercial interior" loading="lazy"></div>
+      <div class="tile"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/gal-08.jpg" alt="Backyard at sunset" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="ba" id="before-after">
+<div class="wrap">
+    <div class="eyebrow">Transformations</div>
+    <h2>Before &amp; After</h2>
+    <p class="intro">Drag the handle to see the difference craftsmanship makes across backyards, interiors, and commercial spaces.</p>
+
+    <div class="compare tall" data-compare>
+      <img class="ba-layer" src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/ba-home-before.jpg" alt="During construction">
+      <div class="ba-reveal">
+        <img class="ba-layer" src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/ba-home-after.jpg" alt="Finished custom home">
+      </div>
+      <div class="tag tag-before">Before</div>
+      <div class="tag tag-after">After</div>
+      <div class="handle"></div>
+    </div>
+    <div class="ba-meta"><span>Custom Home Build</span><span>North Your City</span></div>
+
+    <div class="ba-grid">
+      <div>
+        <div class="compare" data-compare>
+          <img class="ba-layer" src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/ba-patio-before.jpg" alt="Foundation and pour">
+          <div class="ba-reveal">
+            <img class="ba-layer" src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/ba-patio-after.jpg" alt="Finished outdoor living">
+          </div>
+          <div class="tag tag-before">Before</div>
+          <div class="tag tag-after">After</div>
+          <div class="handle"></div>
+        </div>
+        <div class="ba-meta"><span>Outdoor Living</span><span>Your City, AZ</span></div>
+      </div>
+      <div>
+        <div class="compare" data-compare>
+          <img class="ba-layer" src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/ba-office-before.jpg" alt="Active job site">
+          <div class="ba-reveal">
+            <img class="ba-layer" src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/ba-office-after.jpg" alt="Finished commercial interior">
+          </div>
+          <div class="tag tag-before">Before</div>
+          <div class="tag tag-after">After</div>
+          <div class="handle"></div>
+        </div>
+        <div class="ba-meta"><span>Commercial Build-Out</span><span>Chandler, AZ</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-clients" id="testimonials">
+  <div class="wrap">
+    <div class="eyebrow">Client Trust</div>
+    <h2>What owners say afterward</h2>
+    <div class="quotes">
+      <div class="quote">
+        <blockquote>They treated our budget like it was their own and never once cut a corner. The finish work is the part everyone comments on.</blockquote>
+        <hr>
+        <div class="name">Client Name</div>
+        <div class="role">Custom Home — Your City, AZ</div>
+      </div>
+      <div class="quote">
+        <blockquote>Timelines were realistic and they hit them. Communication was direct and constant from permitting through walkthrough.</blockquote>
+        <hr>
+        <div class="name">Client Name</div>
+        <div class="role">Addition &amp; Remodel — Gilbert, AZ</div>
+      </div>
+      <div class="quote">
+        <blockquote>Having engineering in-house saved us weeks. Our build-out opened on schedule and inspections were painless.</blockquote>
+        <hr>
+        <div class="name">Client Name</div>
+        <div class="role">Tenant Improvement — Chandler, AZ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="eyebrow">How We Build</div>
+    <h2>The Your Company Process</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <div class="t">Consultation</div>
+        <div class="d">We walk the site, understand the vision, and define scope, budget range, and constraints.</div>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <div class="t">Design &amp; Engineering</div>
+        <div class="d">In-house architects and structural engineers produce buildable plans and a fixed, itemized proposal.</div>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <div class="t">Permitting &amp; Preconstruction</div>
+        <div class="d">Submittals, approvals, selections, and scheduling locked before a shovel moves.</div>
+      </div>
+      <div class="step">
+        <div class="n">04</div>
+        <div class="t">Construction</div>
+        <div class="d">Managed trades, weekly updates, and a single point of contact throughout.</div>
+      </div>
+      <div class="step">
+        <div class="n">05</div>
+        <div class="t">Finish &amp; Walkthrough</div>
+        <div class="d">Detailed punch list, final inspections, warranty documentation, and handover.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <div class="eyebrow">Questions</div>
+      <h2>Answers before you commit</h2>
+      <p class="pitch">Still deciding? Call <a href="tel:+10000000000">(000) 000-0000</a> and speak with our team directly.</p>
+    </div>
+    <div>
+      <details open>
+        <summary>What areas do you serve?</summary>
+        <p>Your City, Mesa, Chandler, Gilbert, Glendale, Peoria, Surprise, Tempe, and surrounding Valley communities.</p>
+      </details>
+      <details>
+        <summary>Are you licensed and insured?</summary>
+        <p>Yes. Your Company holds an Your State Licensed &amp; Insured license (), bonded and insured for commercial and residential general contracting.</p>
+      </details>
+      <details>
+        <summary>What size projects do you take on?</summary>
+        <p>From focused remodels and tenant improvements to full custom homes and ground-up commercial. Scope and budget are defined together during consultation.</p>
+      </details>
+      <details>
+        <summary>Do you handle design and engineering?</summary>
+        <p>Yes. In-house architects and structural engineers produce buildable plan sets so design and construction stay under one accountable builder.</p>
+      </details>
+      <details>
+        <summary>How is pricing determined?</summary>
+        <p>After a site walk and scope review, we deliver a written, itemized proposal. Transparent pricing. No surprise change orders after contract without approval.</p>
+      </details>
+      <details>
+        <summary>How long does a project take?</summary>
+        <p>Timelines depend on scope, permitting, and selections. We set a realistic schedule during preconstruction and keep you updated weekly through handover.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="mid-cta" id="cta">
+<div class="wrap">
+    <h2>Your build deserves a builder with integrity</h2>
+    <a class="btn btn-primary" href="/d/construction-demo/contact/">Request Consultation →</a>
+    <div class="or">or call <a href="tel:+10000000000">(000) 000-0000</a></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+<div class="wrap inner">
+    <div>
+      <div class="eyebrow">Consultation</div>
+      <h2>Let's build something lasting</h2>
+      <p class="lead">Tell us about your project and we'll schedule a consultation and estimate. No pressure, no obligation.</p>
+      <div class="cinfo">
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.35a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.75.32 1.54.55 2.35.68A2 2 0 0 1 22 16.92z"/></svg>
+          <div><strong>Mobile</strong><a href="tel:+10000000000">(000) 000-0000</a></div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg>
+          <div><strong>Email</strong><a href="mailto:hello@yourcompany.com">hello@yourcompany.com</a></div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><strong>Service Area</strong><span>Your City • Mesa • Chandler • Gilbert • Glendale • Peoria • Surprise • Tempe and all surrounding Valley areas</span></div>
+        </div>
+      </div>
+    </div>
+    <form class="form-card" id="contactForm">
+      <div class="label">Request a consultation</div>
+      <div class="form-row">
+        <div class="field"><label for="c-name">Full name</label><input id="c-name" name="name" required></div>
+        <div class="field"><label for="c-phone">Phone</label><input id="c-phone" name="phone" required></div>
+      </div>
+      <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" required></div>
+      <div class="field">
+        <label for="c-type">Project type</label>
+        <select id="c-type" name="type">
+          <option>New Construction</option>
+          <option>Addition / Remodel</option>
+          <option>Commercial / TI</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field"><label for="c-details">Project details</label><textarea id="c-details" name="details" placeholder="Location, scope, timeline, budget range..."></textarea></div>
+      <button class="btn btn-primary" type="submit">Request Consultation</button>
+      <div class="note">License Licensed &amp; Insured — Commercial &amp; Residential • </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="lockup" style="display:inline-flex;border:1px solid #0A0A0A;padding:8px 14px;font-size:11px;font-weight:800;letter-spacing:.18em;margin-bottom:16px">YOUR LOGO</div>
+        <h3>Built with integrity. Designed to last.</h3>
+        <p>License Licensed &amp; Insured — Commercial &amp; Residential • . Licensed, bonded and insured residential and commercial construction serving the Valley.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="/d/construction-demo/about/">About</a>
+        <a href="/d/construction-demo/services/">Services</a>
+        <a href="/d/construction-demo/projects/">Projects</a>
+        <a href="/d/construction-demo/catalog/">Project Catalog</a>
+        <a href="/d/construction-demo/gallery/">Gallery</a>
+        <a href="/d/construction-demo/before-after/">Before &amp; After</a>
+        <a href="/d/construction-demo/process/">Process</a>
+        <a href="/d/construction-demo/faq/">FAQ</a>
+        <a href="/d/construction-demo/testimonials/">Reviews</a>
+        <a href="/d/construction-demo/contact/">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:+10000000000">(000) 000-0000</a>
+        <a href="mailto:hello@yourcompany.com">hello@yourcompany.com</a>
+        <p>Your City • Mesa • Chandler • Gilbert • Glendale • Peoria • Surprise • Tempe</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Your Company. All rights reserved.</span>
+</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const nav=document.getElementById('nav');
+  const toggle=document.getElementById('navToggle');
+  if(toggle){
+    toggle.addEventListener('click',function(){nav.classList.toggle('open')});
+    nav.querySelectorAll('.links a').forEach(function(a){
+      a.addEventListener('click',function(){nav.classList.remove('open')});
+    });
+  }
+
+  function wireForm(form){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      const fd=new FormData(form);
+      const body=[
+        'New Your Company consultation request',
+        '',
+        'Name: '+fd.get('name'),
+        'Phone: '+fd.get('phone'),
+        'Email: '+fd.get('email'),
+        'Type: '+fd.get('type'),
+        'Details: '+((fd.get('details')||'').toString().trim()||'(none)')
+      ].join('\n');
+      const mailto='mailto:hello@yourcompany.com?subject='+encodeURIComponent('Consultation request — '+fd.get('name'))+'&body='+encodeURIComponent(body);
+      window.location.href=mailto;
+      form.reset();
+    });
+  }
+  const hf=document.getElementById('heroForm');
+  const cf=document.getElementById('contactForm');
+  if(hf) wireForm(hf);
+  if(cf) wireForm(cf);
+
+  const heroVideo=document.getElementById('heroVideo');
+  if(heroVideo){
+    const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduceMotion){
+      heroVideo.remove();
+    } else {
+      const tryPlay=function(){
+        if(document.hidden) return;
+        const p=heroVideo.play();
+        if(p&&p.catch) p.catch(function(){});
+      };
+      heroVideo.muted=true;
+      heroVideo.setAttribute('playsinline','');
+      heroVideo.setAttribute('webkit-playsinline','');
+      tryPlay();
+      heroVideo.addEventListener('loadeddata', tryPlay);
+      document.addEventListener('visibilitychange', function(){
+        if(document.hidden) heroVideo.pause();
+        else tryPlay();
+      });
+      if('IntersectionObserver' in window){
+        const io=new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting) tryPlay();
+            else if(entry.intersectionRatio===0) heroVideo.pause();
+          });
+        }, {threshold:[0,0.2]});
+        io.observe(document.querySelector('.hero')||heroVideo);
+      }
+    }
+  }
+
+  document.querySelectorAll('[data-compare]').forEach(function(el){
+    const reveal=el.querySelector('.ba-reveal');
+    const handle=el.querySelector('.handle');
+    if(!reveal||!handle) return;
+    function syncWidth(){
+      el.style.setProperty('--cw', el.getBoundingClientRect().width+'px');
+    }
+    syncWidth();
+    window.addEventListener('resize', syncWidth);
+    let active=false;
+    function setPos(clientX){
+      const r=el.getBoundingClientRect();
+      let pct=(clientX-r.left)/r.width;
+      pct=Math.max(0.08,Math.min(0.92,pct));
+      reveal.style.clipPath='inset(0 0 0 '+(pct*100)+'%)';
+      handle.style.left=(pct*100)+'%';
+    }
+    function start(e){active=true;setPos(e.touches?e.touches[0].clientX:e.clientX)}
+    function move(e){if(!active)return;if(e.cancelable)e.preventDefault();setPos(e.touches?e.touches[0].clientX:e.clientX)}
+    function end(){active=false}
+    el.addEventListener('mousedown',start);
+    window.addEventListener('mousemove',move);
+    window.addEventListener('mouseup',end);
+    el.addEventListener('touchstart',start,{passive:true});
+    el.addEventListener('touchmove',move,{passive:false});
+    el.addEventListener('touchend',end);
+  });
+})();
+</script>
+</body>
+</html>
