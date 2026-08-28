@@ -10,6 +10,7 @@
 <meta property="og:title" content="Your Company">
 <meta property="og:description" content="Built right. Designed to last. Your City · Your Region.">
 <meta property="og:image" content="/assets/images/clone/hero-bg.jpg">
+  <link rel="preload" as="video" href="https://integris-construction-demo-sales.vercel.app/assets/video/hero-bg.mp4" type="video/mp4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -478,7 +479,7 @@ nav,.filter,header,footer{
     <a href="/d/construction-demo/services/">Services</a>
     <a href="/d/construction-demo/projects/">Projects</a>
     <a href="/d/construction-demo/catalog/">Catalog</a>
-    <a href="/d/construction-demo/gallery/">Gallery</a>
+    <a href="/d/construction-demo/before-after/">Before &amp; After</a>
     <a href="/d/construction-demo/before-after/">Before &amp; After</a>
     <a href="/d/construction-demo/process/">Process</a>
     <a href="/d/construction-demo/faq/">FAQ</a>
@@ -495,7 +496,7 @@ nav,.filter,header,footer{
 
 <section class="hero" id="top">
   <div class="hero-media" aria-hidden="true">
-    <video class="bg-video" id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="https://integris-construction-demo-sales.vercel.app/assets/images/clone/hero-bg.jpg">
+    <video class="bg-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="https://integris-construction-demo-sales.vercel.app/assets/images/clone/hero-bg.jpg">
       <source src="https://integris-construction-demo-sales.vercel.app/assets/video/hero-bg.mp4" type="video/mp4">
     </video>
   </div>
@@ -506,7 +507,7 @@ nav,.filter,header,footer{
       <p class="sub">Custom homes, additions, and commercial builds delivered foundation to finish with quality workmanship and honest pricing.</p>
       <div class="cta">
         <a class="btn btn-primary" href="/d/construction-demo/contact/">Start your project</a>
-        <a class="btn btn-ghost" href="/d/construction-demo/projects/">View our work</a>
+        <a class="btn btn-ghost" href="/d/construction-demo/catalog/">View Our Catalog</a>
       </div>
     </div>
     <form class="form-card" id="heroForm">
@@ -537,6 +538,70 @@ nav,.filter,header,footer{
     <div class="cell"><div class="k">Service</div><div class="v">Foundation to Finish</div></div>
   </div>
 </section>
+
+<section class="work" id="projects">
+<div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Selected Work</div>
+        <h2>A portfolio of Your State craftsmanship</h2>
+      </div>
+      <p class="lead">Homes, outdoor living environments, and commercial spaces built across the Valley. New project photography is added as each build reaches completion.</p>
+    </div>
+    <div class="work-grid">
+      <article class="proj featured">
+        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-desert-ridge.jpg" alt="Desert Ridge Residence">
+        <div class="cap">
+          <div class="tag">Ground-up Custom Home</div>
+          <h3>Desert Ridge Residence</h3>
+          <div class="meta">Your City, AZ — 2025</div>
+        </div>
+      </article>
+      <article class="proj">
+        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-cavalliere.jpg" alt="Cavalliere Outdoor Living">
+        <div class="cap">
+          <div class="tag">Backyard Build &amp; Ramada</div>
+          <h3>Cavalliere Outdoor Living</h3>
+          <div class="meta">North Your City — 2023</div>
+        </div>
+      </article>
+      <article class="proj">
+        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-pinnacle.jpg" alt="Pinnacle Peak Resort Yard">
+        <div class="cap">
+          <div class="tag">Pools, Hardscape &amp; Shade</div>
+          <h3>Pinnacle Peak Resort Yard</h3>
+          <div class="meta">Your City, AZ — 2024</div>
+        </div>
+      </article>
+      <article class="proj">
+        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-camelback.jpg" alt="Camelback Great Room">
+        <div class="cap">
+          <div class="tag">Full Interior Remodel</div>
+          <h3>Camelback Great Room</h3>
+          <div class="meta">Paradise Valley, AZ — 2024</div>
+        </div>
+      </article>
+      <article class="proj">
+        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-valvista.jpg" alt="Val Vista Frame-Up">
+        <div class="cap">
+          <div class="tag">Addition &amp; Structural Work</div>
+          <h3>Val Vista Frame-Up</h3>
+          <div class="meta">Gilbert, AZ — 2024</div>
+        </div>
+      </article>
+      <article class="proj commercial">
+        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-chandler.jpg" alt="Chandler Tenant Improvement">
+        <div class="cap">
+          <div class="tag">Commercial Build-Out</div>
+          <h3>Chandler Tenant Improvement</h3>
+          <div class="meta">Chandler, AZ — 2023</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" style="padding:0 0 48px;text-align:center"><a class="btn btn-primary" href="/d/construction-demo/catalog/">Browse full project catalog</a></div>
 
 <section class="why" id="about">
   <div class="wrap why-grid">
@@ -612,74 +677,12 @@ nav,.filter,header,footer{
   </div>
 </section>
 
-<section class="work" id="projects">
-<div class="wrap">
-    <div class="head">
-      <div>
-        <div class="eyebrow">Selected Work</div>
-        <h2>A portfolio of Your State craftsmanship</h2>
-      </div>
-      <p class="lead">Homes, outdoor living environments, and commercial spaces built across the Valley. New project photography is added as each build reaches completion.</p>
-    </div>
-    <div class="work-grid">
-      <article class="proj featured">
-        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-desert-ridge.jpg" alt="Desert Ridge Residence">
-        <div class="cap">
-          <div class="tag">Ground-up Custom Home</div>
-          <h3>Desert Ridge Residence</h3>
-          <div class="meta">Your City, AZ — 2025</div>
-        </div>
-      </article>
-      <article class="proj">
-        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-cavalliere.jpg" alt="Cavalliere Outdoor Living">
-        <div class="cap">
-          <div class="tag">Backyard Build &amp; Ramada</div>
-          <h3>Cavalliere Outdoor Living</h3>
-          <div class="meta">North Your City — 2023</div>
-        </div>
-      </article>
-      <article class="proj">
-        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-pinnacle.jpg" alt="Pinnacle Peak Resort Yard">
-        <div class="cap">
-          <div class="tag">Pools, Hardscape &amp; Shade</div>
-          <h3>Pinnacle Peak Resort Yard</h3>
-          <div class="meta">Your City, AZ — 2024</div>
-        </div>
-      </article>
-      <article class="proj">
-        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-camelback.jpg" alt="Camelback Great Room">
-        <div class="cap">
-          <div class="tag">Full Interior Remodel</div>
-          <h3>Camelback Great Room</h3>
-          <div class="meta">Paradise Valley, AZ — 2024</div>
-        </div>
-      </article>
-      <article class="proj">
-        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-valvista.jpg" alt="Val Vista Frame-Up">
-        <div class="cap">
-          <div class="tag">Addition &amp; Structural Work</div>
-          <h3>Val Vista Frame-Up</h3>
-          <div class="meta">Gilbert, AZ — 2024</div>
-        </div>
-      </article>
-      <article class="proj commercial">
-        <img src="https://integris-construction-demo-sales.vercel.app/assets/images/clone/project-chandler.jpg" alt="Chandler Tenant Improvement">
-        <div class="cap">
-          <div class="tag">Commercial Build-Out</div>
-          <h3>Chandler Tenant Improvement</h3>
-          <div class="meta">Chandler, AZ — 2023</div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
 
-<div class="wrap" style="padding:0 0 48px;text-align:center"><a class="btn btn-primary" href="/d/construction-demo/catalog/">Browse full project catalog</a></div>
 <section class="gallery" id="gallery">
 <div class="wrap">
     <div class="head">
       <div>
-        <div class="eyebrow">Gallery</div>
+        <div class="eyebrow">Before &amp; After</div>
         <h2>Details from the field</h2>
       </div>
       <p class="lead">Structure, finish, and outdoor living work from builds across Your City, and the East Valley.</p>
@@ -906,7 +909,7 @@ nav,.filter,header,footer{
         <a href="/d/construction-demo/services/">Services</a>
         <a href="/d/construction-demo/projects/">Projects</a>
         <a href="/d/construction-demo/catalog/">Project Catalog</a>
-        <a href="/d/construction-demo/gallery/">Gallery</a>
+        <a href="/d/construction-demo/before-after/">Before &amp; After</a>
         <a href="/d/construction-demo/before-after/">Before &amp; After</a>
         <a href="/d/construction-demo/process/">Process</a>
         <a href="/d/construction-demo/faq/">FAQ</a>

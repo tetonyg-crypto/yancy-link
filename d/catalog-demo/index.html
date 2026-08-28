@@ -46,18 +46,22 @@ button,input{font:inherit;border-radius:0}
 .btn-primary:hover{background:#333}
 @media(max-width:640px){.nav .tel{display:none}}
 
-/* HERO — static image */
+/* HERO — video */
 .hero{
   padding-top:64px;
-  position:relative;min-height:min(60vh,480px);
+  position:relative;min-height:min(70vh,560px);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;overflow:hidden;
-  background:#111 url(https://jh-masonry.com/assets/images/hero-poster.jpg) center/cover no-repeat;
+  background:#111;
   color:#fff;
 }
+.hero-video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+  transform:translateZ(0);
+}
 .hero::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(10,10,10,.50) 0%,rgba(10,10,10,.28) 45%,rgba(10,10,10,.68) 100%);
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(10,10,10,.52) 0%,rgba(10,10,10,.28) 45%,rgba(10,10,10,.65) 100%);
   pointer-events:none;
 }
 .hero .inner{position:relative;z-index:2;padding:60px 24px 48px}
@@ -153,12 +157,16 @@ footer a{color:#0A0A0A;font-weight:700}
 </header>
 
 <section class="hero">
-  <div class="inner">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="https://jh-masonry.com/assets/images/hero-poster.jpg">
+    <source src="https://jh-masonry.com/assets/video/hero-loop.mp4" type="video/mp4">
+  </video>
+  <div class="inner" style="position:relative;z-index:2;">
     <div class="eyebrow">Project catalog</div>
     <h1>Our Work</h1>
     <p>Stone &middot; Brick &middot; Stucco &middot; Fireplaces &middot; Outdoor Living</p>
   </div>
 </section>
+
 
 <div class="filter" id="filters">
   <button class="on" data-filter="all">All work</button>
