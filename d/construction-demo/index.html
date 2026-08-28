@@ -186,13 +186,15 @@ button,input,select,textarea{font:inherit;border-radius:0}
 .trust .v{font-size:12px;color:#444}
 @media(max-width:900px){
   .hero{
-    min-height:auto;
-    padding:64px 0 0;
+    min-height:100svh;
+    padding:80px 0 0;
     justify-content:flex-start;
   }
   .hero::after{
-    background:linear-gradient(180deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.82) 38%,rgba(255,255,255,.55) 62%,rgba(255,255,255,.92) 100%);
+    background:linear-gradient(180deg,rgba(255,255,255,.70) 0%,rgba(255,255,255,.40) 35%,rgba(255,255,255,.20) 65%,rgba(255,255,255,.50) 100%);
   }
+  #heroForm{display:none!important}
+  .hero-copy{max-width:100%}
   .hero-copy{max-width:none}
   .hero-grid{
     grid-template-columns:1fr;
