@@ -16,7 +16,6 @@
 <meta name="twitter:image" content="https://yancygarcia.com/assets/images/og-demo.jpg">
 <meta property="og:url" content="https://yancygarcia.com/d/construction-demo">
 <meta property="og:type" content="website">
-  <link rel="preload" as="video" href="https://integris-construction-demo-sales.vercel.app/assets/video/hero-bg.mp4" type="video/mp4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -142,7 +141,7 @@ button,input,select,textarea{font:inherit;border-radius:0}
 }
 .hero-media{
   position:absolute;inset:0;z-index:0;
-  background:#EDEAE4 url(https://integris-construction-demo-sales.vercel.app/assets/images/clone/hero-bg.jpg) center/cover no-repeat;
+  background:#EDEAE4 url(/assets/images/poster-bg.jpg) center/cover no-repeat;
 }
 .hero-media .bg-video{
   position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
@@ -501,7 +500,7 @@ nav,.filter,header,footer{
 
 <section class="hero" id="top">
   <div class="hero-media" aria-hidden="true">
-    <video class="bg-video" id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://integris-construction-demo-sales.vercel.app/assets/images/clone/hero-bg.jpg">
+    <video class="bg-video" id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="none" poster="/assets/images/poster-bg.jpg">
       <source src="/assets/video/hero-bg.mp4" type="video/mp4">
     </video>
   </div>

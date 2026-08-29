@@ -5,54 +5,168 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/archive", "destination": "/api/gone" },
-    { "source": "/archive/:path*", "destination": "/api/gone" }
+    {
+      "source": "/archive",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/archive/:path*",
+      "destination": "/api/gone"
+    }
   ],
   "redirects": [
-    { "source": "/inventory", "destination": "/", "permanent": true },
-    { "source": "/inventory/:path*", "destination": "/", "permanent": true },
-    { "source": "/deal", "destination": "/", "permanent": true },
-    { "source": "/deal/:path*", "destination": "/", "permanent": true },
-    { "source": "/about", "destination": "/", "permanent": true },
-    { "source": "/es", "destination": "/", "permanent": true },
-    { "source": "/trade", "destination": "/", "permanent": true },
-    { "source": "/buying-power", "destination": "/", "permanent": true },
-    { "source": "/dashboard", "destination": "/", "permanent": true },
-    { "source": "/jarvis", "destination": "/", "permanent": true },
-    { "source": "/blog", "destination": "/", "permanent": true },
-    { "source": "/blog/:path*", "destination": "/", "permanent": true },
-    { "source": "/v", "destination": "/", "permanent": true },
-    { "source": "/v/:path*", "destination": "/", "permanent": true },
-    { "source": "/vcard", "destination": "/", "permanent": true },
-    { "source": "/vcard/:path*", "destination": "/", "permanent": true },
-    { "source": "/templates", "destination": "/", "permanent": true },
-    { "source": "/templates/:path*", "destination": "/", "permanent": true }
+    {
+      "source": "/inventory",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/inventory/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/deal",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/deal/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/es",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/trade",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/buying-power",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/jarvis",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/v",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/v/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vcard",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vcard/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/templates",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/templates/:path*",
+      "destination": "/",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/og-yancygarcia.png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, immutable"
+        }
       ]
     },
     {
       "source": "/og-image.png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, immutable"
+        }
       ]
     },
     {
       "source": "/favicon.svg",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/video/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/images/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
       ]
     }
   ]
