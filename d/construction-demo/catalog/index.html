@@ -526,7 +526,7 @@ nav,.filter,header,footer{
 <div class="cat-page">
 <section class="hero">
   <video class="hero-video" id="catHeroVideo" autoplay muted loop playsinline preload="auto" poster="https://jh-masonry.com/assets/images/catalog/031.jpg">
-    <source src="https://jh-masonry.com/assets/video/hero-loop.mp4" type="video/mp4">
+    <source src="/assets/video/hero-loop.mp4" type="video/mp4">
   </video>
   <div class="eyebrow">Project catalog</div>
   <h1>Our Work</h1>
@@ -704,9 +704,10 @@ nav,.filter,header,footer{
 
   const hv=document.getElementById('catHeroVideo');
   if(hv && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    const tryPlay=()=>{const p=hv.play(); if(p&&p.catch) p.catch(()=>{});};
+    const tryPlay=()=>{const p=hv.play(); if(p&&p.catch) p.catch(()=>{ hv.style.display='none'; });};
     hv.muted=true;
     hv.setAttribute('playsinline','');
+    hv.setAttribute('webkit-playsinline','');
     tryPlay();
     hv.addEventListener('loadeddata', tryPlay);
   }

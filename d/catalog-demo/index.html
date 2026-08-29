@@ -162,8 +162,8 @@ footer a{color:#0A0A0A;font-weight:700}
 </header>
 
 <section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="https://jh-masonry.com/assets/images/catalog/001.jpg">
-    <source src="https://jh-masonry.com/assets/video/hero-loop.mp4" type="video/mp4">
+  <video class="hero-video" id="catHeroVideoMain" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://jh-masonry.com/assets/images/catalog/001.jpg">
+    <source src="/assets/video/hero-loop.mp4" type="video/mp4">
   </video>
   <div class="inner" style="position:relative;z-index:2;">
     <div class="eyebrow">Project catalog</div>
@@ -355,6 +355,8 @@ lbClose.addEventListener("click",closeLb);
 lb.addEventListener("click",e=>{if(e.target===lb)closeLb();});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLb();});
 function closeLb(){lb.classList.remove("open");document.body.style.overflow="";lbImg.src="";}
+const _cmv=document.getElementById("catHeroVideoMain");
+if(_cmv){_cmv.muted=true;_cmv.setAttribute("playsinline","");_cmv.setAttribute("webkit-playsinline","");const _p=_cmv.play();if(_p&&_p.catch)_p.catch(function(){_cmv.style.display="none";});}
 </script>
 </body>
 </html>

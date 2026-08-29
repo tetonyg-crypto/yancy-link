@@ -498,7 +498,7 @@ nav,.filter,header,footer{
 <section class="hero" id="top">
   <div class="hero-media" aria-hidden="true">
     <video class="bg-video" id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://integris-construction-demo-sales.vercel.app/assets/images/clone/hero-bg.jpg">
-      <source src="https://integris-construction-demo-sales.vercel.app/assets/video/hero-bg.mp4" type="video/mp4">
+      <source src="/assets/video/hero-bg.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-grid">
@@ -972,7 +972,7 @@ nav,.filter,header,footer{
       const tryPlay=function(){
         if(document.hidden) return;
         const p=heroVideo.play();
-        if(p&&p.catch) p.catch(function(){});
+        if(p&&p.catch) p.catch(function(){ heroVideo.style.display='none'; });
       };
       heroVideo.muted=true;
       heroVideo.setAttribute('playsinline','');
