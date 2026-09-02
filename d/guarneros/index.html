@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="yg-static-bake" content="guarneros">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="https://guarneros-tile-demo.vercel.app/assets/brand/guarneros-logo.jpg" type="image/jpeg">
+<title>Guarneros Tile LLC — Pools, Baths, Kitchens &amp; Floors</title>
+<meta name="description" content="Guarneros Tile LLC. Tile for pools, baths, kitchens, backsplashes, and floors. Local service. Instagram @guarnerostilellc.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://guarneros-tile-demo.vercel.app/">
+<meta property="og:title" content="Guarneros Tile LLC">
+<meta property="og:description" content="Tile for pools, baths, kitchens, backsplashes, and floors.">
+<meta property="og:image" content="https://guarneros-tile-demo.vercel.app/assets/brand/guarneros-logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter+Tight:wght@300;400;500;600;700&display=swap">
+<style>
+  :root{
+    --ink:#0A0A0B;--ink-2:#161618;--bone:#F4F1EA;--bone-2:#E5E0D4;
+    --yellow:#E6B422;--yellow-2:#F0C84A;--marble:#2A2A2E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--ink);color:var(--bone);font-family:'Inter Tight',system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.6}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:14px 28px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:linear-gradient(180deg,rgba(10,10,11,.97) 0%,rgba(10,10,11,.55) 75%,transparent 100%);backdrop-filter:blur(6px)}
+  nav .l img{height:56px;width:auto;border-radius:8px}
+  nav .r{display:flex;gap:22px;align-items:center}
+  nav .r a{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+  nav .r a.catalog-link{color:#fff;font-weight:700;border-bottom:2px solid var(--yellow);padding-bottom:3px}
+  nav .r a.ig{color:var(--yellow-2);font-weight:700;letter-spacing:.04em;font-size:14px;text-transform:none}
+  @media(max-width:640px){nav{padding:10px 14px}nav .l img{height:44px}nav .r{gap:12px}nav .r a.ig{font-size:12px}}
+  .hero{position:relative;height:100vh;min-height:580px;overflow:hidden;background:var(--ink);margin-top:0}
+  .hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.48}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.62) 0%,rgba(10,10,11,.28) 40%,rgba(10,10,11,.94) 100%)}
+  .hero-content{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 24px 80px;text-align:center}
+  .hero-content img.logo{width:min(240px,52vw);height:auto;border-radius:16px;box-shadow:0 14px 44px rgba(0,0,0,.75)}
+  .hero-content .name{margin-top:22px;font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(28px,5vw,48px);letter-spacing:.04em}
+  .hero-content .tag{margin-top:14px;font-size:clamp(13px,1.7vw,17px);font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow)}
+  .hero-content .sub{margin-top:12px;font-size:clamp(12px,1.3vw,14px);letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+  .hero-content .cta{margin-top:34px;display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center}
+  .btn{display:inline-block;padding:16px 28px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;border:1px solid var(--yellow);color:var(--bone);transition:.2s}
+  .btn:hover{background:var(--yellow);color:#111}
+  .btn.solid{background:var(--yellow);border-color:var(--yellow);color:#111}
+  .btn.solid:hover{background:var(--yellow-2)}
+  .about{padding:120px 32px;display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:center;max-width:1200px;margin:0 auto}
+  .about .label{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--yellow);font-weight:600;margin-bottom:18px}
+  .about h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(34px,4.8vw,56px);line-height:1.05;letter-spacing:-.02em;margin-bottom:24px}
+  .about h1 span{color:var(--yellow)}
+  .about p{font-size:16px;line-height:1.75;opacity:.9;max-width:48ch}
+  .about .ph{aspect-ratio:4/5;overflow:hidden;background:var(--ink-2)}
+  .about .ph img{width:100%;height:100%;object-fit:cover}
+  @media(max-width:800px){.about{grid-template-columns:1fr;padding:80px 20px;gap:36px}}
+  .trades{padding:20px 32px 100px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .trades .t{border:1px solid rgba(244,241,234,.12);padding:26px 20px}
+  .trades .t .n{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--yellow);font-weight:700;margin-bottom:12px}
+  .trades .t .ti{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:700;line-height:1.25}
+  @media(max-width:800px){.trades{grid-template-columns:1fr 1fr;padding:10px 20px 60px}}
+  @media(max-width:480px){.trades{grid-template-columns:1fr}}
+  .work{padding:100px 0 80px;border-top:1px solid var(--ink-2)}
+  .work .head{padding:0 32px 48px;max-width:900px}
+  .work .head .label{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--yellow);font-weight:700;margin-bottom:16px}
+  .work .head h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(32px,5vw,50px);line-height:1.05}
+  .work .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+  .work .card{position:relative;aspect-ratio:5/4;overflow:hidden;background:var(--ink-2)}
+  .work .card img{width:100%;height:100%;object-fit:cover}
+  .work .card .cap{position:absolute;left:0;right:0;bottom:0;padding:28px 24px;background:linear-gradient(0deg,rgba(10,10,11,.95),transparent);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow-2);font-weight:600}
+  .work .more{padding:48px 32px;text-align:center}
+  @media(max-width:700px){.work .grid{grid-template-columns:1fr}}
+  .contact{padding:120px 32px;border-top:1px solid var(--ink-2);max-width:900px;margin:0 auto}
+  .contact h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(34px,5vw,50px);line-height:1;margin-bottom:20px}
+  .contact h2 span{color:var(--yellow)}
+  .contact dl dt{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--yellow);margin-top:28px;font-weight:600}
+  .contact dl dd{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(20px,2.5vw,28px);margin-top:10px;font-weight:500}
+  footer{padding:48px 24px;text-align:center;border-top:1px solid var(--ink-2);font-size:12px;opacity:.65}
+  footer .demo{margin-top:12px;color:var(--yellow);letter-spacing:.18em;text-transform:uppercase;font-size:10px}
+
+/* === YG MOBILE HARD RULE (do not remove) === */
+html,body{overflow-x:hidden!important;max-width:100%!important}
+img,video{max-width:100%;height:auto}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head,.hero:not(.hero-media),.page-cta .wrap,.preview .head,.about,.services,.contact,.cta-band,.strip,section.hero{
+  box-sizing:border-box;
+}
+nav,.filter,header,footer{
+  padding-left:max(16px, env(safe-area-inset-left))!important;
+  padding-right:max(16px, env(safe-area-inset-right))!important;
+}
+.hero-content,.cat-head,.wrap,.about,.services,.contact,.cta-band,.preview .head,section.hero > .eyebrow,section.hero > h1,section.hero > p,.hero .content{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  box-sizing:border-box;
+  max-width:100%;
+}
+.grid,.mosaic{width:100%;max-width:100%;box-sizing:border-box;min-width:0}
+.item,.cell,.card{min-width:0;max-width:100%}
+.item img,.cell img{width:100%;height:100%;object-fit:cover;display:block}
+
+</style>
+</head>
+<body>
+<nav>
+  <a class="l" href="/d/guarneros/"><img src="https://guarneros-tile-demo.vercel.app/assets/brand/guarneros-logo.png" alt="Guarneros Tile LLC"></a>
+  <div class="r">
+    <a class="catalog-link" href="/d/guarneros/catalog/">Catalog</a>
+    <a class="ig" href="https://www.instagram.com/guarnerostilellc/" target="_blank" rel="noopener">@guarnerostilellc</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="https://guarneros-tile-demo.vercel.app/assets/images/catalog/real-03.jpg" alt="Guarneros Tile patterned kitchen backsplash">
+  <div class="hero-content">
+    <img class="logo" src="https://guarneros-tile-demo.vercel.app/assets/brand/guarneros-logo.png" alt="Guarneros Tile LLC">
+    <div class="name">Guarneros Tile LLC</div>
+    <div class="tag">Pools · Baths · Kitchens · Floors</div>
+    <div class="sub">Local tile service · Hilario Guarneros</div>
+    <div class="cta">
+      <a class="btn solid" href="/d/guarneros/catalog/">View project catalog</a>
+      <a class="btn" href="https://www.instagram.com/guarnerostilellc/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</header>
+
+<section class="about">
+  <div class="ph"><img src="https://guarneros-tile-demo.vercel.app/assets/images/catalog/real-01.jpg" alt="Dark glossy tile shower niche"></div>
+  <div>
+    <div class="label">Guarneros Tile LLC</div>
+    <h1>Tile work that holds up in <span>wet rooms</span> and living spaces.</h1>
+    <p>Pools, baths, kitchens, backsplashes, and floors. Precision tile installs finished clean — built for wet rooms and everyday living spaces.</p>
+  </div>
+</section>
+
+<section class="trades">
+  <div class="t"><div class="n">01</div><div class="ti">Bathrooms</div></div>
+  <div class="t"><div class="n">02</div><div class="ti">Kitchens &amp; backsplashes</div></div>
+  <div class="t"><div class="n">03</div><div class="ti">Floors</div></div>
+  <div class="t"><div class="n">04</div><div class="ti">Pools &amp; spas</div></div>
+  <div class="t"><div class="n">05</div><div class="ti">Showers</div></div>
+  <div class="t"><div class="n">06</div><div class="ti">Custom tile work</div></div>
+</section>
+
+<section class="work">
+  <div class="head">
+    <div class="label">Selected work</div>
+    <h2>Recent tile installs.</h2>
+  </div>
+  <div class="grid">
+    <div class="card"><img src="https://guarneros-tile-demo.vercel.app/assets/images/catalog/real-03.jpg" alt="Kitchen backsplash"><div class="cap">Kitchen backsplash</div></div>
+    <div class="card"><img src="https://guarneros-tile-demo.vercel.app/assets/images/catalog/real-04.jpg" alt="Exterior building project"><div class="cap">Exterior project</div></div>
+  </div>
+  <div class="more"><a class="btn solid" href="/d/guarneros/catalog/">Open full catalog</a></div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Reach the <span>crew</span>.</h2>
+  <dl>
+    <dt>Instagram</dt>
+    <dd><a href="https://www.instagram.com/guarnerostilellc/" target="_blank" rel="noopener">@guarnerostilellc</a></dd>
+    <dt>Company</dt>
+    <dd>Guarneros Tile LLC</dd>
+    <dt>Service</dt>
+    <dd>Local tile — pools, baths, kitchens, floors</dd>
+  </dl>
+</section>
+
+<footer>
+  <div>Guarneros Tile LLC</div>
+</footer>
+</body>
+</html>

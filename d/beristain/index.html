@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="yg-static-bake" content="beristain">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<link rel="icon" href="https://beristain-builders-demo.vercel.app/assets/brand/beristain-logo.jpg" type="image/jpeg">
+<title>Beristain Builders — Framing, Siding &amp; Finish | Jackson, WY</title>
+<meta name="description" content="Beristain Builders. Quality craftsmanship in Jackson, Wyoming. Framing, siding, and finish carpentry. Call Juan at (307) 284-8044.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="geo.region" content="US-WY">
+<meta name="geo.placename" content="Jackson, Wyoming">
+<link rel="canonical" href="https://beristain-builders-demo.vercel.app/">
+<meta property="og:title" content="Beristain Builders">
+<meta property="og:description" content="Quality craftsmanship in Jackson, Wyoming. Framing, siding, and finish carpentry.">
+<meta property="og:image" content="https://beristain-builders-demo.vercel.app/assets/images/catalog/04.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B0D0F;--ink-2:#14181F;--bone:#F5F0E6;--mute:#A8A296;
+    --blue:#2F6FED;--blue-2:#5B9BFF;--gold:#C4A574;--gold-2:#E0C48F;
+    --line:rgba(245,240,230,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
+  body{background:var(--ink);color:var(--bone);font-family:'Outfit',system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.55;overflow-x:hidden;max-width:100%}
+  img{max-width:100%;height:auto;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{
+    width:min(1180px,100%);
+    margin:0 auto;
+    padding-left:max(20px, env(safe-area-inset-left));
+    padding-right:max(20px, env(safe-area-inset-right));
+  }
+  .eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--gold)}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:-.02em;line-height:1.05;overflow-wrap:anywhere}
+
+  nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px max(20px, env(safe-area-inset-right)) 14px max(20px, env(safe-area-inset-left));background:rgba(11,13,15,.88);backdrop-filter:blur(12px);border-bottom:1px solid transparent}
+  nav.on{border-bottom-color:var(--line)}
+  nav .brand{flex:none;min-width:0}
+  nav .brand img{height:52px;width:auto;max-width:min(160px,42vw)}
+  nav .links{display:flex;gap:14px;align-items:center;flex:none}
+  nav .links a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--mute)}
+  nav .links a:hover{color:var(--bone)}
+  nav .links a.cta{background:var(--blue);color:#fff;padding:11px 14px;font-weight:600;letter-spacing:.12em;white-space:nowrap}
+  @media(max-width:760px){nav{padding:12px max(16px, env(safe-area-inset-right)) 12px max(16px, env(safe-area-inset-left))}.nav-hide{display:none}nav .brand img{height:42px}nav .links a.cta{padding:10px 12px;font-size:10px}}
+
+  .hero{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden;background:#000;width:100%;max-width:100%}
+  .hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.48;filter:saturate(.9) contrast(1.05)}
+  .hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,13,15,.72) 0%,rgba(11,13,15,.28) 42%,rgba(11,13,15,.92) 100%)}
+  .hero .content{position:relative;z-index:2;text-align:center;padding:120px max(20px, env(safe-area-inset-right)) 80px max(20px, env(safe-area-inset-left));width:min(860px,100%);max-width:100%;box-sizing:border-box}
+  /* His real logo only. Size via max-* so aspect never stretches. */
+  .hero .crest{width:auto!important;height:auto!important;max-height:140px;max-width:min(140px,40vw);margin:0 auto 22px;display:block;object-fit:contain;filter:drop-shadow(0 14px 36px rgba(0,0,0,.55))}
+  .hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(36px,9vw,72px);font-weight:600;letter-spacing:-.03em;line-height:1.02;overflow-wrap:anywhere;padding:0 4px}
+  .hero h1 em{font-style:italic;color:var(--gold-2);font-weight:500}
+  .hero .tag{margin-top:18px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,240,230,.82);font-weight:500;padding:0 8px;overflow-wrap:anywhere}
+  .hero .actions{margin-top:36px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding:0 4px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-width:min(160px,100%);padding:15px 20px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;transition:.2s}
+  .btn-solid{background:var(--blue);color:#fff;border:1px solid var(--blue)}
+  .btn-solid:hover{background:var(--blue-2);border-color:var(--blue-2)}
+  .btn-line{border:1px solid rgba(245,240,230,.45);color:var(--bone)}
+  .btn-line:hover{background:rgba(255,255,255,.06)}
+
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line);background:var(--ink-2);padding-left:max(0px, env(safe-area-inset-left));padding-right:max(0px, env(safe-area-inset-right))}
+  .strip div{padding:28px max(16px, 18px);text-align:center;border-right:1px solid var(--line);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);min-width:0;overflow-wrap:anywhere}
+  .strip div:last-child{border-right:0}
+  .strip strong{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(22px,6vw,28px);font-weight:600;letter-spacing:0;text-transform:none;color:var(--bone);margin-bottom:6px}
+  @media(max-width:700px){.strip{grid-template-columns:1fr}.strip div{border-right:0;border-bottom:1px solid var(--line);padding:22px max(20px, env(safe-area-inset-left))}}
+
+  .about{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center;max-width:1140px;margin:0 auto;padding:110px max(20px, env(safe-area-inset-right)) 110px max(20px, env(safe-area-inset-left))}
+  .about .photo{aspect-ratio:4/5;overflow:hidden;background:#111;position:relative;width:100%;max-width:100%}
+  .about .photo img{width:100%;height:100%;object-fit:cover}
+  .about .photo .chip{position:absolute;left:0;bottom:0;background:var(--blue);color:#fff;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;padding:10px 14px}
+  .about h2{font-size:clamp(30px,7vw,52px);margin:12px 0 18px}
+  .about p{color:rgba(245,240,230,.78);font-size:16px;max-width:46ch;overflow-wrap:anywhere}
+  .about ul{margin-top:28px;list-style:none;display:grid;gap:10px}
+  .about ul li{display:flex;gap:12px;align-items:center;font-size:14px;font-weight:500}
+  .about ul li::before{content:"";width:8px;height:8px;background:var(--gold);flex:none}
+  @media(max-width:860px){.about{grid-template-columns:1fr;padding:72px max(16px, env(safe-area-inset-right)) 72px max(16px, env(safe-area-inset-left));gap:36px}}
+
+  .services{padding:40px max(20px, env(safe-area-inset-right)) 100px max(20px, env(safe-area-inset-left));max-width:1140px;margin:0 auto}
+  .services h2{font-size:clamp(30px,7vw,50px);margin:12px 0 36px}
+  .services .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%}
+  .services .card{border:1px solid var(--line);background:linear-gradient(180deg,#161A22,#10131A);padding:28px 22px;min-height:150px;min-width:0}
+  .services .card .n{font-size:11px;color:var(--gold);letter-spacing:.2em;font-weight:700;margin-bottom:14px}
+  .services .card h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(22px,5vw,26px);font-weight:600;line-height:1.15;overflow-wrap:anywhere}
+  .services .card p{margin-top:10px;color:var(--mute);font-size:14px;overflow-wrap:anywhere}
+  @media(max-width:800px){.services .grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.services .grid{grid-template-columns:1fr}}
+
+  .preview{border-top:1px solid var(--line);padding:100px 0 80px;overflow-x:hidden}
+  .preview .head{max-width:1140px;margin:0 auto;padding:0 max(20px, env(safe-area-inset-right)) 36px max(20px, env(safe-area-inset-left));display:flex;justify-content:space-between;align-items:end;gap:20px}
+  .preview h2{font-size:clamp(30px,7vw,52px);margin-top:10px}
+  .preview .head a{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-2);font-weight:600;white-space:nowrap}
+  .mosaic{display:grid;grid-template-columns:repeat(12,1fr);gap:10px;max-width:1140px;width:100%;margin:0 auto;padding:0 max(20px, env(safe-area-inset-right)) 0 max(20px, env(safe-area-inset-left));box-sizing:border-box}
+  .mosaic .cell{overflow:hidden;background:#111;position:relative;min-width:0;width:100%}
+  .mosaic .cell img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
+  .mosaic .cell:hover img{transform:scale(1.04)}
+  .mosaic .c1{grid-column:span 7;aspect-ratio:16/11}
+  .mosaic .c2{grid-column:span 5;aspect-ratio:4/5}
+  .mosaic .c3,.mosaic .c4,.mosaic .c5{grid-column:span 4;aspect-ratio:1}
+  .mosaic .cap{position:absolute;left:0;right:0;bottom:0;padding:16px;background:linear-gradient(0deg,rgba(0,0,0,.9),transparent);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--gold-2);overflow-wrap:anywhere}
+  @media(max-width:800px){.preview .head{flex-direction:column;align-items:start}.mosaic .c1,.mosaic .c2,.mosaic .c3,.mosaic .c4,.mosaic .c5{grid-column:span 6}}
+  @media(max-width:520px){.mosaic{gap:12px}.mosaic .c1,.mosaic .c2,.mosaic .c3,.mosaic .c4,.mosaic .c5{grid-column:span 12;aspect-ratio:4/5}}
+  .preview .more{text-align:center;padding:44px 20px 0}
+
+  .cta-band{padding:88px max(20px, env(safe-area-inset-right)) 88px max(20px, env(safe-area-inset-left));background:linear-gradient(135deg,#10131A,#0B0D0F 55%,#13233F);text-align:center;border-top:1px solid var(--line)}
+  .cta-band h2{font-size:clamp(32px,8vw,56px);margin:14px auto 0;max-width:16ch;overflow-wrap:anywhere}
+  .cta-band p{margin:18px auto 0;color:var(--mute);max-width:42ch;overflow-wrap:anywhere}
+  .cta-band .actions{margin-top:32px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  .contact{padding:100px max(20px, env(safe-area-inset-right)) 100px max(20px, env(safe-area-inset-left));max-width:900px;margin:0 auto;border-top:1px solid var(--line)}
+  .contact h2{font-size:clamp(30px,7vw,52px);margin:12px 0 28px;overflow-wrap:anywhere}
+  .contact h2 span{color:var(--blue-2)}
+  .contact dl dt{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:26px}
+  .contact dl dd{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(20px,5vw,32px);margin-top:8px;overflow-wrap:anywhere}
+  .contact dl dd a:hover{color:var(--gold-2)}
+
+  footer{border-top:1px solid var(--line);padding:36px max(20px, env(safe-area-inset-right)) 36px max(20px, env(safe-area-inset-left));display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--mute);font-size:12px}
+  footer .b{display:flex;align-items:center;gap:12px;color:var(--bone);font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-weight:600;min-width:0}
+  footer .b img{height:40px;width:auto;background:#fff;border-radius:8px;padding:4px}
+
+/* === YG MOBILE HARD RULE (do not remove) === */
+html,body{overflow-x:hidden!important;max-width:100%!important}
+img,video{max-width:100%;height:auto}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head,.hero:not(.hero-media),.page-cta .wrap,.preview .head,.about,.services,.contact,.cta-band,.strip,section.hero{
+  box-sizing:border-box;
+}
+nav,.filter,header,footer{
+  padding-left:max(16px, env(safe-area-inset-left))!important;
+  padding-right:max(16px, env(safe-area-inset-right))!important;
+}
+.hero-content,.cat-head,.wrap,.about,.services,.contact,.cta-band,.preview .head,section.hero > .eyebrow,section.hero > h1,section.hero > p,.hero .content{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  box-sizing:border-box;
+  max-width:100%;
+}
+.grid,.mosaic{width:100%;max-width:100%;box-sizing:border-box;min-width:0}
+.item,.cell,.card{min-width:0;max-width:100%}
+.item img,.cell img{width:100%;height:100%;object-fit:cover;display:block}
+
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a class="brand" href="#top"><img src="https://beristain-builders-demo.vercel.app/assets/brand/beristain-logo.png?v=3" alt="Beristain Builders" width="480" height="480"></a>
+  <div class="links">
+    <a class="nav-hide" href="#services">Services</a>
+    <a class="nav-hide" href="#work">Work</a>
+    <a class="nav-hide" href="/d/beristain/catalog/">Catalog</a>
+    <a class="cta" href="tel:+13072848044">Call Juan</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img class="bg" src="https://beristain-builders-demo.vercel.app/assets/images/catalog/03.jpg" alt="Beristain Builders mountain home under construction" width="2000" height="1333" decoding="async" fetchpriority="high">
+  <div class="veil" aria-hidden="true"></div>
+  <div class="content">
+    <img class="crest" src="https://beristain-builders-demo.vercel.app/assets/brand/beristain-logo.png?v=3" alt="Beristain Builders" width="480" height="480" decoding="async">
+    <h1>Built for <em>Jackson</em> country.</h1>
+    <p class="tag">Framing · Siding · Finish carpentry</p>
+    <div class="actions">
+      <a class="btn btn-solid" href="/d/beristain/catalog/">Open project catalog</a>
+      <a class="btn btn-line" href="tel:+13072848044">(307) 284-8044</a>
+    </div>
+  </div>
+</header>
+
+<section class="strip">
+  <div><strong>Framing</strong>Structure that holds</div>
+  <div><strong>Siding</strong>Mountain exteriors</div>
+  <div><strong>Finish</strong>Clean carpentry detail</div>
+</section>
+
+<section class="about">
+  <div class="photo">
+    <img src="https://beristain-builders-demo.vercel.app/assets/images/catalog/01.jpg" alt="Vertical wood siding on a custom mountain home" width="900" height="1125" loading="lazy">
+    <div class="chip">Jackson, WY</div>
+  </div>
+  <div>
+    <div class="eyebrow">Beristain Builders</div>
+    <h2 class="display">Quality craftsmanship for custom mountain builds.</h2>
+    <p>Framing, siding, and finish carpentry for homes that have to handle Jackson weather. Real jobsites. Real photos. The same crew you reach by phone.</p>
+    <ul>
+      <li>Custom homes and mountain exteriors</li>
+      <li>Framing through finish carpentry</li>
+      <li>Owner-led crew — call Juan direct</li>
+    </ul>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="eyebrow">Services</div>
+  <h2 class="display">What the crew builds</h2>
+  <div class="grid">
+    <div class="card"><div class="n">01</div><h3>Framing</h3><p>Structure, openings, and roof framing built for the site.</p></div>
+    <div class="card"><div class="n">02</div><h3>Siding</h3><p>Wood and exterior systems that look sharp and hold up.</p></div>
+    <div class="card"><div class="n">03</div><h3>Finish carpentry</h3><p>Trim, windows, eaves, and the details homeowners notice.</p></div>
+    <div class="card"><div class="n">04</div><h3>Custom homes</h3><p>Full carpentry support on mountain custom builds.</p></div>
+    <div class="card"><div class="n">05</div><h3>Remodels</h3><p>Exterior and structural carpentry on existing homes.</p></div>
+    <div class="card"><div class="n">06</div><h3>Exterior</h3><p>Elevation work, wrap, and jobsite crew installs.</p></div>
+  </div>
+</section>
+
+<section class="preview" id="work">
+  <div class="head">
+    <div>
+      <div class="eyebrow">Selected work</div>
+      <h2 class="display">Jobsites in Jackson Hole</h2>
+    </div>
+    <a href="/d/beristain/catalog/">View full catalog →</a>
+  </div>
+  <div class="mosaic">
+    <div class="cell c1"><img src="https://beristain-builders-demo.vercel.app/assets/images/catalog/04.jpg" alt="Siding with Tetons beyond" loading="lazy"><div class="cap">Siding · Jackson Hole</div></div>
+    <div class="cell c2"><img src="https://beristain-builders-demo.vercel.app/assets/images/catalog/01.jpg" alt="Vertical wood siding" loading="lazy"><div class="cap">Mountain exterior</div></div>
+    <div class="cell c3"><img src="https://beristain-builders-demo.vercel.app/assets/images/catalog/02.jpg" alt="Weathered wood siding" loading="lazy"><div class="cap">Siding &amp; windows</div></div>
+    <div class="cell c4"><img src="https://beristain-builders-demo.vercel.app/assets/images/catalog/05.jpg" alt="Crew on exterior" loading="lazy"><div class="cap">Exterior crew</div></div>
+    <div class="cell c5"><img src="https://beristain-builders-demo.vercel.app/assets/images/catalog/07.jpg" alt="Window install" loading="lazy"><div class="cap">Framing &amp; finish</div></div>
+  </div>
+  <div class="more"><a class="btn btn-solid" href="/d/beristain/catalog/">Open full catalog</a></div>
+</section>
+
+<section class="cta-band">
+  <div class="eyebrow">Ready to build</div>
+  <h2 class="display">See the full project catalog</h2>
+  <p>Browse framing, siding, finish, and custom home work — then call Juan to talk through your project.</p>
+  <div class="actions">
+    <a class="btn btn-solid" href="/d/beristain/catalog/">Open catalog</a>
+    <a class="btn btn-line" href="tel:+13072848044">Call (307) 284-8044</a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="eyebrow">Contact</div>
+  <h2 class="display">Call the <span>crew</span>.</h2>
+  <dl>
+    <dt>Direct</dt>
+    <dd><a href="tel:+13072848044">(307) 284-8044</a></dd>
+    <dt>Business line</dt>
+    <dd><a href="tel:+13076999065">(307) 699-9065</a></dd>
+    <dt>Email</dt>
+    <dd><a href="mailto:beristainbuilders@gmail.com">beristainbuilders@gmail.com</a></dd>
+    <dt>Location</dt>
+    <dd>Jackson, WY 83001</dd>
+  </dl>
+</section>
+
+<footer>
+  <div class="b"><img src="https://beristain-builders-demo.vercel.app/assets/brand/beristain-logo.png" alt="">Beristain Builders</div>
+  <div>Jackson, Wyoming · Framing · Siding · Finish</div>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('on',scrollY>20),{passive:true});
+</script>
+</body>
+</html>

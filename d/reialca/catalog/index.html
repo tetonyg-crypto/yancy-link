@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="yg-static-bake" content="reialca">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="https://reialca-catalog-demo.vercel.app/assets/brand/reialca-mark.png" type="image/png">
+<title>REIALCA Construction — Work Catalog</title>
+<meta name="description" content="REIALCA Construction work catalog — basements, remodeling, ADUs, landscaping, and new construction in Utah. Text this menu to a client.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="REIALCA Construction — Work Catalog">
+<meta property="og:description" content="A shoppable menu of REIALCA work by service. Utah. 3 generations of builders.">
+<meta property="og:image" content="https://reialca-catalog-demo.vercel.app/assets/brand/og-share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap">
+<style>
+  :root{
+    --black:#0A0A0A;
+    --black-2:#141414;
+    --white:#F5F5F5;
+    --muted:#9A9A9A;
+    --gold:#E6B422;
+    --gold-2:#F0C84A;
+    --line:rgba(230,180,34,.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--black);color:var(--white);font-family:Inter,system-ui,sans-serif;font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:14px 22px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  nav .l img{height:42px;width:auto}
+  nav .r{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+  nav .r a{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+  nav .r a:hover{color:var(--gold)}
+  nav .r a.tel{color:var(--gold-2);letter-spacing:.04em;text-transform:none;font-size:14px;font-weight:700}
+  @media(max-width:700px){nav .l img{height:34px} nav .r a.hide{display:none}}
+
+  .hero{position:relative;min-height:72vh;display:grid;place-items:center;overflow:hidden;background:#000}
+  .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.82))}
+  .hero-inner{position:relative;z-index:2;text-align:center;padding:110px 24px 70px;max-width:880px}
+  .hero-inner .micro{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:20px}
+  .hero-inner img.logo{height:72px;margin:0 auto 26px;filter:drop-shadow(0 10px 30px rgba(0,0,0,.6))}
+  .hero-inner h1{font-family:Oswald,sans-serif;font-weight:600;font-size:clamp(34px,6vw,64px);letter-spacing:.04em;text-transform:uppercase;line-height:1.05;margin-bottom:16px}
+  .hero-inner p{color:rgba(245,245,245,.82);font-size:clamp(14px,1.6vw,17px);max-width:46ch;margin:0 auto 28px}
+  .hero-inner .cta{display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  .btn{display:inline-block;padding:14px 22px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;border:1px solid var(--gold);color:var(--white);transition:.2s}
+  .btn.solid{background:var(--gold);color:#111;border-color:var(--gold)}
+  .btn.solid:hover{background:var(--gold-2)}
+  .btn:hover{border-color:var(--gold-2);color:var(--gold-2)}
+
+  .about{padding:56px 24px;border-bottom:1px solid var(--line);text-align:center;max-width:820px;margin:0 auto}
+  .about .label{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px}
+  .about p{font-size:16px;color:var(--muted);line-height:1.7}
+
+  .filter{position:sticky;top:71px;z-index:40;background:rgba(10,10,10,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+  .filter button{background:transparent;border:1px solid rgba(245,245,245,.18);color:var(--muted);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:10px 14px}
+  .filter button:hover{border-color:var(--gold);color:var(--gold)}
+  .filter button.on{background:var(--gold);border-color:var(--gold);color:#111;font-weight:700}
+
+  .cat{padding:64px 0 36px;border-top:1px solid rgba(255,255,255,.06)}
+  .cat.hide{display:none}
+  .cat-head{padding:0 24px 28px;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}
+  .cat-head .num{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .cat-head h2{font-family:Oswald,sans-serif;font-size:clamp(28px,4vw,44px);letter-spacing:.06em;text-transform:uppercase}
+  .cat-head .count{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:1400px;margin:0 auto}
+  .item{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--black-2);cursor:pointer;border:1px solid rgba(255,255,255,.06)}
+  .item.wide{aspect-ratio:16/9;grid-column:span 2}
+  .item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .item:hover img{transform:scale(1.04)}
+  .item .stamp{position:absolute;top:12px;left:12px;z-index:2;background:rgba(0,0,0,.75);border:1px solid var(--line);font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:7px 10px;font-weight:700;color:var(--gold)}
+  .item .meta{position:absolute;left:0;right:0;bottom:0;padding:22px;background:linear-gradient(0deg,rgba(0,0,0,.95),transparent);opacity:0;transform:translateY(8px);transition:.28s}
+  .item:hover .meta{opacity:1;transform:none}
+  .item .meta .ti{font-family:Oswald,sans-serif;font-size:22px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
+  .item .meta .lc{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.item.wide{grid-column:span 2}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}.item.wide{grid-column:span 1;aspect-ratio:1/1}.item .meta{opacity:1;transform:none}}
+
+  .lightbox{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;padding:24px}
+  .lightbox.show{display:flex}
+  .lb-card{max-width:1100px;width:100%;display:grid;grid-template-columns:1.45fr 1fr;background:var(--black-2);max-height:90vh;border:1px solid var(--line)}
+  .lb-card .ph{position:relative;min-height:340px;background:#000}
+  .lb-card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+  .lb-card .info{padding:40px 32px;border-left:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between}
+  .lb-card .info .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px}
+  .lb-card .info h3{font-family:Oswald,sans-serif;font-size:clamp(26px,3vw,40px);letter-spacing:.04em;text-transform:uppercase;line-height:1.1;margin-bottom:14px}
+  .lb-card .info p{color:var(--muted);font-size:15px}
+  .lb-card .actions{margin-top:28px;display:flex;gap:10px;flex-wrap:wrap}
+  .lb-card .actions a,.lb-card .actions button{padding:13px 18px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;border:1px solid var(--gold);background:transparent;color:var(--white)}
+  .lb-card .actions a.solid{background:var(--gold);color:#111}
+  @media(max-width:800px){.lb-card{grid-template-columns:1fr;overflow:auto}.lb-card .info{border-left:none;border-top:1px solid var(--line);padding:28px 22px}}
+
+  footer{padding:56px 24px;text-align:center;border-top:1px solid var(--line)}
+  footer img{height:56px;margin:0 auto 16px}
+  footer .lines{font-size:13px;color:var(--muted);line-height:1.8}
+  footer .lines a:hover{color:var(--gold)}
+  footer .demo{margin-top:18px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.75}
+
+/* === YG MOBILE HARD RULE (do not remove) === */
+html,body{overflow-x:hidden!important;max-width:100%!important}
+img,video{max-width:100%;height:auto}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head,.hero:not(.hero-media),.page-cta .wrap,.preview .head,.about,.services,.contact,.cta-band,.strip,section.hero{
+  box-sizing:border-box;
+}
+nav,.filter,header,footer{
+  padding-left:max(16px, env(safe-area-inset-left))!important;
+  padding-right:max(16px, env(safe-area-inset-right))!important;
+}
+.hero-content,.cat-head,.wrap,.about,.services,.contact,.cta-band,.preview .head,section.hero > .eyebrow,section.hero > h1,section.hero > p,.hero .content{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  box-sizing:border-box;
+  max-width:100%;
+}
+.grid,.mosaic{width:100%;max-width:100%;box-sizing:border-box;min-width:0}
+.item,.cell,.card{min-width:0;max-width:100%}
+.item img,.cell img{width:100%;height:100%;object-fit:cover;display:block}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="l" href="/d/reialca/catalog/" aria-label="REIALCA"><img src="https://reialca-catalog-demo.vercel.app/assets/brand/reialca-logo.png" alt="REIALCA Construction"></a>
+  <div class="r">
+    <a class="hide" href="#about">About</a>
+    <a class="hide" href="mailto:reialcallc@gmail.com">Email</a>
+    <a class="tel" href="tel:+18018654425">801.865.4425</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="https://reialca-catalog-demo.vercel.app/assets/images/catalog/001.jpg" alt="REIALCA project">
+  <div class="hero-inner">
+    <div class="micro">Work Catalog · Send to a client</div>
+    <img class="logo" src="https://reialca-catalog-demo.vercel.app/assets/brand/reialca-logo.png" alt="REIALCA Construction">
+    <h1>A menu of our work</h1>
+    <p>Basements, remodeling, ADUs, landscaping, and new construction — organized by service so you can text the right look to the right client.</p>
+    <div class="cta">
+      <a class="btn solid" href="#work">Browse by service</a>
+      <a class="btn" href="tel:+18018654425">Call 801.865.4425</a>
+    </div>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <div class="label">3 generations of builders</div>
+  <p>REIALCA Construction is a Utah-based family construction company focused on building functional, modern, and valuable spaces through design, permits, remodeling, and high-end construction execution.</p>
+</section>
+
+<div class="filter" id="filter">
+  <button class="on" data-cat="all">All</button>
+  <button data-cat="basement">Basement Finishing</button>
+  <button data-cat="remodeling">Modern Remodeling</button>
+  <button data-cat="adu">ADU Development</button>
+  <button data-cat="landscaping">Landscaping</button>
+  <button data-cat="new">New Construction</button>
+  <button data-cat="permits">Design · Permits · Build</button>
+</div>
+
+<div id="work">
+
+<section class="cat" data-cat="basement">
+  <div class="cat-head"><div><div class="num">01</div><h2>Basement Finishing</h2></div><div class="count">Comfort · Entertainment · Value</div></div>
+  <div class="grid">
+    <div class="item" data-title="Finished basement living" data-cat-label="Basement Finishing" data-img="https://reialca-catalog-demo.vercel.app/assets/images/catalog/001.jpg">
+      <img src="https://reialca-catalog-demo.vercel.app/assets/images/catalog/thumbs/001.jpg" alt="Basement finishing" loading="lazy">
+      <div class="stamp">01</div>
+      <div class="meta"><div class="ti">Finished basement living</div><div class="lc">Basement Finishing</div></div>
+    </div>
+    <div class="item" data-title="Modern lower level" data-cat-label="Basement Finishing" data-img="https://reialca-catalog-demo.vercel.app/assets/images/catalog/002.jpg">
+      <img src="https://reialca-catalog-demo.vercel.app/assets/images/catalog/thumbs/002.jpg" alt="Modern basement" loading="lazy">
+      <div class="stamp">02</div>
+      <div class="meta"><div class="ti">Modern lower level</div><div class="lc">Basement Finishing</div></div>
+    </div>
+<div class="meta"><div class="ti">Entertainment-ready space</div><div class="lc">Basement Finishing</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cat" data-cat="remodeling">
+  <div class="cat-head"><div><div class="num">02</div><h2>Modern Remodeling</h2></div><div class="count">Kitchens · Baths · Full-home</div></div>
+  <div class="grid">
+    <div class="item" data-title="Modern remodel exterior" data-cat-label="Modern Remodeling" data-img="https://reialca-catalog-demo.vercel.app/assets/images/catalog/004.jpg">
+      <img src="https://reialca-catalog-demo.vercel.app/assets/images/catalog/thumbs/004.jpg" alt="Modern remodeling" loading="lazy">
+      <div class="stamp">04</div>
+      <div class="meta"><div class="ti">Modern remodel exterior</div><div class="lc">Modern Remodeling</div></div>
+    </div>
+<div class="meta"><div class="ti">Kitchen remodel</div><div class="lc">Modern Remodeling</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cat hide" data-cat="adu">
+  <div class="cat-head"><div><div class="num">03</div><h2>ADU Development</h2></div><div class="count">Design · Permits · Build</div></div>
+  <div class="grid">
+    <div class="item wide" data-title="Accessory dwelling unit" data-cat-label="ADU Development" data-img="https://reialca-catalog-demo.vercel.app/assets/images/catalog/006.jpg">
+      <img src="https://reialca-catalog-demo.vercel.app/assets/images/catalog/thumbs/006.jpg" alt="ADU development" loading="lazy">
+      <div class="stamp">06</div>
+      <div class="meta"><div class="ti">Accessory dwelling unit</div><div class="lc">ADU Development</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cat hide" data-cat="new">
+  <div class="cat-head"><div><div class="num">04</div><h2>New Construction</h2></div><div class="count">Homes · Additions · Shell</div></div>
+  <div class="grid">
+<div class="meta"><div class="ti">Modern residential build</div><div class="lc">New Construction</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cat" data-cat="landscaping">
+  <div class="cat-head"><div><div class="num">05</div><h2>Landscaping &amp; Outdoor Living</h2></div><div class="count">Patio · Fire · Plant</div></div>
+  <div class="grid">
+    <div class="item" data-title="Outdoor living courtyard" data-cat-label="Landscaping" data-img="https://reialca-catalog-demo.vercel.app/assets/images/catalog/008.jpg">
+      <img src="https://reialca-catalog-demo.vercel.app/assets/images/catalog/thumbs/008.jpg" alt="Landscaping" loading="lazy">
+      <div class="stamp">08</div>
+      <div class="meta"><div class="ti">Outdoor living courtyard</div><div class="lc">Landscaping</div></div>
+    </div>
+<div class="meta"><div class="ti">Fire pit lounge</div><div class="lc">Landscaping</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cat hide" data-cat="permits">
+  <div class="cat-head"><div><div class="num">06</div><h2>Design · Permits · Build</h2></div><div class="count">One execution team</div></div>
+  <div class="grid">
+    <div class="item wide" data-title="Full-service project range" data-cat-label="Design · Permits · Build" data-img="https://reialca-catalog-demo.vercel.app/assets/images/catalog/010.jpg">
+      <img src="https://reialca-catalog-demo.vercel.app/assets/images/catalog/thumbs/010.jpg" alt="REIALCA capabilities" loading="lazy">
+      <div class="stamp">10</div>
+      <div class="meta"><div class="ti">Full-service project range</div><div class="lc">Design · Permits · Build</div></div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <img src="https://reialca-catalog-demo.vercel.app/assets/brand/reialca-logo.png" alt="REIALCA Construction">
+  <div class="lines">
+    104 S Rio Grande Street · Salt Lake City, UT<br>
+    <a href="tel:+18018654425">801.865.4425</a> · <a href="mailto:reialcallc@gmail.com">reialcallc@gmail.com</a> · <a href="https://www.instagram.com/reialcallc/" target="_blank" rel="noopener">@REIALCALLC</a>
+  </div>
+</footer>
+
+<div class="lightbox" id="lb" onclick="if(event.target===this)closeLb()">
+  <div class="lb-card">
+    <div class="ph"><img id="lbImg" src="" alt=""></div>
+    <div class="info">
+      <div>
+        <div class="label" id="lbCat">—</div>
+        <h3 id="lbTitle">—</h3>
+        <p>Text this look to a client, then call REIALCA to scope the project.</p>
+      </div>
+      <div class="actions">
+        <a class="solid" href="tel:+18018654425">Call 801.865.4425</a>
+        <button type="button" onclick="closeLb()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const filterBtns = document.querySelectorAll('#filter button');
+  const cats = document.querySelectorAll('section.cat');
+  filterBtns.forEach(b => b.addEventListener('click', () => {
+    filterBtns.forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    const k = b.dataset.cat;
+    cats.forEach(c => {
+      if (k === 'all' || c.dataset.cat === k) c.classList.remove('hide');
+      else c.classList.add('hide');
+    });
+  }));
+  function openLb(item){
+    document.getElementById('lbImg').src = item.dataset.img;
+    document.getElementById('lbTitle').textContent = item.dataset.title;
+    document.getElementById('lbCat').textContent = item.dataset.catLabel;
+    document.getElementById('lb').classList.add('show');
+  }
+  function closeLb(){ document.getElementById('lb').classList.remove('show'); }
+  document.querySelectorAll('.item').forEach(item => item.addEventListener('click', () => openLb(item)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+</script>
+</body>
+</html>

@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="yg-static-bake" content="integris">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="https://integris-construction-demo-sales.vercel.app/assets/brand/favicon.svg" type="image/svg+xml">
+<title>Project Catalog | Integris Construction | Phoenix — Integris Construction</title>
+<meta name="description" content="Integris Construction. Arizona custom homes, additions, and commercial builds. KB-1 Dual · ROC #350134.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+html{scroll-padding-top:80px}
+section[id]{scroll-margin-top:80px}
+:root{
+  --accent:#0A0A0A;
+  --cream:#FFFFFF;
+  --ink:#0A0A0A;
+  --ink-2:#1A1A1A;
+  --white:#FFFFFF;
+  --mute:#4A4A4A;
+  --body:#2E2E2E;
+  --form:rgba(255,255,255,.92);
+  --card:#FFFFFF;
+  --mute-d:#555555;
+  --line-l:#E8E8E8;
+  --before:#555555;
+  --wrap:min(1220px,92vw);
+  --page:#FFFFFF;
+  --soft:#F7F7F5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--page);color:var(--ink);
+  font-family:'Montserrat',system-ui,sans-serif;
+  font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.55;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;border-radius:0}
+.wrap{width:var(--wrap);margin:0 auto}
+.caps{text-transform:uppercase}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--ink);font-weight:700;
+}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--accent);flex-shrink:0}
+.eyebrow.no-rule::before{display:none}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 22px;font-size:11px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;border:1px solid transparent;cursor:pointer;
+  transition:.2s;border-radius:0;line-height:1;
+}
+.btn-primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-primary:hover{background:var(--ink-2)}
+.btn-ghost{background:transparent;color:#0A0A0A;border-color:rgba(10,10,10,.45)}
+.hero .cta .btn-ghost{color:#0A0A0A;border-color:rgba(10,10,10,.5)}
+.hero .cta .btn-ghost:hover{background:rgba(10,10,10,.06)}
+.mid-cta .btn-ghost,.mid-cta .btn-white{color:var(--ink);border-color:var(--ink)}
+.mid-cta .btn-white{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-white{background:#fff;color:var(--ink);border-color:#fff}
+.btn-white:hover{background:var(--cream)}
+.hero .cta .btn-primary{
+  background:#0A0A0A;color:#fff;border-color:#0A0A0A;
+}
+.hero .cta .btn-primary:hover{background:#222}
+.form-card .btn-primary{
+  background:#0A0A0A;color:#fff;border-color:#0A0A0A;
+}
+.form-card .btn-primary:hover{background:#222}
+.nav .actions .btn-primary{background:#0A0A0A;color:#fff;border-color:#0A0A0A}
+.nav .actions .btn-primary:hover{background:#222}
+.nav-toggle{color:#0A0A0A!important}
+
+/* NAV */
+.nav{
+  position:fixed;inset:0 0 auto;z-index:60;
+  background:#fff;
+  border-bottom:1px solid #E8E8E8;
+  color:#0A0A0A;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:0 22px;height:64px;
+}
+.nav .brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav .brand .lockup{
+  display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid #0A0A0A;padding:8px 12px;
+  font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  color:#0A0A0A;line-height:1;white-space:nowrap;
+}
+.nav .links{display:flex;gap:20px;align-items:center}
+.nav .links a{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.nav .links a:hover{opacity:.85}
+.nav .actions{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.nav .tel{font-size:13px;font-weight:700;letter-spacing:.02em;display:inline-flex;align-items:center;gap:6px}
+.nav .tel svg{width:14px;height:14px}
+.nav .actions .btn{padding:12px 16px}
+.nav-toggle{display:none;background:transparent;border:0;color:#0A0A0A;width:40px;height:40px;font-size:22px;cursor:pointer}
+@media(max-width:980px){
+  .nav{padding:0 14px;gap:10px}
+  .nav .links{display:none}
+  .nav .tel span{display:none}
+  .nav .actions .btn{display:none}
+  .nav-toggle{display:grid;place-items:center;color:#0A0A0A!important}
+  .nav .brand .lockup{
+    font-size:10px;letter-spacing:.14em;padding:7px 10px;
+  }
+  .nav.open .links{
+    display:flex;flex-direction:column;align-items:stretch;
+    position:absolute;top:64px;left:0;right:0;background:#fff;
+    padding:8px 16px 20px;gap:0;border-top:1px solid #E8E8E8;
+    box-shadow:0 16px 40px rgba(0,0,0,.08);z-index:70;
+  }
+  .nav.open .links a{
+    padding:14px 4px;border-bottom:1px solid #EFEFEF;font-size:12px;
+  }
+  .nav.open .links a:last-child{border-bottom:0}
+}
+
+/* HERO */
+.hero{
+  position:relative;min-height:100vh;padding:64px 0 0;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  overflow:hidden;
+}
+.hero-media{
+  position:absolute;inset:0;z-index:0;
+  background:#EDEAE4 url(https://integris-construction-demo-sales.vercel.app/assets/images/clone/hero-bg.jpg) center/cover no-repeat;
+}
+.hero-media .bg-video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:1;z-index:0;
+  transform:translateZ(0);
+  backface-visibility:hidden;
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-media .bg-video{display:none!important}
+}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(255,255,255,.88) 0%,rgba(255,255,255,.55) 42%,rgba(255,255,255,.18) 68%,rgba(255,255,255,.08) 100%);pointer-events:none}
+.hero-copy{max-width:560px}
+.hero-grid{
+  position:relative;z-index:2;width:var(--wrap);margin:0 auto;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end;
+  padding:48px 0 32px;
+}
+.hero .geo{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;margin-bottom:18px;color:#0A0A0A}
+.hero h1{
+  font-size:clamp(34px,5.4vw,64px);line-height:.95;font-weight:800;
+  letter-spacing:.01em;text-transform:uppercase;max-width:13ch;color:#0A0A0A;
+}
+.hero .sub{margin-top:18px;font-size:15px;color:#3A3A3A;max-width:46ch;font-weight:400}
+.hero .cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+
+.form-card{
+  background:rgba(255,255,255,.92);backdrop-filter:blur(14px);
+  border:1px solid rgba(10,10,10,.1);padding:28px 24px 22px;border-radius:0;
+  box-shadow:0 18px 50px rgba(10,10,10,.08);
+}
+.form-card .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#0A0A0A;font-weight:700;margin-bottom:18px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#222;margin-bottom:8px;font-weight:700}
+.field input,.field select,.field textarea{
+  width:100%;background:transparent;border:0;border-bottom:1px solid rgba(10,10,10,.22);
+  color:#0A0A0A;padding:8px 0;outline:none;border-radius:0;
+}
+.field textarea{min-height:72px;resize:vertical}
+.field select option{color:#111}
+.form-card .btn{width:100%;margin-top:8px}
+.form-card .note{margin-top:12px;font-size:10px;color:#555;letter-spacing:.04em;text-align:center}
+
+.trust{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #E8E8E8;background:#fff}
+.trust .cell{padding:22px 18px;border-right:1px solid #E8E8E8}
+.trust .cell:last-child{border-right:0}
+.trust .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:6px;color:#0A0A0A}
+.trust .v{font-size:12px;color:#444}
+@media(max-width:900px){
+  .hero{
+    min-height:auto;
+    padding:64px 0 0;
+    justify-content:flex-start;
+  }
+  .hero::after{
+    background:linear-gradient(180deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.82) 38%,rgba(255,255,255,.55) 62%,rgba(255,255,255,.92) 100%);
+  }
+  .hero-copy{max-width:none}
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:22px;
+    padding:28px 0 24px;
+    align-items:stretch;
+  }
+  .hero h1{
+    font-size:clamp(28px,9vw,40px);
+    max-width:11ch;
+    line-height:.98;
+  }
+  .hero .geo{margin-bottom:12px;font-size:11px}
+  .hero .sub{margin-top:14px;font-size:14px;line-height:1.55}
+  .hero .cta{margin-top:20px;gap:10px}
+  .hero .cta .btn{flex:1 1 auto;min-width:140px;padding:13px 16px}
+  .form-card{
+    margin-top:4px;
+    padding:22px 18px 18px;
+    box-shadow:0 10px 30px rgba(10,10,10,.06);
+  }
+  .trust{grid-template-columns:1fr 1fr}
+  .trust .cell{padding:16px 14px}
+  .trust .cell:nth-child(2n){border-right:0}
+  .trust .k{font-size:10px}
+  .trust .v{font-size:11px}
+  .form-row{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .nav .brand .lockup{letter-spacing:.1em;padding:6px 8px;font-size:9px}
+  .hero-grid{padding:22px 0 18px}
+  .hero .cta{flex-direction:column}
+  .hero .cta .btn{width:100%}
+}
+
+/* WHY */
+.why{background:#fff;color:var(--ink);padding:100px 0}
+.why-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.why .photo{aspect-ratio:4/5;overflow:hidden;background:#ddd}
+.why .photo img{width:100%;height:100%;object-fit:cover}
+.why h2{font-size:clamp(28px,4vw,44px);line-height:1.05;text-transform:uppercase;font-weight:800;margin:14px 0 22px;letter-spacing:.01em}
+.why .prose{display:grid;gap:16px;margin-bottom:32px}
+.why .prose p{font-size:15px;color:var(--body);line-height:1.65;max-width:58ch}
+.why-list{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.why-list .item{padding:22px 0;border-top:1px solid var(--line-l)}
+.why-list .item:nth-child(odd){padding-right:24px}
+.why-list .item:nth-child(even){padding-left:24px;border-left:1px solid var(--line-l)}
+.why-list .item h3{font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;margin-bottom:8px}
+.why-list .item p{font-size:13px;color:#444;line-height:1.55}
+@media(max-width:800px){
+  .why-grid,.why-list{grid-template-columns:1fr}
+  .why-list .item:nth-child(odd),.why-list .item:nth-child(even){padding-left:0;padding-right:0;border-left:0}
+}
+
+/* SERVICES */
+.services{background:var(--soft);color:var(--ink);padding:100px 0 80px}
+.services .head{margin-bottom:40px}
+.services h2{font-size:clamp(28px,4.2vw,46px);text-transform:uppercase;font-weight:800;line-height:1.05;margin-top:10px}
+.services .lead{margin-top:14px;color:var(--mute);max-width:54ch;font-size:15px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line-l);background:#fff}
+.svc{background:#fff;padding:28px 24px;min-height:200px;border-right:1px solid var(--line-l);border-bottom:1px solid var(--line-l);transition:.2s;color:var(--ink)}
+.svc:nth-child(3n){border-right:0}
+.svc:nth-child(n+4){border-bottom:0}
+.svc:hover{outline:1px solid var(--accent);outline-offset:-1px;z-index:1}
+.svc .ico{width:28px;height:28px;margin-bottom:16px;color:var(--ink)}
+.svc h3{font-size:14px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;margin-bottom:10px}
+.svc p{font-size:13px;color:var(--mute-d);line-height:1.55}
+@media(max-width:900px){
+  .svc-grid{grid-template-columns:1fr}
+  .svc{border-right:0!important;border-bottom:1px solid var(--line-l)!important}
+  .svc:last-child{border-bottom:0!important}
+}
+
+/* SELECTED WORK */
+.work{background:#fff;color:var(--ink);padding:100px 0 40px}
+.work .head{
+  display:flex;justify-content:space-between;gap:32px;align-items:flex-start;
+  margin-bottom:28px;flex-wrap:wrap;
+}
+.work h2{font-size:clamp(28px,4vw,44px);text-transform:uppercase;font-weight:800;margin-top:10px;max-width:16ch;line-height:1.05}
+.work .lead{max-width:40ch;color:#4A4A4A;font-size:14px;padding-top:28px;line-height:1.6}
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.proj{position:relative;overflow:hidden;background:#222;min-height:280px}
+.proj.featured,.proj.commercial{grid-column:1/-1;min-height:420px}
+.proj img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s}
+.proj:hover img{transform:scale(1.03)}
+.proj::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78),rgba(0,0,0,.08) 55%)}
+.proj .cap{position:relative;z-index:2;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;height:100%;min-height:inherit}
+.proj .tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85);font-weight:700;margin-bottom:8px}
+.proj h3{font-size:clamp(22px,2.4vw,30px);text-transform:uppercase;font-weight:800;color:#fff;line-height:1.05}
+.proj .meta{margin-top:8px;color:#ddd;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+@media(max-width:800px){
+  .work-grid{grid-template-columns:1fr}
+  .proj.featured,.proj.commercial{min-height:320px}
+}
+
+/* GALLERY */
+.gallery{background:var(--soft);padding:100px 0 70px;color:var(--ink)}
+.gallery .head{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:28px;flex-wrap:wrap}
+.gallery h2{font-size:clamp(28px,4vw,44px);text-transform:uppercase;font-weight:800;margin-top:10px}
+.gallery .lead{max-width:42ch;color:#4A4A4A;font-size:14px;padding-top:28px}
+.g-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.g-grid .tile{aspect-ratio:5/4;overflow:hidden;background:#111}
+.g-grid .tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.g-grid .tile:hover img{transform:scale(1.04)}
+@media(max-width:900px){.g-grid{grid-template-columns:1fr 1fr}}
+
+/* BEFORE / AFTER */
+.ba{background:#fff;color:var(--ink);padding:40px 0 100px}
+.ba h2{font-size:clamp(28px,4vw,44px);text-transform:uppercase;font-weight:800;margin:10px 0 14px}
+.ba .intro{color:#4A4A4A;font-size:14px;max-width:56ch;margin-bottom:28px}
+.compare{
+  position:relative;aspect-ratio:16/10;overflow:hidden;background:#eee;
+  user-select:none;touch-action:none;cursor:ew-resize;
+}
+.compare.tall{aspect-ratio:21/10}
+.compare .ba-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;display:block}
+.compare .ba-reveal{
+  position:absolute;inset:0;z-index:2;
+  clip-path:inset(0 0 0 50%);
+}
+.compare .ba-reveal .ba-layer{
+  position:absolute;top:0;left:0;height:100%;
+  width:var(--cw,100%);
+  max-width:none;object-fit:cover;
+}
+.compare .handle{
+  position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-50%);
+  z-index:5;pointer-events:none;
+}
+.compare .handle::after{
+  content:"⇔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:40px;height:40px;border-radius:50%;background:#fff;color:#111;
+  display:grid;place-items:center;font-size:15px;font-weight:700;
+  box-shadow:0 2px 10px rgba(0,0,0,.25);
+}
+.compare .tag{
+  position:absolute;top:12px;z-index:6;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:800;padding:6px 10px;border-radius:0;clip-path:none!important;
+}
+.compare .tag-before{left:12px;background:#555;color:#fff}
+.compare .tag-after{right:12px;background:#0A0A0A;color:#fff}
+.ba-meta{
+  display:flex;justify-content:space-between;margin-top:12px;margin-bottom:28px;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:800px){.ba-grid{grid-template-columns:1fr}}
+
+/* TESTIMONIALS */
+.trust-clients{background:var(--soft);color:var(--ink);padding:100px 0}
+.trust-clients h2{font-size:clamp(28px,4vw,44px);text-transform:uppercase;font-weight:800;margin:10px 0 40px;line-height:1.05}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.quote{padding:0 28px;border-right:1px solid var(--line-l)}
+.quote:first-child{padding-left:0}
+.quote:last-child{border-right:0;padding-right:0}
+.quote blockquote{font-size:15px;line-height:1.65;color:#333;font-weight:400;min-height:7.5em}
+.quote hr{border:0;border-top:1px solid var(--line-l);margin:22px 0 16px}
+.quote .name{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800}
+.quote .role{margin-top:6px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#555}
+@media(max-width:800px){
+  .quotes{grid-template-columns:1fr;gap:28px}
+  .quote{padding:0;border-right:0;border-bottom:1px solid var(--line-l);padding-bottom:28px}
+  .quote:last-child{border-bottom:0;padding-bottom:0}
+  .quote blockquote{min-height:0}
+}
+
+/* PROCESS */
+.process{background:var(--soft);color:var(--ink);padding:100px 0}
+.process h2{font-size:clamp(28px,4vw,44px);text-transform:uppercase;font-weight:800;margin:10px 0 36px}
+.steps{display:grid;gap:0}
+.step{
+  display:grid;grid-template-columns:64px 300px 1fr;gap:18px;align-items:center;
+  padding:24px 8px;border-top:1px solid var(--line-l);transition:.2s;
+}
+.step:last-child{border-bottom:1px solid var(--line-l)}
+.step:hover{background:rgba(0,0,0,.02)}
+.step .n{color:var(--ink);font-weight:800;font-size:18px}
+.step .t{font-size:15px;letter-spacing:.1em;text-transform:uppercase;font-weight:800}
+.step .d{color:#4A4A4A;font-size:14px;line-height:1.55}
+@media(max-width:800px){.step{grid-template-columns:48px 1fr;gap:8px 14px}.step .d{grid-column:2}}
+
+/* FAQ */
+.faq{background:#fff;color:var(--ink);padding:100px 0}
+.faq-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.faq h2{font-size:clamp(28px,4vw,44px);text-transform:uppercase;font-weight:800;margin:10px 0 20px;line-height:1.05}
+.faq .pitch{font-size:15px;color:#444;max-width:34ch;line-height:1.6}
+.faq .pitch a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.faq details{border-top:1px solid var(--line-l);padding:18px 0}
+.faq details:last-child{border-bottom:1px solid var(--line-l)}
+.faq summary{
+  cursor:pointer;list-style:none;font-weight:700;font-size:14px;
+  display:flex;justify-content:space-between;gap:16px;align-items:center;
+  text-transform:uppercase;letter-spacing:.04em;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"▾";color:var(--accent);font-weight:800;font-size:14px;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(180deg)}
+.faq details p{margin-top:12px;color:#444;max-width:70ch;font-size:14px;line-height:1.6;text-transform:none;letter-spacing:0;font-weight:400}
+@media(max-width:800px){.faq-grid{grid-template-columns:1fr}}
+
+/* MID CTA */
+.mid-cta{
+  background:#0A0A0A;padding:90px 0;text-align:center;color:#fff;
+  border-top:0;border-bottom:0;
+}
+.mid-cta h2{
+  font-size:clamp(28px,4.5vw,48px);text-transform:uppercase;font-weight:800;
+  line-height:1.05;max-width:16ch;margin:0 auto 28px;color:#fff;
+}
+.mid-cta .btn{margin-bottom:16px}
+.mid-cta .btn-primary{background:#fff;color:#0A0A0A;border-color:#fff}
+.mid-cta .btn-primary:hover{background:#F5F3EE;color:#0A0A0A}
+.mid-cta .or{font-size:14px;color:rgba(255,255,255,.7)}
+.mid-cta .or a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+/* CONTACT */
+.contact{position:relative;padding:110px 0 120px;overflow:hidden;background:#fff;color:var(--ink)}
+.contact .inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.contact h2{font-size:clamp(30px,4.5vw,48px);text-transform:uppercase;font-weight:800;line-height:1.05;margin:12px 0 16px}
+.contact .lead{color:var(--mute);max-width:40ch;margin-bottom:28px;font-size:15px;line-height:1.6}
+.cinfo{display:grid;gap:20px}
+.cinfo .row{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
+.cinfo .row svg{width:18px;height:18px;color:var(--accent);margin-top:2px}
+.cinfo .row strong{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;color:#0A0A0A;font-weight:800}
+.cinfo .row span,.cinfo .row a{font-size:15px;color:#222;line-height:1.45}
+@media(max-width:800px){.contact .inner{grid-template-columns:1fr}}
+
+
+
+
+/* FOOTER */
+footer{background:#fff;border-top:1px solid var(--line-l);padding:64px 0 36px;color:var(--ink)}
+.foot-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:36px}
+.foot-brand .mark{
+  width:36px;height:36px;background:transparent;border-radius:0;display:grid;place-items:center;margin-bottom:16px;
+}
+.foot-brand .mark img{width:36px;height:36px;object-fit:contain}
+.foot-brand h3{font-size:16px;text-transform:uppercase;font-weight:800;letter-spacing:.04em;margin-bottom:10px;color:var(--ink)}
+.foot-brand p{font-size:13px;color:var(--mute);max-width:46ch;line-height:1.6}
+.foot-col h4{color:var(--ink);font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px;font-weight:700}
+.foot-col a,.foot-col p{display:block;font-size:13px;color:var(--mute);margin-bottom:8px}
+.foot-bottom{
+  margin-top:40px;padding-top:18px;border-top:1px solid var(--line-l);
+  font-size:11px;color:#777;letter-spacing:.08em;text-transform:uppercase;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+.foot-bottom .demo{opacity:.7;letter-spacing:.06em}
+@media(max-width:800px){.foot-grid{grid-template-columns:1fr}}
+
+.cat-page .hero{position:relative;min-height:min(52vh,420px);padding:140px 24px 64px;text-align:center;overflow:hidden;background:#111;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.cat-page .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:1}
+.cat-page .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,.35) 45%,rgba(10,10,10,.72) 100%);pointer-events:none}
+.cat-page .hero .eyebrow,.cat-page .hero h1,.cat-page .hero p{position:relative;z-index:2}
+.cat-page .hero .eyebrow{color:rgba(255,255,255,.85);letter-spacing:.28em;font-size:11px;text-transform:uppercase;font-weight:700}
+.cat-page .hero h1{color:#fff;margin-top:12px;font-size:clamp(32px,6vw,56px);text-transform:uppercase;font-weight:800;letter-spacing:.02em;line-height:1.05}
+.cat-page .hero p{color:rgba(255,255,255,.78);margin-top:14px;max-width:52ch;font-size:15px}
+@media(prefers-reduced-motion:reduce){.cat-page .hero-video{display:none!important}.cat-page .hero{background:#1a1a1a url(https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-comm-01.jpg) center/cover no-repeat}}
+.cat-page .filter{position:sticky;top:64px;z-index:40;background:rgba(255,255,255,.96);border-bottom:1px solid #E8E8E8;padding:14px 20px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.cat-page .filter button{background:transparent;border:1px solid #ddd;color:#555;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:10px 14px;cursor:pointer}
+.cat-page .filter button.on{border-color:#0A0A0A;background:#0A0A0A;color:#fff}
+.cat-page .cat{padding:56px 0 24px}
+.cat-page .cat.hide{display:none}
+.cat-page .cat-head{padding:0 28px 24px;width:min(1220px,92vw);margin:0 auto}
+.cat-page .cat-head .num{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#0A0A0A;font-weight:700;margin-bottom:8px}
+.cat-page .cat-head h2{font-size:clamp(24px,3.5vw,36px);text-transform:uppercase;font-weight:800}
+.cat-page .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 8px;width:min(1220px,96vw);margin:0 auto}
+.cat-page .item{position:relative;aspect-ratio:5/4;overflow:hidden;background:#eee;border:0;padding:0;cursor:pointer;width:100%;appearance:none;-webkit-appearance:none;text-align:left;color:inherit;font:inherit}
+.cat-page .item img{width:100%;height:100%;object-fit:cover;transition:transform .45s;display:block}
+.cat-page .item:hover img{transform:scale(1.04)}
+.cat-page .item .meta{position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent);color:#fff}
+.cat-page .item .ti{font-weight:700;font-size:14px;margin-bottom:4px}
+.cat-page .item .lc{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#ccc}
+@media(max-width:900px){.cat-page .grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.cat-page .grid{grid-template-columns:1fr}}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:90;display:none;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));box-sizing:border-box}
+.lb.show{display:flex}
+.lb img{display:block;max-width:min(980px,calc(100vw - 32px));max-height:min(78vh,calc(100dvh - 120px));width:auto;height:auto;margin:auto;object-fit:contain;position:relative;z-index:1}
+.lb .panel{position:absolute;left:max(16px,env(safe-area-inset-left));bottom:max(16px,env(safe-area-inset-bottom));right:max(16px,env(safe-area-inset-right));color:#fff;max-width:min(420px,100%);z-index:2}
+.lb .panel .lc{font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.7}
+.lb .panel .ti{font-size:clamp(20px,4vw,28px);font-weight:800;margin-top:6px;text-transform:uppercase}
+.lb .close{position:absolute;top:max(12px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right));color:#fff;font-size:28px;background:none;border:0;cursor:pointer;z-index:2}
+.lb .navb{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.1);border:0;color:#fff;font-size:28px;width:44px;height:44px;cursor:pointer;border-radius:50%;z-index:2}
+.lb .prev{left:max(8px,env(safe-area-inset-left))}.lb .next{right:max(8px,env(safe-area-inset-right))}
+
+
+/* === YG MOBILE HARD RULE (do not remove) === */
+html,body{overflow-x:hidden!important;max-width:100%!important}
+img,video{max-width:100%;height:auto}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head,.hero:not(.hero-media),.page-cta .wrap,.preview .head,.about,.services,.contact,.cta-band,.strip,section.hero{
+  box-sizing:border-box;
+}
+nav,.filter,header,footer{
+  padding-left:max(16px, env(safe-area-inset-left))!important;
+  padding-right:max(16px, env(safe-area-inset-right))!important;
+}
+.hero-content,.cat-head,.wrap,.about,.services,.contact,.cta-band,.preview .head,section.hero > .eyebrow,section.hero > h1,section.hero > p,.hero .content{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  box-sizing:border-box;
+  max-width:100%;
+}
+.grid,.mosaic{width:100%;max-width:100%;box-sizing:border-box;min-width:0}
+.item,.cell,.card{min-width:0;max-width:100%}
+.item img,.cell img{width:100%;height:100%;object-fit:cover;display:block}
+
+</style>
+</head>
+<body>
+<header class="nav" id="nav">
+  <a class="brand" href="/d/integris/" aria-label="Integris Construction">
+    <span class="lockup">INTEGRIS CONSTRUCTION</span>
+  </a>
+  <nav class="links" aria-label="Primary">
+    <a href="/d/integris/about/">About</a>
+    <a href="/d/integris/services/">Services</a>
+    <a href="/d/integris/projects/">Projects</a>
+    <a href="/d/integris/catalog/">Catalog</a>
+    <a href="/d/integris/gallery/">Gallery</a>
+    <a href="/d/integris/before-after/">Before &amp; After</a>
+    <a href="/d/integris/process/">Process</a>
+    <a href="/d/integris/faq/">FAQ</a>
+  </nav>
+  <div class="actions">
+    <a class="tel" href="tel:+16027384441">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.35a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.75.32 1.54.55 2.35.68A2 2 0 0 1 22 16.92z"/></svg>
+      <span>(602) 738-4441</span>
+    </a>
+    <a class="btn btn-primary" href="/d/integris/contact/">Request Consultation</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="cat-page">
+<section class="hero">
+  <video class="hero-video" id="catHeroVideo" autoplay muted loop playsinline preload="metadata" poster="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-comm-01.jpg">
+    <source src="https://integris-construction-demo-sales.vercel.app/assets/video/hero-bg.mp4" type="video/mp4">
+  </video>
+  <div class="eyebrow">Project catalog</div>
+  <h1>Work across the Valley</h1>
+  <p>Commercial · Residential · Remodels · Additions · Ground-up · Tenant improvements</p>
+</section>
+<div class="filter" id="filters">
+  <button class="on" data-filter="all">All work</button>
+  <button data-filter="commercial">Commercial</button>
+  <button data-filter="residential">Residential</button>
+  <button data-filter="remodels">Remodels</button>
+  <button data-filter="additions">Additions</button>
+  <button data-filter="ground">Ground-up</button>
+  <button data-filter="ti">Tenant improvements</button>
+</div>
+
+<section class="cat" data-section="commercial">
+  <div class="cat-head"><div class="num">01</div><h2>Commercial builds</h2></div>
+  <div class="grid">
+    <button class="item" type="button" data-full="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-comm-01.jpg" data-title="Jobsite construction" data-label="Phoenix, AZ"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-comm-01.jpg" alt="Jobsite construction" loading="lazy"><div class="meta"><div class="ti">Jobsite construction</div><div class="lc">Phoenix, AZ</div></div></button>
+    <button class="item" type="button" data-full="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-comm-02.jpg" data-title="Plans on site" data-label="Phoenix, AZ"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-comm-02.jpg" alt="Plans on site" loading="lazy"><div class="meta"><div class="ti">Plans on site</div><div class="lc">Phoenix, AZ</div></div></button>
+    <button class="item" type="button" data-full="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-comm-03.jpg" data-title="Commercial structure" data-label="Phoenix, AZ"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-comm-03.jpg" alt="Commercial structure" loading="lazy"><div class="meta"><div class="ti">Commercial structure</div><div class="lc">Phoenix, AZ</div></div></button>
+  </div>
+</section>
+
+<section class="cat" data-section="residential">
+  <div class="cat-head"><div class="num">02</div><h2>Residential builds</h2></div>
+  <div class="grid">
+    <button class="item" type="button" data-full="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-res-01-v5.jpg" data-title="Modern residence" data-label="Phoenix, AZ"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-res-01-v5.jpg" alt="Modern residence" loading="lazy"><div class="meta"><div class="ti">Modern residence</div><div class="lc">Phoenix, AZ</div></div></button>
+    <button class="item" type="button" data-full="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-res-02-v5.jpg" data-title="Residential exterior" data-label="Phoenix, AZ"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-res-02-v5.jpg" alt="Residential exterior" loading="lazy"><div class="meta"><div class="ti">Residential exterior</div><div class="lc">Phoenix, AZ</div></div></button>
+    <button class="item" type="button" data-full="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-res-03-v5.jpg" data-title="Custom home" data-label="Phoenix, AZ"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-res-03-v5.jpg" alt="Custom home" loading="lazy"><div class="meta"><div class="ti">Custom home</div><div class="lc">Phoenix, AZ</div></div></button>
+    <button class="item" type="button" data-full="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-res-04-v5.jpg" data-title="Completed home" data-label="Phoenix, AZ"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-res-04-v5.jpg" alt="Completed home" loading="lazy"><div class="meta"><div class="ti">Completed home</div><div class="lc">Phoenix, AZ</div></div></button>
+  </div>
+</section>
+
+<section class="cat" data-section="remodels">
+  <div class="cat-head"><div class="num">03</div><h2>Remodels</h2></div>
+  <div class="grid">
+    <button class="item" type="button" data-full="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-rem-01.jpg" data-title="Kitchen remodel" data-label="Phoenix, AZ"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-rem-01.jpg" alt="Kitchen remodel" loading="lazy"><div class="meta"><div class="ti">Kitchen remodel</div><div class="lc">Phoenix, AZ</div></div></button>
+    <button class="item" type="button" data-full="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-rem-02.jpg" data-title="Interior remodel" data-label="Phoenix, AZ"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-rem-02.jpg" alt="Interior remodel" loading="lazy"><div class="meta"><div class="ti">Interior remodel</div><div class="lc">Phoenix, AZ</div></div></button>
+  </div>
+</section>
+
+<section class="cat" data-section="additions">
+  <div class="cat-head"><div class="num">04</div><h2>Additions</h2></div>
+  <div class="grid">
+    <button class="item" type="button" data-full="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-add-01.jpg" data-title="Exterior addition" data-label="Phoenix, AZ"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-add-01.jpg" alt="Exterior addition" loading="lazy"><div class="meta"><div class="ti">Exterior addition</div><div class="lc">Phoenix, AZ</div></div></button>
+    <button class="item" type="button" data-full="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-add-02.jpg" data-title="Field crew" data-label="Phoenix, AZ"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-add-02.jpg" alt="Field crew" loading="lazy"><div class="meta"><div class="ti">Field crew</div><div class="lc">Phoenix, AZ</div></div></button>
+  </div>
+</section>
+
+<section class="cat" data-section="ground">
+  <div class="cat-head"><div class="num">05</div><h2>Ground-up construction</h2></div>
+  <div class="grid">
+    <button class="item" type="button" data-full="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-ground-01.jpg" data-title="Structural framing" data-label="Phoenix, AZ"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-ground-01.jpg" alt="Structural framing" loading="lazy"><div class="meta"><div class="ti">Structural framing</div><div class="lc">Phoenix, AZ</div></div></button>
+  </div>
+</section>
+
+<section class="cat" data-section="ti">
+  <div class="cat-head"><div class="num">06</div><h2>Tenant improvements</h2></div>
+  <div class="grid">
+    <button class="item" type="button" data-full="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-ti-01.jpg" data-title="Office interior" data-label="Phoenix, AZ"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-ti-01.jpg" alt="Office interior" loading="lazy"><div class="meta"><div class="ti">Office interior</div><div class="lc">Phoenix, AZ</div></div></button>
+    <button class="item" type="button" data-full="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-ti-02.jpg" data-title="Workspace finish" data-label="Phoenix, AZ"><img src="https://integris-construction-demo-sales.vercel.app/assets/images/catalog/cat-ti-02.jpg" alt="Workspace finish" loading="lazy"><div class="meta"><div class="ti">Workspace finish</div><div class="lc">Phoenix, AZ</div></div></button>
+  </div>
+</section>
+
+
+<section class="page-cta">
+  <div class="wrap">
+    <a class="btn btn-primary" href="/d/integris/contact/">Request Consultation</a>
+    <a class="btn btn-ghost" href="/d/integris/projects/" style="color:#0A0A0A;border-color:#0A0A0A">Back to featured projects</a>
+  </div>
+</section>
+
+<div class="lb" id="lb" aria-hidden="true">
+  <button class="close" type="button" aria-label="Close">×</button>
+  <button class="navb prev" type="button" aria-label="Previous">‹</button>
+  <img alt="">
+  <button class="navb next" type="button" aria-label="Next">›</button>
+  <div class="panel"><div class="lc"></div><div class="ti"></div></div>
+</div>
+
+</div>
+<script>
+(function(){
+  const filters=document.getElementById('filters');
+  if(filters){
+    const sections=[...document.querySelectorAll('.cat')];
+    filters.addEventListener('click',function(e){
+      const btn=e.target.closest('button[data-filter]');
+      if(!btn) return;
+      filters.querySelectorAll('button').forEach(b=>b.classList.remove('on'));
+      btn.classList.add('on');
+      const f=btn.dataset.filter;
+      sections.forEach(s=>{
+        if(f==='all' || s.dataset.section===f) s.classList.remove('hide');
+        else s.classList.add('hide');
+      });
+    });
+  }
+
+  const items=[...document.querySelectorAll('.cat-page .item[data-full]')];
+  const lb=document.getElementById('lb');
+  if(lb && items.length){
+    const img=lb.querySelector('img');
+    const title=lb.querySelector('.panel .ti');
+    const cat=lb.querySelector('.panel .lc');
+    let idx=0;
+    function openAt(i){
+      idx=(i+items.length)%items.length;
+      const el=items[idx];
+      const full=el.dataset.full||'';
+      const thumb=el.querySelector('img');
+      img.src=(full.startsWith('http')||full.startsWith('//'))?full:(thumb&&(thumb.currentSrc||thumb.src))||full;
+      title.textContent=el.dataset.title||'';
+      cat.textContent=el.dataset.label||'';
+      lb.classList.add('show');
+      lb.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    }
+    function close(){
+      lb.classList.remove('show');
+      lb.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+    }
+    items.forEach((el,i)=>el.addEventListener('click',()=>openAt(i)));
+    lb.querySelector('.close').addEventListener('click',close);
+    lb.querySelector('.prev').addEventListener('click',()=>openAt(idx-1));
+    lb.querySelector('.next').addEventListener('click',()=>openAt(idx+1));
+    lb.addEventListener('click',e=>{if(e.target===lb) close();});
+    document.addEventListener('keydown',e=>{
+      if(!lb.classList.contains('show')) return;
+      if(e.key==='Escape') close();
+      if(e.key==='ArrowLeft') openAt(idx-1);
+      if(e.key==='ArrowRight') openAt(idx+1);
+    });
+  }
+
+  const hv=document.getElementById('catHeroVideo');
+  if(hv && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    const tryPlay=()=>{const p=hv.play(); if(p&&p.catch) p.catch(()=>{});};
+    hv.muted=true;
+    hv.setAttribute('playsinline','');
+    tryPlay();
+    hv.addEventListener('loadeddata', tryPlay);
+  }
+})();
+</script>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="lockup" style="display:inline-flex;border:1px solid #0A0A0A;padding:8px 14px;font-size:11px;font-weight:800;letter-spacing:.18em;margin-bottom:16px">INTEGRIS CONSTRUCTION</div>
+        <h3>Built with integrity. Designed to last.</h3>
+        <p>License KB-1 Dual — Commercial &amp; Residential • ROC 350134. Licensed, bonded and insured residential and commercial construction serving the Valley.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="/d/integris/about/">About</a>
+        <a href="/d/integris/services/">Services</a>
+        <a href="/d/integris/projects/">Projects</a>
+        <a href="/d/integris/catalog/">Project Catalog</a>
+        <a href="/d/integris/gallery/">Gallery</a>
+        <a href="/d/integris/before-after/">Before &amp; After</a>
+        <a href="/d/integris/process/">Process</a>
+        <a href="/d/integris/faq/">FAQ</a>
+        <a href="/d/integris/testimonials/">Reviews</a>
+        <a href="/d/integris/contact/">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:+16027384441">(602) 738-4441</a>
+        <a href="mailto:integrisconstructionsales@gmail.com">integrisconstructionsales@gmail.com</a>
+        <p>Phoenix • Scottsdale • Mesa • Chandler • Gilbert • Glendale • Peoria • Surprise • Tempe</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Integris Construction LLC. All rights reserved.</span>
+</div>
+  </div>
+</footer>
+<script>
+(function(){
+  const nav=document.getElementById('nav');
+  const toggle=document.getElementById('navToggle');
+  if(toggle){
+    toggle.addEventListener('click',function(){nav.classList.toggle('open')});
+    nav.querySelectorAll('.links a').forEach(function(a){
+      a.addEventListener('click',function(){nav.classList.remove('open')});
+    });
+  }
+  const form=document.getElementById('contactForm')||document.getElementById('heroForm')||document.getElementById('pageForm');
+  if(form){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      const fd=new FormData(form);
+      const body=[
+        'Name: '+fd.get('name'),
+        'Phone: '+fd.get('phone'),
+        'Email: '+fd.get('email'),
+        'Type: '+fd.get('type'),
+        'Details: '+((fd.get('details')||'').toString().trim()||'(none)')
+      ].join('\n');
+      const mailto='mailto:integrisconstructionsales@gmail.com?subject='+encodeURIComponent('Consultation request — '+fd.get('name'))+'&body='+encodeURIComponent(body);
+      window.location.href=mailto;
+      form.reset();
+    });
+  }
+  document.querySelectorAll('[data-compare]').forEach(function(el){
+    const reveal=el.querySelector('.ba-reveal');
+    const handle=el.querySelector('.handle');
+    if(!reveal||!handle) return;
+    function syncWidth(){ el.style.setProperty('--cw', el.getBoundingClientRect().width+'px'); }
+    syncWidth();
+    window.addEventListener('resize', syncWidth);
+    let active=false;
+    function setPos(clientX){
+      const r=el.getBoundingClientRect();
+      let pct=(clientX-r.left)/r.width;
+      pct=Math.max(0.08,Math.min(0.92,pct));
+      reveal.style.clipPath='inset(0 0 0 '+(pct*100)+'%)';
+      handle.style.left=(pct*100)+'%';
+    }
+    function start(e){active=true;setPos(e.touches?e.touches[0].clientX:e.clientX)}
+    function move(e){if(!active)return;if(e.cancelable)e.preventDefault();setPos(e.touches?e.touches[0].clientX:e.clientX)}
+    function end(){active=false}
+    el.addEventListener('mousedown',start);
+    window.addEventListener('mousemove',move);
+    window.addEventListener('mouseup',end);
+    el.addEventListener('touchstart',start,{passive:true});
+    el.addEventListener('touchmove',move,{passive:false});
+    el.addEventListener('touchend',end);
+  });
+})();
+</script>
+</body>
+</html>

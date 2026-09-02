@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="yg-static-bake" content="cruz">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="https://cruz-construction-demo.vercel.app/assets/brand/cruz-logo.png" type="image/png">
+<title>Cruz Construction — Project Catalog</title>
+<meta name="description" content="Cruz Construction catalog: concrete flatwork, foundations, excavation, site prep, retaining walls.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter+Tight:wght@300;400;500;600&display=swap">
+<style>
+  :root{--ink:#141210;--ink-2:#1E1B18;--bone:#F5F3EE;--bone-2:#E8E4DC;--amber:#D97706;--amber-2:#F59E0B}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--ink);color:var(--bone);font-family:'Inter Tight',system-ui,sans-serif;font-weight:300;line-height:1.6;min-height:100vh}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{cursor:pointer;font-family:inherit}
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:12px 22px;display:flex;justify-content:space-between;align-items:center;background:rgba(20,18,16,.96);border-bottom:1px solid rgba(217,119,6,.25)}
+  nav .l img{height:56px;width:auto}
+  nav .r{display:flex;gap:18px;align-items:center}
+  nav .r a{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+  nav .r .back{color:var(--amber);font-weight:600}
+  nav .r .tel{color:var(--amber-2);font-weight:700;letter-spacing:.04em;font-size:14px;text-transform:none}
+  .hero{position:relative;height:52vh;min-height:320px;overflow:hidden;background:var(--ink)}
+  .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.5),rgba(20,18,16,.2) 40%,rgba(20,18,16,.96));z-index:1}
+  .hero-content{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:90px 24px 40px;text-align:center}
+  .hero-content .micro{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--amber);font-weight:700;margin-bottom:14px}
+  .hero-content img.mark{width:min(640px,88vw);height:auto;filter:drop-shadow(0 12px 36px rgba(0,0,0,.75))}
+  .hero-content .tag{margin-top:18px;font-size:clamp(15px,2vw,20px);font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+  .hero-content .sub{margin-top:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+  .filter{position:sticky;top:72px;z-index:40;background:rgba(20,18,16,.97);border-bottom:1px solid var(--ink-2);padding:14px 16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+  .filter button{background:transparent;border:1px solid rgba(245,243,238,.16);color:var(--bone-2);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:10px 14px}
+  .filter button.on{border-color:var(--amber);background:var(--amber);color:var(--ink);font-weight:700}
+  .cat{padding:64px 0 36px;border-top:1px solid var(--ink-2)}
+  .cat.hide{display:none !important}
+  .cat-head{padding:0 28px 28px}
+  .cat-head .num{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--amber);font-weight:700;margin-bottom:8px}
+  .cat-head h2{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:clamp(28px,4.5vw,44px);line-height:1}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr)}
+  .item{position:relative;aspect-ratio:5/4;overflow:hidden;background:var(--ink-2);border-right:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+  .item img{width:100%;height:100%;object-fit:cover}
+  .item .meta{position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(0deg,rgba(20,18,16,.95),transparent)}
+  .item .meta .ti{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:17px;margin-bottom:4px}
+  .item .meta .lc{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-2);font-weight:600}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  footer{padding:48px 24px;text-align:center;border-top:1px solid var(--ink-2)}
+  footer img{height:56px;margin:0 auto 12px}
+  footer .lines{font-size:13px;opacity:.7;line-height:1.8}
+  footer .demo{margin-top:12px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber)}
+
+/* === YG MOBILE HARD RULE (do not remove) === */
+html,body{overflow-x:hidden!important;max-width:100%!important}
+img,video{max-width:100%;height:auto}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head,.hero:not(.hero-media),.page-cta .wrap,.preview .head,.about,.services,.contact,.cta-band,.strip,section.hero{
+  box-sizing:border-box;
+}
+nav,.filter,header,footer{
+  padding-left:max(16px, env(safe-area-inset-left))!important;
+  padding-right:max(16px, env(safe-area-inset-right))!important;
+}
+.hero-content,.cat-head,.wrap,.about,.services,.contact,.cta-band,.preview .head,section.hero > .eyebrow,section.hero > h1,section.hero > p,.hero .content{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  box-sizing:border-box;
+  max-width:100%;
+}
+.grid,.mosaic{width:100%;max-width:100%;box-sizing:border-box;min-width:0}
+.item,.cell,.card{min-width:0;max-width:100%}
+.item img,.cell img{width:100%;height:100%;object-fit:cover;display:block}
+
+
+/* === YG LIGHTBOX HARD RULE (do not remove) === */
+.item{cursor:pointer}
+.yg-lb{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:9999;display:none;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));box-sizing:border-box}
+.yg-lb.show{display:flex}
+.yg-lb img{display:block;max-width:min(980px,calc(100vw - 32px));max-height:min(78vh,calc(100dvh - 120px));width:auto;height:auto;margin:auto;object-fit:contain;position:relative;z-index:1}
+.yg-lb .yg-panel{position:absolute;left:max(16px,env(safe-area-inset-left));bottom:max(16px,env(safe-area-inset-bottom));right:max(16px,env(safe-area-inset-right));color:#fff;max-width:min(480px,100%);z-index:2;font:600 14px/1.35 system-ui,sans-serif}
+.yg-lb .yg-close{position:absolute;top:max(10px,env(safe-area-inset-top));right:max(14px,env(safe-area-inset-right));color:#fff;font-size:30px;background:none;border:0;cursor:pointer;z-index:2;line-height:1}
+.yg-lb .yg-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:0;color:#fff;font-size:28px;width:44px;height:44px;cursor:pointer;border-radius:50%;z-index:2}
+.yg-lb .yg-prev{left:max(8px,env(safe-area-inset-left))}
+.yg-lb .yg-next{right:max(8px,env(safe-area-inset-right))}
+
+</style>
+</head>
+<body>
+<nav>
+  <a class="l" href="/d/cruz/"><img src="https://cruz-construction-demo.vercel.app/assets/brand/cruz-logo-white.png" alt="Cruz Construction"></a>
+  <div class="r">
+    <a class="back" href="/d/cruz/">Home</a>
+    <a class="tel" href="tel:+18015641752">(801) 564-1752</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="https://cruz-construction-demo.vercel.app/assets/images/catalog/001.jpg" alt="Cruz Construction excavator">
+  <div class="hero-content">
+    <div class="micro">Project catalog</div>
+    <img class="mark" src="https://cruz-construction-demo.vercel.app/assets/brand/cruz-logo-white.png" alt="Cruz Construction">
+    <div class="tag">Concrete · Excavation</div>
+    <div class="sub">Ogden · Salt Lake area · Utah</div>
+  </div>
+</header>
+
+<div class="filter" id="filters">
+  <button type="button" class="on" data-filter="all">All work</button>
+  <button type="button" data-filter="flatwork">Concrete flatwork</button>
+  <button type="button" data-filter="foundations">Foundations</button>
+  <button type="button" data-filter="excavation">Excavation & grading</button>
+  <button type="button" data-filter="siteprep">Site prep</button>
+  <button type="button" data-filter="retaining">Retaining walls</button>
+</div>
+
+<section class="cat" data-section="flatwork" id="cat-flatwork">
+  <div class="cat-head">
+    <div class="num">3 photos</div>
+    <h2>Concrete flatwork</h2>
+  </div>
+  <div class="grid">
+    <div class="item">
+      <img src="https://cruz-construction-demo.vercel.app/assets/images/catalog/thumbs/005.jpg" alt="Concrete finishing over rebar" loading="lazy">
+      <div class="meta"><div class="ti">Concrete finishing over rebar</div><div class="lc">Utah</div></div>
+    </div>
+    <div class="item">
+      <img src="https://cruz-construction-demo.vercel.app/assets/images/catalog/thumbs/006.jpg" alt="Concrete pump pour" loading="lazy">
+      <div class="meta"><div class="ti">Concrete pump pour</div><div class="lc">Utah</div></div>
+    </div>
+    <div class="item">
+      <img src="https://cruz-construction-demo.vercel.app/assets/images/catalog/thumbs/007.jpg" alt="Flatwork pour" loading="lazy">
+      <div class="meta"><div class="ti">Flatwork pour</div><div class="lc">Utah</div></div>
+    </div>
+  </div>
+</section>
+<section class="cat" data-section="foundations" id="cat-foundations">
+  <div class="cat-head">
+    <div class="num">2 photos</div>
+    <h2>Foundations</h2>
+  </div>
+  <div class="grid">
+    <div class="item">
+      <img src="https://cruz-construction-demo.vercel.app/assets/images/catalog/thumbs/008.jpg" alt="Residential foundation / walkout" loading="lazy">
+      <div class="meta"><div class="ti">Residential foundation / walkout</div><div class="lc">Utah</div></div>
+    </div>
+    <div class="item">
+      <img src="https://cruz-construction-demo.vercel.app/assets/images/catalog/thumbs/009.jpg" alt="Foundation wall excavation" loading="lazy">
+      <div class="meta"><div class="ti">Foundation wall excavation</div><div class="lc">Utah</div></div>
+    </div>
+  </div>
+</section>
+<section class="cat" data-section="excavation" id="cat-excavation">
+  <div class="cat-head">
+    <div class="num">2 photos</div>
+    <h2>Excavation & grading</h2>
+  </div>
+  <div class="grid">
+    <div class="item">
+      <img src="https://cruz-construction-demo.vercel.app/assets/images/catalog/thumbs/001.jpg" alt="Excavator on site" loading="lazy">
+      <div class="meta"><div class="ti">Excavator on site</div><div class="lc">Utah</div></div>
+    </div>
+<div class="lc">Utah</div></div>
+    </div>
+<div class="lc">Utah</div></div>
+    </div>
+    <div class="item">
+      <img src="https://cruz-construction-demo.vercel.app/assets/images/catalog/thumbs/004.jpg" alt="Excavation & earthwork" loading="lazy">
+      <div class="meta"><div class="ti">Excavation & earthwork</div><div class="lc">Utah</div></div>
+    </div>
+  </div>
+</section>
+<section class="cat" data-section="siteprep" id="cat-siteprep">
+  <div class="cat-head">
+    <div class="num">2 photos</div>
+    <h2>Site prep</h2>
+  </div>
+  <div class="grid">
+    <div class="item">
+      <img src="https://cruz-construction-demo.vercel.app/assets/images/catalog/thumbs/010.jpg" alt="Site clearing" loading="lazy">
+      <div class="meta"><div class="ti">Site clearing</div><div class="lc">Utah</div></div>
+    </div>
+    <div class="item">
+      <img src="https://cruz-construction-demo.vercel.app/assets/images/catalog/thumbs/011.jpg" alt="Residential dirt & grading prep" loading="lazy">
+      <div class="meta"><div class="ti">Residential dirt & grading prep</div><div class="lc">Utah</div></div>
+    </div>
+  </div>
+</section>
+<section class="cat" data-section="retaining" id="cat-retaining">
+  <div class="cat-head">
+    <div class="num">1 photos</div>
+    <h2>Retaining walls</h2>
+  </div>
+  <div class="grid">
+<div class="lc">Utah</div></div>
+    </div>
+    <div class="item">
+      <img src="https://cruz-construction-demo.vercel.app/assets/images/catalog/thumbs/013.jpg" alt="Residential retaining wall" loading="lazy">
+      <div class="meta"><div class="ti">Residential retaining wall</div><div class="lc">Utah</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="https://cruz-construction-demo.vercel.app/assets/brand/cruz-logo-white.png" alt="Cruz Construction">
+  <div class="lines">Alex Cruz · Owner<br><a href="tel:+18015641752">(801) 564-1752</a><br>Concrete · Excavation · Ogden / Salt Lake area</div>
+</footer>
+<script>
+(function(){
+  var buttons = document.querySelectorAll('#filters button');
+  var sections = document.querySelectorAll('section.cat');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      buttons.forEach(function(b){ b.classList.remove('on'); });
+      btn.classList.add('on');
+      var f = btn.getAttribute('data-filter');
+      sections.forEach(function(s){
+        var show = (f === 'all' || s.getAttribute('data-section') === f);
+        if (show) s.classList.remove('hide');
+        else s.classList.add('hide');
+      });
+    });
+  });
+})();
+</script>
+
+<div class="yg-lb" id="ygLb" aria-hidden="true">
+  <button class="yg-close" type="button" aria-label="Close">×</button>
+  <button class="yg-nav yg-prev" type="button" aria-label="Previous">‹</button>
+  <img alt="">
+  <button class="yg-nav yg-next" type="button" aria-label="Next">›</button>
+  <div class="yg-panel"></div>
+</div>
+
+
+<script>
+(function(){
+  if(window.__ygLbInit) return; window.__ygLbInit=true;
+  var cards=[].slice.call(document.querySelectorAll('.item')).filter(function(c){return c.querySelector('img');});
+  if(!cards.length) return;
+  var lb=document.getElementById('ygLb');
+  if(!lb){
+    lb=document.createElement('div');
+    lb.className='yg-lb'; lb.id='ygLb'; lb.setAttribute('aria-hidden','true');
+    lb.innerHTML='<button class="yg-close" type="button" aria-label="Close">×</button><button class="yg-nav yg-prev" type="button" aria-label="Previous">‹</button><img alt=""><button class="yg-nav yg-next" type="button" aria-label="Next">›</button><div class="yg-panel"></div>';
+    document.body.appendChild(lb);
+  }
+  var img=lb.querySelector('img');
+  var panel=lb.querySelector('.yg-panel');
+  var idx=0;
+  function srcOf(card){
+    var full=card.getAttribute('data-full')||card.getAttribute('data-img')||card.getAttribute('data-src')||'';
+    var thumb=card.querySelector('img');
+    if(full && (full.indexOf('http')===0 || full.indexOf('//')===0)) return full;
+    if(thumb){
+      var ds=thumb.getAttribute('data-src');
+      if(ds && (ds.indexOf('http')===0 || ds.indexOf('//')===0)) return ds;
+      return thumb.currentSrc||thumb.src||full;
+    }
+    return full;
+  }
+  function titleOf(card){
+    var t=card.getAttribute('data-title');
+    if(t) return t;
+    var el=card.querySelector('.ti,.title,.meta .ti,h3');
+    if(el) return (el.textContent||'').trim();
+    var im=card.querySelector('img');
+    return (im && im.alt)||'';
+  }
+  function openAt(i){
+    idx=(i+cards.length)%cards.length;
+    var card=cards[idx];
+    img.src=srcOf(card);
+    panel.textContent=titleOf(card);
+    lb.classList.add('show');
+    lb.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function close(){
+    lb.classList.remove('show');
+    lb.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+  cards.forEach(function(card,i){
+    card.style.cursor='pointer';
+    card.addEventListener('click',function(e){
+      if(e.target.closest && e.target.closest('a.cta,.cta')) return;
+      e.preventDefault();
+      openAt(i);
+    });
+  });
+  lb.querySelector('.yg-close').addEventListener('click',close);
+  lb.querySelector('.yg-prev').addEventListener('click',function(){openAt(idx-1)});
+  lb.querySelector('.yg-next').addEventListener('click',function(){openAt(idx+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb) close()});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('show')) return;
+    if(e.key==='Escape') close();
+    if(e.key==='ArrowLeft') openAt(idx-1);
+    if(e.key==='ArrowRight') openAt(idx+1);
+  });
+})();
+</script>
+
+</body>
+</html>

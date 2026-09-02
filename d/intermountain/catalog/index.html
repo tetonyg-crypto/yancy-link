@@ -1,0 +1,1940 @@
+<!doctype html>
+<html lang="en">
+<head><!-- YG NATIVE LIGHTBOX OK --><meta name="yg-static-bake" content="intermountain">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="https://intermountain-contractors-demo.vercel.app/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="https://intermountain-contractors-demo.vercel.app/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://intermountain-contractors-demo.vercel.app/favicon-16x16.png">
+<link rel="apple-touch-icon" href="https://intermountain-contractors-demo.vercel.app/apple-touch-icon.png">
+<link rel="manifest" href="https://intermountain-contractors-demo.vercel.app/site.webmanifest">
+<title>Intermountain Contractors — Project Catalog (Demo)</title>
+<meta name="description" content="Intermountain Contractors work catalog sample — excavation, grading, concrete prep, roads, site work.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter+Tight:wght@300;400;500&display=swap">
+<style>
+  :root{
+    --black:#0A0908;
+    --black-2:#161412;
+    --bone:#F2EFE9;
+    --bone-2:#E8E2D2;
+    --terra:#B86F4A;
+    --brand-amber:#6B5B4F;
+    --brand-gold:#A89880;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--black);color:var(--bone);font-family:'Inter Tight',system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.6;min-height:100vh}
+  img,video{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none;transition:color .2s}
+  a:hover{color:var(--brand-gold)}
+  button{cursor:pointer;font-family:inherit}
+  .wrap{max-width:1440px;margin:0 auto;padding:0 32px}
+
+
+  /* === NAV === */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(10,9,8,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(36,91,135,.18)}
+  nav .l{display:inline-flex;align-items:center;line-height:0;flex-shrink:0}
+  nav .l img{height:28px;width:auto;display:block}
+  nav .r{display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+  nav .r a{font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;color:var(--bone-2);white-space:nowrap}
+  nav .r .back{color:var(--brand-amber);font-weight:600}
+  nav .r .tel{color:var(--brand-gold);font-weight:600;letter-spacing:.04em;font-size:12px;text-transform:none}
+  @media(max-width:760px){
+    nav{padding:10px 14px;gap:8px}
+    nav .l img{height:22px}
+    nav .r{gap:10px}
+    nav .r a{font-size:9px;letter-spacing:.18em}
+    nav .r .lock-link{display:none}
+    nav .r .tel{font-size:11px}
+  }
+  @media(max-width:480px){
+    nav .r .tel-second{display:none}
+  }
+
+  /* === HERO — master picture + JH MASONRY centered === */
+  .hero{position:relative;height:88vh;min-height:600px;width:100%;background:var(--black);overflow:hidden}
+  .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,9,8,.5) 0%, rgba(10,9,8,.2) 35%, rgba(10,9,8,.35) 65%, rgba(10,9,8,.85) 100%);z-index:1;pointer-events:none}
+  .hero-content{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 32px 80px;text-align:center}
+  .hero-content .micro{font-family:'Inter Tight',sans-serif;font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--brand-amber);font-weight:700;margin-bottom:32px;text-shadow:-1.5px -1.5px 0 #fff,1.5px -1.5px 0 #fff,-1.5px 1.5px 0 #fff,1.5px 1.5px 0 #fff,0 1.5px 0 #fff,1.5px 0 0 #fff,0 -1.5px 0 #fff,-1.5px 0 0 #fff}
+  .hero-content .mark img{width:min(900px,82vw);height:auto;display:block;margin:0 auto;filter:drop-shadow(0 10px 40px rgba(0,0,0,.7))}
+  .hero-content .tag{margin-top:36px;font-family:'Inter Tight',sans-serif;font-size:clamp(18px,2vw,28px);font-weight:700;letter-spacing:.32em;text-transform:uppercase;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+  .hero-content .tag .b{color:var(--brand-amber)}
+  .hero-content .tag .r{color:var(--brand-gold)}
+  .hero-content .tag .w{color:#fff}
+  .hero-content .tag .sep{color:rgba(255,255,255,.5);font-weight:300;margin:0 .35em}
+  .hero-content .sub{margin-top:20px;font-family:'Inter Tight',sans-serif;font-size:clamp(12px,1.2vw,16px);font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:#fff;opacity:.85}
+  .hero-content .cue{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--brand-amber);font-weight:600;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+  /* === FILTER BAR === */
+  .filter{position:sticky;top:71px;z-index:40;background:rgba(10,9,8,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--black-2);padding:18px 32px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+  .filter button{background:transparent;border:1px solid rgba(243,238,229,.18);color:var(--bone-2);font-family:'Inter Tight',sans-serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;padding:10px 18px;border-radius:0;transition:all .2s}
+  .filter button:hover{border-color:var(--brand-amber);color:var(--brand-amber)}
+  .filter button.on{border-color:var(--brand-amber);background:var(--brand-amber);color:#fff;font-weight:600}
+
+  /* === CATEGORY SECTIONS === */
+  .cat{padding:96px 0 64px;border-top:1px solid var(--black-2)}
+  .cat.hide{display:none}
+  .cat-head{padding:0 32px 56px;display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+  .cat-head .num{font-family:'Inter Tight',sans-serif;font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--brand-gold);font-weight:700}
+  .cat-head h2{font-family:'Fraunces',Georgia,serif;font-weight:700;font-variation-settings:"opsz" 144,"SOFT" 30;font-size:clamp(40px,6.5vw,96px);line-height:1;letter-spacing:-.025em;color:var(--bone)}
+  .cat-head h2 .ac{color:var(--brand-amber)}
+  .cat-head .count{font-family:'Inter Tight',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--bone-2);opacity:.6}
+
+  /* === GRID === */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:0}
+  .item{position:relative;aspect-ratio:5/4;overflow:hidden;background:var(--black-2);cursor:pointer;border-right:1px solid var(--black);border-bottom:1px solid var(--black)}
+  .item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .25s ease;display:block}
+  .item:hover img{transform:scale(1.04);filter:brightness(1.06)}
+  .item .stamp{position:absolute;top:14px;left:14px;z-index:2;background:rgba(10,9,8,.8);color:var(--bone);font-family:'Inter Tight',sans-serif;font-size:9px;letter-spacing:.32em;text-transform:uppercase;padding:6px 10px;font-weight:600;backdrop-filter:blur(8px)}
+  .item .stamp .num{color:var(--brand-amber)}
+  .item .meta{position:absolute;left:0;right:0;bottom:0;padding:24px 22px 22px;background:linear-gradient(0deg, rgba(10,9,8,.95) 0%, rgba(10,9,8,.6) 60%, transparent 100%);color:var(--bone);transform:translateY(8px);opacity:0;transition:transform .35s ease,opacity .35s ease;z-index:3}
+  .item:hover .meta{transform:translateY(0);opacity:1}
+  .item .meta .ti{font-family:'Fraunces',Georgia,serif;font-weight:700;font-variation-settings:"opsz" 144,"SOFT" 30;font-size:20px;line-height:1.1;letter-spacing:-.01em;color:#fff;margin-bottom:8px}
+  .item .meta .lc{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--brand-amber);font-weight:600;margin-bottom:16px}
+  .item .book{display:inline-flex;align-items:center;gap:10px;background:var(--brand-gold);color:#fff;border:none;padding:12px 18px;font-family:'Inter Tight',sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;transition:background .2s}
+  .item .book:hover{background:var(--brand-amber)}
+  .item .book::after{content:"→";letter-spacing:0;font-size:14px}
+
+  /* === LIGHTBOX === */
+  .lightbox{position:fixed;inset:0;z-index:80;background:rgba(10,9,8,.96);display:none;align-items:center;justify-content:center;padding:48px 32px;animation:fade .25s ease}
+  .lightbox.show{display:flex}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .lb-card{max-width:1280px;width:100%;display:grid;grid-template-columns:1.6fr 1fr;gap:0;align-items:stretch;max-height:88vh}
+  .lb-card .ph{position:relative;background:var(--black-2);overflow:hidden;min-height:520px}
+  .lb-card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--black)}
+  .lb-card .info{padding:64px 56px;background:var(--black);border-left:1px solid var(--black-2);display:flex;flex-direction:column;justify-content:space-between}
+  .lb-card .info .top .label{font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--brand-amber);font-weight:700;margin-bottom:18px}
+  .lb-card .info .top h3{font-family:'Fraunces',Georgia,serif;font-weight:700;font-variation-settings:"opsz" 144,"SOFT" 30;font-size:clamp(36px,4vw,56px);line-height:1.05;color:var(--bone);margin-bottom:24px}
+  .lb-card .info .top dl{display:grid;grid-template-columns:90px 1fr;gap:14px 24px;margin-top:32px;border-top:1px solid var(--black-2);padding-top:28px}
+  .lb-card .info .top dt{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--bone-2);opacity:.55;align-self:center}
+  .lb-card .info .top dd{font-family:'Fraunces',Georgia,serif;font-size:18px;color:var(--bone);font-weight:500}
+  .lb-card .info .top dd .ac{color:var(--brand-amber);font-weight:600}
+  .lb-card .info .actions{display:flex;flex-direction:column;gap:14px;margin-top:48px}
+  .lb-card .info .actions .primary{background:var(--brand-gold);color:#fff;border:none;padding:20px 32px;font-family:'Inter Tight',sans-serif;font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;transition:background .2s;display:inline-flex;align-items:center;justify-content:center;gap:14px;text-decoration:none}
+  .lb-card .info .actions .primary::after{content:"→";font-size:18px}
+  .lb-card .info .actions .primary:hover{background:var(--brand-amber)}
+  .lb-card .info .actions .secondary{background:transparent;color:var(--bone-2);border:1px solid rgba(243,238,229,.18);padding:18px 32px;font-family:'Inter Tight',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;transition:all .2s}
+  .lb-card .info .actions .secondary:hover{border-color:var(--brand-amber);color:var(--brand-amber)}
+  .lb-close{position:absolute;top:24px;right:24px;background:rgba(10,9,8,.9);border:1px solid rgba(243,238,229,.2);color:var(--bone);width:48px;height:48px;font-size:20px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+  .lb-close:hover{background:var(--brand-gold);border-color:var(--brand-gold);color:#fff}
+
+  /* === FOOTER === */
+  footer{padding:96px 32px 56px;border-top:1px solid var(--black-2);text-align:center}
+  footer .mark img{height:80px;width:auto;margin:0 auto;display:block;opacity:.9}
+  footer .by{margin-top:28px;font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--bone-2);opacity:.55}
+  footer .legal{margin-top:32px;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--bone-2);opacity:.4}
+
+  /* === RESPONSIVE === */
+  @media(max-width:960px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .lb-card{grid-template-columns:1fr;max-height:none;overflow-y:auto}
+    .lb-card .ph{aspect-ratio:4/3;min-height:auto}
+    .lb-card .info{padding:32px 24px}
+  }
+  @media(max-width:640px){
+    .grid{grid-template-columns:1fr}
+    .hero{height:80vh}
+    .hero-content{padding:120px 24px 60px}
+    .cat-head{padding:0 24px 40px}
+    .cat-head h2{font-size:48px}
+    .filter{padding:14px 24px}
+    .filter button{padding:8px 14px;font-size:10px}
+  }
+
+  /* === INLINE BOOKING MODAL — stay in catalog === */
+  .book-modal{position:fixed;inset:0;z-index:200;background:rgba(10,9,8,.92);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:24px;animation:bmFade .2s ease}
+  .book-modal.show{display:flex}
+  @keyframes bmFade{from{opacity:0}to{opacity:1}}
+  .book-card{max-width:1080px;width:100%;display:grid;grid-template-columns:1fr 1.2fr;gap:0;align-items:stretch;max-height:90vh;background:var(--black);border:1px solid var(--black-2)}
+  .book-card .preview{position:relative;background:var(--black-2);overflow:hidden;min-height:380px}
+  .book-card .preview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .book-card .preview .preview-meta{position:absolute;left:0;right:0;bottom:0;padding:24px;background:linear-gradient(0deg,rgba(0,0,0,.92),transparent);color:#fff;font-family:'Inter Tight',sans-serif}
+  .book-card .preview .preview-meta .pl{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--brand-amber);font-weight:700}
+  .book-card .preview .preview-meta .ti{font-family:'Fraunces',serif;font-weight:700;font-size:22px;margin-top:8px;line-height:1.2}
+  .book-card .preview .preview-meta .lc{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--brand-gold);font-weight:600;margin-top:6px}
+  .book-card .form-side{padding:40px 44px;display:flex;flex-direction:column;justify-content:space-between;overflow-y:auto}
+  .book-card .form-side .hdr .label{font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--brand-amber);font-weight:700}
+  .book-card .form-side .hdr h3{font-family:'Fraunces',Georgia,serif;font-weight:700;font-variation-settings:"opsz" 144,"SOFT" 30;font-size:clamp(28px,3vw,40px);line-height:1.05;color:var(--bone);margin:14px 0 8px}
+  .book-card .form-side .hdr p{font-size:13px;color:var(--bone-2);opacity:.75;line-height:1.55;max-width:42ch;margin-bottom:24px}
+  .book-card form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .book-card form .full{grid-column:1/-1}
+  .book-card form label{display:block;font-family:'Inter Tight',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--bone-2);opacity:.7;margin-bottom:8px;font-weight:600}
+  .book-card form input,.book-card form textarea,.book-card form select{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(243,238,229,.18);padding:8px 0 10px;font-family:'Inter Tight',sans-serif;font-size:16px;color:var(--bone);outline:none;transition:border-color .2s}
+  .book-card form input:focus,.book-card form textarea:focus,.book-card form select:focus{border-bottom-color:var(--brand-amber)}
+  .book-card form textarea{min-height:60px;resize:vertical;line-height:1.5}
+  .book-card form select option{background:var(--black);color:var(--bone)}
+  .book-card form .submit-row{grid-column:1/-1;display:flex;gap:14px;align-items:center;margin-top:18px}
+  .book-card form button.send{background:var(--brand-gold);color:#fff;border:none;padding:18px 28px;font-family:'Inter Tight',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;cursor:pointer;transition:background .2s;flex:1}
+  .book-card form button.send:hover{background:var(--brand-amber)}
+  .book-card form button.send:disabled{opacity:.55;cursor:wait}
+  .book-card form button.cancel{background:transparent;color:var(--bone-2);border:1px solid rgba(243,238,229,.18);padding:18px 24px;font-family:'Inter Tight',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;cursor:pointer}
+  .book-card .form-success{display:none;text-align:center;padding:48px 28px}
+  .book-card .form-success.show{display:block}
+  .book-card .form-success .check{font-size:48px;color:var(--brand-amber);margin-bottom:18px}
+  .book-card .form-success h4{font-family:'Fraunces',serif;font-weight:700;font-size:26px;color:var(--bone);margin-bottom:14px}
+  .book-card .form-success p{font-size:14px;color:var(--bone-2);max-width:36ch;margin:0 auto;line-height:1.6;opacity:.8}
+  .book-card .form-error{display:none;background:rgba(180,30,38,.12);border:1px solid rgba(180,30,38,.5);color:#fff;padding:12px 16px;font-size:13px;margin-top:12px;grid-column:1/-1}
+  .book-card .form-error.show{display:block}
+  .book-close{position:absolute;top:18px;right:18px;background:rgba(10,9,8,.85);border:1px solid rgba(243,238,229,.2);color:var(--bone);width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:5}
+  .book-close:hover{background:var(--brand-gold);border-color:var(--brand-gold)}
+  @media(max-width:780px){
+    .book-card{grid-template-columns:1fr;max-height:95vh;overflow-y:auto}
+    .book-card .preview{min-height:200px;aspect-ratio:5/3}
+    .book-card .form-side{padding:28px 22px}
+    .book-card form{grid-template-columns:1fr}
+  }
+
+/* === YG MOBILE HARD RULE (do not remove) === */
+html,body{overflow-x:hidden!important;max-width:100%!important}
+img,video{max-width:100%;height:auto}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head,.hero:not(.hero-media),.page-cta .wrap,.preview .head,.about,.services,.contact,.cta-band,.strip,section.hero{
+  box-sizing:border-box;
+}
+nav,.filter,header,footer{
+  padding-left:max(16px, env(safe-area-inset-left))!important;
+  padding-right:max(16px, env(safe-area-inset-right))!important;
+}
+.hero-content,.cat-head,.wrap,.about,.services,.contact,.cta-band,.preview .head,section.hero > .eyebrow,section.hero > h1,section.hero > p,.hero .content{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  box-sizing:border-box;
+  max-width:100%;
+}
+.grid,.mosaic{width:100%;max-width:100%;box-sizing:border-box;min-width:0}
+.item,.cell,.card{min-width:0;max-width:100%}
+.item img,.cell img{width:100%;height:100%;object-fit:cover;display:block}
+
+
+/* === YG LIGHTBOX MOBILE HARDEN === */
+.lightbox{padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))!important;box-sizing:border-box}
+.lightbox img,.lb-card img,.lb-media img{max-width:100%;max-height:min(78vh,calc(100dvh - 140px));width:auto;height:auto;object-fit:contain;margin:auto}
+.lb-card{max-width:min(1280px,100%)!important;width:100%!important}
+
+</style>
+</head>
+<body>
+
+<!-- ============ CATALOG (public demo — no password gate) ============ -->
+<div id="catalog">
+
+<nav>
+  <a class="l" href="/d/intermountain/" aria-label="Intermountain Contractors"><img src="https://intermountain-contractors-demo.vercel.app/assets/brand/hn-logo.png" alt="Intermountain Contractors"></a>
+  <div class="r">
+    <a class="back" href="../">← Main</a>
+    <a class="tel" style="color:var(--brand-amber)" href="tel:+18014103745">(801) 410-3745</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <img class="bg" src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/001.jpg" alt="Intermountain Contractors — featured work">
+  <div class="hero-content">
+    <div class="micro">Work Catalog · 30 Years of Expert Craftsmanship</div>
+    <div class="mark"><a href="/d/intermountain/"><img src="https://intermountain-contractors-demo.vercel.app/assets/brand/hn-logo.png" alt="Intermountain Contractors"></a></div>
+    <div class="tag"><span class="b">STONE</span><span class="sep">·</span><span class="r">BRICK</span><span class="sep">·</span><span class="w">STUCCO</span></div>
+    <div class="sub">Pick the look · We build it</div>
+    <div class="cue">Scroll to browse ↓</div>
+  </div>
+</header>
+
+<!-- FILTER -->
+<div class="filter" id="filter">
+  <button class="on" data-cat="all">All Work</button>
+  <button data-cat="stone">Excavation</button>
+  <button data-cat="brick">Grading</button>
+  <button data-cat="stucco">Concrete Prep</button>
+  <button data-cat="site preps">Pool & Site Prep</button>
+  <button data-cat="outdoor">Roads & Pads</button>
+</div>
+
+<!-- ============ CATEGORIES ============ -->
+
+<section class="cat" data-cat="stone">
+  <div class="cat-head">
+    <div>
+      <div class="num">001 — Catalog</div>
+      <h2><span class="ac">Stone</span> Veneer</h2>
+    </div>
+    <div class="count">33 plates · Brick, block & stone. Fireplaces, chimneys, mailboxes, rock work.</div>
+  </div>
+  <div class="grid">
+    <div class="item" data-id="001" data-title="Masonry work, Pl. 001" data-loc="Draper, Utah" data-type="Brick">
+      <div class="stamp">Pl. <span class="num">001</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/001.jpg" alt="Masonry work, Pl. 001" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 001</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="002" data-title="Masonry work, Pl. 002" data-loc="Salt Lake Valley" data-type="Block">
+      <div class="stamp">Pl. <span class="num">002</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/002.jpg" alt="Masonry work, Pl. 002" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 002</div><div class="lc">Salt Lake Valley</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="003" data-title="Masonry work, Pl. 003" data-loc="Draper, Utah" data-type="Stone">
+      <div class="stamp">Pl. <span class="num">003</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/003.jpg" alt="Masonry work, Pl. 003" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 003</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="004" data-title="Masonry work, Pl. 004" data-loc="Utah" data-type="Masonry">
+      <div class="stamp">Pl. <span class="num">004</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/004.jpg" alt="Masonry work, Pl. 004" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 004</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="005" data-title="Masonry work, Pl. 005" data-loc="Draper, Utah" data-type="Brick">
+      <div class="stamp">Pl. <span class="num">005</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/005.jpg" alt="Masonry work, Pl. 005" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 005</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="006" data-title="Masonry work, Pl. 006" data-loc="Salt Lake Valley" data-type="Block">
+      <div class="stamp">Pl. <span class="num">006</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/006.jpg" alt="Masonry work, Pl. 006" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 006</div><div class="lc">Salt Lake Valley</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="007" data-title="Masonry work, Pl. 007" data-loc="Draper, Utah" data-type="Stone">
+      <div class="stamp">Pl. <span class="num">007</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/007.jpg" alt="Masonry work, Pl. 007" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 007</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="008" data-title="Masonry work, Pl. 008" data-loc="Utah" data-type="Masonry">
+      <div class="stamp">Pl. <span class="num">008</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/008.jpg" alt="Masonry work, Pl. 008" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 008</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="009" data-title="Masonry work, Pl. 009" data-loc="Draper, Utah" data-type="Brick">
+      <div class="stamp">Pl. <span class="num">009</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/009.jpg" alt="Masonry work, Pl. 009" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 009</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="010" data-title="Masonry work, Pl. 010" data-loc="Salt Lake Valley" data-type="Block">
+      <div class="stamp">Pl. <span class="num">010</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/010.jpg" alt="Masonry work, Pl. 010" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 010</div><div class="lc">Salt Lake Valley</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="011" data-title="Masonry work, Pl. 011" data-loc="Draper, Utah" data-type="Stone">
+      <div class="stamp">Pl. <span class="num">011</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/011.jpg" alt="Masonry work, Pl. 011" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 011</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="012" data-title="Masonry work, Pl. 012" data-loc="Utah" data-type="Masonry">
+      <div class="stamp">Pl. <span class="num">012</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/012.jpg" alt="Masonry work, Pl. 012" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 012</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="013" data-title="Masonry work, Pl. 013" data-loc="Draper, Utah" data-type="Brick">
+      <div class="stamp">Pl. <span class="num">013</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/013.jpg" alt="Masonry work, Pl. 013" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 013</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="014" data-title="Masonry work, Pl. 014" data-loc="Salt Lake Valley" data-type="Block">
+      <div class="stamp">Pl. <span class="num">014</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/014.jpg" alt="Masonry work, Pl. 014" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 014</div><div class="lc">Salt Lake Valley</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="015" data-title="Masonry work, Pl. 015" data-loc="Draper, Utah" data-type="Stone">
+      <div class="stamp">Pl. <span class="num">015</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/015.jpg" alt="Masonry work, Pl. 015" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 015</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="016" data-title="Masonry work, Pl. 016" data-loc="Utah" data-type="Masonry">
+      <div class="stamp">Pl. <span class="num">016</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/016.jpg" alt="Masonry work, Pl. 016" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 016</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="017" data-title="Masonry work, Pl. 017" data-loc="Draper, Utah" data-type="Brick">
+      <div class="stamp">Pl. <span class="num">017</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/017.jpg" alt="Masonry work, Pl. 017" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 017</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="018" data-title="Masonry work, Pl. 018" data-loc="Salt Lake Valley" data-type="Block">
+      <div class="stamp">Pl. <span class="num">018</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/018.jpg" alt="Masonry work, Pl. 018" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 018</div><div class="lc">Salt Lake Valley</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="019" data-title="Masonry work, Pl. 019" data-loc="Draper, Utah" data-type="Stone">
+      <div class="stamp">Pl. <span class="num">019</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/019.jpg" alt="Masonry work, Pl. 019" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 019</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="020" data-title="Masonry work, Pl. 020" data-loc="Utah" data-type="Masonry">
+      <div class="stamp">Pl. <span class="num">020</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/020.jpg" alt="Masonry work, Pl. 020" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 020</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="021" data-title="Masonry work, Pl. 021" data-loc="Draper, Utah" data-type="Brick">
+      <div class="stamp">Pl. <span class="num">021</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/021.jpg" alt="Masonry work, Pl. 021" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 021</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="022" data-title="Masonry work, Pl. 022" data-loc="Salt Lake Valley" data-type="Block">
+      <div class="stamp">Pl. <span class="num">022</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/022.jpg" alt="Masonry work, Pl. 022" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 022</div><div class="lc">Salt Lake Valley</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="023" data-title="Masonry work, Pl. 023" data-loc="Draper, Utah" data-type="Stone">
+      <div class="stamp">Pl. <span class="num">023</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/023.jpg" alt="Masonry work, Pl. 023" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 023</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="024" data-title="Masonry work, Pl. 024" data-loc="Utah" data-type="Masonry">
+      <div class="stamp">Pl. <span class="num">024</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/024.jpg" alt="Masonry work, Pl. 024" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 024</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="025" data-title="Masonry work, Pl. 025" data-loc="Draper, Utah" data-type="Brick">
+      <div class="stamp">Pl. <span class="num">025</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/025.jpg" alt="Masonry work, Pl. 025" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 025</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="026" data-title="Masonry work, Pl. 026" data-loc="Salt Lake Valley" data-type="Block">
+      <div class="stamp">Pl. <span class="num">026</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/026.jpg" alt="Masonry work, Pl. 026" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 026</div><div class="lc">Salt Lake Valley</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="027" data-title="Masonry work, Pl. 027" data-loc="Draper, Utah" data-type="Stone">
+      <div class="stamp">Pl. <span class="num">027</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/027.jpg" alt="Masonry work, Pl. 027" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 027</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="028" data-title="Masonry work, Pl. 028" data-loc="Utah" data-type="Masonry">
+      <div class="stamp">Pl. <span class="num">028</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/028.jpg" alt="Masonry work, Pl. 028" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 028</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="029" data-title="Masonry work, Pl. 029" data-loc="Draper, Utah" data-type="Brick">
+      <div class="stamp">Pl. <span class="num">029</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/029.jpg" alt="Masonry work, Pl. 029" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 029</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="030" data-title="Masonry work, Pl. 030" data-loc="Salt Lake Valley" data-type="Block">
+      <div class="stamp">Pl. <span class="num">030</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/030.jpg" alt="Masonry work, Pl. 030" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 030</div><div class="lc">Salt Lake Valley</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="031" data-title="Masonry work, Pl. 031" data-loc="Draper, Utah" data-type="Stone">
+      <div class="stamp">Pl. <span class="num">031</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/031.jpg" alt="Masonry work, Pl. 031" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 031</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="032" data-title="Masonry work, Pl. 032" data-loc="Utah" data-type="Masonry">
+      <div class="stamp">Pl. <span class="num">032</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/032.jpg" alt="Masonry work, Pl. 032" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 032</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="033" data-title="Masonry work, Pl. 033" data-loc="Draper, Utah" data-type="Brick">
+      <div class="stamp">Pl. <span class="num">033</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/033.jpg" alt="Masonry work, Pl. 033" loading="lazy">
+      <div class="meta"><div class="ti">Masonry work, Pl. 033</div><div class="lc">Draper, Utah</div><button class="book">Book this style</button></div>
+    </div>
+  </div>
+    <div class="item" data-id="002" data-title="Stone elevation, Pl. 002" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">002</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/002.jpg" alt="Stone elevation, Pl. 002" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 002</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="003" data-title="Stone elevation, Pl. 003" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">003</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/003.jpg" alt="Stone elevation, Pl. 003" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 003</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="005" data-title="Stone elevation, Pl. 005" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">005</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/005.jpg" alt="Stone elevation, Pl. 005" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 005</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="006" data-title="Stone elevation, Pl. 006" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">006</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/006.jpg" alt="Stone elevation, Pl. 006" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 006</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="012" data-title="Stone elevation, Pl. 012" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">012</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/012.jpg" alt="Stone elevation, Pl. 012" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 012</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="013" data-title="Stone elevation, Pl. 013" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">013</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/013.jpg" alt="Stone elevation, Pl. 013" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 013</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="014" data-title="Stone elevation, Pl. 014" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">014</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/014.jpg" alt="Stone elevation, Pl. 014" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 014</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="023" data-title="Stone elevation, Pl. 023" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">023</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/023.jpg" alt="Stone elevation, Pl. 023" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 023</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="026" data-title="Stone elevation, Pl. 026" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">026</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/026.jpg" alt="Stone elevation, Pl. 026" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 026</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="028" data-title="Stone elevation, Pl. 028" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">028</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/028.jpg" alt="Stone elevation, Pl. 028" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 028</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="029" data-title="Stone elevation, Pl. 029" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">029</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/029.jpg" alt="Stone elevation, Pl. 029" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 029</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="033" data-title="Stone elevation, Pl. 033" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">033</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/033.jpg" alt="Stone elevation, Pl. 033" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 033</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="034" data-title="Stone elevation, Pl. 034" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">034</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/034.jpg" alt="Stone elevation, Pl. 034" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 034</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="043" data-title="Stone elevation, Pl. 043" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">043</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/043.jpg" alt="Stone elevation, Pl. 043" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 043</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="044" data-title="Stone elevation, Pl. 044" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">044</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/044.jpg" alt="Stone elevation, Pl. 044" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 044</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="069" data-title="Stone elevation, Pl. 069" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">069</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/069.jpg" alt="Stone elevation, Pl. 069" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 069</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="070" data-title="Stone elevation, Pl. 070" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">070</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/070.jpg" alt="Stone elevation, Pl. 070" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 070</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="071" data-title="Stone elevation, Pl. 071" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">071</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/071.jpg" alt="Stone elevation, Pl. 071" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 071</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="103" data-title="Stone elevation, Pl. 103" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">103</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/103.jpg" alt="Stone elevation, Pl. 103" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 103</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="111" data-title="Stone elevation, Pl. 111" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">111</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/111.jpg" alt="Stone elevation, Pl. 111" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 111</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="112" data-title="Stone elevation, Pl. 112" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">112</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/112.jpg" alt="Stone elevation, Pl. 112" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 112</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="113" data-title="Stone elevation, Pl. 113" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">113</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/113.jpg" alt="Stone elevation, Pl. 113" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 113</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="133" data-title="Stone elevation, Pl. 133" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">133</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/133.jpg" alt="Stone elevation, Pl. 133" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 133</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="134" data-title="Stone elevation, Pl. 134" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">134</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/134.jpg" alt="Stone elevation, Pl. 134" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 134</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="135" data-title="Stone elevation, Pl. 135" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">135</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/135.jpg" alt="Stone elevation, Pl. 135" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 135</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="136" data-title="Stone elevation, Pl. 136" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">136</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/136.jpg" alt="Stone elevation, Pl. 136" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 136</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="137" data-title="Stone elevation, Pl. 137" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">137</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/137.jpg" alt="Stone elevation, Pl. 137" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 137</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="138" data-title="Stone elevation, Pl. 138" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">138</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/138.jpg" alt="Stone elevation, Pl. 138" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 138</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="139" data-title="Stone elevation, Pl. 139" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">139</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/139.jpg" alt="Stone elevation, Pl. 139" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 139</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="140" data-title="Stone elevation, Pl. 140" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">140</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/140.jpg" alt="Stone elevation, Pl. 140" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 140</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="142" data-title="Stone elevation, Pl. 142" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">142</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/142.jpg" alt="Stone elevation, Pl. 142" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 142</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="145" data-title="Stone elevation, Pl. 145" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">145</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/145.jpg" alt="Stone elevation, Pl. 145" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 145</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="146" data-title="Stone elevation, Pl. 146" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">146</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/146.jpg" alt="Stone elevation, Pl. 146" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 146</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="147" data-title="Stone elevation, Pl. 147" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">147</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/147.jpg" alt="Stone elevation, Pl. 147" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 147</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="148" data-title="Stone elevation, Pl. 148" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">148</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/148.jpg" alt="Stone elevation, Pl. 148" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 148</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="206" data-title="Stone elevation, Pl. 206" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">206</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/206.jpg" alt="Stone elevation, Pl. 206" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 206</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="207" data-title="Stone elevation, Pl. 207" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">207</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/207.jpg" alt="Stone elevation, Pl. 207" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 207</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="208" data-title="Stone elevation, Pl. 208" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">208</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/208.jpg" alt="Stone elevation, Pl. 208" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 208</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="215" data-title="Stone elevation, Pl. 215" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">215</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/215.jpg" alt="Stone elevation, Pl. 215" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 215</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="223" data-title="Stone elevation, Pl. 223" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">223</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/223.jpg" alt="Stone elevation, Pl. 223" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 223</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="225" data-title="Stone elevation, Pl. 225" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">225</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/225.jpg" alt="Stone elevation, Pl. 225" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 225</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="229" data-title="Stone elevation, Pl. 229" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">229</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/229.jpg" alt="Stone elevation, Pl. 229" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 229</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="230" data-title="Stone elevation, Pl. 230" data-loc="Wyoming" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">230</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/230.jpg" alt="Stone elevation, Pl. 230" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 230</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="243" data-title="Stone elevation, Pl. 243" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">243</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/243.jpg" alt="Stone elevation, Pl. 243" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 243</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="244" data-title="Stone elevation, Pl. 244" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">244</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/244.jpg" alt="Stone elevation, Pl. 244" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 244</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="245" data-title="Stone elevation, Pl. 245" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">245</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/245.jpg" alt="Stone elevation, Pl. 245" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 245</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="246" data-title="Stone elevation, Pl. 246" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">246</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/246.jpg" alt="Stone elevation, Pl. 246" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 246</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="247" data-title="Stone elevation, Pl. 247" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">247</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/247.jpg" alt="Stone elevation, Pl. 247" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 247</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="252" data-title="Stone elevation, Pl. 252" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">252</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/252.jpg" alt="Stone elevation, Pl. 252" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 252</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="253" data-title="Stone elevation, Pl. 253" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">253</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/253.jpg" alt="Stone elevation, Pl. 253" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 253</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="254" data-title="Stone elevation, Pl. 254" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">254</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/254.jpg" alt="Stone elevation, Pl. 254" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 254</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="255" data-title="Stone elevation, Pl. 255" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">255</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/255.jpg" alt="Stone elevation, Pl. 255" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 255</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="256" data-title="Stone elevation, Pl. 256" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">256</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/256.jpg" alt="Stone elevation, Pl. 256" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 256</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="257" data-title="Stone elevation, Pl. 257" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">257</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/257.jpg" alt="Stone elevation, Pl. 257" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 257</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="258" data-title="Stone elevation, Pl. 258" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">258</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/258.jpg" alt="Stone elevation, Pl. 258" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 258</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="260" data-title="Stone elevation, Pl. 260" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">260</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/260.jpg" alt="Stone elevation, Pl. 260" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 260</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="262" data-title="Stone elevation, Pl. 262" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">262</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/262.jpg" alt="Stone elevation, Pl. 262" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 262</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="264" data-title="Stone elevation, Pl. 264" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">264</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/264.jpg" alt="Stone elevation, Pl. 264" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 264</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="265" data-title="Stone elevation, Pl. 265" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">265</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/265.jpg" alt="Stone elevation, Pl. 265" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 265</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="266" data-title="Stone elevation, Pl. 266" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">266</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/266.jpg" alt="Stone elevation, Pl. 266" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 266</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="269" data-title="Stone elevation, Pl. 269" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">269</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/269.jpg" alt="Stone elevation, Pl. 269" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 269</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="270" data-title="Stone elevation, Pl. 270" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">270</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/270.jpg" alt="Stone elevation, Pl. 270" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 270</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="271" data-title="Stone elevation, Pl. 271" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">271</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/271.jpg" alt="Stone elevation, Pl. 271" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 271</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="272" data-title="Stone elevation, Pl. 272" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">272</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/272.jpg" alt="Stone elevation, Pl. 272" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 272</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="273" data-title="Stone elevation, Pl. 273" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">273</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/273.jpg" alt="Stone elevation, Pl. 273" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 273</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="274" data-title="Stone elevation, Pl. 274" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">274</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/274.jpg" alt="Stone elevation, Pl. 274" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 274</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="277" data-title="Stone elevation, Pl. 277" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">277</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/277.jpg" alt="Stone elevation, Pl. 277" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 277</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="282" data-title="Stone elevation, Pl. 282" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">282</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/282.jpg" alt="Stone elevation, Pl. 282" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 282</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="283" data-title="Stone elevation, Pl. 283" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">283</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/283.jpg" alt="Stone elevation, Pl. 283" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 283</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="289" data-title="Stone elevation, Pl. 289" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">289</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/289.jpg" alt="Stone elevation, Pl. 289" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 289</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="300" data-title="Stone elevation, Pl. 300" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">300</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/300.jpg" alt="Stone elevation, Pl. 300" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 300</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="303" data-title="Stone elevation, Pl. 303" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">303</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/303.jpg" alt="Stone elevation, Pl. 303" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 303</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="304" data-title="Stone elevation, Pl. 304" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">304</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/304.jpg" alt="Stone elevation, Pl. 304" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 304</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="306" data-title="Stone elevation, Pl. 306" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">306</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/306.jpg" alt="Stone elevation, Pl. 306" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 306</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="307" data-title="Stone elevation, Pl. 307" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">307</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/307.jpg" alt="Stone elevation, Pl. 307" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 307</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="310" data-title="Stone elevation, Pl. 310" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">310</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/310.jpg" alt="Stone elevation, Pl. 310" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 310</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="312" data-title="Stone elevation, Pl. 312" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">312</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/312.jpg" alt="Stone elevation, Pl. 312" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 312</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="314" data-title="Stone elevation, Pl. 314" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">314</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/314.jpg" alt="Stone elevation, Pl. 314" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 314</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="316" data-title="Stone elevation, Pl. 316" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">316</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/316.jpg" alt="Stone elevation, Pl. 316" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 316</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="318" data-title="Stone elevation, Pl. 318" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">318</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/318.jpg" alt="Stone elevation, Pl. 318" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 318</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="319" data-title="Stone elevation, Pl. 319" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">319</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/319.jpg" alt="Stone elevation, Pl. 319" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 319</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="321" data-title="Stone elevation, Pl. 321" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">321</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/321.jpg" alt="Stone elevation, Pl. 321" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 321</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="323" data-title="Stone elevation, Pl. 323" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">323</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/323.jpg" alt="Stone elevation, Pl. 323" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 323</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="324" data-title="Stone elevation, Pl. 324" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">324</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/324.jpg" alt="Stone elevation, Pl. 324" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 324</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="325" data-title="Stone elevation, Pl. 325" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">325</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/325.jpg" alt="Stone elevation, Pl. 325" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 325</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="328" data-title="Stone elevation, Pl. 328" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">328</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/328.jpg" alt="Stone elevation, Pl. 328" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 328</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="329" data-title="Stone elevation, Pl. 329" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">329</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/329.jpg" alt="Stone elevation, Pl. 329" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 329</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="330" data-title="Stone elevation, Pl. 330" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">330</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/330.jpg" alt="Stone elevation, Pl. 330" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 330</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="332" data-title="Stone elevation, Pl. 332" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">332</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/332.jpg" alt="Stone elevation, Pl. 332" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 332</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="333" data-title="Stone elevation, Pl. 333" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">333</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/333.jpg" alt="Stone elevation, Pl. 333" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 333</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="334" data-title="Stone elevation, Pl. 334" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">334</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/334.jpg" alt="Stone elevation, Pl. 334" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 334</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="335" data-title="Stone elevation, Pl. 335" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">335</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/335.jpg" alt="Stone elevation, Pl. 335" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 335</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="338" data-title="Stone elevation, Pl. 338" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">338</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/338.jpg" alt="Stone elevation, Pl. 338" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 338</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="339" data-title="Stone elevation, Pl. 339" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">339</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/339.jpg" alt="Stone elevation, Pl. 339" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 339</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="340" data-title="Stone elevation, Pl. 340" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">340</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/340.jpg" alt="Stone elevation, Pl. 340" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 340</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="342" data-title="Stone elevation, Pl. 342" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">342</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/342.jpg" alt="Stone elevation, Pl. 342" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 342</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="346" data-title="Stone elevation, Pl. 346" data-loc="Utah" data-type="Excavation">
+      <div class="stamp">Pl. <span class="num">346</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/346.jpg" alt="Stone elevation, Pl. 346" loading="lazy">
+      <div class="meta"><div class="ti">Stone elevation, Pl. 346</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="cat" data-cat="brick">
+  <div class="cat-head">
+    <div>
+      <div class="num">002 — Catalog</div>
+      <h2><span class="ac">Grading</span></h2>
+    </div>
+    <div class="count">28 plates · Traditional & modern bonds. Chimneys, accents, full builds.</div>
+  </div>
+  <div class="grid">
+  </div>
+    <div class="item" data-id="018" data-title="Grading build, Pl. 018" data-loc="Wyoming" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">018</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/018.jpg" alt="Grading build, Pl. 018" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 018</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="024" data-title="Grading build, Pl. 024" data-loc="Wyoming" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">024</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/024.jpg" alt="Grading build, Pl. 024" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 024</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="025" data-title="Grading build, Pl. 025" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">025</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/025.jpg" alt="Grading build, Pl. 025" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 025</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="040" data-title="Grading build, Pl. 040" data-loc="Wyoming" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">040</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/040.jpg" alt="Grading build, Pl. 040" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 040</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="046" data-title="Grading build, Pl. 046" data-loc="Wyoming" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">046</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/046.jpg" alt="Grading build, Pl. 046" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 046</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="051" data-title="Grading build, Pl. 051" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">051</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/051.jpg" alt="Grading build, Pl. 051" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 051</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="052" data-title="Grading build, Pl. 052" data-loc="Wyoming" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">052</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/052.jpg" alt="Grading build, Pl. 052" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 052</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="084" data-title="Grading build, Pl. 084" data-loc="Wyoming" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">084</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/084.jpg" alt="Grading build, Pl. 084" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 084</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="109" data-title="Grading build, Pl. 109" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">109</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/109.jpg" alt="Grading build, Pl. 109" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 109</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="129" data-title="Grading build, Pl. 129" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">129</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/129.jpg" alt="Grading build, Pl. 129" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 129</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="130" data-title="Grading build, Pl. 130" data-loc="Wyoming" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">130</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/130.jpg" alt="Grading build, Pl. 130" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 130</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="131" data-title="Grading build, Pl. 131" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">131</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/131.jpg" alt="Grading build, Pl. 131" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 131</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="192" data-title="Grading build, Pl. 192" data-loc="Wyoming" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">192</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/192.jpg" alt="Grading build, Pl. 192" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 192</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="205" data-title="Grading build, Pl. 205" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">205</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/205.jpg" alt="Grading build, Pl. 205" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 205</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="234" data-title="Grading build, Pl. 234" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">234</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/234.jpg" alt="Grading build, Pl. 234" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 234</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="235" data-title="Grading build, Pl. 235" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">235</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/235.jpg" alt="Grading build, Pl. 235" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 235</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="240" data-title="Grading build, Pl. 240" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">240</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/240.jpg" alt="Grading build, Pl. 240" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 240</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="241" data-title="Grading build, Pl. 241" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">241</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/241.jpg" alt="Grading build, Pl. 241" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 241</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="259" data-title="Grading build, Pl. 259" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">259</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/259.jpg" alt="Grading build, Pl. 259" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 259</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="263" data-title="Grading build, Pl. 263" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">263</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/263.jpg" alt="Grading build, Pl. 263" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 263</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="280" data-title="Grading build, Pl. 280" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">280</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/280.jpg" alt="Grading build, Pl. 280" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 280</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="288" data-title="Grading build, Pl. 288" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">288</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/288.jpg" alt="Grading build, Pl. 288" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 288</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="290" data-title="Grading build, Pl. 290" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">290</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/290.jpg" alt="Grading build, Pl. 290" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 290</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="297" data-title="Grading build, Pl. 297" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">297</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/297.jpg" alt="Grading build, Pl. 297" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 297</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="308" data-title="Grading build, Pl. 308" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">308</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/308.jpg" alt="Grading build, Pl. 308" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 308</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="311" data-title="Grading build, Pl. 311" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">311</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/311.jpg" alt="Grading build, Pl. 311" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 311</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="313" data-title="Grading build, Pl. 313" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">313</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/313.jpg" alt="Grading build, Pl. 313" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 313</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="336" data-title="Grading build, Pl. 336" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">336</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/336.jpg" alt="Grading build, Pl. 336" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 336</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="337" data-title="Grading build, Pl. 337" data-loc="Utah" data-type="Grading">
+      <div class="stamp">Pl. <span class="num">337</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/337.jpg" alt="Grading build, Pl. 337" loading="lazy">
+      <div class="meta"><div class="ti">Grading build, Pl. 337</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="cat" data-cat="stucco">
+  <div class="cat-head">
+    <div>
+      <div class="num">003 — Catalog</div>
+      <h2><span class="ac">Concrete Prep</span></h2>
+    </div>
+    <div class="count">25 plates · Traditional & modern finishes. Full re-coats and new construction.</div>
+  </div>
+  <div class="grid">
+  </div>
+    <div class="item" data-id="009" data-title="Concrete Prep finish, Pl. 009" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">009</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/009.jpg" alt="Concrete Prep finish, Pl. 009" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 009</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="010" data-title="Concrete Prep finish, Pl. 010" data-loc="Wyoming" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">010</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/010.jpg" alt="Concrete Prep finish, Pl. 010" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 010</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="027" data-title="Concrete Prep finish, Pl. 027" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">027</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/027.jpg" alt="Concrete Prep finish, Pl. 027" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 027</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="035" data-title="Concrete Prep finish, Pl. 035" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">035</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/035.jpg" alt="Concrete Prep finish, Pl. 035" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 035</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="036" data-title="Concrete Prep finish, Pl. 036" data-loc="Wyoming" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">036</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/036.jpg" alt="Concrete Prep finish, Pl. 036" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 036</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="042" data-title="Concrete Prep finish, Pl. 042" data-loc="Wyoming" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">042</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/042.jpg" alt="Concrete Prep finish, Pl. 042" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 042</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="047" data-title="Concrete Prep finish, Pl. 047" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">047</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/047.jpg" alt="Concrete Prep finish, Pl. 047" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 047</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="048" data-title="Concrete Prep finish, Pl. 048" data-loc="Wyoming" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">048</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/048.jpg" alt="Concrete Prep finish, Pl. 048" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 048</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="107" data-title="Concrete Prep finish, Pl. 107" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">107</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/107.jpg" alt="Concrete Prep finish, Pl. 107" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 107</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="108" data-title="Concrete Prep finish, Pl. 108" data-loc="Wyoming" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">108</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/108.jpg" alt="Concrete Prep finish, Pl. 108" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 108</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="114" data-title="Concrete Prep finish, Pl. 114" data-loc="Wyoming" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">114</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/114.jpg" alt="Concrete Prep finish, Pl. 114" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 114</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="115" data-title="Concrete Prep finish, Pl. 115" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">115</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/115.jpg" alt="Concrete Prep finish, Pl. 115" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 115</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="116" data-title="Concrete Prep finish, Pl. 116" data-loc="Wyoming" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">116</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/116.jpg" alt="Concrete Prep finish, Pl. 116" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 116</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="117" data-title="Concrete Prep finish, Pl. 117" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">117</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/117.jpg" alt="Concrete Prep finish, Pl. 117" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 117</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="156" data-title="Concrete Prep finish, Pl. 156" data-loc="Wyoming" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">156</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/156.jpg" alt="Concrete Prep finish, Pl. 156" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 156</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="157" data-title="Concrete Prep finish, Pl. 157" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">157</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/157.jpg" alt="Concrete Prep finish, Pl. 157" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 157</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="199" data-title="Concrete Prep finish, Pl. 199" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">199</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/199.jpg" alt="Concrete Prep finish, Pl. 199" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 199</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="200" data-title="Concrete Prep finish, Pl. 200" data-loc="Wyoming" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">200</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/200.jpg" alt="Concrete Prep finish, Pl. 200" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 200</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="267" data-title="Concrete Prep finish, Pl. 267" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">267</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/267.jpg" alt="Concrete Prep finish, Pl. 267" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 267</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="278" data-title="Concrete Prep finish, Pl. 278" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">278</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/278.jpg" alt="Concrete Prep finish, Pl. 278" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 278</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="279" data-title="Concrete Prep finish, Pl. 279" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">279</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/279.jpg" alt="Concrete Prep finish, Pl. 279" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 279</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="281" data-title="Concrete Prep finish, Pl. 281" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">281</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/281.jpg" alt="Concrete Prep finish, Pl. 281" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 281</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="341" data-title="Concrete Prep finish, Pl. 341" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">341</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/341.jpg" alt="Concrete Prep finish, Pl. 341" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 341</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="343" data-title="Concrete Prep finish, Pl. 343" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">343</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/343.jpg" alt="Concrete Prep finish, Pl. 343" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 343</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="344" data-title="Concrete Prep finish, Pl. 344" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">344</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/344.jpg" alt="Concrete Prep finish, Pl. 344" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 344</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="345" data-title="Concrete Prep finish, Pl. 345" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">345</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/345.jpg" alt="Concrete Prep finish, Pl. 345" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 345</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="347" data-title="Concrete Prep finish, Pl. 347" data-loc="Utah" data-type="Concrete Prep">
+      <div class="stamp">Pl. <span class="num">347</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/347.jpg" alt="Concrete Prep finish, Pl. 347" loading="lazy">
+      <div class="meta"><div class="ti">Concrete Prep finish, Pl. 347</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="cat" data-cat="site preps">
+  <div class="cat-head">
+    <div>
+      <div class="num">004 — Catalog</div>
+      <h2><span class="ac">Pool & Site Prep</span></h2>
+    </div>
+    <div class="count">53 plates · Interior surrounds, full-height chases, exterior chimneys.</div>
+  </div>
+  <div class="grid">
+  </div>
+    <div class="item" data-id="008" data-title="Fireplace / chimney, Pl. 008" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">008</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/008.jpg" alt="Fireplace / chimney, Pl. 008" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 008</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="019" data-title="Fireplace / chimney, Pl. 019" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">019</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/019.jpg" alt="Fireplace / chimney, Pl. 019" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 019</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="020" data-title="Fireplace / chimney, Pl. 020" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">020</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/020.jpg" alt="Fireplace / chimney, Pl. 020" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 020</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="030" data-title="Fireplace / chimney, Pl. 030" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">030</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/030.jpg" alt="Fireplace / chimney, Pl. 030" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 030</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="041" data-title="Fireplace / chimney, Pl. 041" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">041</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/041.jpg" alt="Fireplace / chimney, Pl. 041" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 041</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="045" data-title="Fireplace / chimney, Pl. 045" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">045</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/045.jpg" alt="Fireplace / chimney, Pl. 045" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 045</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="055" data-title="Fireplace / chimney, Pl. 055" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">055</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/055.jpg" alt="Fireplace / chimney, Pl. 055" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 055</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="056" data-title="Fireplace / chimney, Pl. 056" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">056</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/056.jpg" alt="Fireplace / chimney, Pl. 056" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 056</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="059" data-title="Fireplace / chimney, Pl. 059" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">059</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/059.jpg" alt="Fireplace / chimney, Pl. 059" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 059</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="060" data-title="Fireplace / chimney, Pl. 060" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">060</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/060.jpg" alt="Fireplace / chimney, Pl. 060" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 060</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="061" data-title="Fireplace / chimney, Pl. 061" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">061</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/061.jpg" alt="Fireplace / chimney, Pl. 061" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 061</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="066" data-title="Fireplace / chimney, Pl. 066" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">066</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/066.jpg" alt="Fireplace / chimney, Pl. 066" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 066</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="067" data-title="Fireplace / chimney, Pl. 067" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">067</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/067.jpg" alt="Fireplace / chimney, Pl. 067" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 067</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="086" data-title="Fireplace / chimney, Pl. 086" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">086</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/086.jpg" alt="Fireplace / chimney, Pl. 086" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 086</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="093" data-title="Fireplace / chimney, Pl. 093" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">093</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/093.jpg" alt="Fireplace / chimney, Pl. 093" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 093</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="094" data-title="Fireplace / chimney, Pl. 094" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">094</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/094.jpg" alt="Fireplace / chimney, Pl. 094" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 094</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="095" data-title="Fireplace / chimney, Pl. 095" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">095</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/095.jpg" alt="Fireplace / chimney, Pl. 095" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 095</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="096" data-title="Fireplace / chimney, Pl. 096" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">096</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/096.jpg" alt="Fireplace / chimney, Pl. 096" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 096</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="102" data-title="Fireplace / chimney, Pl. 102" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">102</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/102.jpg" alt="Fireplace / chimney, Pl. 102" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 102</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="104" data-title="Fireplace / chimney, Pl. 104" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">104</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/104.jpg" alt="Fireplace / chimney, Pl. 104" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 104</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="106" data-title="Fireplace / chimney, Pl. 106" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">106</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/106.jpg" alt="Fireplace / chimney, Pl. 106" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 106</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="141" data-title="Fireplace / chimney, Pl. 141" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">141</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/141.jpg" alt="Fireplace / chimney, Pl. 141" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 141</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="166" data-title="Fireplace / chimney, Pl. 166" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">166</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/166.jpg" alt="Fireplace / chimney, Pl. 166" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 166</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="167" data-title="Fireplace / chimney, Pl. 167" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">167</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/167.jpg" alt="Fireplace / chimney, Pl. 167" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 167</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="188" data-title="Fireplace / chimney, Pl. 188" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">188</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/188.jpg" alt="Fireplace / chimney, Pl. 188" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 188</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="194" data-title="Fireplace / chimney, Pl. 194" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">194</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/194.jpg" alt="Fireplace / chimney, Pl. 194" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 194</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="195" data-title="Fireplace / chimney, Pl. 195" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">195</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/195.jpg" alt="Fireplace / chimney, Pl. 195" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 195</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="202" data-title="Fireplace / chimney, Pl. 202" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">202</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/202.jpg" alt="Fireplace / chimney, Pl. 202" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 202</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="220" data-title="Fireplace / chimney, Pl. 220" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">220</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/220.jpg" alt="Fireplace / chimney, Pl. 220" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 220</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="226" data-title="Fireplace / chimney, Pl. 226" data-loc="Wyoming" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">226</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/226.jpg" alt="Fireplace / chimney, Pl. 226" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 226</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="233" data-title="Fireplace / chimney, Pl. 233" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">233</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/233.jpg" alt="Fireplace / chimney, Pl. 233" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 233</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="236" data-title="Fireplace / chimney, Pl. 236" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">236</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/236.jpg" alt="Fireplace / chimney, Pl. 236" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 236</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="237" data-title="Fireplace / chimney, Pl. 237" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">237</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/237.jpg" alt="Fireplace / chimney, Pl. 237" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 237</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="239" data-title="Fireplace / chimney, Pl. 239" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">239</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/239.jpg" alt="Fireplace / chimney, Pl. 239" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 239</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="249" data-title="Fireplace / chimney, Pl. 249" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">249</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/249.jpg" alt="Fireplace / chimney, Pl. 249" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 249</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="251" data-title="Fireplace / chimney, Pl. 251" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">251</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/251.jpg" alt="Fireplace / chimney, Pl. 251" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 251</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="275" data-title="Fireplace / chimney, Pl. 275" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">275</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/275.jpg" alt="Fireplace / chimney, Pl. 275" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 275</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="276" data-title="Fireplace / chimney, Pl. 276" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">276</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/276.jpg" alt="Fireplace / chimney, Pl. 276" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 276</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="284" data-title="Fireplace / chimney, Pl. 284" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">284</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/284.jpg" alt="Fireplace / chimney, Pl. 284" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 284</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="287" data-title="Fireplace / chimney, Pl. 287" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">287</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/287.jpg" alt="Fireplace / chimney, Pl. 287" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 287</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="293" data-title="Fireplace / chimney, Pl. 293" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">293</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/293.jpg" alt="Fireplace / chimney, Pl. 293" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 293</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="296" data-title="Fireplace / chimney, Pl. 296" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">296</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/296.jpg" alt="Fireplace / chimney, Pl. 296" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 296</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="305" data-title="Fireplace / chimney, Pl. 305" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">305</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/305.jpg" alt="Fireplace / chimney, Pl. 305" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 305</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="309" data-title="Fireplace / chimney, Pl. 309" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">309</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/309.jpg" alt="Fireplace / chimney, Pl. 309" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 309</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="315" data-title="Fireplace / chimney, Pl. 315" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">315</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/315.jpg" alt="Fireplace / chimney, Pl. 315" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 315</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="317" data-title="Fireplace / chimney, Pl. 317" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">317</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/317.jpg" alt="Fireplace / chimney, Pl. 317" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 317</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="320" data-title="Fireplace / chimney, Pl. 320" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">320</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/320.jpg" alt="Fireplace / chimney, Pl. 320" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 320</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="322" data-title="Fireplace / chimney, Pl. 322" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">322</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/322.jpg" alt="Fireplace / chimney, Pl. 322" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 322</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="326" data-title="Fireplace / chimney, Pl. 326" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">326</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/326.jpg" alt="Fireplace / chimney, Pl. 326" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 326</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="327" data-title="Fireplace / chimney, Pl. 327" data-loc="Utah" data-type="Pool & Site Prep">
+      <div class="stamp">Pl. <span class="num">327</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/327.jpg" alt="Fireplace / chimney, Pl. 327" loading="lazy">
+      <div class="meta"><div class="ti">Fireplace / chimney, Pl. 327</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="cat" data-cat="outdoor">
+  <div class="cat-head">
+    <div>
+      <div class="num">005 — Catalog</div>
+      <h2><span class="ac">Outdoor</span> Living</h2>
+    </div>
+    <div class="count">32 plates · Pillar caps, fire pits, retaining walls, kitchens, paver patios.</div>
+  </div>
+  <div class="grid">
+  </div>
+    <div class="item" data-id="022" data-title="Hardscape / outdoor, Pl. 022" data-loc="Wyoming" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">022</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/022.jpg" alt="Hardscape / outdoor, Pl. 022" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 022</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="031" data-title="Hardscape / outdoor, Pl. 031" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">031</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/031.jpg" alt="Hardscape / outdoor, Pl. 031" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 031</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="032" data-title="Hardscape / outdoor, Pl. 032" data-loc="Wyoming" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">032</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/032.jpg" alt="Hardscape / outdoor, Pl. 032" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 032</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="068" data-title="Hardscape / outdoor, Pl. 068" data-loc="Wyoming" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">068</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/068.jpg" alt="Hardscape / outdoor, Pl. 068" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 068</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="078" data-title="Hardscape / outdoor, Pl. 078" data-loc="Wyoming" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">078</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/078.jpg" alt="Hardscape / outdoor, Pl. 078" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 078</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="110" data-title="Hardscape / outdoor, Pl. 110" data-loc="Wyoming" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">110</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/110.jpg" alt="Hardscape / outdoor, Pl. 110" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 110</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="121" data-title="Hardscape / outdoor, Pl. 121" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">121</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/121.jpg" alt="Hardscape / outdoor, Pl. 121" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 121</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="128" data-title="Hardscape / outdoor, Pl. 128" data-loc="Wyoming" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">128</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/128.jpg" alt="Hardscape / outdoor, Pl. 128" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 128</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="143" data-title="Hardscape / outdoor, Pl. 143" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">143</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/143.jpg" alt="Hardscape / outdoor, Pl. 143" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 143</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="144" data-title="Hardscape / outdoor, Pl. 144" data-loc="Wyoming" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">144</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/144.jpg" alt="Hardscape / outdoor, Pl. 144" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 144</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="176" data-title="Hardscape / outdoor, Pl. 176" data-loc="Wyoming" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">176</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/176.jpg" alt="Hardscape / outdoor, Pl. 176" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 176</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="216" data-title="Hardscape / outdoor, Pl. 216" data-loc="Wyoming" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">216</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/216.jpg" alt="Hardscape / outdoor, Pl. 216" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 216</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="217" data-title="Hardscape / outdoor, Pl. 217" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">217</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/217.jpg" alt="Hardscape / outdoor, Pl. 217" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 217</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="231" data-title="Hardscape / outdoor, Pl. 231" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">231</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/231.jpg" alt="Hardscape / outdoor, Pl. 231" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 231</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="232" data-title="Hardscape / outdoor, Pl. 232" data-loc="Wyoming" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">232</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/232.jpg" alt="Hardscape / outdoor, Pl. 232" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 232</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="238" data-title="Hardscape / outdoor, Pl. 238" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">238</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/238.jpg" alt="Hardscape / outdoor, Pl. 238" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 238</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="242" data-title="Hardscape / outdoor, Pl. 242" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">242</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/242.jpg" alt="Hardscape / outdoor, Pl. 242" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 242</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="248" data-title="Hardscape / outdoor, Pl. 248" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">248</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/248.jpg" alt="Hardscape / outdoor, Pl. 248" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 248</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="261" data-title="Hardscape / outdoor, Pl. 261" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">261</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/261.jpg" alt="Hardscape / outdoor, Pl. 261" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 261</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="268" data-title="Hardscape / outdoor, Pl. 268" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">268</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/268.jpg" alt="Hardscape / outdoor, Pl. 268" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 268</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="285" data-title="Hardscape / outdoor, Pl. 285" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">285</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/285.jpg" alt="Hardscape / outdoor, Pl. 285" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 285</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="286" data-title="Hardscape / outdoor, Pl. 286" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">286</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/286.jpg" alt="Hardscape / outdoor, Pl. 286" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 286</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="291" data-title="Hardscape / outdoor, Pl. 291" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">291</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/291.jpg" alt="Hardscape / outdoor, Pl. 291" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 291</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="292" data-title="Hardscape / outdoor, Pl. 292" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">292</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/292.jpg" alt="Hardscape / outdoor, Pl. 292" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 292</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="294" data-title="Hardscape / outdoor, Pl. 294" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">294</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/294.jpg" alt="Hardscape / outdoor, Pl. 294" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 294</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="295" data-title="Hardscape / outdoor, Pl. 295" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">295</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/295.jpg" alt="Hardscape / outdoor, Pl. 295" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 295</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="298" data-title="Hardscape / outdoor, Pl. 298" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">298</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/298.jpg" alt="Hardscape / outdoor, Pl. 298" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 298</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="299" data-title="Hardscape / outdoor, Pl. 299" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">299</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/299.jpg" alt="Hardscape / outdoor, Pl. 299" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 299</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="301" data-title="Hardscape / outdoor, Pl. 301" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">301</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/301.jpg" alt="Hardscape / outdoor, Pl. 301" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 301</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="302" data-title="Hardscape / outdoor, Pl. 302" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">302</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/302.jpg" alt="Hardscape / outdoor, Pl. 302" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 302</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="331" data-title="Hardscape / outdoor, Pl. 331" data-loc="Utah" data-type="Roads & Pads">
+      <div class="stamp">Pl. <span class="num">331</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/331.jpg" alt="Hardscape / outdoor, Pl. 331" loading="lazy">
+      <div class="meta"><div class="ti">Hardscape / outdoor, Pl. 331</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="cat" data-cat="interior">
+  <div class="cat-head">
+    <div>
+      <div class="num">006 — Catalog</div>
+      <h2><span class="ac">Interior</span></h2>
+    </div>
+    <div class="count">3 plates · Hood surrounds, vaulted feature walls, basement walkouts, built-ins.</div>
+  </div>
+  <div class="grid">
+  </div>
+    <div class="item" data-id="213" data-title="Interior finish, Pl. 213" data-loc="Utah" data-type="Interior">
+      <div class="stamp">Pl. <span class="num">213</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/213.jpg" alt="Interior finish, Pl. 213" loading="lazy">
+      <div class="meta"><div class="ti">Interior finish, Pl. 213</div><div class="lc">Utah</div><button class="book">Book this style</button></div>
+    </div>
+    <div class="item" data-id="214" data-title="Interior finish, Pl. 214" data-loc="Wyoming" data-type="Interior">
+      <div class="stamp">Pl. <span class="num">214</span></div>
+      <img src="https://intermountain-contractors-demo.vercel.app/assets/images/catalog/thumbs/214.jpg" alt="Interior finish, Pl. 214" loading="lazy">
+      <div class="meta"><div class="ti">Interior finish, Pl. 214</div><div class="lc">Wyoming</div><button class="book">Book this style</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="mark"><a href="/d/intermountain/"><img src="https://intermountain-contractors-demo.vercel.app/assets/brand/hn-logo.png" alt="Intermountain Contractors"></a></div>
+  <div class="by">D Glen Darger · Owner</div>
+  <div class="by" style="margin-top:14px">
+    <a href="tel:+18014103745" style="color:var(--brand-amber);font-weight:700;letter-spacing:.04em;font-size:16px">(801) 410-3745</a>
+    &nbsp;&nbsp;·&nbsp;&nbsp;
+  </div>
+  <div class="legal">© Intermountain Contractors · Licensed &amp; Insured · <span style="color:var(--brand-amber);font-weight:600">UT masonry</span></div>
+
+  <!-- LEGAL DISCLAIMER -->
+  <div style="margin-top:48px;padding:32px 28px 24px;max-width:880px;margin-left:auto;margin-right:auto;border:1px solid var(--black-2);text-align:left">
+    <div style="font-family:'Inter Tight',sans-serif;font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--brand-amber);font-weight:700;margin-bottom:14px;text-align:center">Catalog Notice</div>
+
+    <p style="font-family:'Inter Tight',sans-serif;font-size:12.5px;line-height:1.75;color:var(--bone-2);opacity:.85;margin-bottom:14px">
+      Project photos from Intermountain Contractors. Licensed and insured masonry work across Utah.
+    </p>
+
+    <p style="font-family:'Inter Tight',sans-serif;font-size:11.5px;line-height:1.7;color:var(--bone-2);opacity:.65;border-top:1px solid var(--black-2);padding-top:14px;margin-top:18px">
+      Property owners depicted who wish to request removal of any image may contact Intermountain Contractors at
+      <a href="tel:+18014103745" style="color:var(--brand-amber);font-weight:600">(801) 410-3745</a> or;
+      requests are honored within five (5) business days.
+    </p>
+  </div>
+</footer>
+
+</div><!-- /#catalog -->
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()" aria-label="Close">×</button>
+  <div class="lb-card">
+    <div class="ph"><img id="lbImg" src="" alt=""></div>
+    <div class="info">
+      <div class="top">
+        <div class="label">From the catalog</div>
+        <h3 id="lbTitle">—</h3>
+        <dl>
+          <dt>Plate</dt><dd id="lbPlate" class="ac">—</dd>
+          <dt>Type</dt><dd id="lbType">—</dd>
+          <dt>Location</dt><dd id="lbLoc">—</dd>
+        </dl>
+      </div>
+      <div class="actions">
+        <button class="primary" id="lbBook" type="button">Book this style</button>
+        <button class="secondary" onclick="closeLightbox()">Keep browsing</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ INLINE BOOKING MODAL (stays in catalog) ============ -->
+<div class="book-modal" id="bookModal" onclick="if(event.target===this)closeBookModal()">
+  <div class="book-card">
+    <button class="book-close" type="button" onclick="closeBookModal()" aria-label="Close">×</button>
+    <div class="preview">
+      <img id="bmImg" src="" alt="">
+      <div class="preview-meta">
+        <div class="pl" id="bmPlate">Plate —</div>
+        <div class="ti" id="bmTitle">—</div>
+        <div class="lc" id="bmLoc">—</div>
+      </div>
+    </div>
+    <div class="form-side">
+      <div id="bmFormWrap">
+        <div class="hdr">
+          <div class="label">Request a quote</div>
+          <h3>Like this look? Rudy will reach out.</h3>
+          <p>Send a few details and he'll get back to you with timeline + estimate. No pressure, no spam.</p>
+        </div>
+        <form id="bookForm" action="https://formsubmit.co/rudy@example.com" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Intermountain Contractors — Catalog Booking Request">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Intermountain Contractors. Rudy got your request and will be in touch.">
+          <input type="hidden" name="source" value="catalog">
+          <input type="hidden" id="bmRefField" name="catalog_reference" value="">
+          <input type="hidden" id="bmTypeField" name="project_type" value="">
+          <div>
+            <label for="bmName">Name</label>
+            <input id="bmName" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="bmPhone">Phone</label>
+            <input id="bmPhone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+          <div>
+            <label for="bmEmail">Email <span style="opacity:.5;letter-spacing:.2em">(optional)</span></label>
+            <input id="bmEmail" name="email" type="email" autocomplete="email">
+          </div>
+          <div>
+            <label for="bmZip">ZIP / City</label>
+            <input id="bmZip" name="zip_or_city" type="text" autocomplete="postal-code">
+          </div>
+          <div class="full">
+            <label for="bmNotes">What you're picturing</label>
+            <textarea id="bmNotes" name="notes" placeholder="e.g. front elevation of a new build, similar to this plate"></textarea>
+          </div>
+          <div class="form-error" id="bmError">Something went wrong sending that. You can also text Rudy at (801) 410-3745.</div>
+          <div class="submit-row">
+            <button class="cancel" type="button" onclick="closeBookModal()">Cancel</button>
+            <button class="send" type="submit" id="bmSend">Send request</button>
+          </div>
+        </form>
+      </div>
+      <div class="form-success" id="bmSuccess">
+        <div class="check">✓</div>
+        <h4>Got it. Rudy will reach out.</h4>
+        <p>Your request is in. Expect a call or text from <strong>(801) 410-3745</strong> in the next day or so. Keep browsing — you can request more plates anytime.</p>
+        <div style="margin-top:28px"><button class="cancel" type="button" onclick="closeBookModal()" style="width:100%">Back to catalog</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // DEMO SALES COPY — public catalog, no password, no session lock, no anti-screenshot layer.
+
+  // ===== FILTER =====
+  const filterBtns = document.querySelectorAll("#filter button");
+  const cats = document.querySelectorAll("section.cat");
+  filterBtns.forEach(b => b.addEventListener("click", () => {
+    filterBtns.forEach(x => x.classList.remove("on"));
+    b.classList.add("on");
+    const cat = b.dataset.cat;
+    cats.forEach(c => c.classList.toggle("hide", cat !== "all" && c.dataset.cat !== cat));
+  }));
+
+  // ===== LIGHTBOX =====
+  const lb = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lbImg");
+  const lbTitle = document.getElementById("lbTitle");
+  const lbPlate = document.getElementById("lbPlate");
+  const lbType = document.getElementById("lbType");
+  const lbLoc = document.getElementById("lbLoc");
+  const lbBook = document.getElementById("lbBook");
+
+  // Track the item currently displayed in the lightbox (so lbBook knows the context)
+  let currentItem = null;
+
+  document.querySelectorAll(".item").forEach(it => {
+    it.addEventListener("click", e => {
+      // Inline "Book this style" button → open booking modal directly (skip lightbox)
+      if (e.target.closest(".book")) {
+        e.preventDefault();
+        e.stopPropagation();
+        openBookModal(it);
+        return;
+      }
+      // Otherwise → open lightbox preview
+      const id = it.dataset.id;
+      const title = it.dataset.title;
+      const loc = it.dataset.loc;
+      const type = it.dataset.type;
+      const img = it.querySelector("img");
+      lbImg.src = img.src.replace("/catalog/thumbs/", "/catalog/");
+      lbImg.alt = img.alt;
+      lbTitle.textContent = title;
+      lbPlate.textContent = "No. " + id;
+      lbType.textContent = type;
+      lbLoc.textContent = loc;
+      currentItem = it;
+      lb.classList.add("show");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  // Lightbox "Book this style" → open booking modal for the current lightbox item
+  lbBook.addEventListener("click", () => {
+    if (!currentItem) return;
+    closeLightbox();
+    openBookModal(currentItem);
+  });
+
+  function closeLightbox(){
+    lb.classList.remove("show");
+    document.body.style.overflow = "";
+  }
+
+  // ===== INLINE BOOKING MODAL =====
+  const bookModal = document.getElementById("bookModal");
+  const bmImg = document.getElementById("bmImg");
+  const bmPlate = document.getElementById("bmPlate");
+  const bmTitle = document.getElementById("bmTitle");
+  const bmLoc = document.getElementById("bmLoc");
+  const bmRefField = document.getElementById("bmRefField");
+  const bmTypeField = document.getElementById("bmTypeField");
+  const bmNotes = document.getElementById("bmNotes");
+  const bookForm = document.getElementById("bookForm");
+  const bmFormWrap = document.getElementById("bmFormWrap");
+  const bmSuccess = document.getElementById("bmSuccess");
+  const bmError = document.getElementById("bmError");
+  const bmSend = document.getElementById("bmSend");
+
+  function openBookModal(it){
+    const id = it.dataset.id || "";
+    const title = it.dataset.title || "";
+    const loc = it.dataset.loc || "";
+    const type = it.dataset.type || "";
+    const img = it.querySelector("img");
+    bmImg.src = img.src.replace("/catalog/thumbs/", "/catalog/");
+    bmImg.alt = img.alt;
+    bmPlate.textContent = "Plate " + id;
+    bmTitle.textContent = title;
+    bmLoc.textContent = loc + " · " + type;
+    bmRefField.value = "Plate " + id + " — " + title + " (" + loc + ")";
+    bmTypeField.value = type;
+    // Pre-fill the notes textarea so it's obvious what they're booking
+    if (!bmNotes.value || bmNotes.dataset.autofilled === "1") {
+      bmNotes.value = "Interested in this look — Plate " + id + " (" + type + "). ";
+      bmNotes.dataset.autofilled = "1";
+    }
+    // Reset visual state
+    bmFormWrap.style.display = "";
+    bmSuccess.classList.remove("show");
+    bmError.classList.remove("show");
+    bmSend.disabled = false;
+    bmSend.textContent = "Send request";
+    bookModal.classList.add("show");
+    document.body.style.overflow = "hidden";
+    setTimeout(() => document.getElementById("bmName").focus(), 80);
+  }
+
+  function closeBookModal(){
+    bookModal.classList.remove("show");
+    document.body.style.overflow = "";
+  }
+
+  // Submit booking form via fetch — never leaves the catalog
+  bookForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    bmError.classList.remove("show");
+    if (!bookForm.checkValidity()) { bookForm.reportValidity(); return; }
+    bmSend.disabled = true;
+    bmSend.textContent = "Sending…";
+    try {
+      const fd = new FormData(bookForm);
+      const res = await fetch(bookForm.action, { method: "POST", body: fd, headers: { "Accept": "application/json" } });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      // Success — flip to confirmation state
+      bmFormWrap.style.display = "none";
+      bmSuccess.classList.add("show");
+      // Reset form for next plate
+      bookForm.reset();
+      bmNotes.dataset.autofilled = "";
+    } catch (err) {
+      console.warn("Booking submit failed", err);
+      bmError.classList.add("show");
+      bmSend.disabled = false;
+      bmSend.textContent = "Send request";
+    }
+  });
+
+  document.addEventListener("keydown", e => {
+    if(e.key === "Escape"){
+      if (bookModal.classList.contains("show")) closeBookModal();
+      else closeLightbox();
+    }
+  });
+</script>
+</body>
+</html>

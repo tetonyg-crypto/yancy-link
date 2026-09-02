@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="yg-static-bake" content="dying-breed">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="https://dying-breed-barbershop-demo.vercel.app/assets/brand/logo.svg" type="image/svg+xml">
+<title>Dying Breed Barber Shop</title>
+<meta name="description" content="Dying Breed Barber Shop — Old School Traditions. Premium men's cuts, beard work, and classic shaves.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Dying Breed Barber Shop">
+<meta property="og:description" content="Old School Traditions. Premium barbering.">
+<meta property="og:image" content="https://dying-breed-barbershop-demo.vercel.app/assets/images/hero/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#0a0a0a;
+    --ink-2:#1a1a1a;
+    --mute:#6b6b6b;
+    --line:#e6e6e6;
+    --line-2:#111;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Outfit',system-ui,sans-serif;font-weight:300;
+    -webkit-font-smoothing:antialiased;line-height:1.55;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1180px,100%);margin:0 auto;padding:0 28px}
+  .eyebrow{
+    font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+    font-weight:500;color:var(--mute);
+  }
+  .display{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-weight:500;letter-spacing:-.02em;line-height:1.05;
+  }
+
+  /* NAV */
+  nav{
+    position:fixed;inset:0 0 auto 0;z-index:40;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;
+    background:rgba(255,255,255,.88);
+    backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid transparent;
+    transition:border-color .25s, background .25s;
+  }
+  nav.scrolled{border-bottom-color:var(--line)}
+  nav .mark{display:flex;align-items:center;gap:14px}
+  nav .mark img{height:44px;width:auto}
+  nav .mark span{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:22px;font-weight:600;letter-spacing:.02em;
+  }
+  nav .links{display:flex;align-items:center;gap:28px}
+  nav .links a{
+    font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:var(--mute);
+  }
+  nav .links a:hover{color:var(--ink)}
+  nav .links a.book{
+    color:#fff;background:var(--ink);padding:11px 18px;font-weight:500;
+  }
+  nav .links a.book:hover{background:#000}
+  @media(max-width:820px){
+    nav{padding:14px 16px}
+    nav .mark span,.nav-hide{display:none}
+    nav .mark img{height:36px}
+    nav .links{gap:14px}
+  }
+
+  /* HERO */
+  .hero{
+    position:relative;min-height:100svh;display:grid;place-items:center;
+    color:#fff;overflow:hidden;background:#0a0a0a;
+  }
+  .hero .bg{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    filter:grayscale(1) contrast(1.05) brightness(.72);
+    transform:scale(1.02);
+  }
+  .hero .veil{
+    position:absolute;inset:0;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.25) 40%, rgba(0,0,0,.72) 100%);
+  }
+  .hero .content{
+    position:relative;z-index:2;text-align:center;
+    padding:120px 24px 80px;width:min(720px,100%);
+  }
+  .hero .crest{
+    width:min(280px,58vw);margin:0 auto 28px;
+    filter:drop-shadow(0 18px 40px rgba(0,0,0,.55));
+  }
+  .hero h1{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-weight:500;font-size:clamp(40px,7vw,72px);
+    letter-spacing:-.03em;line-height:.95;
+  }
+  .hero .tag{
+    margin-top:18px;font-size:12px;letter-spacing:.38em;text-transform:uppercase;
+    font-weight:400;opacity:.9;
+  }
+  .hero .actions{margin-top:40px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-width:160px;padding:15px 22px;
+    font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;
+  }
+  .btn-solid{background:#fff;color:#0a0a0a}
+  .btn-solid:hover{background:#f0f0f0}
+  .btn-line{border:1px solid rgba(255,255,255,.65);color:#fff}
+  .btn-line:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+  .hero .scroll{
+    position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;
+    font-size:10px;letter-spacing:.34em;text-transform:uppercase;opacity:.65;
+  }
+
+  /* INTRO BAND */
+  .intro{
+    padding:88px 0;text-align:center;border-bottom:1px solid var(--line);
+  }
+  .intro h2{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:clamp(32px,4.5vw,52px);font-weight:500;max-width:18ch;margin:16px auto 0;
+  }
+  .intro p{
+    margin:22px auto 0;max-width:42ch;color:var(--mute);font-size:16px;font-weight:300;
+  }
+
+  /* SERVICES */
+  .services{padding:100px 0;background:#fafafa}
+  .services .head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:48px}
+  .services .head h2{font-size:clamp(36px,5vw,56px)}
+  .services .list{border-top:1px solid var(--line-2)}
+  .services .row{
+    display:grid;grid-template-columns:1.1fr 2fr auto;gap:24px;align-items:baseline;
+    padding:28px 0;border-bottom:1px solid var(--line);
+  }
+  .services .row h3{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:28px;font-weight:500;letter-spacing:-.01em;
+  }
+  .services .row p{color:var(--mute);font-size:15px;max-width:48ch}
+  .services .row .price{
+    font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);white-space:nowrap;
+  }
+  @media(max-width:720px){
+    .services .head{flex-direction:column;align-items:start}
+    .services .row{grid-template-columns:1fr;gap:8px}
+  }
+
+  /* GALLERY */
+  .gallery{padding:100px 0}
+  .gallery .head{margin-bottom:40px}
+  .gallery .head h2{font-size:clamp(36px,5vw,56px);margin-top:12px}
+  .gallery .grid{
+    display:grid;grid-template-columns:repeat(12,1fr);gap:14px;
+  }
+  .gallery .cell{overflow:hidden;background:#111;position:relative}
+  .gallery .cell img{
+    width:100%;height:100%;object-fit:cover;
+    filter:grayscale(1);transition:transform .7s ease, filter .7s ease;
+  }
+  .gallery .cell:hover img{transform:scale(1.04);filter:grayscale(0)}
+  .gallery .c1{grid-column:span 5;aspect-ratio:4/5}
+  .gallery .c2{grid-column:span 7;aspect-ratio:16/11}
+  .gallery .c3{grid-column:span 4;aspect-ratio:1}
+  .gallery .c4{grid-column:span 4;aspect-ratio:1}
+  .gallery .c5{grid-column:span 4;aspect-ratio:1}
+  .gallery .c6{grid-column:span 12;aspect-ratio:21/9}
+  @media(max-width:800px){
+    .gallery .grid{gap:10px}
+    .gallery .c1,.gallery .c2,.gallery .c3,.gallery .c4,.gallery .c5{grid-column:span 6}
+    .gallery .c6{grid-column:span 12;aspect-ratio:16/10}
+  }
+  @media(max-width:520px){
+    .gallery .c1,.gallery .c2,.gallery .c3,.gallery .c4,.gallery .c5,.gallery .c6{grid-column:span 12;aspect-ratio:4/5}
+  }
+
+  /* ABOUT SPLIT */
+  .about{padding:0;display:grid;grid-template-columns:1fr 1fr;min-height:640px}
+  .about .photo{position:relative;min-height:420px;overflow:hidden;background:#111}
+  .about .photo img{
+    width:100%;height:100%;object-fit:cover;filter:grayscale(1);position:absolute;inset:0;
+  }
+  .about .copy{
+    display:flex;flex-direction:column;justify-content:center;
+    padding:72px 56px;background:var(--ink);color:#fff;
+  }
+  .about .copy .eyebrow{color:rgba(255,255,255,.45)}
+  .about .copy h2{font-size:clamp(34px,4vw,52px);margin-top:14px;max-width:12ch}
+  .about .copy p{margin-top:22px;color:rgba(255,255,255,.68);font-size:16px;max-width:38ch}
+  .about .copy .rule{width:48px;height:1px;background:#fff;margin:32px 0 18px;opacity:.5}
+  .about .copy .quote{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:28px;font-style:italic;font-weight:400;line-height:1.25;
+  }
+  @media(max-width:900px){
+    .about{grid-template-columns:1fr}
+    .about .copy{padding:56px 28px}
+    .about .photo{min-height:360px;aspect-ratio:4/5}
+  }
+
+  /* VISIT */
+  .visit{padding:100px 0;border-top:1px solid var(--line)}
+  .visit .grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px;margin-top:40px}
+  .visit h2{font-size:clamp(36px,5vw,56px);margin-top:12px}
+  .visit h3{
+    font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;margin-bottom:18px;
+  }
+  .visit ul{list-style:none}
+  .visit li{
+    display:flex;justify-content:space-between;gap:16px;
+    padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;
+  }
+  .visit li span:last-child{color:var(--mute)}
+  .visit .ph{color:var(--mute)}
+  @media(max-width:800px){.visit .grid{grid-template-columns:1fr;gap:36px}}
+
+  /* BOOK */
+  .book{
+    padding:100px 0;background:var(--ink);color:#fff;
+  }
+  .book .layout{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
+  .book h2{font-size:clamp(36px,5vw,56px);margin-top:12px}
+  .book .lede{margin-top:18px;color:rgba(255,255,255,.6);max-width:36ch}
+  .book .eyebrow{color:rgba(255,255,255,.45)}
+  form label{
+    display:block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+    color:rgba(255,255,255,.45);margin-bottom:8px;
+  }
+  form .field{margin-bottom:18px}
+  form input,form select,form textarea{
+    width:100%;background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.28);
+    color:#fff;padding:12px 0;font:inherit;font-size:16px;border-radius:0;outline:none;
+  }
+  form input:focus,form select:focus,form textarea:focus{border-bottom-color:#fff}
+  form select option{background:#111;color:#fff}
+  form button{
+    margin-top:18px;width:100%;background:#fff;color:#0a0a0a;border:0;
+    padding:16px;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;cursor:pointer;
+  }
+  form button:hover{background:#f0f0f0}
+  form button:disabled{opacity:.6}
+  .ok{display:none;margin-top:20px;padding:16px 0;border-top:1px solid rgba(255,255,255,.25);color:#fff}
+  .book .side{padding-top:8px}
+  .book .side dt{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:28px}
+  .book .side dt:first-child{margin-top:0}
+  .book .side dd{margin-top:8px;font-size:18px;font-family:'Cormorant Garamond',Georgia,serif}
+  .book .side dd.ph{color:rgba(255,255,255,.45);font-family:inherit;font-size:15px}
+  @media(max-width:860px){.book .layout{grid-template-columns:1fr;gap:40px}}
+
+  footer{
+    padding:48px 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+    border-top:1px solid var(--line);font-size:12px;color:var(--mute);
+  }
+  footer .brand{
+    display:flex;align-items:center;gap:12px;color:var(--ink);
+    font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;
+  }
+  footer .brand img{height:36px}
+
+/* === YG MOBILE HARD RULE (do not remove) === */
+html,body{overflow-x:hidden!important;max-width:100%!important}
+img,video{max-width:100%;height:auto}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head,.hero:not(.hero-media),.page-cta .wrap,.preview .head,.about,.services,.contact,.cta-band,.strip,section.hero{
+  box-sizing:border-box;
+}
+nav,.filter,header,footer{
+  padding-left:max(16px, env(safe-area-inset-left))!important;
+  padding-right:max(16px, env(safe-area-inset-right))!important;
+}
+.hero-content,.cat-head,.wrap,.about,.services,.contact,.cta-band,.preview .head,section.hero > .eyebrow,section.hero > h1,section.hero > p,.hero .content{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  box-sizing:border-box;
+  max-width:100%;
+}
+.grid,.mosaic{width:100%;max-width:100%;box-sizing:border-box;min-width:0}
+.item,.cell,.card{min-width:0;max-width:100%}
+.item img,.cell img{width:100%;height:100%;object-fit:cover;display:block}
+
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="mark" href="#top">
+    <img src="https://dying-breed-barbershop-demo.vercel.app/assets/brand/logo.svg" alt="Dying Breed Barber Shop" width="44" height="54">
+    <span>Dying Breed</span>
+  </a>
+  <div class="links">
+    <a class="nav-hide" href="#services">Services</a>
+    <a class="nav-hide" href="#gallery">Work</a>
+    <a class="nav-hide" href="#about">About</a>
+    <a class="nav-hide" href="#visit">Visit</a>
+    <a class="book" href="#book">Book</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img class="bg" src="https://dying-breed-barbershop-demo.vercel.app/assets/images/hero/hero.jpg" alt="" width="2000" height="1328" decoding="async" fetchpriority="high">
+  <div class="veil" aria-hidden="true"></div>
+  <div class="content">
+    <img class="crest" src="https://dying-breed-barbershop-demo.vercel.app/assets/brand/logo.svg" alt="Dying Breed Barber Shop crest" width="280" height="344" decoding="async">
+    <h1>Dying Breed<br>Barber Shop</h1>
+    <p class="tag">Old School Traditions</p>
+    <div class="actions">
+      <a class="btn btn-solid" href="#book">Book a chair</a>
+      <a class="btn btn-line" href="#gallery">See the work</a>
+    </div>
+  </div>
+  <div class="scroll">Scroll</div>
+</header>
+
+<section class="intro">
+  <div class="wrap">
+    <div class="eyebrow">Est. craft</div>
+    <h2 class="display">Precision cuts. Quiet confidence. No shortcuts.</h2>
+    <p>A barbershop built on the craft in the crest. Precision cuts, clean finishes, and classic chair work.</p>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Services</div>
+        <h2 class="display">The chair menu</h2>
+      </div>
+      <p class="eyebrow" style="max-width:28ch;text-align:right">Ask the chair for today’s pricing.</p>
+    </div>
+    <div class="list">
+      <div class="row">
+        <h3>Haircut</h3>
+        <p>Consultation, cut, and clean finish.</p>
+        <div class="price">Call for pricing</div>
+      </div>
+      <div class="row">
+        <h3>Beard trim</h3>
+        <p>Shape, balance, and line work.</p>
+        <div class="price">Call for pricing</div>
+      </div>
+      <div class="row">
+        <h3>Hot towel shave</h3>
+        <p>Classic straight-razor pass with hot towel.</p>
+        <div class="price">Call for pricing</div>
+      </div>
+      <div class="row">
+        <h3>Lineup</h3>
+        <p>Edge-up and neckline. Sharp and tight.</p>
+        <div class="price">Call for pricing</div>
+      </div>
+      <div class="row">
+        <h3>Kids cut</h3>
+        <p>Kids cuts, sized for comfort.</p>
+        <div class="price">Call for pricing</div>
+      </div>
+      <div class="row">
+        <h3>Cut + beard</h3>
+        <p>Full chair package.</p>
+        <div class="price">Call for pricing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Gallery</div>
+      <h2 class="display">In the chair</h2>
+    </div>
+    <div class="grid">
+      <div class="cell c1">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://dying-breed-barbershop-demo.vercel.app/assets/images/gallery/02.jpg" alt="Barber work" width="1200" height="1800" loading="lazy" decoding="async">
+      </div>
+      <div class="cell c2">
+        <img src="https://dying-breed-barbershop-demo.vercel.app/assets/images/gallery/01.jpg" alt="Barbershop interior" width="1200" height="800" loading="eager" decoding="async">
+      </div>
+      <div class="cell c3">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://dying-breed-barbershop-demo.vercel.app/assets/images/gallery/03.jpg" alt="Classic cut" width="1200" height="800" loading="lazy" decoding="async">
+      </div>
+      <div class="cell c4">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://dying-breed-barbershop-demo.vercel.app/assets/images/gallery/04.jpg" alt="Tools of the trade" width="1200" height="800" loading="lazy" decoding="async">
+      </div>
+      <div class="cell c5">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://dying-breed-barbershop-demo.vercel.app/assets/images/gallery/05.jpg" alt="Fade detail" width="1200" height="800" loading="lazy" decoding="async">
+      </div>
+      <div class="cell c6">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://dying-breed-barbershop-demo.vercel.app/assets/images/gallery/06.jpg" alt="Shop atmosphere" width="1200" height="800" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="photo">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://dying-breed-barbershop-demo.vercel.app/assets/images/hero/secondary.jpg" alt="Barber at work" width="1600" height="2400" loading="lazy" decoding="async">
+  </div>
+  <div class="copy">
+    <div class="eyebrow">About</div>
+    <h2 class="display">Old school traditions.</h2>
+    <p>Dying Breed Barber Shop is named for the craft on the crest. Old-school traditions, steady hands, and a chair that still means something.</p>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="quote">“Old School Traditions”</p>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="eyebrow">Visit</div>
+    <h2 class="display">Hours &amp; location</h2>
+    <div class="grid">
+      <div>
+        <h3>Hours</h3>
+        <ul>
+          <li><span>Monday</span><span class="ph">Call for hours</span></li>
+          <li><span>Tuesday</span><span class="ph">Call for hours</span></li>
+          <li><span>Wednesday</span><span class="ph">Call for hours</span></li>
+          <li><span>Thursday</span><span class="ph">Call for hours</span></li>
+          <li><span>Friday</span><span class="ph">Call for hours</span></li>
+          <li><span>Saturday</span><span class="ph">Call for hours</span></li>
+          <li><span>Sunday</span><span class="ph">Call for hours</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Location</h3>
+        <p>Ask the shop for the current address when you book.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p><a href="#book">Request a chair time</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="layout">
+      <div>
+        <div class="eyebrow">Book / Call</div>
+        <h2 class="display">Get in the chair.</h2>
+        <p class="lede">Send a request and the shop will follow up.</p>
+        <div class="side" style="margin-top:40px">
+          <dl>
+            <dt>Book</dt>
+            <dd><a href="#book">Request a chair time</a></dd>
+            <dt>Walk-ins</dt>
+            <dd>Welcome when chairs are open</dd>
+          </dl>
+        </div>
+      </div>
+      <div>
+        <form id="lead" action="https://formsubmit.co/YOUR_SHOP_EMAIL@example.com" method="POST">
+          <input type="hidden" name="_subject" value="New booking — Dying Breed Barber Shop">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="/?sent=1#book">
+          <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Dying Breed Barber Shop. We will get back to you soon.">
+          <div class="field"><label for="n">Name</label><input id="n" name="name" required autocomplete="name"></div>
+          <div class="field"><label for="p">Phone</label><input id="p" name="phone" type="tel" required autocomplete="tel"></div>
+          <div class="field"><label for="t">Service</label>
+            <select id="t" name="service" required>
+              <option value="">Choose one</option>
+              <option>Haircut</option>
+              <option>Beard trim</option>
+              <option>Hot towel shave</option>
+              <option>Lineup</option>
+              <option>Kids cut</option>
+              <option>Cut + beard</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field"><label for="when">Preferred day / time</label><input id="when" name="preferred_time" placeholder="Saturday morning"></div>
+          <div class="field"><label for="m">Notes</label><textarea id="m" name="notes" rows="3"></textarea></div>
+          <button type="submit">Send request</button>
+        </form>
+        <div class="ok" id="ok">Sent. We will reach out soon.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">
+    <img src="https://dying-breed-barbershop-demo.vercel.app/assets/brand/logo.svg" alt="" width="36" height="44">
+    Dying Breed Barber Shop
+  </div>
+  <div>Old School Traditions</div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, {passive:true});
+
+  (function(){
+    const p = new URLSearchParams(location.search);
+    if(p.has('sent')){
+      const ok = document.createElement('div');
+      ok.textContent = "Thank you — we will reach out soon.";
+      Object.assign(ok.style, {
+        position:'fixed',top:'88px',left:'50%',transform:'translateX(-50%)',
+        background:'#0a0a0a',color:'#fff',padding:'14px 24px',
+        fontSize:'13px',letterSpacing:'.06em',zIndex:'99'
+      });
+      document.body.appendChild(ok);
+      setTimeout(()=>ok.remove(),5500);
+    }
+  })();
+
+  document.getElementById('lead').addEventListener('submit', async function(e){
+    if(this.action.indexOf('formsubmit.co') < 0) return;
+    if(this.action.indexOf('YOUR_SHOP_EMAIL') >= 0){
+      e.preventDefault();
+      alert('Replace YOUR_SHOP_EMAIL@example.com with the shop email before sending.');
+      return;
+    }
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    const label = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Sending…';
+    try{
+      const r = await fetch(this.action, {method:'POST', body:new FormData(this), headers:{'Accept':'application/json'}});
+      if(r.ok){
+        this.style.display='none';
+        document.getElementById('ok').style.display='block';
+      } else { this.submit(); }
+    } catch(_){ this.submit(); }
+    finally { btn.disabled=false; btn.textContent=label; }
+  });
+
+  (function(){
+    const imgs = document.querySelectorAll('img[data-src]');
+    const hydrate = (img) => {
+      const src = img.getAttribute('data-src');
+      if(!src) return;
+      img.src = src;
+      img.removeAttribute('data-src');
+    };
+    if(!('IntersectionObserver' in window)){ imgs.forEach(hydrate); return; }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach((en)=>{
+        if(en.isIntersecting){ hydrate(en.target); io.unobserve(en.target); }
+      });
+    }, {rootMargin:'240px 0px'});
+    imgs.forEach((img)=>io.observe(img));
+  })();
+</script>
+</body>
+</html>

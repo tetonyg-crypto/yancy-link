@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="yg-static-bake" content="el-valle">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="https://el-valle-demo.vercel.app/assets/brand/el-valle-logo.png" type="image/png">
+<link rel="apple-touch-icon" href="https://el-valle-demo.vercel.app/assets/brand/el-valle-logo.png">
+<title>El Valle Mexican Restaurant — Driggs, Idaho</title>
+<meta name="description" content="Family-owned authentic Mexican food in Driggs, Idaho. Quesabirrias, tacos, pozole, burgers, breakfast. 220 N Main St. Call (208) 354-0028.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://el-valle-demo.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="El Valle Mexican Restaurant — Driggs, Idaho">
+<meta property="og:description" content="Authentic Mexican food in Driggs. Browse the menu catalog. Call (208) 354-0028.">
+<meta property="og:image" content="https://el-valle-demo.vercel.app/assets/brand/og-share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter+Tight:wght@300;400;500;600&display=swap">
+<style>
+  :root{
+    --black:#0A0908;
+    --black-2:#161412;
+    --bone:#F2EFE9;
+    --bone-2:#E8E2D2;
+    --gold:#C9922A;
+    --gold-2:#E0B04A;
+    --warm:#8B4513;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--black);color:var(--bone);font-family:'Inter Tight',system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.6}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1440px;margin:0 auto;padding:0 32px}
+  .micro{font-size:10px;letter-spacing:.28em;text-transform:uppercase;font-weight:400}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:16px 32px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:linear-gradient(180deg,rgba(10,9,8,.9) 0%,rgba(10,9,8,.5) 70%,transparent 100%);backdrop-filter:blur(6px)}
+  nav .l img{height:48px;width:auto}
+  nav .r{display:flex;gap:22px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+  nav .r a{font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500}
+  nav .r a.catalog-link{color:#fff;font-weight:700;border-bottom:2px solid var(--gold);padding-bottom:3px}
+  nav .r a.tel{color:var(--gold-2);font-weight:700;letter-spacing:.04em;font-size:13px;text-transform:none}
+  @media(max-width:760px){
+    nav{padding:12px 16px}
+    nav .l img{height:36px}
+    nav .r{gap:12px}
+    nav .r a.hide-m{display:none}
+    nav .r a.tel{font-size:12px}
+  }
+
+  .hero{position:relative;height:100vh;min-height:560px;width:100%;overflow:hidden;background:var(--black)}
+  .hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,9,8,.55) 0%,rgba(10,9,8,.25) 40%,rgba(10,9,8,.85) 100%);pointer-events:none}
+  .hero-content{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 24px 80px;text-align:center}
+  .hero-content img{width:min(280px,58vw);height:auto;filter:drop-shadow(0 12px 40px rgba(0,0,0,.7))}
+  .hero-content .tag{margin-top:28px;font-size:clamp(14px,2vw,22px);font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-2)}
+  .hero-content .sub{margin-top:14px;font-size:clamp(12px,1.3vw,16px);letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+  .hero-content .cta{margin-top:36px;display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center}
+  .btn{display:inline-block;padding:16px 28px;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;border:1px solid var(--gold);color:var(--bone);transition:.2s}
+  .btn:hover{background:var(--gold);color:var(--black)}
+  .btn.solid{background:var(--gold);color:var(--black);border-color:var(--gold)}
+  .btn.solid:hover{background:var(--gold-2)}
+
+  .ledger{padding:72px 0;border-top:1px solid var(--black-2);border-bottom:1px solid var(--black-2)}
+  .ledger .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .ledger .stat{padding:0 24px;border-left:1px solid var(--black-2)}
+  .ledger .stat:first-child{border-left:none}
+  .ledger .n{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:clamp(24px,3.5vw,42px);line-height:1;letter-spacing:-.02em}
+  .ledger .l{margin-top:14px;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+  @media(max-width:700px){.ledger .grid{grid-template-columns:1fr;gap:32px}.ledger .stat{border-left:none;padding:0}}
+
+  .about{padding:120px 32px;display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:center;max-width:1200px;margin:0 auto}
+  .about .label{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:18px}
+  .about h1{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:clamp(36px,5vw,64px);line-height:1.05;letter-spacing:-.02em;margin-bottom:24px}
+  .about h1 span{color:var(--gold)}
+  .about p{font-size:16px;line-height:1.75;opacity:.85;max-width:48ch}
+  .about .ph{aspect-ratio:4/5;overflow:hidden;background:var(--black-2)}
+  .about .ph img{width:100%;height:100%;object-fit:cover}
+  @media(max-width:800px){.about{grid-template-columns:1fr;padding:80px 20px;gap:36px}}
+
+  .menu-preview{padding:100px 0 80px;border-top:1px solid var(--black-2)}
+  .menu-preview .head{padding:0 32px 48px;max-width:900px}
+  .menu-preview .head .label{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:16px}
+  .menu-preview .head h2{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:clamp(32px,5vw,56px);line-height:1.05;letter-spacing:-.02em}
+  .menu-preview .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+  .menu-preview .card{position:relative;aspect-ratio:5/4;overflow:hidden;background:var(--black-2)}
+  .menu-preview .card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .menu-preview .card:hover img{transform:scale(1.04)}
+  .menu-preview .card .cap{position:absolute;left:0;right:0;bottom:0;padding:28px 24px;background:linear-gradient(0deg,rgba(10,9,8,.95),transparent);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-2);font-weight:600}
+  .menu-preview .more{padding:48px 32px;text-align:center}
+  @media(max-width:700px){.menu-preview .grid{grid-template-columns:1fr}}
+
+  .contact{padding:120px 32px;border-top:1px solid var(--black-2);display:grid;grid-template-columns:1.2fr 1fr;gap:64px;max-width:1200px;margin:0 auto}
+  .contact h2{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:clamp(36px,5vw,64px);line-height:1;margin-bottom:20px}
+  .contact h2 span{color:var(--gold)}
+  .contact .lede{opacity:.8;margin-bottom:32px;max-width:40ch}
+  .contact dl dt{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-top:28px;font-weight:600}
+  .contact dl dt:first-child{margin-top:0}
+  .contact dl dd{font-family:'Fraunces',Georgia,serif;font-size:clamp(20px,2.5vw,28px);margin-top:10px;font-weight:500}
+  .contact dl dd a{transition:color .2s}
+  .contact dl dd a:hover{color:var(--gold)}
+  .contact .map-note{padding:32px;border:1px solid rgba(201,146,42,.35);background:rgba(201,146,42,.06)}
+  .contact .map-note .t{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px}
+  .contact .map-note p{font-size:15px;line-height:1.6;opacity:.9}
+  @media(max-width:800px){.contact{grid-template-columns:1fr;padding:80px 20px;gap:40px}}
+
+  footer{padding:64px 32px;text-align:center;border-top:1px solid var(--black-2)}
+  footer img{height:72px;margin:0 auto 20px;opacity:.95}
+  footer .lines{font-size:13px;opacity:.7;line-height:1.8}
+  footer .legal{margin-top:28px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.4}
+  footer .demo{margin-top:16px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);opacity:.7}
+
+/* === YG MOBILE HARD RULE (do not remove) === */
+html,body{overflow-x:hidden!important;max-width:100%!important}
+img,video{max-width:100%;height:auto}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head,.hero:not(.hero-media),.page-cta .wrap,.preview .head,.about,.services,.contact,.cta-band,.strip,section.hero{
+  box-sizing:border-box;
+}
+nav,.filter,header,footer{
+  padding-left:max(16px, env(safe-area-inset-left))!important;
+  padding-right:max(16px, env(safe-area-inset-right))!important;
+}
+.hero-content,.cat-head,.wrap,.about,.services,.contact,.cta-band,.preview .head,section.hero > .eyebrow,section.hero > h1,section.hero > p,.hero .content{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  box-sizing:border-box;
+  max-width:100%;
+}
+.grid,.mosaic{width:100%;max-width:100%;box-sizing:border-box;min-width:0}
+.item,.cell,.card{min-width:0;max-width:100%}
+.item img,.cell img{width:100%;height:100%;object-fit:cover;display:block}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="l" href="/d/el-valle/" aria-label="El Valle"><img src="https://el-valle-demo.vercel.app/assets/brand/el-valle-logo.png" alt="El Valle Mexican Food"></a>
+  <div class="r">
+    <a class="hide-m" href="#about">About</a>
+    <a class="hide-m" href="#menu">Menu</a>
+    <a class="tel" href="tel:+12083540028">(208) 354-0028</a>
+    <a class="catalog-link" href="/d/el-valle/catalog/">MENU CATALOG</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="https://el-valle-demo.vercel.app/assets/images/catalog/002.jpg" alt="El Valle food">
+  <div class="hero-content">
+    <img src="https://el-valle-demo.vercel.app/assets/brand/el-valle-logo.png" alt="El Valle Mexican Food">
+    <div class="tag">Authentic Mexican</div>
+    <div class="sub">Driggs, Idaho · Family Owned</div>
+    <div class="cta">
+      <a class="btn solid" href="/d/el-valle/catalog/">Browse the menu</a>
+      <a class="btn" href="tel:+12083540028">Call to order</a>
+    </div>
+  </div>
+</header>
+
+<section class="ledger">
+  <div class="wrap">
+    <div class="grid">
+      <div class="stat"><div class="n">Family owned</div><div class="l">in Driggs</div></div>
+      <div class="stat"><div class="n">Tacos to birria</div><div class="l">and breakfast</div></div>
+      <div class="stat"><div class="n">Daily 10:30–9</div><div class="l">dine-in · takeout</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="ph"><img src="https://el-valle-demo.vercel.app/assets/images/catalog/003.jpg" alt="El Valle shrimp cocktail" loading="lazy"></div>
+  <div>
+    <div class="label">001 — Our kitchen</div>
+    <h1>Real Mexican food<br>in the <span>valley.</span></h1>
+    <p>El Valle is a family-owned Mexican restaurant on Main Street in Driggs. Quesabirrias, pozole, tacos, birria, burgers, and breakfast — cooked the way we know it, for neighbors and visitors alike.</p>
+  </div>
+</section>
+
+<section class="menu-preview" id="menu">
+  <div class="head">
+    <div class="label">002 — From the kitchen</div>
+    <h2>Browse the dishes. Pick what looks right.</h2>
+  </div>
+  <div class="grid">
+    <a class="card" href="/d/el-valle/catalog/"><img src="https://el-valle-demo.vercel.app/assets/images/catalog/005.jpg" alt="Burger" loading="lazy"><div class="cap">Burgers</div></a>
+    <a class="card" href="/d/el-valle/catalog/"><img src="https://el-valle-demo.vercel.app/assets/images/catalog/003.jpg" alt="Seafood cocktail" loading="lazy"><div class="cap">Seafood &amp; cocktails</div></a>
+    <a class="card" href="/d/el-valle/catalog/"><img src="https://el-valle-demo.vercel.app/assets/images/catalog/002.jpg" alt="Plated Mexican dish" loading="lazy"><div class="cap">Plates</div></a>
+    <a class="card" href="/d/el-valle/catalog/"><img src="https://el-valle-demo.vercel.app/assets/images/catalog/001.jpg" alt="El Valle dishes" loading="lazy"><div class="cap">See full catalog</div></a>
+  </div>
+  <div class="more"><a class="btn solid" href="/d/el-valle/catalog/">Open the full menu catalog →</a></div>
+</section>
+
+<section class="contact" id="contact">
+  <div>
+    <h2>Come eat with <span>us.</span></h2>
+    <p class="lede">Call ahead for takeout, or walk in for dine-in. We are open every day.</p>
+    <a class="btn solid" href="tel:+12083540028">Call (208) 354-0028</a>
+  </div>
+  <div>
+    <dl>
+      <dt>Address</dt>
+      <dd>220 N Main St<br>Driggs, ID 83422</dd>
+      <dt>Phone</dt>
+      <dd><a href="tel:+12083540028">(208) 354-0028</a></dd>
+      <dt>Hours</dt>
+      <dd>Sun–Sat · 10:30 am – 9:00 pm</dd>
+      <dt>Social</dt>
+      <dd style="font-size:18px;letter-spacing:.04em">
+        <a href="https://www.instagram.com/elvalle_llc/" target="_blank" rel="noopener">@elvalle_llc</a>
+      </dd>
+    </dl>
+    <div class="map-note" style="margin-top:36px">
+      <div class="t">Find us</div>
+      <p>On Main Street in downtown Driggs. Takeout and dine-in available.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="https://el-valle-demo.vercel.app/assets/brand/el-valle-logo.png" alt="El Valle">
+  <div class="lines">
+    220 N Main St · Driggs, ID 83422<br>
+    <a href="tel:+12083540028">(208) 354-0028</a>
+  </div>
+  <div class="legal">© El Valle Mexican Restaurant</div>
+</footer>
+
+</body>
+</html>

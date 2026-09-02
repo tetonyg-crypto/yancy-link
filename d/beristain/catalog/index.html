@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="yg-static-bake" content="beristain">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<link rel="icon" href="https://beristain-builders-demo.vercel.app/assets/brand/beristain-logo.jpg" type="image/jpeg">
+<title>Project Catalog — Beristain Builders</title>
+<meta name="description" content="Beristain Builders project catalog. Framing, siding, finish carpentry, and custom mountain homes in Jackson, WY.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B0D0F;--ink-2:#14181F;--bone:#F5F0E6;--mute:#A8A296;
+    --blue:#2F6FED;--blue-2:#5B9BFF;--gold:#C4A574;--gold-2:#E0C48F;
+    --line:rgba(245,240,230,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{overflow-x:hidden;max-width:100%}
+  body{background:var(--ink);color:var(--bone);font-family:'Outfit',system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.5}
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit;text-decoration:none}
+  .wrap{
+    width:min(1240px,100%);
+    margin:0 auto;
+    padding-left:max(20px, env(safe-area-inset-left));
+    padding-right:max(20px, env(safe-area-inset-right));
+  }
+
+  nav{
+    position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:12px max(20px, env(safe-area-inset-right)) 12px max(20px, env(safe-area-inset-left));
+    background:rgba(11,13,15,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)
+  }
+  nav .brand{flex:none;min-width:0}
+  nav .brand img{height:48px;width:auto;max-width:min(160px,42vw)}
+  nav .r{display:flex;gap:12px;align-items:center;flex:none}
+  nav .r a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);font-weight:500}
+  nav .r a:hover{color:var(--bone)}
+  nav .r a.cta{background:var(--blue);color:#fff;padding:10px 14px;font-weight:600;white-space:nowrap}
+  @media(max-width:640px){
+    .hide-m{display:none}
+    nav .brand img{height:40px}
+    nav .r a.cta{padding:10px 12px;font-size:10px;letter-spacing:.12em}
+  }
+
+  .hero{padding:40px 0 28px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:140px minmax(0,1fr) auto;gap:20px;align-items:center;min-width:0}
+  .hero > *{min-width:0}
+  .hero .crest{width:auto!important;height:auto!important;max-height:88px;max-width:88px;border-radius:0;background:transparent;padding:0;object-fit:contain}
+  .hero .eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(30px,8vw,52px);font-weight:600;letter-spacing:-.03em;line-height:1.05;margin-top:8px;overflow-wrap:anywhere}
+  .hero p{color:var(--mute);margin-top:12px;max-width:100%;font-size:15px;overflow-wrap:anywhere}
+  .hero .stat{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);text-align:right;justify-self:end}
+  .hero .stat strong{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(32px,9vw,48px);color:var(--bone);letter-spacing:0;text-transform:none;font-weight:600;margin-bottom:6px;line-height:1}
+  @media(max-width:800px){
+    .hero{grid-template-columns:minmax(0,1fr) auto;gap:14px 16px}
+    .hero .crest{grid-column:1 / -1;max-height:72px;max-width:72px}
+    .hero .stat{text-align:right;align-self:start;padding-top:4px}
+  }
+  @media(max-width:420px){
+    .hero{grid-template-columns:1fr}
+    .hero .stat{text-align:left}
+  }
+
+  .filters{position:sticky;top:61px;z-index:30;background:rgba(11,13,15,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 0}
+  .filters .row{display:flex;gap:8px;flex-wrap:wrap}
+  .filters button{border:1px solid var(--line);background:transparent;color:var(--bone);padding:9px 12px;font:inherit;font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.15s}
+  .filters button.on,.filters button:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+  .catalog{padding:24px 0 80px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;width:100%;max-width:100%}
+  .item{position:relative;overflow:hidden;background:var(--ink-2);aspect-ratio:4/5;border:1px solid var(--line);cursor:pointer;width:100%;max-width:100%;padding:0;appearance:none;-webkit-appearance:none;border-radius:0;color:inherit;text-align:left}
+  .item img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
+  .item:hover img{transform:scale(1.03)}
+  .item .meta{position:absolute;left:0;right:0;bottom:0;padding:18px 16px 14px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.82));color:#fff}
+  .item .meta .cat{font-size:10px;letter-spacing:.24em;text-transform:uppercase;opacity:.75;color:var(--gold-2)}
+  .item .meta .title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(18px,5vw,22px);font-weight:600;margin-top:4px;overflow-wrap:anywhere}
+  .item[hidden]{display:none}
+  @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr;gap:12px}}
+
+  .lb{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:80;display:none;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));box-sizing:border-box}
+  .lb.show{display:flex}
+  .lb img{display:block;max-width:min(980px,calc(100vw - 32px));max-height:min(78vh,calc(100dvh - 120px));width:auto;height:auto;margin:auto;object-fit:contain;position:relative;z-index:1}
+  .lb .panel{position:absolute;left:max(16px, env(safe-area-inset-left));bottom:max(16px, env(safe-area-inset-bottom));right:max(16px, env(safe-area-inset-right));color:#fff;max-width:min(420px,100%)}
+  .lb .panel .cat{font-size:10px;letter-spacing:.28em;text-transform:uppercase;opacity:.65;color:var(--gold-2)}
+  .lb .panel h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(24px,7vw,32px);font-weight:600;margin-top:6px;overflow-wrap:anywhere}
+  .lb .close{position:absolute;top:max(12px, env(safe-area-inset-top));right:max(16px, env(safe-area-inset-right));color:#fff;font-size:28px;background:none;border:0;cursor:pointer}
+  .lb .book{display:inline-block;margin-top:16px;background:var(--blue);color:#fff;padding:12px 16px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+  .lb .navb{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);border:0;color:#fff;font-size:28px;width:44px;height:44px;cursor:pointer;border-radius:50%}
+  .lb .prev{left:max(8px, env(safe-area-inset-left))}.lb .next{right:max(8px, env(safe-area-inset-right))}
+
+  footer{padding:28px max(20px, env(safe-area-inset-right)) 28px max(20px, env(safe-area-inset-left));border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--mute)}
+  footer a{color:var(--gold-2)}
+
+/* === YG MOBILE HARD RULE (do not remove) === */
+html,body{overflow-x:hidden!important;max-width:100%!important}
+img,video{max-width:100%;height:auto}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head,.hero:not(.hero-media),.page-cta .wrap,.preview .head,.about,.services,.contact,.cta-band,.strip,section.hero{
+  box-sizing:border-box;
+}
+nav,.filter,header,footer{
+  padding-left:max(16px, env(safe-area-inset-left))!important;
+  padding-right:max(16px, env(safe-area-inset-right))!important;
+}
+.hero-content,.cat-head,.wrap,.about,.services,.contact,.cta-band,.preview .head,section.hero > .eyebrow,section.hero > h1,section.hero > p,.hero .content{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  box-sizing:border-box;
+  max-width:100%;
+}
+.grid,.mosaic{width:100%;max-width:100%;box-sizing:border-box;min-width:0}
+.item,.cell,.card{min-width:0;max-width:100%}
+.item img,.cell img{width:100%;height:100%;object-fit:cover;display:block}
+
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="/d/beristain/"><img src="https://beristain-builders-demo.vercel.app/assets/brand/beristain-logo.png?v=3" alt="Beristain Builders" width="480" height="480"></a>
+  <div class="r">
+    <a class="hide-m" href="/d/beristain/">Home</a>
+    <a class="hide-m" href="/d/beristain/#services">Services</a>
+    <a class="cta" href="tel:+13072848044">Call Juan</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <img class="crest" src="https://beristain-builders-demo.vercel.app/assets/brand/beristain-logo.png?v=3" alt="Beristain Builders" width="480" height="480" decoding="async">
+  <div>
+    <div class="eyebrow">Project catalog</div>
+    <h1>Beristain Builders</h1>
+    <p>Framing, siding, finish carpentry, and custom mountain builds in Jackson, Wyoming.</p>
+  </div>
+  <div class="stat"><strong>8</strong>project photos</div>
+</header>
+
+<div class="filters">
+  <div class="wrap">
+    <div class="row" id="filters">
+      <button class="on" data-filter="all">All work</button>
+      <button data-filter="framing">Framing</button>
+      <button data-filter="siding">Siding</button>
+      <button data-filter="finish">Finish</button>
+      <button data-filter="custom">Custom homes</button>
+      <button data-filter="exterior">Exterior</button>
+    </div>
+  </div>
+</div>
+
+<main class="catalog wrap">
+  <div class="grid" id="grid">
+    <button class="item" type="button" data-cat="siding custom" data-full="https://beristain-builders-demo.vercel.app/assets/images/catalog/01.jpg" data-title="Vertical wood siding" data-label="Siding · Custom homes">
+      <img src="https://beristain-builders-demo.vercel.app/assets/images/catalog/01.jpg" alt="Vertical wood siding" loading="lazy">
+      <div class="meta"><div class="cat">Siding</div><div class="title">Vertical wood siding</div></div>
+    </button>
+    <button class="item" type="button" data-cat="siding finish" data-full="https://beristain-builders-demo.vercel.app/assets/images/catalog/02.jpg" data-title="Weathered plank siding" data-label="Siding · Finish">
+      <img src="https://beristain-builders-demo.vercel.app/assets/images/catalog/02.jpg" alt="Weathered plank siding" loading="lazy">
+      <div class="meta"><div class="cat">Siding</div><div class="title">Weathered plank siding</div></div>
+    </button>
+    <button class="item" type="button" data-cat="framing custom exterior" data-full="https://beristain-builders-demo.vercel.app/assets/images/catalog/03.jpg" data-title="Structure under wrap" data-label="Framing · Custom homes">
+      <img src="https://beristain-builders-demo.vercel.app/assets/images/catalog/03.jpg" alt="House frame and wrap" loading="lazy">
+      <div class="meta"><div class="cat">Framing</div><div class="title">Structure under wrap</div></div>
+    </button>
+    <button class="item" type="button" data-cat="siding exterior" data-full="https://beristain-builders-demo.vercel.app/assets/images/catalog/04.jpg" data-title="Siding with mountain view" data-label="Siding · Exterior">
+      <img src="https://beristain-builders-demo.vercel.app/assets/images/catalog/04.jpg" alt="Siding with mountains" loading="lazy">
+      <div class="meta"><div class="cat">Siding</div><div class="title">Siding with mountain view</div></div>
+    </button>
+    <button class="item" type="button" data-cat="exterior" data-full="https://beristain-builders-demo.vercel.app/assets/images/catalog/05.jpg" data-title="Crew on the exterior" data-label="Exterior">
+      <img src="https://beristain-builders-demo.vercel.app/assets/images/catalog/05.jpg" alt="Crew on exterior" loading="lazy">
+      <div class="meta"><div class="cat">Exterior</div><div class="title">Crew on the exterior</div></div>
+    </button>
+    <button class="item" type="button" data-cat="framing exterior" data-full="https://beristain-builders-demo.vercel.app/assets/images/catalog/06.jpg" data-title="Roof framing &amp; underlayment" data-label="Framing">
+      <img src="https://beristain-builders-demo.vercel.app/assets/images/catalog/06.jpg" alt="Roof framing" loading="lazy">
+      <div class="meta"><div class="cat">Framing</div><div class="title">Roof framing &amp; underlayment</div></div>
+    </button>
+    <button class="item" type="button" data-cat="framing finish" data-full="https://beristain-builders-demo.vercel.app/assets/images/catalog/07.jpg" data-title="Openings &amp; eaves" data-label="Framing · Finish">
+      <img src="https://beristain-builders-demo.vercel.app/assets/images/catalog/07.jpg" alt="Window openings and eaves" loading="lazy">
+      <div class="meta"><div class="cat">Finish</div><div class="title">Openings &amp; eaves</div></div>
+    </button>
+    <button class="item" type="button" data-cat="custom" data-full="https://beristain-builders-demo.vercel.app/assets/images/catalog/08.jpg" data-title="Quality craftsmanship" data-label="Custom homes · Jackson, WY">
+      <img src="https://beristain-builders-demo.vercel.app/assets/images/catalog/08.jpg" alt="Beristain Builders craftsmanship" loading="lazy">
+      <div class="meta"><div class="cat">Custom homes</div><div class="title">Quality craftsmanship</div></div>
+    </button>
+  </div>
+</main>
+
+<footer>
+  <div>Beristain Builders · Jackson, WY</div>
+  <div><a href="tel:+13072848044">(307) 284-8044</a> · <a href="mailto:beristainbuilders@gmail.com">beristainbuilders@gmail.com</a></div>
+</footer>
+
+<div class="lb" id="lb" aria-hidden="true">
+  <button class="close" type="button" aria-label="Close">×</button>
+  <button class="navb prev" type="button" aria-label="Previous">‹</button>
+  <button class="navb next" type="button" aria-label="Next">›</button>
+  <img id="lb-img" src="" alt="">
+  <div class="panel">
+    <div class="cat" id="lb-cat"></div>
+    <h3 id="lb-title"></h3>
+    <a class="book" href="tel:+13072848044">Call (307) 284-8044</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  const items=[...document.querySelectorAll('.item')];
+  const filters=document.getElementById('filters');
+  filters.addEventListener('click',e=>{
+    const btn=e.target.closest('button[data-filter]');
+    if(!btn) return;
+    filters.querySelectorAll('button').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    const f=btn.dataset.filter;
+    items.forEach(it=>{
+      const cats=(it.dataset.cat||'').split(/\s+/);
+      it.hidden=!(f==='all'||cats.includes(f));
+    });
+  });
+
+  const lb=document.getElementById('lb');
+  const img=document.getElementById('lb-img');
+  const title=document.getElementById('lb-title');
+  const cat=document.getElementById('lb-cat');
+  let idx=0;
+  const visible=()=>items.filter(i=>!i.hidden);
+
+  function openAt(i){
+    const list=visible();
+    if(!list.length) return;
+    idx=(i+list.length)%list.length;
+    const el=list[idx];
+    const full=el.dataset.full||'';
+    const thumb=el.querySelector('img');
+    img.src=(full.startsWith('http')||full.startsWith('//'))?full:(thumb&&(thumb.currentSrc||thumb.src))||full;
+    title.textContent=el.dataset.title;
+    cat.textContent=el.dataset.label;
+    lb.classList.add('show');
+    lb.setAttribute('aria-hidden','false');
+  }
+  function close(){lb.classList.remove('show');lb.setAttribute('aria-hidden','true');}
+
+  items.forEach((el,i)=>el.addEventListener('click',()=>{
+    const list=visible();
+    openAt(list.indexOf(el));
+  }));
+  lb.querySelector('.close').addEventListener('click',close);
+  lb.querySelector('.prev').addEventListener('click',()=>openAt(idx-1));
+  lb.querySelector('.next').addEventListener('click',()=>openAt(idx+1));
+  lb.addEventListener('click',e=>{if(e.target===lb) close();});
+  addEventListener('keydown',e=>{
+    if(!lb.classList.contains('show')) return;
+    if(e.key==='Escape') close();
+    if(e.key==='ArrowLeft') openAt(idx-1);
+    if(e.key==='ArrowRight') openAt(idx+1);
+  });
+})();
+</script>
+</body>
+</html>

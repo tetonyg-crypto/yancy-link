@@ -1,0 +1,23 @@
+/* Integris-premium design tokens — contractor demo factory */
+:root {
+  --ink: #0a0a0a;
+  --ink-soft: #1a1a1a;
+  --ink-muted: #4a4a4a;
+  --line: #e6e4df;
+  --line-strong: #d0cdc6;
+  --cream: #f7f5f0;
+  --cream-deep: #efece5;
+  --white: #ffffff;
+  --bone: #faf9f6;
+  --shadow: 0 12px 40px rgba(10, 10, 10, 0.08);
+  --radius: 2px;
+  --nav-h: 72px;
+  --max: 1160px;
+  --font-serif: "Fraunces", "Instrument Serif", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+}

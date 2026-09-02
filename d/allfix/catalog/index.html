@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="yg-static-bake" content="allfix">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="https://all-fix-home-repair-demo.vercel.app/assets/brand/allfix-mark-v8.png" type="image/png">
+<title>All Fix Home Repair — Project Catalog</title>
+<meta name="description" content="Project catalog for All Fix Home Repair: general repairs, drywall & paint, doors & windows, flooring, bath & kitchen, exterior/fencing, remodels.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0A0A0A;--ink-2:#141414;--gold:#E8821A;--gold-2:#F0A04A;--white:#fff;--mute:#A0A0A0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--ink);color:var(--white);font-family:'Inter Tight',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55;min-height:100vh}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--gold-2)}
+button{cursor:pointer;font-family:inherit}
+.banner{background:var(--gold);color:#0A0A0A;text-align:center;padding:11px 16px;font-size:12px;font-weight:800;letter-spacing:.04em}
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 22px;background:rgba(10,10,10,.96);backdrop-filter:blur(12px);border-bottom:1px solid #222}
+nav .brand{display:flex;align-items:center;gap:10px}
+nav .brand img{height:40px;width:40px;object-fit:contain;border-radius:0;background:transparent}
+nav .brand .word{font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.1em;font-size:16px}
+nav .r{display:flex;gap:16px;align-items:center}
+nav .r a{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+nav .r .tel{color:var(--gold-2);font-size:14px;letter-spacing:.02em;text-transform:none;font-weight:700}
+.hero{position:relative;height:58vh;min-height:360px;overflow:hidden;background:var(--ink)}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.5),rgba(10,10,10,.2) 40%,rgba(10,10,10,.96));z-index:1}
+.hero-content{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 48px}
+.hero-content .micro{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:18px}
+.hero-content img.mark{width:min(280px,70vw);height:auto;filter:drop-shadow(0 12px 36px rgba(0,0,0,.75));border-radius:14px}
+.hero-content .tag{margin-top:22px;font-size:clamp(15px,2vw,22px);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#fff}
+.hero-content .sub{margin-top:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.8;color:#fff}
+.filter{position:sticky;top:68px;z-index:40;background:rgba(10,10,10,.96);backdrop-filter:blur(12px);border-bottom:1px solid #222;padding:12px 14px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.filter button{background:transparent;border:1px solid #333;color:#ccc;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:9px 12px;transition:.2s}
+.filter button:hover,.filter button.on{border-color:var(--gold);background:var(--gold);color:#0A0A0A}
+.cat{padding:56px 0 32px;border-top:1px solid #1c1c1c}
+.cat.hide{display:none}
+.cat-head{padding:0 24px 24px}
+.cat-head .num{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px}
+.cat-head h2{font-family:'Oswald',sans-serif;font-size:clamp(24px,3.8vw,36px);letter-spacing:.03em}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.item{position:relative;aspect-ratio:5/4;overflow:hidden;background:#111;border-right:1px solid #0a0a0a;border-bottom:1px solid #0a0a0a}
+.item img{width:100%;height:100%;object-fit:cover;transition:transform .45s}
+.item:hover img{transform:scale(1.04)}
+.item .meta{position:absolute;left:0;right:0;bottom:0;padding:16px;background:linear-gradient(0deg,rgba(0,0,0,.92),transparent)}
+.item .meta .ti{font-family:'Oswald',sans-serif;font-size:17px;letter-spacing:.03em;margin-bottom:4px}
+.item .meta .lc{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#bbb;font-weight:600}
+.item .badge{position:absolute;top:10px;left:10px;z-index:3;font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;padding:6px 9px;background:rgba(0,0,0,.82);border:1px solid var(--gold);color:var(--gold-2)}
+.item .badge.stock{border-color:#555;color:#ddd}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+footer{padding:44px 20px;text-align:center;border-top:1px solid #222}
+footer img{height:120px;width:auto;margin:0 auto 12px;border-radius:12px}
+footer .lines{font-size:13px;color:var(--mute);line-height:1.8}
+footer .demo{margin-top:12px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+
+/* === YG MOBILE HARD RULE (do not remove) === */
+html,body{overflow-x:hidden!important;max-width:100%!important}
+img,video{max-width:100%;height:auto}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head,.hero:not(.hero-media),.page-cta .wrap,.preview .head,.about,.services,.contact,.cta-band,.strip,section.hero{
+  box-sizing:border-box;
+}
+nav,.filter,header,footer{
+  padding-left:max(16px, env(safe-area-inset-left))!important;
+  padding-right:max(16px, env(safe-area-inset-right))!important;
+}
+.hero-content,.cat-head,.wrap,.about,.services,.contact,.cta-band,.preview .head,section.hero > .eyebrow,section.hero > h1,section.hero > p,.hero .content{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  box-sizing:border-box;
+  max-width:100%;
+}
+.grid,.mosaic{width:100%;max-width:100%;box-sizing:border-box;min-width:0}
+.item,.cell,.card{min-width:0;max-width:100%}
+.item img,.cell img{width:100%;height:100%;object-fit:cover;display:block}
+
+
+/* === YG LIGHTBOX HARD RULE (do not remove) === */
+.item{cursor:pointer}
+.yg-lb{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:9999;display:none;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));box-sizing:border-box}
+.yg-lb.show{display:flex}
+.yg-lb img{display:block;max-width:min(980px,calc(100vw - 32px));max-height:min(78vh,calc(100dvh - 120px));width:auto;height:auto;margin:auto;object-fit:contain;position:relative;z-index:1}
+.yg-lb .yg-panel{position:absolute;left:max(16px,env(safe-area-inset-left));bottom:max(16px,env(safe-area-inset-bottom));right:max(16px,env(safe-area-inset-right));color:#fff;max-width:min(480px,100%);z-index:2;font:600 14px/1.35 system-ui,sans-serif}
+.yg-lb .yg-close{position:absolute;top:max(10px,env(safe-area-inset-top));right:max(14px,env(safe-area-inset-right));color:#fff;font-size:30px;background:none;border:0;cursor:pointer;z-index:2;line-height:1}
+.yg-lb .yg-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:0;color:#fff;font-size:28px;width:44px;height:44px;cursor:pointer;border-radius:50%;z-index:2}
+.yg-lb .yg-prev{left:max(8px,env(safe-area-inset-left))}
+.yg-lb .yg-next{right:max(8px,env(safe-area-inset-right))}
+
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="/d/allfix/">
+    <img src="https://all-fix-home-repair-demo.vercel.app/assets/brand/allfix-mark-v8.png" alt="All Fix Home Repair">
+    <div class="word">ALL FIX</div>
+  </a>
+  <div class="r">
+    <a href="/d/allfix/">Home</a>
+    <a class="tel" href="tel:+12064597422">(206) 459-7422</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/real-05.jpg" alt="Deck finish work">
+  <div class="hero-content">
+    <div class="micro">Project catalog</div>
+    <img class="mark" src="https://all-fix-home-repair-demo.vercel.app/assets/brand/allfix-logo-card-v8.png" alt="All Fix Home Repair">
+    <div class="tag">Project photos</div>
+    <div class="sub">Seattle, WA · Licensed · Bonded · Insured</div>
+  </div>
+</header>
+
+<div class="filter" id="filters">
+  <button class="on" data-filter="all">All</button>
+  <button data-filter="repairs">General repairs</button>
+  <button data-filter="paint">Drywall &amp; paint</button>
+  <button data-filter="doors">Doors &amp; windows</button>
+  <button data-filter="flooring">Flooring</button>
+  <button data-filter="bathkit">Bath &amp; kitchen</button>
+  <button data-filter="exterior">Exterior / fencing</button>
+  <button data-filter="remodels">Remodels</button>
+</div>
+
+<section class="cat" data-section="repairs">
+  <div class="cat-head"><div class="num">General repairs</div><h2>General repairs</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/thumbs/real-09.jpg" alt="Interior carpentry" loading="lazy"><div class="meta"><div class="ti">Interior carpentry / built-ins</div></div></div>
+</div></div>
+    <div class="item"><img src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/thumbs/stock-01.jpg" alt="Tools" loading="lazy"><div class="meta"><div class="ti">Repair tools</div></div></div>
+    <div class="item"><img src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/thumbs/stock-06.jpg" alt="Handyman" loading="lazy"><div class="meta"><div class="ti">On-site repair</div></div></div>
+  </div>
+</section>
+
+<section class="cat" data-section="paint">
+  <div class="cat-head"><div class="num">Drywall &amp; paint</div><h2>Drywall &amp; paint</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/thumbs/real-06.jpg" alt="Deck staining" loading="lazy"><div class="meta"><div class="ti">Exterior stain / paint</div></div></div>
+    <div class="item"><img src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/thumbs/stock-02.jpg" alt="Painting" loading="lazy"><div class="meta"><div class="ti">Interior painting</div></div></div>
+    <div class="item"><img src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/thumbs/stock-03.jpg" alt="Drywall" loading="lazy"><div class="meta"><div class="ti">Drywall finish</div></div></div>
+    <div class="item"><img src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/thumbs/stock-05.jpg" alt="Paint work" loading="lazy"><div class="meta"><div class="ti">Paint detail</div></div></div>
+  </div>
+</section>
+
+<section class="cat" data-section="doors">
+  <div class="cat-head"><div class="num">Doors &amp; windows</div><h2>Doors &amp; windows</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/thumbs/real-07.jpg" alt="Windows and siding" loading="lazy"><div class="meta"><div class="ti">Window &amp; siding detail</div></div></div>
+</div></div>
+  </div>
+</section>
+
+<section class="cat" data-section="flooring">
+  <div class="cat-head"><div class="num">Flooring</div><h2>Flooring</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/thumbs/real-03.jpg" alt="Kitchen flooring" loading="lazy"><div class="meta"><div class="ti">Kitchen plank flooring</div></div></div>
+</div></div>
+  </div>
+</section>
+
+<section class="cat" data-section="bathkit">
+  <div class="cat-head"><div class="num">Bath &amp; kitchen</div><h2>Bath &amp; kitchen</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/thumbs/real-01.jpg" alt="Shower tile" loading="lazy"><div class="meta"><div class="ti">Walk-in shower tile</div></div></div>
+    <div class="item"><img src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/thumbs/real-02.jpg" alt="Vanity" loading="lazy"><div class="meta"><div class="ti">Bath vanity &amp; faucet</div></div></div>
+</div></div>
+    <div class="item"><img src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/thumbs/stock-07.jpg" alt="Kitchen" loading="lazy"><div class="meta"><div class="ti">Kitchen example</div></div></div>
+  </div>
+</section>
+
+<section class="cat" data-section="exterior">
+  <div class="cat-head"><div class="num">Exterior / fencing</div><h2>Exterior / fencing</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/thumbs/real-04.jpg" alt="New deck" loading="lazy"><div class="meta"><div class="ti">New deck build</div></div></div>
+    <div class="item"><img src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/thumbs/real-05.jpg" alt="Painted deck" loading="lazy"><div class="meta"><div class="ti">Multi-level deck finish</div></div></div>
+</div></div>
+    <div class="item"><img src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/thumbs/real-10.jpg" alt="Deck framing" loading="lazy"><div class="meta"><div class="ti">Deck structure</div></div></div>
+    <div class="item"><img src="https://all-fix-home-repair-demo.vercel.app/assets/images/catalog/thumbs/stock-04.jpg" alt="Fence" loading="lazy"><div class="meta"><div class="ti">Fence / outdoor</div></div></div>
+  </div>
+</section>
+
+<section class="cat hide" data-section="remodels">
+  <div class="cat-head"><div class="num">Remodels</div><h2>Remodels</h2></div>
+  <div class="grid">
+</div></div>
+</div></div>
+</div></div>
+</div></div>
+  </div>
+</section>
+
+<footer>
+  <img src="https://all-fix-home-repair-demo.vercel.app/assets/brand/allfix-logo-card-v8.png" alt="All Fix Home Repair">
+  <div class="lines">
+    Joshua · (206) 459-7422<br>
+    allfixhr@gmail.com · Seattle, WA<br>
+    Licensed · Bonded · Insured
+  </div>
+</footer>
+<script>
+(()=>{
+  const filters=document.getElementById('filters');
+  const sections=[...document.querySelectorAll('.cat')];
+  if(!filters) return;
+  filters.addEventListener('click',e=>{
+    const btn=e.target.closest('button[data-filter]');
+    if(!btn) return;
+    filters.querySelectorAll('button').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    const f=btn.dataset.filter;
+    sections.forEach(s=>{
+      if(f==='all'||s.dataset.section===f) s.classList.remove('hide');
+      else s.classList.add('hide');
+    });
+  });
+})();
+</script>
+
+<div class="yg-lb" id="ygLb" aria-hidden="true">
+  <button class="yg-close" type="button" aria-label="Close">×</button>
+  <button class="yg-nav yg-prev" type="button" aria-label="Previous">‹</button>
+  <img alt="">
+  <button class="yg-nav yg-next" type="button" aria-label="Next">›</button>
+  <div class="yg-panel"></div>
+</div>
+
+
+<script>
+(function(){
+  if(window.__ygLbInit) return; window.__ygLbInit=true;
+  var cards=[].slice.call(document.querySelectorAll('.item')).filter(function(c){return c.querySelector('img');});
+  if(!cards.length) return;
+  var lb=document.getElementById('ygLb');
+  if(!lb){
+    lb=document.createElement('div');
+    lb.className='yg-lb'; lb.id='ygLb'; lb.setAttribute('aria-hidden','true');
+    lb.innerHTML='<button class="yg-close" type="button" aria-label="Close">×</button><button class="yg-nav yg-prev" type="button" aria-label="Previous">‹</button><img alt=""><button class="yg-nav yg-next" type="button" aria-label="Next">›</button><div class="yg-panel"></div>';
+    document.body.appendChild(lb);
+  }
+  var img=lb.querySelector('img');
+  var panel=lb.querySelector('.yg-panel');
+  var idx=0;
+  function srcOf(card){
+    var full=card.getAttribute('data-full')||card.getAttribute('data-img')||card.getAttribute('data-src')||'';
+    var thumb=card.querySelector('img');
+    if(full && (full.indexOf('http')===0 || full.indexOf('//')===0)) return full;
+    if(thumb){
+      var ds=thumb.getAttribute('data-src');
+      if(ds && (ds.indexOf('http')===0 || ds.indexOf('//')===0)) return ds;
+      return thumb.currentSrc||thumb.src||full;
+    }
+    return full;
+  }
+  function titleOf(card){
+    var t=card.getAttribute('data-title');
+    if(t) return t;
+    var el=card.querySelector('.ti,.title,.meta .ti,h3');
+    if(el) return (el.textContent||'').trim();
+    var im=card.querySelector('img');
+    return (im && im.alt)||'';
+  }
+  function openAt(i){
+    idx=(i+cards.length)%cards.length;
+    var card=cards[idx];
+    img.src=srcOf(card);
+    panel.textContent=titleOf(card);
+    lb.classList.add('show');
+    lb.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function close(){
+    lb.classList.remove('show');
+    lb.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+  cards.forEach(function(card,i){
+    card.style.cursor='pointer';
+    card.addEventListener('click',function(e){
+      if(e.target.closest && e.target.closest('a.cta,.cta')) return;
+      e.preventDefault();
+      openAt(i);
+    });
+  });
+  lb.querySelector('.yg-close').addEventListener('click',close);
+  lb.querySelector('.yg-prev').addEventListener('click',function(){openAt(idx-1)});
+  lb.querySelector('.yg-next').addEventListener('click',function(){openAt(idx+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb) close()});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('show')) return;
+    if(e.key==='Escape') close();
+    if(e.key==='ArrowLeft') openAt(idx-1);
+    if(e.key==='ArrowRight') openAt(idx+1);
+  });
+})();
+</script>
+
+</body>
+</html>

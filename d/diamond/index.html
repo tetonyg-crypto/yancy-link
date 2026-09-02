@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="yg-static-bake" content="diamond">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="https://diamond-masonry-demo.vercel.app/assets/brand/diamond-masonry-logo.svg" type="image/svg+xml">
+<title>Diamond Masonry — Stone, Brick, Stucco</title>
+<meta name="description" content="Diamond Masonry. Stone veneer, brick, stucco, fireplaces, and hardscape. View the work catalog.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap">
+<style>
+  :root{--black:#0A0A0A;--black-2:#141414;--white:#FAFAFA;--muted:#8A8A8A;--line:rgba(255,255,255,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--black);color:var(--white);font-family:Inter,system-ui,sans-serif;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  nav{position:fixed;top:37px;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:rgba(10,10,10,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .l img{height:44px;width:auto}
+  nav .r{display:flex;gap:22px;align-items:center}
+  nav .r a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+  nav .r a:hover,nav .r a.cat{color:#fff}
+  nav .r .tel{color:#fff;font-weight:700;letter-spacing:.04em;text-transform:none;font-size:14px}
+  @media(max-width:700px){nav{top:40px;padding:10px 14px}nav .l img{height:34px}nav .r a.hide{display:none}}
+  .hero{position:relative;min-height:100vh;display:grid;place-items:center;overflow:hidden;background:#000;padding-top:90px}
+  .hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38;filter:grayscale(.15)}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.25) 40%,rgba(0,0,0,.92))}
+  .hero-inner{position:relative;z-index:2;text-align:center;padding:80px 24px}
+  .hero-inner .micro{font-size:11px;letter-spacing:.32em;text-transform:uppercase;margin-bottom:28px;font-weight:700}
+  .hero-inner img.logo{width:min(520px,88vw);margin:0 auto;filter:drop-shadow(0 12px 40px rgba(0,0,0,.7))}
+  .hero-inner .tag{margin-top:28px;font-size:clamp(14px,2vw,18px);letter-spacing:.28em;text-transform:uppercase;font-weight:600}
+  .hero-inner .sub{margin-top:12px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .cta{margin-top:36px;display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  .btn{display:inline-block;padding:14px 26px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;border:1px solid #fff;color:#fff;transition:.2s}
+  .btn.solid{background:#fff;color:#111}
+  .btn.solid:hover{background:transparent;color:#fff}
+  .btn:hover{background:#fff;color:#111}
+  .about{padding:110px 28px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+  .about .ph{aspect-ratio:4/5;overflow:hidden;background:var(--black-2)}
+  .about .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(.2)}
+  .about .label{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;margin-bottom:14px;color:var(--muted)}
+  .about h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(36px,5vw,56px);line-height:1.05;font-weight:600;margin-bottom:20px}
+  .about p{color:rgba(250,250,250,.8);max-width:46ch;margin-bottom:14px}
+  @media(max-width:800px){.about{grid-template-columns:1fr;gap:28px;padding:80px 20px}}
+  .services{padding:40px 28px 100px;max-width:1100px;margin:0 auto}
+  .services .label{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:12px}
+  .services h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(32px,4.5vw,48px);font-weight:600;margin-bottom:36px}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .svc{border:1px solid var(--line);padding:26px 22px}
+  .svc .n{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;font-weight:700}
+  .svc h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600}
+  @media(max-width:800px){.svc-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.svc-grid{grid-template-columns:1fr}}
+  .work{padding:80px 0;border-top:1px solid var(--line)}
+  .work .head{padding:0 28px 36px;max-width:900px}
+  .work .label{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:12px}
+  .work h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(32px,4.5vw,48px);font-weight:600}
+  .work .note{margin-top:10px;font-size:13px;color:var(--muted)}
+  .work .grid{display:grid;grid-template-columns:repeat(3,1fr)}
+  .work .card{aspect-ratio:5/4;overflow:hidden;background:var(--black-2)}
+  .work .card img{width:100%;height:100%;object-fit:cover;filter:grayscale(.25)}
+  @media(max-width:700px){.work .grid{grid-template-columns:1fr 1fr}}
+  .work .more{padding:40px 28px;text-align:center}
+  .contact{padding:100px 28px;border-top:1px solid var(--line);max-width:800px;margin:0 auto}
+  .contact h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(32px,4.5vw,48px);font-weight:600;margin-bottom:14px}
+  .contact p{color:var(--muted);margin-bottom:22px}
+  .contact .phone{font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;margin-bottom:28px}
+  form{display:grid;gap:12px}
+  form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:560px){form .row{grid-template-columns:1fr}}
+  label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px;font-weight:600}
+  input,textarea{width:100%;padding:14px;border:1px solid var(--line);background:transparent;color:#fff}
+  textarea{min-height:110px;resize:vertical}
+  form .btn{width:100%;text-align:center;cursor:pointer;background:#fff;color:#111;border:none}
+  footer{padding:40px 24px;border-top:1px solid var(--line);text-align:center}
+  footer img{height:48px;margin:0 auto 12px}
+  footer .demo{margin-top:12px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+
+/* === YG MOBILE HARD RULE (do not remove) === */
+html,body{overflow-x:hidden!important;max-width:100%!important}
+img,video{max-width:100%;height:auto}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head,.hero:not(.hero-media),.page-cta .wrap,.preview .head,.about,.services,.contact,.cta-band,.strip,section.hero{
+  box-sizing:border-box;
+}
+nav,.filter,header,footer{
+  padding-left:max(16px, env(safe-area-inset-left))!important;
+  padding-right:max(16px, env(safe-area-inset-right))!important;
+}
+.hero-content,.cat-head,.wrap,.about,.services,.contact,.cta-band,.preview .head,section.hero > .eyebrow,section.hero > h1,section.hero > p,.hero .content{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  box-sizing:border-box;
+  max-width:100%;
+}
+.grid,.mosaic{width:100%;max-width:100%;box-sizing:border-box;min-width:0}
+.item,.cell,.card{min-width:0;max-width:100%}
+.item img,.cell img{width:100%;height:100%;object-fit:cover;display:block}
+
+</style>
+</head>
+<body>
+<nav>
+  <a class="l" href="/d/diamond/"><img src="https://diamond-masonry-demo.vercel.app/assets/brand/diamond-masonry-logo-white.svg" alt="Diamond Masonry"></a>
+  <div class="r">
+    <a class="hide" href="#services">Services</a>
+    <a class="cat" href="/d/diamond/catalog">Catalog</a>
+    <a class="hide" href="#contact">Contact</a>
+    <a class="tel" href="#contact">Request an estimate</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/001.jpg" alt="">
+  <div class="hero-inner">
+    <div class="micro">Masonry craft</div>
+    <img class="logo" src="https://diamond-masonry-demo.vercel.app/assets/brand/diamond-masonry-logo-white.svg" alt="Diamond Masonry">
+    <div class="tag">Stone · Brick · Stucco</div>
+    <div class="sub">Custom masonry for homes that last</div>
+    <div class="cta">
+      <a class="btn solid" href="/d/diamond/catalog">View catalog</a>
+      <a class="btn" href="#contact">Request a quote</a>
+    </div>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <div class="ph"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/002.jpg" alt="Stone veneer work"></div>
+  <div>
+    <div class="label">About</div>
+    <h1>Diamond Masonry</h1>
+    <p>Clean lines. Solid craft. Stone, brick, and stucco finished with care for residential and custom projects.</p>
+      </div>
+</section>
+
+<section class="services" id="services">
+  <div class="label">Services</div>
+  <h2>What we build</h2>
+  <div class="svc-grid">
+    <div class="svc"><div class="n">01</div><h3>Stone veneer</h3></div>
+    <div class="svc"><div class="n">02</div><h3>Brick &amp; block</h3></div>
+    <div class="svc"><div class="n">03</div><h3>Stucco</h3></div>
+    <div class="svc"><div class="n">04</div><h3>Chimneys &amp; fireplaces</h3></div>
+    <div class="svc"><div class="n">05</div><h3>Hardscape / retaining</h3></div>
+    <div class="svc"><div class="n">06</div><h3>Custom stonework</h3></div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="head">
+    <div class="label">Selected work</div>
+    <h2>A look at the craft</h2>
+  </div>
+  <div class="grid">
+    <div class="card"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/001.jpg" alt="Stone veneer" loading="lazy"></div>
+    <div class="card"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/004.jpg" alt="Brick detail" loading="lazy"></div>
+    <div class="card"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/006.jpg" alt="Stucco exterior" loading="lazy"></div>
+    <div class="card"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/008.jpg" alt="Fireplace" loading="lazy"></div>
+    <div class="card"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/010.jpg" alt="Hardscape" loading="lazy"></div>
+    <div class="card"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/003.jpg" alt="Custom stone" loading="lazy"></div>
+  </div>
+  <div class="more"><a class="btn" href="/d/diamond/catalog">Open full catalog</a></div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Request a quote</h2>
+  <p>Share a few details and we will follow up with a quote.</p>
+  <form onsubmit="event.preventDefault();">
+    <div class="row">
+      <div><label>Name</label><input required placeholder="Your name"></div>
+      <div><label>Phone</label><input placeholder="Your phone"></div>
+    </div>
+    <div><label>Project notes</label><textarea placeholder="Stone, brick, stucco, fireplace, or hardscape"></textarea></div>
+    <button class="btn" type="submit">Send quote request</button>
+  </form>
+</section>
+
+<footer>
+  <img src="https://diamond-masonry-demo.vercel.app/assets/brand/diamond-masonry-logo-white.svg" alt="Diamond Masonry">
+  <div>Diamond Masonry</div>
+</footer>
+</body>
+</html>

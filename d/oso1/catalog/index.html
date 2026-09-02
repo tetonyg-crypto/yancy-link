@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="yg-static-bake" content="oso1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" type="image/png" sizes="32x32" href="https://oso1-general-contractor-demo.vercel.app/assets/brand/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://oso1-general-contractor-demo.vercel.app/assets/brand/favicon-192.png">
+<title>Work Catalog — OSO 1 General Contractor LLC</title>
+<meta name="description" content="OSO 1 work catalog. Concrete, remodel, exterior, and hauling.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#fff;--ink:#0a0a0a;--mute:#666;--line:#e8e8e8;--soft:#f7f7f7}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:'Outfit',system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.5}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1240px,100%);margin:0 auto;padding:0 24px}
+
+  nav{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .brand img{height:52px;width:auto}
+  nav .r{display:flex;gap:18px;align-items:center}
+  nav .r a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+  nav .r a.cta{background:var(--ink);color:#fff;padding:10px 14px}
+  @media(max-width:640px){.hide-m{display:none}nav .brand img{height:44px}}
+
+  .hero{padding:56px 0 36px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:160px 1fr auto;gap:28px;align-items:center}
+  .hero .crest{width:140px;height:auto}
+  .hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(34px,5vw,52px);font-weight:500;letter-spacing:-.03em;line-height:1;margin-top:8px}
+  .hero p{color:var(--mute);margin-top:12px;max-width:48ch;font-size:15px}
+  .hero .stat{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--mute);text-align:right}
+  .hero .stat strong{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:48px;color:var(--ink);letter-spacing:0;text-transform:none;font-weight:500;margin-bottom:6px}
+  @media(max-width:800px){.hero{grid-template-columns:1fr;gap:16px}.hero .crest{width:120px}.hero .stat{text-align:left}}
+
+  .filters{position:sticky;top:61px;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:14px 0}
+  .filters .row{display:flex;gap:8px;flex-wrap:wrap}
+  .filters button{border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 14px;font:inherit;font-size:11px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+  .filters button.on,.filters button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  .catalog{padding:28px 0 80px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .item{position:relative;overflow:hidden;background:var(--soft);aspect-ratio:4/5;border:1px solid var(--line);cursor:pointer}
+  .item img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
+  .item:hover img{transform:scale(1.03)}
+  .item .meta{position:absolute;left:0;right:0;bottom:0;padding:18px 16px 14px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.72));color:#fff}
+  .item .meta .cat{font-size:10px;letter-spacing:.24em;text-transform:uppercase;opacity:.75}
+  .item .meta .title{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:500;margin-top:4px}
+  .item[hidden]{display:none}
+  @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr;gap:10px}}
+
+  .lb{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:80;display:none;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));box-sizing:border-box}
+  .lb.show{display:flex}
+  .lb img{display:block;max-width:min(980px,calc(100vw - 32px));max-height:min(78vh,calc(100dvh - 120px));width:auto;height:auto;margin:auto;object-fit:contain;position:relative;z-index:1}
+  .lb .panel{position:absolute;left:24px;bottom:24px;color:#fff;max-width:420px}
+  .lb .panel .cat{font-size:10px;letter-spacing:.28em;text-transform:uppercase;opacity:.6}
+  .lb .panel h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:500;margin-top:6px}
+  .lb .close{position:absolute;top:18px;right:22px;color:#fff;font-size:28px;background:none;border:0;cursor:pointer}
+  .lb .book{display:inline-block;margin-top:16px;background:#fff;color:#0a0a0a;padding:12px 16px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+
+  footer{padding:28px 24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--mute)}
+
+/* === YG MOBILE HARD RULE (do not remove) === */
+html,body{overflow-x:hidden!important;max-width:100%!important}
+img,video{max-width:100%;height:auto}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head,.hero:not(.hero-media),.page-cta .wrap,.preview .head,.about,.services,.contact,.cta-band,.strip,section.hero{
+  box-sizing:border-box;
+}
+nav,.filter,header,footer{
+  padding-left:max(16px, env(safe-area-inset-left))!important;
+  padding-right:max(16px, env(safe-area-inset-right))!important;
+}
+.hero-content,.cat-head,.wrap,.about,.services,.contact,.cta-band,.preview .head,section.hero > .eyebrow,section.hero > h1,section.hero > p,.hero .content{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  box-sizing:border-box;
+  max-width:100%;
+}
+.grid,.mosaic{width:100%;max-width:100%;box-sizing:border-box;min-width:0}
+.item,.cell,.card{min-width:0;max-width:100%}
+.item img,.cell img{width:100%;height:100%;object-fit:cover;display:block}
+
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="/d/oso1/"><img src="https://oso1-general-contractor-demo.vercel.app/assets/brand/logo-nav.png" alt="OSO 1" width="100" height="73"></a>
+  <div class="r">
+    <a class="hide-m" href="/d/oso1/">Home</a>
+    <a class="hide-m" href="/d/oso1/#services">Services</a>
+    <a class="cta" href="tel:+15122403251">512.240.3251</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <img class="crest" src="https://oso1-general-contractor-demo.vercel.app/assets/brand/logo.png" alt="OSO 1 crest" width="140" height="79" decoding="async">
+  <div>
+    <div style="font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--mute)">Work catalog</div>
+    <h1>OSO 1 General Contractor</h1>
+    <p>Concrete, remodel, exterior, and hauling — organized from the services on Orvelin’s card.</p>
+  </div>
+  <div class="stat"><strong id="count">12</strong> plates in view</div>
+</header>
+
+<div class="filters">
+  <div class="wrap">
+    <div class="row" id="filters">
+      <button type="button" class="on" data-filter="all">All</button>
+      <button type="button" data-filter="concrete">Concrete / driveways</button>
+      <button type="button" data-filter="remodel">Remodel / interior</button>
+      <button type="button" data-filter="exterior">Exterior</button>
+      <button type="button" data-filter="hauling">Hauling / clearing</button>
+    </div>
+  </div>
+</div>
+
+<section class="catalog">
+  <div class="wrap">
+    <div class="grid" id="grid">
+      <article class="item" data-cat="concrete" data-title="Concrete pour" data-id="01">
+        <img src="https://oso1-general-contractor-demo.vercel.app/assets/images/catalog/01.jpg" alt="Concrete work" width="1400" height="933" loading="eager" decoding="async">
+        <div class="meta"><div class="cat">Concrete / driveways</div><div class="title">Concrete pour</div></div>
+      </article>
+      <article class="item" data-cat="concrete" data-title="Driveway surface" data-id="02">
+        <img src="https://oso1-general-contractor-demo.vercel.app/assets/images/catalog/02.jpg" alt="Driveway" width="1400" height="934" loading="eager" decoding="async">
+        <div class="meta"><div class="cat">Concrete / driveways</div><div class="title">Driveway surface</div></div>
+      </article>
+      <article class="item" data-cat="concrete" data-title="Jobsite concrete" data-id="03">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://oso1-general-contractor-demo.vercel.app/assets/images/catalog/03.jpg" alt="Jobsite" width="1400" height="933" loading="lazy" decoding="async">
+        <div class="meta"><div class="cat">Concrete / driveways</div><div class="title">Jobsite concrete</div></div>
+      </article>
+
+      <article class="item" data-cat="remodel" data-title="Interior remodel" data-id="04">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://oso1-general-contractor-demo.vercel.app/assets/images/catalog/04.jpg" alt="Interior remodel" width="1400" height="933" loading="lazy" decoding="async">
+        <div class="meta"><div class="cat">Remodel / interior</div><div class="title">Interior remodel</div></div>
+      </article>
+      <article class="item" data-cat="remodel" data-title="Living space finish" data-id="05">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://oso1-general-contractor-demo.vercel.app/assets/images/catalog/05.jpg" alt="Living remodel" width="1400" height="952" loading="lazy" decoding="async">
+        <div class="meta"><div class="cat">Remodel / interior</div><div class="title">Living space finish</div></div>
+      </article>
+      <article class="item" data-cat="remodel" data-title="Cabinets &amp; counters" data-id="06">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://oso1-general-contractor-demo.vercel.app/assets/images/catalog/06.jpg" alt="Kitchen remodel" width="1400" height="2100" loading="lazy" decoding="async">
+        <div class="meta"><div class="cat">Remodel / interior</div><div class="title">Cabinets &amp; counters</div></div>
+      </article>
+
+      <article class="item" data-cat="exterior" data-title="Home exterior" data-id="07">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://oso1-general-contractor-demo.vercel.app/assets/images/catalog/07.jpg" alt="Home exterior" width="1400" height="1051" loading="lazy" decoding="async">
+        <div class="meta"><div class="cat">Exterior</div><div class="title">Home exterior</div></div>
+      </article>
+      <article class="item" data-cat="exterior" data-title="Fence line" data-id="08">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://oso1-general-contractor-demo.vercel.app/assets/images/catalog/08.jpg" alt="Fence" width="1400" height="933" loading="lazy" decoding="async">
+        <div class="meta"><div class="cat">Exterior</div><div class="title">Fence line</div></div>
+      </article>
+      <article class="item" data-cat="exterior" data-title="Landscaping" data-id="09">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://oso1-general-contractor-demo.vercel.app/assets/images/catalog/09.jpg" alt="Landscaping" width="1400" height="933" loading="lazy" decoding="async">
+        <div class="meta"><div class="cat">Exterior</div><div class="title">Landscaping</div></div>
+      </article>
+
+      <article class="item" data-cat="hauling" data-title="Hauling equipment" data-id="10">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://oso1-general-contractor-demo.vercel.app/assets/images/catalog/10.jpg" alt="Hauling" width="1400" height="2099" loading="lazy" decoding="async">
+        <div class="meta"><div class="cat">Hauling / clearing</div><div class="title">Hauling equipment</div></div>
+      </article>
+      <article class="item" data-cat="hauling" data-title="Site clearing" data-id="11">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://oso1-general-contractor-demo.vercel.app/assets/images/catalog/11.jpg" alt="Site work" width="1400" height="788" loading="lazy" decoding="async">
+        <div class="meta"><div class="cat">Hauling / clearing</div><div class="title">Site clearing</div></div>
+      </article>
+      <article class="item" data-cat="remodel exterior" data-title="Paint finish" data-id="12">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://oso1-general-contractor-demo.vercel.app/assets/images/catalog/12.jpg" alt="Painting" width="1400" height="978" loading="lazy" decoding="async">
+        <div class="meta"><div class="cat">Remodel · Exterior</div><div class="title">Paint finish</div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <button class="close" type="button" aria-label="Close" id="lbClose">×</button>
+  <img id="lbImg" src="" alt="">
+  <div class="panel">
+    <div class="cat" id="lbCat">—</div>
+    <h3 id="lbTitle">—</h3>
+    <a class="book" href="tel:+15122403251">Call about this look</a>
+  </div>
+</div>
+
+<footer>
+  <div>OSO 1 General Contractor LLC · Orvelin</div>
+  <div><a href="tel:+15122403251">512.240.3251</a></div>
+</footer>
+
+<script>
+  const filters=[...document.querySelectorAll('#filters button')];
+  const items=[...document.querySelectorAll('.item')];
+  const countEl=document.getElementById('count');
+  function apply(filter){
+    let n=0;
+    items.forEach(it=>{
+      const ok=filter==='all' || it.dataset.cat.includes(filter);
+      it.hidden=!ok;
+      if(ok) n++;
+    });
+    countEl.textContent=String(n);
+  }
+  filters.forEach(btn=>btn.addEventListener('click',()=>{
+    filters.forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    apply(btn.dataset.filter);
+  }));
+
+  const lb=document.getElementById('lb');
+  const lbImg=document.getElementById('lbImg');
+  const lbTitle=document.getElementById('lbTitle');
+  const lbCat=document.getElementById('lbCat');
+  items.forEach(it=>it.addEventListener('click',()=>{
+    const img=it.querySelector('img');
+    lbImg.src=img.getAttribute('data-src')||img.getAttribute('src');
+    lbImg.alt=img.alt;
+    lbTitle.textContent=it.dataset.title;
+    lbCat.textContent=it.querySelector('.cat').textContent;
+    lb.classList.add('show');
+    document.body.style.overflow='hidden';
+  }));
+  function closeLb(){lb.classList.remove('show');document.body.style.overflow='';lbImg.src='';}
+  document.getElementById('lbClose').onclick=closeLb;
+  lb.addEventListener('click',e=>{if(e.target===lb) closeLb();});
+  addEventListener('keydown',e=>{if(e.key==='Escape') closeLb();});
+
+  (function(){
+    const imgs=[...document.querySelectorAll('img[data-src]')];
+    const go=img=>{img.src=img.dataset.src;img.removeAttribute('data-src');};
+    if(!('IntersectionObserver' in window)){imgs.forEach(go);return;}
+    const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){go(en.target);io.unobserve(en.target);}}),{rootMargin:'220px'});
+    imgs.forEach(i=>io.observe(i));
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="yg-static-bake" content="hn">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="https://hn-trucking-demo.vercel.app/assets/brand/hn-logo.png" type="image/png">
+<title>H&amp;N Trucking &amp; Excavation — Project Catalog</title>
+<meta name="description" content="Project photos from H&amp;N Trucking and Excavation in Arizona.">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter+Tight:wght@300;400;500;600&display=swap">
+<style>
+  :root{--black:#0A0908;--black-2:#161412;--bone:#F2EFE9;--bone-2:#E8E2D2;--amber:#C47A2C;--amber-2:#E0A04A}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--black);color:var(--bone);font-family:'Inter Tight',system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.6;min-height:100vh}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none;transition:color .2s}
+  a:hover{color:var(--amber-2)}
+  button{cursor:pointer;font-family:inherit}
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(10,9,8,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(196,122,44,.2)}
+  nav .l img{height:40px;width:auto}
+  nav .r{display:flex;gap:18px;align-items:center}
+  nav .r a{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+  nav .r .back{color:var(--amber);font-weight:600}
+  nav .r .tel{color:var(--amber-2);font-weight:700;letter-spacing:.04em;font-size:12px;text-transform:none}
+  .hero{position:relative;height:62vh;min-height:380px;overflow:hidden;background:var(--black)}
+  .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,9,8,.45),rgba(10,9,8,.2) 40%,rgba(10,9,8,.92));z-index:1}
+  .hero-content{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 24px 60px;text-align:center}
+  .hero-content .micro{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--amber);font-weight:700;margin-bottom:20px}
+  .hero-content img.mark{width:min(260px,58vw);height:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,.7))}
+  .hero-content .tag{margin-top:24px;font-size:clamp(15px,2vw,22px);font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#fff}
+  .hero-content .sub{margin-top:12px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+  .filter{position:sticky;top:69px;z-index:40;background:rgba(10,9,8,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--black-2);padding:16px 24px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+  .filter button{background:transparent;border:1px solid rgba(242,239,233,.18);color:var(--bone-2);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;padding:10px 16px;transition:.2s}
+  .filter button:hover{border-color:var(--amber);color:var(--amber)}
+  .filter button.on{border-color:var(--amber);background:var(--amber);color:var(--black);font-weight:700}
+  .cat{padding:80px 0 48px;border-top:1px solid var(--black-2)}
+  .cat.hide{display:none}
+  .cat-head{padding:0 32px 40px;display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap}
+  .cat-head .num{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--amber);font-weight:700}
+  .cat-head h2{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:clamp(32px,5vw,64px);line-height:1;letter-spacing:-.02em}
+  .cat-head .count{font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.5;max-width:28ch;text-align:right}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .item{position:relative;aspect-ratio:5/4;overflow:hidden;background:var(--black-2);cursor:pointer;border-right:1px solid var(--black);border-bottom:1px solid var(--black)}
+  .item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .item:hover img{transform:scale(1.04)}
+  .item .stamp{position:absolute;top:12px;left:12px;z-index:2;background:rgba(10,9,8,.8);font-size:9px;letter-spacing:.28em;text-transform:uppercase;padding:6px 10px;font-weight:600}
+  .item .stamp .num{color:var(--amber)}
+  .item .meta{position:absolute;left:0;right:0;bottom:0;padding:22px;background:linear-gradient(0deg,rgba(10,9,8,.95),transparent);transform:translateY(8px);opacity:0;transition:.3s;z-index:3}
+  .item:hover .meta{transform:translateY(0);opacity:1}
+  .item .meta .ti{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:20px;margin-bottom:6px}
+  .item .meta .lc{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--amber);font-weight:600}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}.item .meta{opacity:1;transform:none}}
+  .lightbox{position:fixed;inset:0;z-index:80;background:rgba(10,9,8,.96);display:none;align-items:center;justify-content:center;padding:40px 24px}
+  .lightbox.show{display:flex}
+  .lb-card{max-width:1100px;width:100%;display:grid;grid-template-columns:1.5fr 1fr;gap:0;max-height:88vh;background:var(--black)}
+  .lb-card .ph{position:relative;min-height:360px;background:var(--black-2);overflow:hidden}
+  .lb-card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+  .lb-card .info{padding:48px 40px;border-left:1px solid var(--black-2);display:flex;flex-direction:column;justify-content:space-between}
+  .lb-card .info .label{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--amber);font-weight:700;margin-bottom:16px}
+  .lb-card .info h3{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:clamp(28px,3.5vw,44px);line-height:1.1;margin-bottom:16px}
+  .lb-card .info p{opacity:.75;font-size:15px;line-height:1.6}
+  .lb-card .info .actions{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
+  .lb-card .info .actions a,.lb-card .info .actions button{padding:14px 22px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;border:1px solid var(--amber);background:transparent;color:var(--bone)}
+  .lb-card .info .actions a.solid{background:var(--amber);color:var(--black)}
+  @media(max-width:800px){.lb-card{grid-template-columns:1fr;max-height:92vh;overflow:auto}.lb-card .ph{min-height:280px}.lb-card .info{border-left:none;border-top:1px solid var(--black-2);padding:28px 22px}}
+  footer{padding:64px 24px;text-align:center;border-top:1px solid var(--black-2)}
+  footer img{height:56px;margin:0 auto 16px}
+  footer .lines{font-size:13px;opacity:.7;line-height:1.8}
+  footer .demo{margin-top:16px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);opacity:.65}
+
+/* === YG MOBILE HARD RULE (do not remove) === */
+html,body{overflow-x:hidden!important;max-width:100%!important}
+img,video{max-width:100%;height:auto}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head,.hero:not(.hero-media),.page-cta .wrap,.preview .head,.about,.services,.contact,.cta-band,.strip,section.hero{
+  box-sizing:border-box;
+}
+nav,.filter,header,footer{
+  padding-left:max(16px, env(safe-area-inset-left))!important;
+  padding-right:max(16px, env(safe-area-inset-right))!important;
+}
+.hero-content,.cat-head,.wrap,.about,.services,.contact,.cta-band,.preview .head,section.hero > .eyebrow,section.hero > h1,section.hero > p,.hero .content{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  box-sizing:border-box;
+  max-width:100%;
+}
+.grid,.mosaic{width:100%;max-width:100%;box-sizing:border-box;min-width:0}
+.item,.cell,.card{min-width:0;max-width:100%}
+.item img,.cell img{width:100%;height:100%;object-fit:cover;display:block}
+
+</style>
+</head>
+<body>
+<nav>
+  <a class="l" href="/d/hn/"><img src="https://hn-trucking-demo.vercel.app/assets/brand/hn-logo.png" alt="H&amp;N Trucking &amp; Excavation"></a>
+  <div class="r">
+    <a class="back" href="/d/hn/">← Website</a>
+    <a class="tel" href="tel:+12086812182">(208) 681-2182</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="https://hn-trucking-demo.vercel.app/assets/images/work/full/r01.jpg" alt="H&amp;N excavation work in Arizona">
+  <div class="hero-content">
+    <div class="micro">Project catalog</div>
+    <img class="mark" src="https://hn-trucking-demo.vercel.app/assets/brand/hn-logo.png" alt="H&amp;N Trucking &amp; Excavation">
+    <div class="tag">Excavation &amp; grading · Arizona</div>
+    <div class="sub">47 job photos</div>
+  </div>
+</header>
+
+<div class="filter" id="filter">
+  <button class="on" data-cat="all">All</button>
+  <button data-cat="excavation">Excavation</button>
+  <button data-cat="site">Site prep</button>
+  <button data-cat="concrete">Concrete prep</button>
+  <button data-cat="roads">Roads &amp; asphalt</button>
+</div>
+
+<section class="cat" data-cat="excavation">
+  <div class="cat-head">
+    <div>
+      <div class="num">01</div>
+      <h2>Excavation</h2>
+    </div>
+    <div class="count">Trenches, digs, and earthwork · 12 photos</div>
+  </div>
+  <div class="grid">
+    <div class="item" data-title="Job photo 01" data-cat-label="Excavation" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r01.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r01.jpg" alt="H&amp;N job photo 01" loading="lazy">
+      <div class="stamp"><span class="num">01</span></div>
+      <div class="meta"><div class="ti">Job photo 01</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 05" data-cat-label="Excavation" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r05.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r05.jpg" alt="H&amp;N job photo 05" loading="lazy">
+      <div class="stamp"><span class="num">05</span></div>
+      <div class="meta"><div class="ti">Job photo 05</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 09" data-cat-label="Excavation" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r09.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r09.jpg" alt="H&amp;N job photo 09" loading="lazy">
+      <div class="stamp"><span class="num">09</span></div>
+      <div class="meta"><div class="ti">Job photo 09</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 13" data-cat-label="Excavation" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r13.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r13.jpg" alt="H&amp;N job photo 13" loading="lazy">
+      <div class="stamp"><span class="num">13</span></div>
+      <div class="meta"><div class="ti">Job photo 13</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 17" data-cat-label="Excavation" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r17.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r17.jpg" alt="H&amp;N job photo 17" loading="lazy">
+      <div class="stamp"><span class="num">17</span></div>
+      <div class="meta"><div class="ti">Job photo 17</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 21" data-cat-label="Excavation" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r21.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r21.jpg" alt="H&amp;N job photo 21" loading="lazy">
+      <div class="stamp"><span class="num">21</span></div>
+      <div class="meta"><div class="ti">Job photo 21</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 25" data-cat-label="Excavation" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r25.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r25.jpg" alt="H&amp;N job photo 25" loading="lazy">
+      <div class="stamp"><span class="num">25</span></div>
+      <div class="meta"><div class="ti">Job photo 25</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 29" data-cat-label="Excavation" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r29.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r29.jpg" alt="H&amp;N job photo 29" loading="lazy">
+      <div class="stamp"><span class="num">29</span></div>
+      <div class="meta"><div class="ti">Job photo 29</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 33" data-cat-label="Excavation" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r33.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r33.jpg" alt="H&amp;N job photo 33" loading="lazy">
+      <div class="stamp"><span class="num">33</span></div>
+      <div class="meta"><div class="ti">Job photo 33</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 37" data-cat-label="Excavation" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r37.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r37.jpg" alt="H&amp;N job photo 37" loading="lazy">
+      <div class="stamp"><span class="num">37</span></div>
+      <div class="meta"><div class="ti">Job photo 37</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 41" data-cat-label="Excavation" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r41.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r41.jpg" alt="H&amp;N job photo 41" loading="lazy">
+      <div class="stamp"><span class="num">41</span></div>
+      <div class="meta"><div class="ti">Job photo 41</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 45" data-cat-label="Excavation" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r45.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r45.jpg" alt="H&amp;N job photo 45" loading="lazy">
+      <div class="stamp"><span class="num">45</span></div>
+      <div class="meta"><div class="ti">Job photo 45</div><div class="lc">Arizona</div></div>
+    </div>
+  </div>
+</section>
+<section class="cat" data-cat="site">
+  <div class="cat-head">
+    <div>
+      <div class="num">02</div>
+      <h2>Site prep</h2>
+    </div>
+    <div class="count">Pads, grading, and layout · 12 photos</div>
+  </div>
+  <div class="grid">
+    <div class="item" data-title="Job photo 02" data-cat-label="Site prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r02.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r02.jpg" alt="H&amp;N job photo 02" loading="lazy">
+      <div class="stamp"><span class="num">02</span></div>
+      <div class="meta"><div class="ti">Job photo 02</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 06" data-cat-label="Site prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r06.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r06.jpg" alt="H&amp;N job photo 06" loading="lazy">
+      <div class="stamp"><span class="num">06</span></div>
+      <div class="meta"><div class="ti">Job photo 06</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 10" data-cat-label="Site prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r10.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r10.jpg" alt="H&amp;N job photo 10" loading="lazy">
+      <div class="stamp"><span class="num">10</span></div>
+      <div class="meta"><div class="ti">Job photo 10</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 14" data-cat-label="Site prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r14.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r14.jpg" alt="H&amp;N job photo 14" loading="lazy">
+      <div class="stamp"><span class="num">14</span></div>
+      <div class="meta"><div class="ti">Job photo 14</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 18" data-cat-label="Site prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r18.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r18.jpg" alt="H&amp;N job photo 18" loading="lazy">
+      <div class="stamp"><span class="num">18</span></div>
+      <div class="meta"><div class="ti">Job photo 18</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 22" data-cat-label="Site prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r22.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r22.jpg" alt="H&amp;N job photo 22" loading="lazy">
+      <div class="stamp"><span class="num">22</span></div>
+      <div class="meta"><div class="ti">Job photo 22</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 26" data-cat-label="Site prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r26.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r26.jpg" alt="H&amp;N job photo 26" loading="lazy">
+      <div class="stamp"><span class="num">26</span></div>
+      <div class="meta"><div class="ti">Job photo 26</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 30" data-cat-label="Site prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r30.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r30.jpg" alt="H&amp;N job photo 30" loading="lazy">
+      <div class="stamp"><span class="num">30</span></div>
+      <div class="meta"><div class="ti">Job photo 30</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 34" data-cat-label="Site prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r34.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r34.jpg" alt="H&amp;N job photo 34" loading="lazy">
+      <div class="stamp"><span class="num">34</span></div>
+      <div class="meta"><div class="ti">Job photo 34</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 38" data-cat-label="Site prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r38.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r38.jpg" alt="H&amp;N job photo 38" loading="lazy">
+      <div class="stamp"><span class="num">38</span></div>
+      <div class="meta"><div class="ti">Job photo 38</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 42" data-cat-label="Site prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r42.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r42.jpg" alt="H&amp;N job photo 42" loading="lazy">
+      <div class="stamp"><span class="num">42</span></div>
+      <div class="meta"><div class="ti">Job photo 42</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 46" data-cat-label="Site prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r46.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r46.jpg" alt="H&amp;N job photo 46" loading="lazy">
+      <div class="stamp"><span class="num">46</span></div>
+      <div class="meta"><div class="ti">Job photo 46</div><div class="lc">Arizona</div></div>
+    </div>
+  </div>
+</section>
+<section class="cat" data-cat="concrete">
+  <div class="cat-head">
+    <div>
+      <div class="num">03</div>
+      <h2>Concrete prep</h2>
+    </div>
+    <div class="count">Forms, rebar, and pour prep · 12 photos</div>
+  </div>
+  <div class="grid">
+    <div class="item" data-title="Job photo 03" data-cat-label="Concrete prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r03.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r03.jpg" alt="H&amp;N job photo 03" loading="lazy">
+      <div class="stamp"><span class="num">03</span></div>
+      <div class="meta"><div class="ti">Job photo 03</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 07" data-cat-label="Concrete prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r07.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r07.jpg" alt="H&amp;N job photo 07" loading="lazy">
+      <div class="stamp"><span class="num">07</span></div>
+      <div class="meta"><div class="ti">Job photo 07</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 11" data-cat-label="Concrete prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r11.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r11.jpg" alt="H&amp;N job photo 11" loading="lazy">
+      <div class="stamp"><span class="num">11</span></div>
+      <div class="meta"><div class="ti">Job photo 11</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 15" data-cat-label="Concrete prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r15.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r15.jpg" alt="H&amp;N job photo 15" loading="lazy">
+      <div class="stamp"><span class="num">15</span></div>
+      <div class="meta"><div class="ti">Job photo 15</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 19" data-cat-label="Concrete prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r19.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r19.jpg" alt="H&amp;N job photo 19" loading="lazy">
+      <div class="stamp"><span class="num">19</span></div>
+      <div class="meta"><div class="ti">Job photo 19</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 23" data-cat-label="Concrete prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r23.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r23.jpg" alt="H&amp;N job photo 23" loading="lazy">
+      <div class="stamp"><span class="num">23</span></div>
+      <div class="meta"><div class="ti">Job photo 23</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 27" data-cat-label="Concrete prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r27.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r27.jpg" alt="H&amp;N job photo 27" loading="lazy">
+      <div class="stamp"><span class="num">27</span></div>
+      <div class="meta"><div class="ti">Job photo 27</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 31" data-cat-label="Concrete prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r31.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r31.jpg" alt="H&amp;N job photo 31" loading="lazy">
+      <div class="stamp"><span class="num">31</span></div>
+      <div class="meta"><div class="ti">Job photo 31</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 35" data-cat-label="Concrete prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r35.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r35.jpg" alt="H&amp;N job photo 35" loading="lazy">
+      <div class="stamp"><span class="num">35</span></div>
+      <div class="meta"><div class="ti">Job photo 35</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 39" data-cat-label="Concrete prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r39.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r39.jpg" alt="H&amp;N job photo 39" loading="lazy">
+      <div class="stamp"><span class="num">39</span></div>
+      <div class="meta"><div class="ti">Job photo 39</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 43" data-cat-label="Concrete prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r43.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r43.jpg" alt="H&amp;N job photo 43" loading="lazy">
+      <div class="stamp"><span class="num">43</span></div>
+      <div class="meta"><div class="ti">Job photo 43</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 47" data-cat-label="Concrete prep" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r47.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r47.jpg" alt="H&amp;N job photo 47" loading="lazy">
+      <div class="stamp"><span class="num">47</span></div>
+      <div class="meta"><div class="ti">Job photo 47</div><div class="lc">Arizona</div></div>
+    </div>
+  </div>
+</section>
+<section class="cat" data-cat="roads">
+  <div class="cat-head">
+    <div>
+      <div class="num">04</div>
+      <h2>Roads & asphalt</h2>
+    </div>
+    <div class="count">Highway, BLM, and pave work · 11 photos</div>
+  </div>
+  <div class="grid">
+    <div class="item" data-title="Job photo 04" data-cat-label="Roads & asphalt" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r04.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r04.jpg" alt="H&amp;N job photo 04" loading="lazy">
+      <div class="stamp"><span class="num">04</span></div>
+      <div class="meta"><div class="ti">Job photo 04</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 08" data-cat-label="Roads & asphalt" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r08.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r08.jpg" alt="H&amp;N job photo 08" loading="lazy">
+      <div class="stamp"><span class="num">08</span></div>
+      <div class="meta"><div class="ti">Job photo 08</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 12" data-cat-label="Roads & asphalt" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r12.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r12.jpg" alt="H&amp;N job photo 12" loading="lazy">
+      <div class="stamp"><span class="num">12</span></div>
+      <div class="meta"><div class="ti">Job photo 12</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 16" data-cat-label="Roads & asphalt" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r16.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r16.jpg" alt="H&amp;N job photo 16" loading="lazy">
+      <div class="stamp"><span class="num">16</span></div>
+      <div class="meta"><div class="ti">Job photo 16</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 20" data-cat-label="Roads & asphalt" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r20.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r20.jpg" alt="H&amp;N job photo 20" loading="lazy">
+      <div class="stamp"><span class="num">20</span></div>
+      <div class="meta"><div class="ti">Job photo 20</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 24" data-cat-label="Roads & asphalt" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r24.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r24.jpg" alt="H&amp;N job photo 24" loading="lazy">
+      <div class="stamp"><span class="num">24</span></div>
+      <div class="meta"><div class="ti">Job photo 24</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 28" data-cat-label="Roads & asphalt" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r28.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r28.jpg" alt="H&amp;N job photo 28" loading="lazy">
+      <div class="stamp"><span class="num">28</span></div>
+      <div class="meta"><div class="ti">Job photo 28</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 32" data-cat-label="Roads & asphalt" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r32.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r32.jpg" alt="H&amp;N job photo 32" loading="lazy">
+      <div class="stamp"><span class="num">32</span></div>
+      <div class="meta"><div class="ti">Job photo 32</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 36" data-cat-label="Roads & asphalt" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r36.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r36.jpg" alt="H&amp;N job photo 36" loading="lazy">
+      <div class="stamp"><span class="num">36</span></div>
+      <div class="meta"><div class="ti">Job photo 36</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 40" data-cat-label="Roads & asphalt" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r40.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r40.jpg" alt="H&amp;N job photo 40" loading="lazy">
+      <div class="stamp"><span class="num">40</span></div>
+      <div class="meta"><div class="ti">Job photo 40</div><div class="lc">Arizona</div></div>
+    </div>
+    <div class="item" data-title="Job photo 44" data-cat-label="Roads & asphalt" data-img="https://hn-trucking-demo.vercel.app/assets/images/work/full/r44.jpg">
+      <img src="https://hn-trucking-demo.vercel.app/assets/images/work/thumb/r44.jpg" alt="H&amp;N job photo 44" loading="lazy">
+      <div class="stamp"><span class="num">44</span></div>
+      <div class="meta"><div class="ti">Job photo 44</div><div class="lc">Arizona</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="https://hn-trucking-demo.vercel.app/assets/brand/hn-logo.png" alt="H&amp;N Trucking &amp; Excavation">
+  <div class="lines">
+    H&amp;N Trucking and Excavation · Arizona<br>
+    Rudy Gauna · <a href="tel:+12086812182">(208) 681-2182</a>
+  </div>
+</footer>
+
+<div class="lightbox" id="lb" onclick="if(event.target===this)closeLb()">
+  <div class="lb-card">
+    <div class="ph"><img id="lbImg" src="" alt=""></div>
+    <div class="info">
+      <div>
+        <div class="label" id="lbCat">—</div>
+        <h3 id="lbTitle">—</h3>
+        <p>Job photo from H&amp;N Trucking and Excavation. Call Rudy to discuss a similar project.</p>
+      </div>
+      <div class="actions">
+        <a class="solid" href="tel:+12086812182">Call (208) 681-2182</a>
+        <button type="button" onclick="closeLb()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const filterBtns = document.querySelectorAll('#filter button');
+  const cats = document.querySelectorAll('section.cat');
+  filterBtns.forEach(b => b.addEventListener('click', () => {
+    filterBtns.forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    const k = b.dataset.cat;
+    cats.forEach(c => {
+      if (k === 'all' || c.dataset.cat === k) c.classList.remove('hide');
+      else c.classList.add('hide');
+    });
+  }));
+  function openLb(item){
+    document.getElementById('lbImg').src = item.dataset.img;
+    document.getElementById('lbTitle').textContent = item.dataset.title;
+    document.getElementById('lbCat').textContent = item.dataset.catLabel;
+    document.getElementById('lb').classList.add('show');
+  }
+  function closeLb(){ document.getElementById('lb').classList.remove('show'); }
+  document.querySelectorAll('.item').forEach(item => {
+    item.addEventListener('click', () => openLb(item));
+  });
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeLb(); });
+</script>
+</body>
+</html>

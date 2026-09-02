@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="yg-static-bake" content="diamond">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="https://diamond-masonry-demo.vercel.app/assets/brand/diamond-masonry-logo.svg" type="image/svg+xml">
+<title>Diamond Masonry — Work Catalog</title>
+<meta name="description" content="Diamond Masonry project catalog: stone veneer, brick, stucco, fireplaces, hardscape, custom stonework.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap">
+<style>
+  :root{--black:#0A0A0A;--black-2:#141414;--white:#FAFAFA;--muted:#8A8A8A;--line:rgba(255,255,255,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--black);color:var(--white);font-family:Inter,system-ui,sans-serif;font-weight:300;line-height:1.55;min-height:100vh}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{cursor:pointer;font-family:inherit}
+  nav{position:fixed;top:37px;left:0;right:0;z-index:50;padding:12px 22px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,.96);border-bottom:1px solid var(--line)}
+  nav .l img{height:44px;width:auto}
+  nav .r{display:flex;gap:18px;align-items:center}
+  nav .r a{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+  nav .r a.home{color:#fff}
+  nav .r .tel{color:#fff;font-weight:700;text-transform:none;letter-spacing:.04em;font-size:14px}
+  .hero{position:relative;height:52vh;min-height:320px;overflow:hidden;margin-top:37px}
+  .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4;filter:grayscale(.2)}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.5),rgba(10,10,10,.95))}
+  .hero-content{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:90px 24px 40px;text-align:center}
+  .hero-content .micro{font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;margin-bottom:16px}
+  .hero-content img.mark{width:min(420px,80vw);filter:drop-shadow(0 12px 36px rgba(0,0,0,.7))}
+  .hero-content .sub{margin-top:16px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .filter{position:sticky;top:113px;z-index:40;background:rgba(10,10,10,.97);border-bottom:1px solid var(--line);padding:14px 16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+  .filter button{background:transparent;border:1px solid rgba(255,255,255,.18);color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:10px 14px}
+  .filter button.on{border-color:#fff;background:#fff;color:#111;font-weight:700}
+  .cat{padding:64px 0 36px;border-top:1px solid var(--line)}
+  .cat.hide{display:none !important}
+  .cat-head{padding:0 28px 28px}
+  .cat-head .num{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:8px}
+  .cat-head h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(28px,4.5vw,44px)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr)}
+  .item{position:relative;aspect-ratio:5/4;overflow:hidden;background:var(--black-2);border-right:1px solid #000;border-bottom:1px solid #000}
+  .item img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15)}
+  .item .meta{position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(0deg,rgba(10,10,10,.95),transparent)}
+  .item .meta .ti{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600}
+  .item .meta .lc{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px;font-weight:600}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  footer{padding:48px 24px;text-align:center;border-top:1px solid var(--line)}
+  footer img{height:56px;margin:0 auto 12px}
+  footer .demo{margin-top:12px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+
+/* === YG MOBILE HARD RULE (do not remove) === */
+html,body{overflow-x:hidden!important;max-width:100%!important}
+img,video{max-width:100%;height:auto}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head,.hero:not(.hero-media),.page-cta .wrap,.preview .head,.about,.services,.contact,.cta-band,.strip,section.hero{
+  box-sizing:border-box;
+}
+nav,.filter,header,footer{
+  padding-left:max(16px, env(safe-area-inset-left))!important;
+  padding-right:max(16px, env(safe-area-inset-right))!important;
+}
+.hero-content,.cat-head,.wrap,.about,.services,.contact,.cta-band,.preview .head,section.hero > .eyebrow,section.hero > h1,section.hero > p,.hero .content{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  box-sizing:border-box;
+  max-width:100%;
+}
+.grid,.mosaic{width:100%;max-width:100%;box-sizing:border-box;min-width:0}
+.item,.cell,.card{min-width:0;max-width:100%}
+.item img,.cell img{width:100%;height:100%;object-fit:cover;display:block}
+
+
+/* === YG LIGHTBOX HARD RULE (do not remove) === */
+.item{cursor:pointer}
+.yg-lb{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:9999;display:none;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));box-sizing:border-box}
+.yg-lb.show{display:flex}
+.yg-lb img{display:block;max-width:min(980px,calc(100vw - 32px));max-height:min(78vh,calc(100dvh - 120px));width:auto;height:auto;margin:auto;object-fit:contain;position:relative;z-index:1}
+.yg-lb .yg-panel{position:absolute;left:max(16px,env(safe-area-inset-left));bottom:max(16px,env(safe-area-inset-bottom));right:max(16px,env(safe-area-inset-right));color:#fff;max-width:min(480px,100%);z-index:2;font:600 14px/1.35 system-ui,sans-serif}
+.yg-lb .yg-close{position:absolute;top:max(10px,env(safe-area-inset-top));right:max(14px,env(safe-area-inset-right));color:#fff;font-size:30px;background:none;border:0;cursor:pointer;z-index:2;line-height:1}
+.yg-lb .yg-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:0;color:#fff;font-size:28px;width:44px;height:44px;cursor:pointer;border-radius:50%;z-index:2}
+.yg-lb .yg-prev{left:max(8px,env(safe-area-inset-left))}
+.yg-lb .yg-next{right:max(8px,env(safe-area-inset-right))}
+
+</style>
+</head>
+<body>
+<nav>
+  <a class="l" href="/d/diamond/"><img src="https://diamond-masonry-demo.vercel.app/assets/brand/diamond-masonry-logo-white.svg" alt="Diamond Masonry"></a>
+  <div class="r">
+    <a class="home" href="/d/diamond/">Home</a>
+    <a class="tel" href="/d/diamond/#contact">Request an estimate</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/004.jpg" alt="">
+  <div class="hero-content">
+    <div class="micro">Project catalog</div>
+    <img class="mark" src="https://diamond-masonry-demo.vercel.app/assets/brand/diamond-masonry-logo-white.svg" alt="Diamond Masonry">
+    <div class="sub">Stone · Brick · Stucco · Fireplaces · Hardscape</div>
+  </div>
+</header>
+
+<div class="filter" id="filters">
+  <button type="button" class="on" data-filter="all">All work</button>
+  <button type="button" data-filter="stone">Stone veneer</button>
+  <button type="button" data-filter="brick">Brick &amp; block</button>
+  <button type="button" data-filter="stucco">Stucco</button>
+  <button type="button" data-filter="fireplace">Chimneys &amp; fireplaces</button>
+  <button type="button" data-filter="hardscape">Hardscape / retaining</button>
+  <button type="button" data-filter="custom">Custom stonework</button>
+</div>
+
+<section class="cat" data-section="stone">
+  <div class="cat-head"><div class="num">3 photos</div><h2>Stone veneer</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/001.jpg" alt="Custom stone veneer facade" loading="lazy"><div class="meta"><div class="ti">Custom stone veneer facade</div></div></div>
+    <div class="item"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/002.jpg" alt="Full-face residential stone veneer" loading="lazy"><div class="meta"><div class="ti">Full-face residential stone veneer</div></div></div>
+    <div class="item"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/003.jpg" alt="Ornate ashlar stone facade" loading="lazy"><div class="meta"><div class="ti">Ornate ashlar stone facade</div></div></div>
+  </div>
+</section>
+<section class="cat" data-section="brick">
+  <div class="cat-head"><div class="num">2 photos</div><h2>Brick &amp; block</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/004.jpg" alt="Red brick wall detail" loading="lazy"><div class="meta"><div class="ti">Red brick wall detail</div></div></div>
+    <div class="item"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/005.jpg" alt="Brick texture close-up" loading="lazy"><div class="meta"><div class="ti">Brick texture close-up</div></div></div>
+  </div>
+</section>
+<section class="cat" data-section="stucco">
+  <div class="cat-head"><div class="num">2 photos</div><h2>Stucco</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/006.jpg" alt="Residential stucco exterior" loading="lazy"><div class="meta"><div class="ti">Residential stucco exterior</div></div></div>
+    <div class="item"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/007.jpg" alt="Historic stucco residence" loading="lazy"><div class="meta"><div class="ti">Historic stucco residence</div></div></div>
+  </div>
+</section>
+<section class="cat" data-section="fireplace">
+  <div class="cat-head"><div class="num">2 photos</div><h2>Chimneys &amp; fireplaces</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/008.jpg" alt="Marble fireplace surround" loading="lazy"><div class="meta"><div class="ti">Marble fireplace surround</div></div></div>
+    <div class="item"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/009.jpg" alt="Brick chimney and gable" loading="lazy"><div class="meta"><div class="ti">Brick chimney and gable</div></div></div>
+  </div>
+</section>
+<section class="cat" data-section="hardscape">
+  <div class="cat-head"><div class="num">2 photos</div><h2>Hardscape / retaining</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/010.jpg" alt="Stone retaining walls and beds" loading="lazy"><div class="meta"><div class="ti">Stone retaining walls and beds</div></div></div>
+    <div class="item"><img src="https://diamond-masonry-demo.vercel.app/assets/images/catalog/011.jpg" alt="Block retaining wall" loading="lazy"><div class="meta"><div class="ti">Block retaining wall</div></div></div>
+  </div>
+</section>
+<section class="cat hide" data-section="custom">
+  <div class="cat-head"><div class="num">0 photos</div><h2>Custom stonework</h2></div>
+  <div class="grid">
+  </div>
+</section>
+
+<footer>
+  <img src="https://diamond-masonry-demo.vercel.app/assets/brand/diamond-masonry-logo-white.svg" alt="Diamond Masonry">
+  <div>Diamond Masonry</div>
+</footer>
+<script>
+(function(){
+  var bar=document.getElementById('filters');
+  bar.addEventListener('click',function(e){
+    var btn=e.target.closest('button[data-filter]');
+    if(!btn) return;
+    var f=btn.getAttribute('data-filter');
+    bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b===btn)});
+    document.querySelectorAll('.cat').forEach(function(sec){
+      if(f==='all'){sec.classList.remove('hide');return}
+      sec.classList.toggle('hide',sec.getAttribute('data-section')!==f);
+    });
+  });
+})();
+</script>
+
+<div class="yg-lb" id="ygLb" aria-hidden="true">
+  <button class="yg-close" type="button" aria-label="Close">×</button>
+  <button class="yg-nav yg-prev" type="button" aria-label="Previous">‹</button>
+  <img alt="">
+  <button class="yg-nav yg-next" type="button" aria-label="Next">›</button>
+  <div class="yg-panel"></div>
+</div>
+
+
+<script>
+(function(){
+  if(window.__ygLbInit) return; window.__ygLbInit=true;
+  var cards=[].slice.call(document.querySelectorAll('.item')).filter(function(c){return c.querySelector('img');});
+  if(!cards.length) return;
+  var lb=document.getElementById('ygLb');
+  if(!lb){
+    lb=document.createElement('div');
+    lb.className='yg-lb'; lb.id='ygLb'; lb.setAttribute('aria-hidden','true');
+    lb.innerHTML='<button class="yg-close" type="button" aria-label="Close">×</button><button class="yg-nav yg-prev" type="button" aria-label="Previous">‹</button><img alt=""><button class="yg-nav yg-next" type="button" aria-label="Next">›</button><div class="yg-panel"></div>';
+    document.body.appendChild(lb);
+  }
+  var img=lb.querySelector('img');
+  var panel=lb.querySelector('.yg-panel');
+  var idx=0;
+  function srcOf(card){
+    var full=card.getAttribute('data-full')||card.getAttribute('data-img')||card.getAttribute('data-src')||'';
+    var thumb=card.querySelector('img');
+    if(full && (full.indexOf('http')===0 || full.indexOf('//')===0)) return full;
+    if(thumb){
+      var ds=thumb.getAttribute('data-src');
+      if(ds && (ds.indexOf('http')===0 || ds.indexOf('//')===0)) return ds;
+      return thumb.currentSrc||thumb.src||full;
+    }
+    return full;
+  }
+  function titleOf(card){
+    var t=card.getAttribute('data-title');
+    if(t) return t;
+    var el=card.querySelector('.ti,.title,.meta .ti,h3');
+    if(el) return (el.textContent||'').trim();
+    var im=card.querySelector('img');
+    return (im && im.alt)||'';
+  }
+  function openAt(i){
+    idx=(i+cards.length)%cards.length;
+    var card=cards[idx];
+    img.src=srcOf(card);
+    panel.textContent=titleOf(card);
+    lb.classList.add('show');
+    lb.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function close(){
+    lb.classList.remove('show');
+    lb.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+  cards.forEach(function(card,i){
+    card.style.cursor='pointer';
+    card.addEventListener('click',function(e){
+      if(e.target.closest && e.target.closest('a.cta,.cta')) return;
+      e.preventDefault();
+      openAt(i);
+    });
+  });
+  lb.querySelector('.yg-close').addEventListener('click',close);
+  lb.querySelector('.yg-prev').addEventListener('click',function(){openAt(idx-1)});
+  lb.querySelector('.yg-next').addEventListener('click',function(){openAt(idx+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb) close()});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('show')) return;
+    if(e.key==='Escape') close();
+    if(e.key==='ArrowLeft') openAt(idx-1);
+    if(e.key==='ArrowRight') openAt(idx+1);
+  });
+})();
+</script>
+
+</body>
+</html>

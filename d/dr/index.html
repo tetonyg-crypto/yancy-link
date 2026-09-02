@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="yg-static-bake" content="dr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="https://dr-home-services-demo.vercel.app/assets/brand/dr-logo.png" type="image/png">
+<title>DR Home Services — Work Catalog</title>
+<meta name="description" content="DR Home Services project catalog: drywall, painting, and trim in the Salt Lake Valley, Utah.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap">
+<style>
+  :root{
+    --black:#0A0A0A;
+    --black-2:#141414;
+    --bone:#F5F5F5;
+    --muted:#9A9A9A;
+    --red:#C41E3A;
+    --red-2:#E11D48;
+    --line:rgba(196,30,58,.32);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--black);color:var(--bone);font-family:'Inter Tight',system-ui,sans-serif;font-weight:300;line-height:1.55;min-height:100vh;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{cursor:pointer;font-family:inherit}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:12px 22px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,.96);border-bottom:1px solid var(--line)}
+  nav .l{display:flex;align-items:center;gap:12px}
+  nav .l img{height:52px;width:auto}
+  nav .l .name{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;line-height:1.2}
+  nav .l .name span{color:var(--red)}
+  nav .r .tel{color:var(--red-2);font-weight:700;letter-spacing:.02em;font-size:15px}
+
+  .hero{position:relative;height:54vh;min-height:340px;overflow:hidden;background:var(--black)}
+  .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.55),rgba(10,10,10,.2) 40%,rgba(10,10,10,.97));z-index:1}
+  .hero-content{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:90px 24px 40px;text-align:center}
+  .hero-content .micro{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:16px}
+  .hero-content img.mark{width:min(240px,46vw);height:auto;filter:drop-shadow(0 12px 36px rgba(0,0,0,.75))}
+  .hero-content h1{margin-top:18px;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(28px,5vw,46px);line-height:1.1}
+  .hero-content .sub{margin-top:10px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+  .hero-content .lic{margin-top:8px;font-size:11px;letter-spacing:.08em;color:var(--muted)}
+
+  .filter{position:sticky;top:76px;z-index:40;background:rgba(10,10,10,.97);border-bottom:1px solid var(--black-2);padding:14px 16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+  .filter button{background:transparent;border:1px solid rgba(245,245,245,.16);color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:10px 14px}
+  .filter button.on{border-color:var(--red);background:var(--red);color:#fff;font-weight:700}
+
+  .cat{padding:64px 0 36px;border-top:1px solid var(--black-2)}
+  .cat.hide{display:none !important}
+  .cat-head{padding:0 28px 28px}
+  .cat-head .num{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:8px}
+  .cat-head h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(28px,4.5vw,44px);line-height:1}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr)}
+  .item{position:relative;aspect-ratio:5/4;overflow:hidden;background:var(--black-2);border-right:1px solid var(--black);border-bottom:1px solid var(--black)}
+  .item img{width:100%;height:100%;object-fit:cover}
+  .item .meta{position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(0deg,rgba(10,10,10,.95),transparent)}
+  .item .meta .ti{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:17px;margin-bottom:4px}
+  .item .meta .lc{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--red-2);font-weight:600}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){
+    .grid{grid-template-columns:1fr}
+    nav .l .name{display:none}
+  }
+
+  footer{padding:48px 24px;text-align:center;border-top:1px solid var(--black-2)}
+  footer img{height:72px;margin:0 auto 14px}
+  footer .lines{font-size:13px;opacity:.75;line-height:1.8}
+  footer .demo{margin-top:14px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+
+/* === YG MOBILE HARD RULE (do not remove) === */
+html,body{overflow-x:hidden!important;max-width:100%!important}
+img,video{max-width:100%;height:auto}
+nav,.filter,header,footer,.wrap,.hero-content,.cat-head,.hero:not(.hero-media),.page-cta .wrap,.preview .head,.about,.services,.contact,.cta-band,.strip,section.hero{
+  box-sizing:border-box;
+}
+nav,.filter,header,footer{
+  padding-left:max(16px, env(safe-area-inset-left))!important;
+  padding-right:max(16px, env(safe-area-inset-right))!important;
+}
+.hero-content,.cat-head,.wrap,.about,.services,.contact,.cta-band,.preview .head,section.hero > .eyebrow,section.hero > h1,section.hero > p,.hero .content{
+  padding-left:max(12px, env(safe-area-inset-left));
+  padding-right:max(12px, env(safe-area-inset-right));
+  box-sizing:border-box;
+  max-width:100%;
+}
+.grid,.mosaic{width:100%;max-width:100%;box-sizing:border-box;min-width:0}
+.item,.cell,.card{min-width:0;max-width:100%}
+.item img,.cell img{width:100%;height:100%;object-fit:cover;display:block}
+
+</style>
+</head>
+<body>
+<nav>
+  <a class="l" href="/d/dr/catalog">
+    <img src="https://dr-home-services-demo.vercel.app/assets/brand/dr-logo.png" alt="DR Home Services">
+    <span class="name">DR Home <span>Services</span></span>
+  </a>
+  <div class="r">
+    <a class="tel" href="tel:+18016083761">(801) 608-3761</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="https://dr-home-services-demo.vercel.app/assets/images/catalog/012.jpg" alt="">
+  <div class="hero-content">
+    <div class="micro">Project catalog</div>
+    <img class="mark" src="https://dr-home-services-demo.vercel.app/assets/brand/dr-logo.png" alt="DR Home Services">
+    <h1>Drywall · Painting · Trim</h1>
+    <div class="sub">Salt Lake Valley · Utah</div>
+    <div class="lic">Lic. #12779590-5501 · Licensed &amp; insured</div>
+  </div>
+</header>
+
+<div class="filter" id="filters">
+  <button type="button" class="on" data-filter="all">All work</button>
+  <button type="button" data-filter="drywall">Drywall hang &amp; finish</button>
+  <button type="button" data-filter="interior">Interior painting</button>
+  <button type="button" data-filter="exterior">Exterior painting</button>
+  <button type="button" data-filter="trim">Trim &amp; finish carpentry</button>
+  <button type="button" data-filter="texture">Texture work</button>
+  <button type="button" data-filter="repairs">Repairs &amp; patches</button>
+</div>
+
+<section class="cat" data-section="drywall">
+  <div class="cat-head"><div class="num">3 photos</div><h2>Drywall hang &amp; finish</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/001.jpg" alt="Basement framing ready for drywall" loading="lazy"><div class="meta"><div class="ti">Basement framing ready for drywall</div><div class="lc">Utah</div></div></div>
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/002.jpg" alt="Drywall hang in progress" loading="lazy"><div class="meta"><div class="ti">Drywall hang in progress</div><div class="lc">Utah</div></div></div>
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/003.jpg" alt="Fresh drywall finish before flooring" loading="lazy"><div class="meta"><div class="ti">Fresh drywall finish before flooring</div><div class="lc">Utah</div></div></div>
+  </div>
+</section>
+
+<section class="cat" data-section="interior">
+  <div class="cat-head"><div class="num">3 photos</div><h2>Interior painting</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/004.jpg" alt="Interior paint refresh before and after" loading="lazy"><div class="meta"><div class="ti">Interior paint refresh before and after</div><div class="lc">Utah</div></div></div>
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/005.jpg" alt="Neutral repaint before and after" loading="lazy"><div class="meta"><div class="ti">Neutral repaint before and after</div><div class="lc">Utah</div></div></div>
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/006.jpg" alt="Accent wall interior paint" loading="lazy"><div class="meta"><div class="ti">Accent wall interior paint</div><div class="lc">Utah</div></div></div>
+<div class="lc">Utah</div></div></div>
+  </div>
+</section>
+
+<section class="cat" data-section="exterior">
+  <div class="cat-head"><div class="num">1 photos</div><h2>Exterior painting</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/008.jpg" alt="Garage door exterior paint" loading="lazy"><div class="meta"><div class="ti">Garage door exterior paint</div><div class="lc">Utah</div></div></div>
+  </div>
+</section>
+
+<section class="cat" data-section="trim">
+  <div class="cat-head"><div class="num">4 photos</div><h2>Trim &amp; finish carpentry</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/009.jpg" alt="Basement finish with baseboard trim" loading="lazy"><div class="meta"><div class="ti">Basement finish with baseboard trim</div><div class="lc">Utah</div></div></div>
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/010.jpg" alt="Clean baseboard and painted walls" loading="lazy"><div class="meta"><div class="ti">Clean baseboard and painted walls</div><div class="lc">Utah</div></div></div>
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/011.jpg" alt="Board-and-batten trim detail" loading="lazy"><div class="meta"><div class="ti">Board-and-batten trim detail</div><div class="lc">Utah</div></div></div>
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/012.jpg" alt="Finished room with crown and base" loading="lazy"><div class="meta"><div class="ti">Finished room with crown and base</div><div class="lc">Utah</div></div></div>
+  </div>
+</section>
+
+<section class="cat" data-section="texture">
+  <div class="cat-head"><div class="num">1 photos</div><h2>Texture work</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/013.jpg" alt="Ceiling texture match repair" loading="lazy"><div class="meta"><div class="ti">Ceiling texture match repair</div><div class="lc">Utah</div></div></div>
+<div class="lc">Utah</div></div></div>
+  </div>
+</section>
+
+<section class="cat" data-section="repairs">
+  <div class="cat-head"><div class="num">5 photos</div><h2>Repairs &amp; patches</h2></div>
+  <div class="grid">
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/015.jpg" alt="Wall opening for repair" loading="lazy"><div class="meta"><div class="ti">Wall opening for repair</div><div class="lc">Utah</div></div></div>
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/016.jpg" alt="Ceiling soffit repair in progress" loading="lazy"><div class="meta"><div class="ti">Ceiling soffit repair in progress</div><div class="lc">Utah</div></div></div>
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/017.jpg" alt="Kitchen ceiling repair before and after" loading="lazy"><div class="meta"><div class="ti">Kitchen ceiling repair before and after</div><div class="lc">Utah</div></div></div>
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/018.jpg" alt="Drywall patch repairs before and after" loading="lazy"><div class="meta"><div class="ti">Drywall patch repairs before and after</div><div class="lc">Utah</div></div></div>
+    <div class="item"><img src="https://dr-home-services-demo.vercel.app/assets/images/catalog/019.jpg" alt="Large-area drywall repair" loading="lazy"><div class="meta"><div class="ti">Large-area drywall repair</div><div class="lc">Utah</div></div></div>
+  </div>
+</section>
+
+<footer>
+  <img src="https://dr-home-services-demo.vercel.app/assets/brand/dr-logo.png" alt="DR Home Services">
+  <div class="lines">
+    DR Home Services<br>
+    Salt Lake Valley, Utah<br>
+    Lic. #12779590-5501<br>
+    <a href="tel:+18016083761">(801) 608-3761</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var bar=document.getElementById('filters');
+  if(!bar) return;
+  bar.addEventListener('click',function(e){
+    var btn=e.target.closest('button[data-filter]');
+    if(!btn) return;
+    var f=btn.getAttribute('data-filter');
+    bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b===btn)});
+    document.querySelectorAll('.cat').forEach(function(sec){
+      if(f==='all'){sec.classList.remove('hide');return}
+      sec.classList.toggle('hide',sec.getAttribute('data-section')!==f);
+    });
+  });
+})();
+</script>
+</body>
+</html>
