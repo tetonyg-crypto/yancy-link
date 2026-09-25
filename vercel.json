@@ -153,6 +153,24 @@
       ]
     },
     {
+      "source": "/d/(edgar|glen|intermountain|ivan|jh|victor)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/d/(edgar|glen|intermountain|ivan|jh|victor)/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
       "source": "/(.*)",
       "headers": [
         {
